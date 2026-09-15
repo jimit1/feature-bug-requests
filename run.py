@@ -11,7 +11,6 @@ PRICE = {"reader": (1.0, 5.0), "editor": (5.0, 25.0)}
 USAGE = {"reader": [0, 0], "editor": [0, 0]}
 CLIENT = []
 
-
 def call_model(tier, system, user):
     import anthropic
     key = os.environ.get("ANTHROPIC_API_KEY")
@@ -25,7 +24,6 @@ def call_model(tier, system, user):
     USAGE[tier][1] += r.usage.output_tokens
     return "".join(b.text for b in r.content if b.type == "text")
 
-
 def parse_json(text):
     t = text.strip()
     if t.startswith("```"):
@@ -35,11 +33,9 @@ def parse_json(text):
     except ValueError:
         return None
 
-
 def stamp(iso, ms=0):
     t = datetime.strptime(iso[:19], "%Y-%m-%dT%H:%M:%S") + timedelta(milliseconds=ms)
     return t.strftime("%Y-%m-%dT%H:%M:%SZ")
-
 
 def account_fields(a):
     if not a:
@@ -47,7 +43,6 @@ def account_fields(a):
     r = a["record"]
     return {"account_id": a["account_id"], "account": r["Name"], "account_type": a["account_type"],
             "tier": r.get("Tier__c"), "arr": r.get("ARR__c") or 0}
-
 
 def open_cases_per_account(by_sfid):
     counts = {}
@@ -60,14 +55,12 @@ def open_cases_per_account(by_sfid):
             counts[a["account_id"]] = counts.get(a["account_id"], 0) + 1
     return counts
 
-
 def gong_doc(f, by_domain, day):
     d = json.load(open(f, encoding="utf-8"))
     meta, parties = d["call"]["metaData"], {p["speakerId"]: p for p in d["call"]["parties"]}
-    acct = None
-    for p in d["call"]["parties"]:
-        if p.get("affiliation") == "External" and not acct:
-            acct = by_domain.get((p.get("emailAddress") or "@").rsplit("@", 1)[-1])
+    domains = [(p.get("emailAddress") or "@").rsplit("@", 1)[-1] for p in d["call"]["parties"]
+               if p.get("affiliation") == "External"]
+    acct = next((by_domain[dm] for dm in domains if dm in by_domain), None)
     lines = ["Call %s, recorded %s. Title: %s" % (meta["id"], meta["started"][:10], meta.get("title", "")),
              "Turns in order. Each header reads [speaker_id S | Name | side | START-END]."]
     units = {}
@@ -84,7 +77,6 @@ def gong_doc(f, by_domain, day):
         lines += ["", "[speaker_id %s | %s | %s | %d-%d]" % (sid, p.get("name", "Unknown"), side, start, end), text]
     return {"source": "gong", "doc_id": meta["id"], "day": day, "account": account_fields(acct),
             "text": "\n".join(lines), "units": units, "hidden": set()}
-
 
 def case_doc(f, by_sfid, users, day):
     d = json.load(open(f, encoding="utf-8"))
@@ -107,7 +99,6 @@ def case_doc(f, by_sfid, users, day):
             "account": account_fields(by_sfid.get(c.get("AccountId"))),
             "text": "\n".join(lines), "units": units, "hidden": hidden}
 
-
 def documents_for(day):
     accs = load("data/accounts.json")["accounts"]
     by_domain = {a["domain"]: a for a in accs}
@@ -123,12 +114,10 @@ def documents_for(day):
             docs.append(case_doc(f, by_sfid, users, day))
     return docs, by_sfid
 
-
 def unit_key(source, loc):
     if source == "gong":
         return (str(loc["speaker_id"]), int(loc["start_ms"]), int(loc["end_ms"]))
     return str(loc["comment_id"])
-
 
 def verify(claim, doc):
     """Return None when the claim is citable and its quote is exact, otherwise the reason it is rejected."""
@@ -151,7 +140,6 @@ def verify(claim, doc):
         return "quote not found in cited turn"
     return None
 
-
 def build_claim(claim, doc):
     unit = doc["units"][unit_key(doc["source"], claim["locator"])]
     loc = dict(claim["locator"])
@@ -165,7 +153,6 @@ def build_claim(claim, doc):
     out["locator"] = loc
     out["occurred_at"] = unit["occurred_at"]
     return out
-
 
 def read_documents(docs, day):
     prompts = {"gong": open(path("agents/call_reader.md"), encoding="utf-8").read(),
@@ -183,13 +170,7 @@ def read_documents(docs, day):
                 rejected.append(dict(bad, day=day, source=doc["source"], doc_id=doc["doc_id"], reason=reason))
             else:
                 claims.append(build_claim(c, doc))
-    seen, unique = set(), []
-    for c in claims:
-        if c["id"] not in seen:
-            seen.add(c["id"])
-            unique.append(c)
-    return unique, rejected
-
+    return list({c["id"]: c for c in claims}.values()), rejected
 
 def apply_decisions(out, new_claims, themes, state, day):
     by_id = {c["id"]: c for c in new_claims}
@@ -221,7 +202,6 @@ def apply_decisions(out, new_claims, themes, state, day):
             theme["summary"] = summaries[theme["id"]]
     return appended, opened
 
-
 def score_theme(theme, claims, open_cases, day):
     cs = [claims[i] for i in theme["claim_ids"] if i in claims]
     ids = {c["account_id"] for c in cs if c.get("account_id")}
@@ -235,29 +215,21 @@ def score_theme(theme, claims, open_cases, day):
              "cases": round(w["cases"] * min(theme["open_cases"], 4) / 4, 1),
              "recency": round(w["recency"] * max(0, CFG["recency_days"] - since) / CFG["recency_days"], 1),
              "bug": float(w["bug"]) if theme["type"] == "bug" else 0.0}
-    theme["score_parts"] = parts
-    theme["score"] = round(sum(parts.values()))
+    theme["score_parts"], theme["score"] = parts, round(sum(parts.values()))
     return theme
 
-
 def all_claims():
-    out = {}
-    for f in sorted(glob.glob(path("library/claims/*.jsonl"))):
-        if f.endswith("rejected.jsonl"):
-            continue
-        for line in open(f, encoding="utf-8"):
-            if line.strip():
-                c = json.loads(line)
-                out[c["id"]] = c
-    return out
-
+    files = [f for f in sorted(glob.glob(path("library/claims/*.jsonl"))) if not f.endswith("rejected.jsonl")]
+    rows = [json.loads(ln) for f in files for ln in open(f, encoding="utf-8") if ln.strip()]
+    return {c["id"]: c for c in rows}
 
 def append_jsonl(rel, rows):
+    if not rows:
+        return
     os.makedirs(os.path.dirname(path(rel)), exist_ok=True)
     with open(path(rel), "a", encoding="utf-8") as fh:
         for r in rows:
             fh.write(json.dumps(r, ensure_ascii=False) + "\n")
-
 
 def write_library(themes, claims, state, day):
     os.makedirs(path("library/themes"), exist_ok=True)
@@ -272,7 +244,6 @@ def write_library(themes, claims, state, day):
     open(path("ui/data.js"), "w", encoding="utf-8").write(
         "window.DIGEST = " + json.dumps(view, indent=1, ensure_ascii=False) + ";\n")
     json.dump(state, open(path("library/state.json"), "w", encoding="utf-8"), indent=1)
-
 
 def main():
     ap = argparse.ArgumentParser(description="Build one day of the feature and bug digest.")
@@ -291,15 +262,11 @@ def main():
     claims, rejected = read_documents(docs, day)
     known = all_claims()
     claims = [c for c in claims if c["id"] not in known]
-    if rejected:
-        append_jsonl("library/claims/rejected.jsonl", rejected)
-    if claims:
-        append_jsonl("library/claims/%s.jsonl" % day, claims)
+    append_jsonl("library/claims/rejected.jsonl", rejected)
+    append_jsonl("library/claims/%s.jsonl" % day, claims)
 
-    themes = {}
-    for f in sorted(glob.glob(path("library/themes/*.json"))):
-        t = json.load(open(f, encoding="utf-8"))
-        themes[t["id"]] = t
+    themes = {t["id"]: t for t in (json.load(open(f, encoding="utf-8"))
+                                  for f in sorted(glob.glob(path("library/themes/*.json"))))}
     appended = opened = 0
     if claims:
         index = open(path("library/themes/index.md"), encoding="utf-8").read() if os.path.exists(path("library/themes/index.md")) else ""
@@ -314,8 +281,7 @@ def main():
 
     known.update({c["id"]: c for c in claims})
     open_cases = open_cases_per_account(by_sfid)
-    for t in themes.values():
-        score_theme(t, known, open_cases, day)
+    [score_theme(t, known, open_cases, day) for t in themes.values()]
     state["days"] = sorted(set(state["days"] + [day]))
     write_library(themes, known, state, day)
 
@@ -327,7 +293,6 @@ def main():
     if not args.no_commit:
         subprocess.run(["git", "add", "library", "ui/data.js"], cwd=ROOT, check=True)
         subprocess.run(["git", "commit", "-m", msg], cwd=ROOT, check=True)
-
 
 if __name__ == "__main__":
     main()
