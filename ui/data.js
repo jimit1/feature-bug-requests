@@ -1,11 +1,122 @@
 window.DIGEST = {
- "as_of": "2026-09-09",
+ "as_of": "2026-09-10",
  "days": [
   "2026-09-08",
-  "2026-09-09"
+  "2026-09-09",
+  "2026-09-10"
  ],
  "ask_url": "https://g3kmsu2e2ikq7cyivffqi7i6oe0unrtk.lambda-url.us-east-1.on.aws/",
  "themes": [
+  {
+   "id": "THEME-0001",
+   "title": "Renewal invoices omit prior credits and balances",
+   "type": "bug",
+   "summary": "Staff at member organizations are sending renewal invoices that do not account for money the member has already paid, including prior credits, open balances, and payments made when a member upgraded tiers partway through the year. Members receive a bill for the full annual amount, forcing finance staff to catch and correct each invoice by hand before or after it goes out.",
+   "claim_ids": [
+    "c-915d4dd0bc13",
+    "c-deb7b49ebfd6",
+    "c-a48464d88d04"
+   ],
+   "first_seen": "2026-09-08",
+   "last_seen": "2026-09-10",
+   "log": [
+    {
+     "day": "2026-09-08",
+     "action": "open",
+     "claim_id": "c-915d4dd0bc13",
+     "why": "Nothing in the empty index covers renewal totals being calculated without amounts the member already paid or carried over, so this opens that theme."
+    },
+    {
+     "day": "2026-09-08",
+     "action": "append",
+     "claim_id": "c-deb7b49ebfd6",
+     "why": "A missing partial-year credit line is the same failure as a missing carried-over balance: the renewal total ignores what the member already paid."
+    },
+    {
+     "day": "2026-09-10",
+     "action": "append",
+     "claim_id": "c-a48464d88d04",
+     "why": "The renewal total is computed without crediting what the member already paid during the year, which is the same underlying failure as the existing theme about renewal invoices omitting prior credits and balances."
+    }
+   ],
+   "accounts": {
+    "customer": 2,
+    "prospect": 0
+   },
+   "open_cases": 9,
+   "score_parts": {
+    "accounts": 15.0,
+    "value": 17.0,
+    "cases": 20.0,
+    "recency": 15.0,
+    "bug": 10.0
+   },
+   "score": 77,
+   "claims": [
+    {
+     "id": "c-915d4dd0bc13",
+     "day": "2026-09-08",
+     "source": "gong",
+     "type": "bug",
+     "topic": "renewal statements missing carried-over balance",
+     "quote": "Every renewal statement we send out is missing the balance that carried over from the previous period, so the invoice total reads far higher than it should.",
+     "account_id": "ACC-0001",
+     "account": "Great Lakes Museum Alliance",
+     "account_type": "customer",
+     "tier": "Enterprise",
+     "arr": 340000,
+     "speaker": "Rhonda Calloway",
+     "locator": {
+      "call_id": "7782934451002",
+      "speaker_id": "4521",
+      "start_ms": 663288,
+      "end_ms": 722760
+     },
+     "occurred_at": "2026-09-08T15:12:15Z"
+    },
+    {
+     "id": "c-deb7b49ebfd6",
+     "day": "2026-09-08",
+     "source": "gong",
+     "type": "bug",
+     "topic": "missing credit line on renewal invoices",
+     "quote": "Our renewal invoice keeps landing without a line for the credit we are owed from the partial year adjustment, and finance ends up chasing it every single cycle.",
+     "account_id": "ACC-0001",
+     "account": "Great Lakes Museum Alliance",
+     "account_type": "customer",
+     "tier": "Enterprise",
+     "arr": 340000,
+     "speaker": "Naomi Castellanos",
+     "locator": {
+      "call_id": "7782934452001",
+      "speaker_id": "c-01",
+      "start_ms": 187200,
+      "end_ms": 223200
+     },
+     "occurred_at": "2026-09-08T12:35:27Z"
+    },
+    {
+     "id": "c-a48464d88d04",
+     "day": "2026-09-10",
+     "source": "salesforce",
+     "type": "bug",
+     "topic": "mid-year upgrade renewal billing",
+     "quote": "Members who upgraded partway through the year are billed the whole annual figure again with nothing knocked off",
+     "account_id": "ACC-0003",
+     "account": "Prairie Land Trust Council",
+     "account_type": "customer",
+     "tier": "Professional",
+     "arr": 154000,
+     "speaker": "Unknown",
+     "locator": {
+      "case_id": "5008W00002aQpLrQAK",
+      "comment_id": "00a8W00000XfT2mQAF",
+      "case_number": "00001042"
+     },
+     "occurred_at": "2026-09-10T14:22:05Z"
+    }
+   ]
+  },
   {
    "id": "THEME-0005",
    "title": "Membership report export truncated at row limit",
@@ -40,10 +151,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 15.0,
+    "recency": 13.9,
     "bug": 10.0
    },
-   "score": 77,
+   "score": 76,
    "claims": [
     {
      "id": "c-7d2a3f364428",
@@ -130,10 +241,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 15.0,
+    "recency": 13.9,
     "bug": 10.0
    },
-   "score": 73,
+   "score": 72,
    "claims": [
     {
      "id": "c-5d3a978f29d2",
@@ -200,89 +311,6 @@ window.DIGEST = {
    ]
   },
   {
-   "id": "THEME-0001",
-   "title": "Renewal invoices omit prior credits and balances",
-   "type": "bug",
-   "summary": "Membership staff send renewal invoices that leave out credits and carried-over balances the member has already paid, so the amount due reads far higher than it should. Finance teams chase the difference manually every renewal cycle.",
-   "claim_ids": [
-    "c-915d4dd0bc13",
-    "c-deb7b49ebfd6"
-   ],
-   "first_seen": "2026-09-08",
-   "last_seen": "2026-09-08",
-   "log": [
-    {
-     "day": "2026-09-08",
-     "action": "open",
-     "claim_id": "c-915d4dd0bc13",
-     "why": "Nothing in the empty index covers renewal totals being calculated without amounts the member already paid or carried over, so this opens that theme."
-    },
-    {
-     "day": "2026-09-08",
-     "action": "append",
-     "claim_id": "c-deb7b49ebfd6",
-     "why": "A missing partial-year credit line is the same failure as a missing carried-over balance: the renewal total ignores what the member already paid."
-    }
-   ],
-   "accounts": {
-    "customer": 1,
-    "prospect": 0
-   },
-   "open_cases": 6,
-   "score_parts": {
-    "accounts": 7.5,
-    "value": 17.0,
-    "cases": 20.0,
-    "recency": 13.9,
-    "bug": 10.0
-   },
-   "score": 68,
-   "claims": [
-    {
-     "id": "c-915d4dd0bc13",
-     "day": "2026-09-08",
-     "source": "gong",
-     "type": "bug",
-     "topic": "renewal statements missing carried-over balance",
-     "quote": "Every renewal statement we send out is missing the balance that carried over from the previous period, so the invoice total reads far higher than it should.",
-     "account_id": "ACC-0001",
-     "account": "Great Lakes Museum Alliance",
-     "account_type": "customer",
-     "tier": "Enterprise",
-     "arr": 340000,
-     "speaker": "Rhonda Calloway",
-     "locator": {
-      "call_id": "7782934451002",
-      "speaker_id": "4521",
-      "start_ms": 663288,
-      "end_ms": 722760
-     },
-     "occurred_at": "2026-09-08T15:12:15Z"
-    },
-    {
-     "id": "c-deb7b49ebfd6",
-     "day": "2026-09-08",
-     "source": "gong",
-     "type": "bug",
-     "topic": "missing credit line on renewal invoices",
-     "quote": "Our renewal invoice keeps landing without a line for the credit we are owed from the partial year adjustment, and finance ends up chasing it every single cycle.",
-     "account_id": "ACC-0001",
-     "account": "Great Lakes Museum Alliance",
-     "account_type": "customer",
-     "tier": "Enterprise",
-     "arr": 340000,
-     "speaker": "Naomi Castellanos",
-     "locator": {
-      "call_id": "7782934452001",
-      "speaker_id": "c-01",
-      "start_ms": 187200,
-      "end_ms": 223200
-     },
-     "occurred_at": "2026-09-08T12:35:27Z"
-    }
-   ]
-  },
-  {
    "id": "THEME-0006",
    "title": "Duplicate journal entries in general ledger sync",
    "type": "bug",
@@ -316,10 +344,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 7.7,
     "cases": 20.0,
-    "recency": 15.0,
+    "recency": 13.9,
     "bug": 10.0
    },
-   "score": 68,
+   "score": 67,
    "claims": [
     {
      "id": "c-9e53583c6513",
@@ -398,10 +426,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 2.0,
     "cases": 20.0,
-    "recency": 15.0,
+    "recency": 13.9,
     "bug": 10.0
    },
-   "score": 62,
+   "score": 61,
    "claims": [
     {
      "id": "c-8fc57031470e",
@@ -474,10 +502,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 13.9,
+    "recency": 12.9,
     "bug": 0.0
    },
-   "score": 58,
+   "score": 57,
    "claims": [
     {
      "id": "c-16cd97e72e9e",
@@ -536,10 +564,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 13.9,
+    "recency": 12.9,
     "bug": 0.0
    },
-   "score": 55,
+   "score": 54,
    "claims": [
     {
      "id": "c-6fdcefc76dcd",
@@ -611,10 +639,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 4.8,
     "cases": 15.0,
-    "recency": 13.9,
+    "recency": 12.9,
     "bug": 10.0
    },
-   "score": 51,
+   "score": 50,
    "claims": [
     {
      "id": "c-c44577763b5c",
@@ -666,10 +694,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 0.0,
     "cases": 0.0,
-    "recency": 15.0,
+    "recency": 13.9,
     "bug": 0.0
    },
-   "score": 22,
+   "score": 21,
    "claims": [
     {
      "id": "c-b696c3430eb3",
@@ -721,10 +749,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 0.0,
     "cases": 0.0,
-    "recency": 15.0,
+    "recency": 13.9,
     "bug": 0.0
    },
-   "score": 22,
+   "score": 21,
    "claims": [
     {
      "id": "c-299d81776e9e",

@@ -2,13 +2,14 @@
  "id": "THEME-0001",
  "title": "Renewal invoices omit prior credits and balances",
  "type": "bug",
- "summary": "Membership staff send renewal invoices that leave out credits and carried-over balances the member has already paid, so the amount due reads far higher than it should. Finance teams chase the difference manually every renewal cycle.",
+ "summary": "Staff at member organizations are sending renewal invoices that do not account for money the member has already paid, including prior credits, open balances, and payments made when a member upgraded tiers partway through the year. Members receive a bill for the full annual amount, forcing finance staff to catch and correct each invoice by hand before or after it goes out.",
  "claim_ids": [
   "c-915d4dd0bc13",
-  "c-deb7b49ebfd6"
+  "c-deb7b49ebfd6",
+  "c-a48464d88d04"
  ],
  "first_seen": "2026-09-08",
- "last_seen": "2026-09-08",
+ "last_seen": "2026-09-10",
  "log": [
   {
    "day": "2026-09-08",
@@ -21,19 +22,25 @@
    "action": "append",
    "claim_id": "c-deb7b49ebfd6",
    "why": "A missing partial-year credit line is the same failure as a missing carried-over balance: the renewal total ignores what the member already paid."
+  },
+  {
+   "day": "2026-09-10",
+   "action": "append",
+   "claim_id": "c-a48464d88d04",
+   "why": "The renewal total is computed without crediting what the member already paid during the year, which is the same underlying failure as the existing theme about renewal invoices omitting prior credits and balances."
   }
  ],
  "accounts": {
-  "customer": 1,
+  "customer": 2,
   "prospect": 0
  },
- "open_cases": 6,
+ "open_cases": 9,
  "score_parts": {
-  "accounts": 7.5,
+  "accounts": 15.0,
   "value": 17.0,
   "cases": 20.0,
-  "recency": 13.9,
+  "recency": 15.0,
   "bug": 10.0
  },
- "score": 68
+ "score": 77
 }
