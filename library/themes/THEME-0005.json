@@ -2,13 +2,15 @@
  "id": "THEME-0005",
  "title": "Membership report export truncated at row limit",
  "type": "bug",
- "summary": "Report exports stop short once the result set passes a few thousand rows, affecting both membership lists and year end donor reports. Staff work around it by running several partial exports and stitching them together manually.",
+ "summary": "Customers running large reports get files that stop partway through, with no warning that rows are missing. This affects both membership and donor reporting, so staff only discover the gap when the totals do not match their own record counts.",
  "claim_ids": [
   "c-7d2a3f364428",
-  "c-155dc035f7d8"
+  "c-155dc035f7d8",
+  "c-83304fe35523",
+  "c-e79e344c3032"
  ],
  "first_seen": "2026-09-08",
- "last_seen": "2026-09-09",
+ "last_seen": "2026-09-11",
  "log": [
   {
    "day": "2026-09-08",
@@ -21,6 +23,18 @@
    "action": "append",
    "claim_id": "c-155dc035f7d8",
    "why": "A donor report cut off past a few thousand rows is the same export truncation at a row limit as the existing theme, only on a different report."
+  },
+  {
+   "day": "2026-09-11",
+   "action": "append",
+   "claim_id": "c-83304fe35523",
+   "why": "This is the same silent row-limit truncation on large exports already tracked in the export truncation theme."
+  },
+  {
+   "day": "2026-09-11",
+   "action": "append",
+   "claim_id": "c-e79e344c3032",
+   "why": "A donor report cut off short of the full record count is the same export row cap, differing only in which report noticed it."
   }
  ],
  "accounts": {
@@ -32,8 +46,8 @@
   "accounts": 15.0,
   "value": 17.0,
   "cases": 20.0,
-  "recency": 13.9,
+  "recency": 15.0,
   "bug": 10.0
  },
- "score": 76
+ "score": 77
 }

@@ -2,13 +2,15 @@
  "id": "THEME-0003",
  "title": "Offline event check-in with later sync",
  "type": "feature",
- "summary": "Onsite teams checking attendees in on tablets lose the ability to work when venue wifi drops, which stalls the line at the door. They need check-in to keep recording locally and sync back to the system once connectivity returns.",
+ "summary": "Event staff lose the ability to sign attendees in whenever venue network access drops, and some accounts need the on-site attendance record for insurance and compliance evidence. They are asking for the check-in kiosk to keep accepting arrivals during an outage and reconcile the entries once connectivity returns.",
  "claim_ids": [
   "c-6fdcefc76dcd",
-  "c-b58dd0db5d66"
+  "c-b58dd0db5d66",
+  "c-dd21af62c2f6",
+  "c-5814ec6d0a27"
  ],
  "first_seen": "2026-09-08",
- "last_seen": "2026-09-08",
+ "last_seen": "2026-09-11",
  "log": [
   {
    "day": "2026-09-08",
@@ -21,19 +23,31 @@
    "action": "append",
    "claim_id": "c-b58dd0db5d66",
    "why": "Same ask as the other check-in claim from the same account: keep check-in running without connectivity and sync when back online."
+  },
+  {
+   "day": "2026-09-11",
+   "action": "append",
+   "claim_id": "c-dd21af62c2f6",
+   "why": "A kiosk that stops signing people in when the wifi drops is the failure side of the existing offline check-in with later sync theme."
+  },
+  {
+   "day": "2026-09-11",
+   "action": "append",
+   "claim_id": "c-5814ec6d0a27",
+   "why": "The request for the kiosk to keep running through an outage and reconcile afterwards is exactly the offline check-in with later sync ask."
   }
  ],
  "accounts": {
-  "customer": 1,
+  "customer": 2,
   "prospect": 0
  },
- "open_cases": 4,
+ "open_cases": 7,
  "score_parts": {
-  "accounts": 7.5,
+  "accounts": 15.0,
   "value": 13.4,
   "cases": 20.0,
-  "recency": 12.9,
+  "recency": 15.0,
   "bug": 0.0
  },
- "score": 54
+ "score": 63
 }

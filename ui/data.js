@@ -1,12 +1,151 @@
 window.DIGEST = {
- "as_of": "2026-09-10",
+ "as_of": "2026-09-11",
  "days": [
   "2026-09-08",
   "2026-09-09",
-  "2026-09-10"
+  "2026-09-10",
+  "2026-09-11"
  ],
  "ask_url": "https://g3kmsu2e2ikq7cyivffqi7i6oe0unrtk.lambda-url.us-east-1.on.aws/",
  "themes": [
+  {
+   "id": "THEME-0005",
+   "title": "Membership report export truncated at row limit",
+   "type": "bug",
+   "summary": "Customers running large reports get files that stop partway through, with no warning that rows are missing. This affects both membership and donor reporting, so staff only discover the gap when the totals do not match their own record counts.",
+   "claim_ids": [
+    "c-7d2a3f364428",
+    "c-155dc035f7d8",
+    "c-83304fe35523",
+    "c-e79e344c3032"
+   ],
+   "first_seen": "2026-09-08",
+   "last_seen": "2026-09-11",
+   "log": [
+    {
+     "day": "2026-09-08",
+     "action": "open",
+     "claim_id": "c-7d2a3f364428",
+     "why": "Exports cutting off above a row threshold is a reporting failure with no matching theme in the index."
+    },
+    {
+     "day": "2026-09-09",
+     "action": "append",
+     "claim_id": "c-155dc035f7d8",
+     "why": "A donor report cut off past a few thousand rows is the same export truncation at a row limit as the existing theme, only on a different report."
+    },
+    {
+     "day": "2026-09-11",
+     "action": "append",
+     "claim_id": "c-83304fe35523",
+     "why": "This is the same silent row-limit truncation on large exports already tracked in the export truncation theme."
+    },
+    {
+     "day": "2026-09-11",
+     "action": "append",
+     "claim_id": "c-e79e344c3032",
+     "why": "A donor report cut off short of the full record count is the same export row cap, differing only in which report noticed it."
+    }
+   ],
+   "accounts": {
+    "customer": 2,
+    "prospect": 0
+   },
+   "open_cases": 8,
+   "score_parts": {
+    "accounts": 15.0,
+    "value": 17.0,
+    "cases": 20.0,
+    "recency": 15.0,
+    "bug": 10.0
+   },
+   "score": 77,
+   "claims": [
+    {
+     "id": "c-7d2a3f364428",
+     "day": "2026-09-08",
+     "source": "gong",
+     "type": "bug",
+     "topic": "membership export cuts off at row limit",
+     "quote": "Any report we try to export once membership crosses about ten thousand rows just cuts off partway through instead of finishing the file.",
+     "account_id": "ACC-0001",
+     "account": "Great Lakes Museum Alliance",
+     "account_type": "customer",
+     "tier": "Enterprise",
+     "arr": 340000,
+     "speaker": "Naomi Castellanos",
+     "locator": {
+      "call_id": "7782934452010",
+      "speaker_id": "c-01",
+      "start_ms": 208421,
+      "end_ms": 271579
+     },
+     "occurred_at": "2026-09-08T09:04:55Z"
+    },
+    {
+     "id": "c-155dc035f7d8",
+     "day": "2026-09-09",
+     "source": "gong",
+     "type": "bug",
+     "topic": "year end donor report row limit",
+     "quote": "Our year end donor report stops short of the full list once it gets past a few thousand rows, so we are stitching multiple exports together by hand.",
+     "account_id": "ACC-0006",
+     "account": "Copper Ridge Youth Foundation",
+     "account_type": "customer",
+     "tier": "Standard",
+     "arr": 18000,
+     "speaker": "Denise Okonkwo",
+     "locator": {
+      "call_id": "7782934452011",
+      "speaker_id": "c-06",
+      "start_ms": 252720,
+      "end_ms": 259200
+     },
+     "occurred_at": "2026-09-09T15:20:51Z"
+    },
+    {
+     "id": "c-83304fe35523",
+     "day": "2026-09-11",
+     "source": "gong",
+     "type": "bug",
+     "topic": "export truncation at ten thousand rows",
+     "quote": "Every export we run over about ten thousand rows comes back cut off at the bottom and nobody is told that it happened.",
+     "account_id": "ACC-0006",
+     "account": "Copper Ridge Youth Foundation",
+     "account_type": "customer",
+     "tier": "Standard",
+     "arr": 18000,
+     "speaker": "Marisol Quintero",
+     "locator": {
+      "call_id": "7782934451119",
+      "speaker_id": "5066",
+      "start_ms": 406214,
+      "end_ms": 453060
+     },
+     "occurred_at": "2026-09-11T15:38:08Z"
+    },
+    {
+     "id": "c-e79e344c3032",
+     "day": "2026-09-11",
+     "source": "salesforce",
+     "type": "bug",
+     "topic": "year end donor report row limit",
+     "quote": "Our year end donor report stops at about 3,200 rows even though we have close to 5,000 donors on file.",
+     "account_id": "ACC-0006",
+     "account": "Copper Ridge Youth Foundation",
+     "account_type": "customer",
+     "tier": "Standard",
+     "arr": 18000,
+     "speaker": "Denise Okonkwo",
+     "locator": {
+      "case_id": "500000000000000007",
+      "comment_id": "00a00000000000001a",
+      "case_number": "00005007"
+     },
+     "occurred_at": "2026-09-11T15:45:55Z"
+    }
+   ]
+  },
   {
    "id": "THEME-0001",
    "title": "Renewal invoices omit prior credits and balances",
@@ -48,10 +187,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 15.0,
+    "recency": 13.9,
     "bug": 10.0
    },
-   "score": 77,
+   "score": 76,
    "claims": [
     {
      "id": "c-915d4dd0bc13",
@@ -118,89 +257,6 @@ window.DIGEST = {
    ]
   },
   {
-   "id": "THEME-0005",
-   "title": "Membership report export truncated at row limit",
-   "type": "bug",
-   "summary": "Report exports stop short once the result set passes a few thousand rows, affecting both membership lists and year end donor reports. Staff work around it by running several partial exports and stitching them together manually.",
-   "claim_ids": [
-    "c-7d2a3f364428",
-    "c-155dc035f7d8"
-   ],
-   "first_seen": "2026-09-08",
-   "last_seen": "2026-09-09",
-   "log": [
-    {
-     "day": "2026-09-08",
-     "action": "open",
-     "claim_id": "c-7d2a3f364428",
-     "why": "Exports cutting off above a row threshold is a reporting failure with no matching theme in the index."
-    },
-    {
-     "day": "2026-09-09",
-     "action": "append",
-     "claim_id": "c-155dc035f7d8",
-     "why": "A donor report cut off past a few thousand rows is the same export truncation at a row limit as the existing theme, only on a different report."
-    }
-   ],
-   "accounts": {
-    "customer": 2,
-    "prospect": 0
-   },
-   "open_cases": 8,
-   "score_parts": {
-    "accounts": 15.0,
-    "value": 17.0,
-    "cases": 20.0,
-    "recency": 13.9,
-    "bug": 10.0
-   },
-   "score": 76,
-   "claims": [
-    {
-     "id": "c-7d2a3f364428",
-     "day": "2026-09-08",
-     "source": "gong",
-     "type": "bug",
-     "topic": "membership export cuts off at row limit",
-     "quote": "Any report we try to export once membership crosses about ten thousand rows just cuts off partway through instead of finishing the file.",
-     "account_id": "ACC-0001",
-     "account": "Great Lakes Museum Alliance",
-     "account_type": "customer",
-     "tier": "Enterprise",
-     "arr": 340000,
-     "speaker": "Naomi Castellanos",
-     "locator": {
-      "call_id": "7782934452010",
-      "speaker_id": "c-01",
-      "start_ms": 208421,
-      "end_ms": 271579
-     },
-     "occurred_at": "2026-09-08T09:04:55Z"
-    },
-    {
-     "id": "c-155dc035f7d8",
-     "day": "2026-09-09",
-     "source": "gong",
-     "type": "bug",
-     "topic": "year end donor report row limit",
-     "quote": "Our year end donor report stops short of the full list once it gets past a few thousand rows, so we are stitching multiple exports together by hand.",
-     "account_id": "ACC-0006",
-     "account": "Copper Ridge Youth Foundation",
-     "account_type": "customer",
-     "tier": "Standard",
-     "arr": 18000,
-     "speaker": "Denise Okonkwo",
-     "locator": {
-      "call_id": "7782934452011",
-      "speaker_id": "c-06",
-      "start_ms": 252720,
-      "end_ms": 259200
-     },
-     "occurred_at": "2026-09-09T15:20:51Z"
-    }
-   ]
-  },
-  {
    "id": "THEME-0008",
    "title": "Pledge reminder schedule ignores donor contact preferences",
    "type": "bug",
@@ -241,10 +297,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 13.9,
+    "recency": 12.9,
     "bug": 10.0
    },
-   "score": 72,
+   "score": 71,
    "claims": [
     {
      "id": "c-5d3a978f29d2",
@@ -344,10 +400,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 7.7,
     "cases": 20.0,
-    "recency": 13.9,
+    "recency": 12.9,
     "bug": 10.0
    },
-   "score": 67,
+   "score": 66,
    "claims": [
     {
      "id": "c-9e53583c6513",
@@ -393,6 +449,144 @@ window.DIGEST = {
    ]
   },
   {
+   "id": "THEME-0003",
+   "title": "Offline event check-in with later sync",
+   "type": "feature",
+   "summary": "Event staff lose the ability to sign attendees in whenever venue network access drops, and some accounts need the on-site attendance record for insurance and compliance evidence. They are asking for the check-in kiosk to keep accepting arrivals during an outage and reconcile the entries once connectivity returns.",
+   "claim_ids": [
+    "c-6fdcefc76dcd",
+    "c-b58dd0db5d66",
+    "c-dd21af62c2f6",
+    "c-5814ec6d0a27"
+   ],
+   "first_seen": "2026-09-08",
+   "last_seen": "2026-09-11",
+   "log": [
+    {
+     "day": "2026-09-08",
+     "action": "open",
+     "claim_id": "c-6fdcefc76dcd",
+     "why": "Check-in failing when venue wifi drops and the ask for offline capture with sync are one theme, and none exists yet."
+    },
+    {
+     "day": "2026-09-08",
+     "action": "append",
+     "claim_id": "c-b58dd0db5d66",
+     "why": "Same ask as the other check-in claim from the same account: keep check-in running without connectivity and sync when back online."
+    },
+    {
+     "day": "2026-09-11",
+     "action": "append",
+     "claim_id": "c-dd21af62c2f6",
+     "why": "A kiosk that stops signing people in when the wifi drops is the failure side of the existing offline check-in with later sync theme."
+    },
+    {
+     "day": "2026-09-11",
+     "action": "append",
+     "claim_id": "c-5814ec6d0a27",
+     "why": "The request for the kiosk to keep running through an outage and reconcile afterwards is exactly the offline check-in with later sync ask."
+    }
+   ],
+   "accounts": {
+    "customer": 2,
+    "prospect": 0
+   },
+   "open_cases": 7,
+   "score_parts": {
+    "accounts": 15.0,
+    "value": 13.4,
+    "cases": 20.0,
+    "recency": 15.0,
+    "bug": 0.0
+   },
+   "score": 63,
+   "claims": [
+    {
+     "id": "c-6fdcefc76dcd",
+     "day": "2026-09-08",
+     "source": "gong",
+     "type": "feature",
+     "topic": "offline event check-in syncing",
+     "quote": "When the venue wifi drops we need event check-in to keep running on the tablets and sync everything back up once we are online again. That is the single thing I would change if I could change one thing.",
+     "account_id": "ACC-0002",
+     "account": "Cascadia Nurses Association",
+     "account_type": "customer",
+     "tier": "Enterprise",
+     "arr": 268000,
+     "speaker": "Sylvia Marchetti",
+     "locator": {
+      "call_id": "7782934451118",
+      "speaker_id": "4631",
+      "start_ms": 754970,
+      "end_ms": 790252
+     },
+     "occurred_at": "2026-09-08T17:44:14Z"
+    },
+    {
+     "id": "c-b58dd0db5d66",
+     "day": "2026-09-08",
+     "source": "salesforce",
+     "type": "feature",
+     "topic": "offline event check-in with sync",
+     "quote": "Our onsite team needs event check-in to keep working even when the venue wifi drops, and then sync everything back once we are online again.",
+     "account_id": "ACC-0002",
+     "account": "Cascadia Nurses Association",
+     "account_type": "customer",
+     "tier": "Enterprise",
+     "arr": 268000,
+     "speaker": "Renee Okafor",
+     "locator": {
+      "case_id": "500000000000000002",
+      "comment_id": "00a000000000000005",
+      "case_number": "00005002"
+     },
+     "occurred_at": "2026-09-08T10:25:12Z"
+    },
+    {
+     "id": "c-dd21af62c2f6",
+     "day": "2026-09-11",
+     "source": "gong",
+     "type": "bug",
+     "topic": "attendee kiosk offline during network outage",
+     "quote": "If the hall wifi cuts out halfway through the morning, the attendee kiosk has to carry on signing people in and catch up later.",
+     "account_id": "ACC-0004",
+     "account": "Atlantic Shipwrights Guild",
+     "account_type": "customer",
+     "tier": "Professional",
+     "arr": 96000,
+     "speaker": "Garrett Thibodeaux",
+     "locator": {
+      "call_id": "7782934451207",
+      "speaker_id": "4744",
+      "start_ms": 444042,
+      "end_ms": 506400
+     },
+     "occurred_at": "2026-09-11T13:09:29Z"
+    },
+    {
+     "id": "c-5814ec6d0a27",
+     "day": "2026-09-11",
+     "source": "gong",
+     "type": "feature",
+     "topic": "offline capability for attendee kiosk during network outages",
+     "quote": "Our insurance requires us to show who was on site and roughly when, so the attendee kiosk staying up through an outage and reconciling afterwards is the difference between a compliant record and a gap.",
+     "account_id": "ACC-0004",
+     "account": "Atlantic Shipwrights Guild",
+     "account_type": "customer",
+     "tier": "Professional",
+     "arr": 96000,
+     "speaker": "Garrett Thibodeaux",
+     "locator": {
+      "call_id": "7782934451207",
+      "speaker_id": "4744",
+      "start_ms": 444042,
+      "end_ms": 506400
+     },
+     "occurred_at": "2026-09-11T13:09:29Z"
+    }
+   ]
+  },
+  {
    "id": "THEME-0004",
    "title": "Renewal notice email deliverability",
    "type": "bug",
@@ -426,10 +620,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 2.0,
     "cases": 20.0,
-    "recency": 13.9,
+    "recency": 12.9,
     "bug": 10.0
    },
-   "score": 61,
+   "score": 60,
    "claims": [
     {
      "id": "c-8fc57031470e",
@@ -502,10 +696,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 12.9,
+    "recency": 11.8,
     "bug": 0.0
    },
-   "score": 57,
+   "score": 56,
    "claims": [
     {
      "id": "c-16cd97e72e9e",
@@ -527,88 +721,6 @@ window.DIGEST = {
       "end_ms": 218688
      },
      "occurred_at": "2026-09-08T15:04:10Z"
-    }
-   ]
-  },
-  {
-   "id": "THEME-0003",
-   "title": "Offline event check-in with later sync",
-   "type": "feature",
-   "summary": "Onsite teams checking attendees in on tablets lose the ability to work when venue wifi drops, which stalls the line at the door. They need check-in to keep recording locally and sync back to the system once connectivity returns.",
-   "claim_ids": [
-    "c-6fdcefc76dcd",
-    "c-b58dd0db5d66"
-   ],
-   "first_seen": "2026-09-08",
-   "last_seen": "2026-09-08",
-   "log": [
-    {
-     "day": "2026-09-08",
-     "action": "open",
-     "claim_id": "c-6fdcefc76dcd",
-     "why": "Check-in failing when venue wifi drops and the ask for offline capture with sync are one theme, and none exists yet."
-    },
-    {
-     "day": "2026-09-08",
-     "action": "append",
-     "claim_id": "c-b58dd0db5d66",
-     "why": "Same ask as the other check-in claim from the same account: keep check-in running without connectivity and sync when back online."
-    }
-   ],
-   "accounts": {
-    "customer": 1,
-    "prospect": 0
-   },
-   "open_cases": 4,
-   "score_parts": {
-    "accounts": 7.5,
-    "value": 13.4,
-    "cases": 20.0,
-    "recency": 12.9,
-    "bug": 0.0
-   },
-   "score": 54,
-   "claims": [
-    {
-     "id": "c-6fdcefc76dcd",
-     "day": "2026-09-08",
-     "source": "gong",
-     "type": "feature",
-     "topic": "offline event check-in syncing",
-     "quote": "When the venue wifi drops we need event check-in to keep running on the tablets and sync everything back up once we are online again. That is the single thing I would change if I could change one thing.",
-     "account_id": "ACC-0002",
-     "account": "Cascadia Nurses Association",
-     "account_type": "customer",
-     "tier": "Enterprise",
-     "arr": 268000,
-     "speaker": "Sylvia Marchetti",
-     "locator": {
-      "call_id": "7782934451118",
-      "speaker_id": "4631",
-      "start_ms": 754970,
-      "end_ms": 790252
-     },
-     "occurred_at": "2026-09-08T17:44:14Z"
-    },
-    {
-     "id": "c-b58dd0db5d66",
-     "day": "2026-09-08",
-     "source": "salesforce",
-     "type": "feature",
-     "topic": "offline event check-in with sync",
-     "quote": "Our onsite team needs event check-in to keep working even when the venue wifi drops, and then sync everything back once we are online again.",
-     "account_id": "ACC-0002",
-     "account": "Cascadia Nurses Association",
-     "account_type": "customer",
-     "tier": "Enterprise",
-     "arr": 268000,
-     "speaker": "Renee Okafor",
-     "locator": {
-      "case_id": "500000000000000002",
-      "comment_id": "00a000000000000005",
-      "case_number": "00005002"
-     },
-     "occurred_at": "2026-09-08T10:25:12Z"
     }
    ]
   },
@@ -639,10 +751,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 4.8,
     "cases": 15.0,
-    "recency": 12.9,
+    "recency": 11.8,
     "bug": 10.0
    },
-   "score": 50,
+   "score": 49,
    "claims": [
     {
      "id": "c-c44577763b5c",
@@ -694,10 +806,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 0.0,
     "cases": 0.0,
-    "recency": 13.9,
+    "recency": 12.9,
     "bug": 0.0
    },
-   "score": 21,
+   "score": 20,
    "claims": [
     {
      "id": "c-b696c3430eb3",
@@ -749,10 +861,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 0.0,
     "cases": 0.0,
-    "recency": 13.9,
+    "recency": 12.9,
     "bug": 0.0
    },
-   "score": 21,
+   "score": 20,
    "claims": [
     {
      "id": "c-299d81776e9e",
