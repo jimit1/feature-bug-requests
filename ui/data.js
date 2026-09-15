@@ -1,10 +1,204 @@
 window.DIGEST = {
- "as_of": "2026-09-08",
+ "as_of": "2026-09-09",
  "days": [
-  "2026-09-08"
+  "2026-09-08",
+  "2026-09-09"
  ],
  "ask_url": "https://g3kmsu2e2ikq7cyivffqi7i6oe0unrtk.lambda-url.us-east-1.on.aws/",
  "themes": [
+  {
+   "id": "THEME-0005",
+   "title": "Membership report export truncated at row limit",
+   "type": "bug",
+   "summary": "Report exports stop short once the result set passes a few thousand rows, affecting both membership lists and year end donor reports. Staff work around it by running several partial exports and stitching them together manually.",
+   "claim_ids": [
+    "c-7d2a3f364428",
+    "c-155dc035f7d8"
+   ],
+   "first_seen": "2026-09-08",
+   "last_seen": "2026-09-09",
+   "log": [
+    {
+     "day": "2026-09-08",
+     "action": "open",
+     "claim_id": "c-7d2a3f364428",
+     "why": "Exports cutting off above a row threshold is a reporting failure with no matching theme in the index."
+    },
+    {
+     "day": "2026-09-09",
+     "action": "append",
+     "claim_id": "c-155dc035f7d8",
+     "why": "A donor report cut off past a few thousand rows is the same export truncation at a row limit as the existing theme, only on a different report."
+    }
+   ],
+   "accounts": {
+    "customer": 2,
+    "prospect": 0
+   },
+   "open_cases": 8,
+   "score_parts": {
+    "accounts": 15.0,
+    "value": 17.0,
+    "cases": 20.0,
+    "recency": 15.0,
+    "bug": 10.0
+   },
+   "score": 77,
+   "claims": [
+    {
+     "id": "c-7d2a3f364428",
+     "day": "2026-09-08",
+     "source": "gong",
+     "type": "bug",
+     "topic": "membership export cuts off at row limit",
+     "quote": "Any report we try to export once membership crosses about ten thousand rows just cuts off partway through instead of finishing the file.",
+     "account_id": "ACC-0001",
+     "account": "Great Lakes Museum Alliance",
+     "account_type": "customer",
+     "tier": "Enterprise",
+     "arr": 340000,
+     "speaker": "Naomi Castellanos",
+     "locator": {
+      "call_id": "7782934452010",
+      "speaker_id": "c-01",
+      "start_ms": 208421,
+      "end_ms": 271579
+     },
+     "occurred_at": "2026-09-08T09:04:55Z"
+    },
+    {
+     "id": "c-155dc035f7d8",
+     "day": "2026-09-09",
+     "source": "gong",
+     "type": "bug",
+     "topic": "year end donor report row limit",
+     "quote": "Our year end donor report stops short of the full list once it gets past a few thousand rows, so we are stitching multiple exports together by hand.",
+     "account_id": "ACC-0006",
+     "account": "Copper Ridge Youth Foundation",
+     "account_type": "customer",
+     "tier": "Standard",
+     "arr": 18000,
+     "speaker": "Denise Okonkwo",
+     "locator": {
+      "call_id": "7782934452011",
+      "speaker_id": "c-06",
+      "start_ms": 252720,
+      "end_ms": 259200
+     },
+     "occurred_at": "2026-09-09T15:20:51Z"
+    }
+   ]
+  },
+  {
+   "id": "THEME-0008",
+   "title": "Pledge reminder schedule ignores donor contact preferences",
+   "type": "bug",
+   "summary": "Pledge reminders go out by email to donors who have asked to be contacted by mail only, and staff have no way to hold those sends back. Donors repeat the request and fundraising teams lose trust with the people they are asking to give.",
+   "claim_ids": [
+    "c-5d3a978f29d2",
+    "c-5b5f6e38062c",
+    "c-7a9d32ef25ab"
+   ],
+   "first_seen": "2026-09-08",
+   "last_seen": "2026-09-09",
+   "log": [
+    {
+     "day": "2026-09-08",
+     "action": "open",
+     "claim_id": "c-5d3a978f29d2",
+     "why": "Fundraising reminders overriding stored donor preferences is a separate ask from renewal notice delivery and opens its own theme."
+    },
+    {
+     "day": "2026-09-09",
+     "action": "append",
+     "claim_id": "c-5b5f6e38062c",
+     "why": "Pledge reminders emailed to donors who asked for paper only is the same failure as the existing theme about reminders ignoring donor contact preferences."
+    },
+    {
+     "day": "2026-09-09",
+     "action": "append",
+     "claim_id": "c-7a9d32ef25ab",
+     "why": "Mail-only donors still receiving emailed pledge reminders is the same preference being ignored that the existing theme describes."
+    }
+   ],
+   "accounts": {
+    "customer": 2,
+    "prospect": 0
+   },
+   "open_cases": 6,
+   "score_parts": {
+    "accounts": 15.0,
+    "value": 13.4,
+    "cases": 20.0,
+    "recency": 15.0,
+    "bug": 10.0
+   },
+   "score": 73,
+   "claims": [
+    {
+     "id": "c-5d3a978f29d2",
+     "day": "2026-09-08",
+     "source": "gong",
+     "type": "bug",
+     "topic": "pledge reminders ignoring donor preference",
+     "quote": "Pledge reminders keep going out on the standard schedule even for donors who told us they only want a single reminder before the campaign closes.",
+     "account_id": "ACC-0002",
+     "account": "Cascadia Nurses Association",
+     "account_type": "customer",
+     "tier": "Enterprise",
+     "arr": 268000,
+     "speaker": "Renee Okafor",
+     "locator": {
+      "call_id": "7782934452019",
+      "speaker_id": "c-02",
+      "start_ms": 313354,
+      "end_ms": 319749
+     },
+     "occurred_at": "2026-09-08T12:06:21Z"
+    },
+    {
+     "id": "c-5b5f6e38062c",
+     "day": "2026-09-09",
+     "source": "gong",
+     "type": "bug",
+     "topic": "pledge reminders ignore paper-only preference",
+     "quote": "Our pledge reminders still go out by email to donors who told us twice that they only want paper, and there is no way to hold them back.",
+     "account_id": "ACC-0005",
+     "account": "Sunbelt Literacy Network",
+     "account_type": "customer",
+     "tier": "Standard",
+     "arr": 41000,
+     "speaker": "Yvette Bramhall",
+     "locator": {
+      "call_id": "7782934451404",
+      "speaker_id": "4955",
+      "start_ms": 449706,
+      "end_ms": 486168
+     },
+     "occurred_at": "2026-09-09T14:08:59Z"
+    },
+    {
+     "id": "c-7a9d32ef25ab",
+     "day": "2026-09-09",
+     "source": "salesforce",
+     "type": "bug",
+     "topic": "pledge reminders sent to opted-out mail-only donors",
+     "quote": "We have donors who asked to be reminded by mail only, and the system still emails them pledge reminders on top of that.",
+     "account_id": "ACC-0005",
+     "account": "Sunbelt Literacy Network",
+     "account_type": "customer",
+     "tier": "Standard",
+     "arr": 41000,
+     "speaker": "Yolanda Pruitt",
+     "locator": {
+      "case_id": "500000000000000011",
+      "comment_id": "00a000000000000042",
+      "case_number": "00005017"
+     },
+     "occurred_at": "2026-09-09T09:45:54Z"
+    }
+   ]
+  },
   {
    "id": "THEME-0001",
    "title": "Renewal invoices omit prior credits and balances",
@@ -39,10 +233,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 15.0,
+    "recency": 13.9,
     "bug": 10.0
    },
-   "score": 70,
+   "score": 68,
    "claims": [
     {
      "id": "c-915d4dd0bc13",
@@ -89,112 +283,167 @@ window.DIGEST = {
    ]
   },
   {
-   "id": "THEME-0005",
-   "title": "Membership report export truncated at row limit",
+   "id": "THEME-0006",
+   "title": "Duplicate journal entries in general ledger sync",
    "type": "bug",
-   "summary": "Staff exporting membership reports get files that stop partway through once the record count passes roughly ten thousand rows. The truncated export is silent, so incomplete data can be used without anyone noticing.",
+   "summary": "A batch of transactions periodically posts twice to the general ledger after the accounting sync runs. Finance staff have to identify and remove the duplicate entries before the books reconcile.",
    "claim_ids": [
-    "c-7d2a3f364428"
+    "c-9e53583c6513",
+    "c-5c26d1b4bb94"
    ],
    "first_seen": "2026-09-08",
-   "last_seen": "2026-09-08",
+   "last_seen": "2026-09-09",
    "log": [
     {
      "day": "2026-09-08",
      "action": "open",
-     "claim_id": "c-7d2a3f364428",
-     "why": "Exports cutting off above a row threshold is a reporting failure with no matching theme in the index."
+     "claim_id": "c-9e53583c6513",
+     "why": "Double-posted journal entries in the accounting sync are distinct from invoice and reporting issues and open a new theme."
+    },
+    {
+     "day": "2026-09-09",
+     "action": "append",
+     "claim_id": "c-5c26d1b4bb94",
+     "why": "Transactions appearing twice in the ledger after a sync run is the duplicate journal entry problem the existing theme covers."
     }
    ],
    "accounts": {
-    "customer": 1,
+    "customer": 2,
     "prospect": 0
    },
-   "open_cases": 6,
+   "open_cases": 5,
    "score_parts": {
-    "accounts": 7.5,
-    "value": 17.0,
+    "accounts": 15.0,
+    "value": 7.7,
     "cases": 20.0,
     "recency": 15.0,
     "bug": 10.0
    },
-   "score": 70,
+   "score": 68,
    "claims": [
     {
-     "id": "c-7d2a3f364428",
+     "id": "c-9e53583c6513",
      "day": "2026-09-08",
      "source": "gong",
      "type": "bug",
-     "topic": "membership export cuts off at row limit",
-     "quote": "Any report we try to export once membership crosses about ten thousand rows just cuts off partway through instead of finishing the file.",
-     "account_id": "ACC-0001",
-     "account": "Great Lakes Museum Alliance",
+     "topic": "duplicate journal entries in general ledger sync",
+     "quote": "The general ledger sync has posted the same journal entry twice on more than one closing, and our bookkeeper has to go back and reverse the duplicate by hand.",
+     "account_id": "ACC-0003",
+     "account": "Prairie Land Trust Council",
      "account_type": "customer",
-     "tier": "Enterprise",
-     "arr": 340000,
-     "speaker": "Naomi Castellanos",
+     "tier": "Professional",
+     "arr": 154000,
+     "speaker": "Miguel Ferreira",
      "locator": {
-      "call_id": "7782934452010",
-      "speaker_id": "c-01",
-      "start_ms": 208421,
-      "end_ms": 271579
+      "call_id": "7782934452015",
+      "speaker_id": "c-03",
+      "start_ms": 478615,
+      "end_ms": 486462
      },
-     "occurred_at": "2026-09-08T09:04:55Z"
+     "occurred_at": "2026-09-08T09:08:48Z"
+    },
+    {
+     "id": "c-5c26d1b4bb94",
+     "day": "2026-09-09",
+     "source": "salesforce",
+     "type": "bug",
+     "topic": "duplicate transactions in ledger after sync",
+     "quote": "Every few weeks a batch of transactions shows up twice in the ledger after the sync runs, and finance has to hunt down which one to remove.",
+     "account_id": "ACC-0005",
+     "account": "Sunbelt Literacy Network",
+     "account_type": "customer",
+     "tier": "Standard",
+     "arr": 41000,
+     "speaker": "Yolanda Pruitt",
+     "locator": {
+      "case_id": "50000000000000000a",
+      "comment_id": "00a000000000000026",
+      "case_number": "00005010"
+     },
+     "occurred_at": "2026-09-09T11:45:46Z"
     }
    ]
   },
   {
-   "id": "THEME-0008",
-   "title": "Pledge reminder schedule ignores donor contact preferences",
+   "id": "THEME-0004",
+   "title": "Renewal notice email deliverability",
    "type": "bug",
-   "summary": "Donors who asked for a single reminder before a campaign closes still receive the full standard reminder sequence. Fundraising staff face complaints and have to manage those preferences outside the system.",
+   "summary": "Renewal reminder emails are being filtered as spam by major mail providers, so members never see the notice and lapse without warning. Staff only find out when renewals are missed and have to chase members by hand.",
    "claim_ids": [
-    "c-5d3a978f29d2"
+    "c-8fc57031470e",
+    "c-c3cc9482540b"
    ],
    "first_seen": "2026-09-08",
-   "last_seen": "2026-09-08",
+   "last_seen": "2026-09-09",
    "log": [
     {
      "day": "2026-09-08",
      "action": "open",
-     "claim_id": "c-5d3a978f29d2",
-     "why": "Fundraising reminders overriding stored donor preferences is a separate ask from renewal notice delivery and opens its own theme."
+     "claim_id": "c-8fc57031470e",
+     "why": "This is about renewal emails being filtered to spam rather than about invoice amounts, and no theme covers message delivery."
+    },
+    {
+     "day": "2026-09-09",
+     "action": "append",
+     "claim_id": "c-c3cc9482540b",
+     "why": "Renewal reminders landing in spam and members missing the notice is the deliverability failure the existing theme already tracks."
     }
    ],
    "accounts": {
-    "customer": 1,
+    "customer": 2,
     "prospect": 0
    },
    "open_cases": 4,
    "score_parts": {
-    "accounts": 7.5,
-    "value": 13.4,
+    "accounts": 15.0,
+    "value": 2.0,
     "cases": 20.0,
     "recency": 15.0,
     "bug": 10.0
    },
-   "score": 66,
+   "score": 62,
    "claims": [
     {
-     "id": "c-5d3a978f29d2",
+     "id": "c-8fc57031470e",
      "day": "2026-09-08",
      "source": "gong",
      "type": "bug",
-     "topic": "pledge reminders ignoring donor preference",
-     "quote": "Pledge reminders keep going out on the standard schedule even for donors who told us they only want a single reminder before the campaign closes.",
-     "account_id": "ACC-0002",
-     "account": "Cascadia Nurses Association",
+     "topic": "renewal notices landing in spam folder",
+     "quote": "A good number of our members tell us the renewal notice never showed up, and when we check, it landed in their spam folder instead of the inbox.",
+     "account_id": "ACC-0005",
+     "account": "Sunbelt Literacy Network",
      "account_type": "customer",
-     "tier": "Enterprise",
-     "arr": 268000,
-     "speaker": "Renee Okafor",
+     "tier": "Standard",
+     "arr": 41000,
+     "speaker": "Yolanda Pruitt",
      "locator": {
-      "call_id": "7782934452019",
-      "speaker_id": "c-02",
-      "start_ms": 313354,
-      "end_ms": 319749
+      "call_id": "7782934452008",
+      "speaker_id": "c-05",
+      "start_ms": 127685,
+      "end_ms": 167586
      },
-     "occurred_at": "2026-09-08T12:06:21Z"
+     "occurred_at": "2026-09-08T15:04:04Z"
+    },
+    {
+     "id": "c-c3cc9482540b",
+     "day": "2026-09-09",
+     "source": "gong",
+     "type": "bug",
+     "topic": "renewal reminder emails flagged as spam",
+     "quote": "Our renewal reminder emails are getting flagged as spam by some of the bigger providers, so members are missing the notice entirely.",
+     "account_id": "ACC-0006",
+     "account": "Copper Ridge Youth Foundation",
+     "account_type": "customer",
+     "tier": "Standard",
+     "arr": 18000,
+     "speaker": "Denise Okonkwo",
+     "locator": {
+      "call_id": "7782934452009",
+      "speaker_id": "c-06",
+      "start_ms": 312000,
+      "end_ms": 324000
+     },
+     "occurred_at": "2026-09-09T13:23:01Z"
     }
    ]
   },
@@ -225,10 +474,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 15.0,
+    "recency": 13.9,
     "bug": 0.0
    },
-   "score": 60,
+   "score": 58,
    "claims": [
     {
      "id": "c-16cd97e72e9e",
@@ -287,10 +536,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 15.0,
+    "recency": 13.9,
     "bug": 0.0
    },
-   "score": 56,
+   "score": 55,
    "claims": [
     {
      "id": "c-6fdcefc76dcd",
@@ -336,61 +585,6 @@ window.DIGEST = {
    ]
   },
   {
-   "id": "THEME-0006",
-   "title": "Duplicate journal entries in general ledger sync",
-   "type": "bug",
-   "summary": "The general ledger sync has posted the same journal entry twice during more than one close. Bookkeepers must find and reverse the duplicates by hand before the books balance.",
-   "claim_ids": [
-    "c-9e53583c6513"
-   ],
-   "first_seen": "2026-09-08",
-   "last_seen": "2026-09-08",
-   "log": [
-    {
-     "day": "2026-09-08",
-     "action": "open",
-     "claim_id": "c-9e53583c6513",
-     "why": "Double-posted journal entries in the accounting sync are distinct from invoice and reporting issues and open a new theme."
-    }
-   ],
-   "accounts": {
-    "customer": 1,
-    "prospect": 0
-   },
-   "open_cases": 3,
-   "score_parts": {
-    "accounts": 7.5,
-    "value": 7.7,
-    "cases": 15.0,
-    "recency": 15.0,
-    "bug": 10.0
-   },
-   "score": 55,
-   "claims": [
-    {
-     "id": "c-9e53583c6513",
-     "day": "2026-09-08",
-     "source": "gong",
-     "type": "bug",
-     "topic": "duplicate journal entries in general ledger sync",
-     "quote": "The general ledger sync has posted the same journal entry twice on more than one closing, and our bookkeeper has to go back and reverse the duplicate by hand.",
-     "account_id": "ACC-0003",
-     "account": "Prairie Land Trust Council",
-     "account_type": "customer",
-     "tier": "Professional",
-     "arr": 154000,
-     "speaker": "Miguel Ferreira",
-     "locator": {
-      "call_id": "7782934452015",
-      "speaker_id": "c-03",
-      "start_ms": 478615,
-      "end_ms": 486462
-     },
-     "occurred_at": "2026-09-08T09:08:48Z"
-    }
-   ]
-  },
-  {
    "id": "THEME-0007",
    "title": "Expiration warnings for postings",
    "type": "bug",
@@ -417,10 +611,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 4.8,
     "cases": 15.0,
-    "recency": 15.0,
+    "recency": 13.9,
     "bug": 10.0
    },
-   "score": 52,
+   "score": 51,
    "claims": [
     {
      "id": "c-c44577763b5c",
@@ -446,57 +640,112 @@ window.DIGEST = {
    ]
   },
   {
-   "id": "THEME-0004",
-   "title": "Renewal notice email deliverability",
-   "type": "bug",
-   "summary": "Members report that renewal notices never arrived, and staff find the messages were filtered into spam folders instead of the inbox. Renewals are missed and staff have to follow up individually to confirm delivery.",
+   "id": "THEME-0009",
+   "title": "SCORM package import into learning module",
+   "type": "feature",
+   "summary": "Organizations moving from a hosted e-learning platform cannot upload existing SCORM 1.2 and SCORM 2004 packages directly into the learning module. Staff would have to rebuild every course by hand, which blocks migration for training heavy associations.",
    "claim_ids": [
-    "c-8fc57031470e"
+    "c-b696c3430eb3"
    ],
-   "first_seen": "2026-09-08",
-   "last_seen": "2026-09-08",
+   "first_seen": "2026-09-09",
+   "last_seen": "2026-09-09",
    "log": [
     {
-     "day": "2026-09-08",
+     "day": "2026-09-09",
      "action": "open",
-     "claim_id": "c-8fc57031470e",
-     "why": "This is about renewal emails being filtered to spam rather than about invoice amounts, and no theme covers message delivery."
+     "claim_id": "c-b696c3430eb3",
+     "why": "No existing theme covers loading course content into the learning module, so this import ask needs a new heading."
     }
    ],
    "accounts": {
-    "customer": 1,
-    "prospect": 0
+    "customer": 0,
+    "prospect": 1
    },
-   "open_cases": 2,
+   "open_cases": 0,
    "score_parts": {
     "accounts": 7.5,
-    "value": 2.0,
-    "cases": 10.0,
+    "value": 0.0,
+    "cases": 0.0,
     "recency": 15.0,
-    "bug": 10.0
+    "bug": 0.0
    },
-   "score": 44,
+   "score": 22,
    "claims": [
     {
-     "id": "c-8fc57031470e",
-     "day": "2026-09-08",
+     "id": "c-b696c3430eb3",
+     "day": "2026-09-09",
      "source": "gong",
-     "type": "bug",
-     "topic": "renewal notices landing in spam folder",
-     "quote": "A good number of our members tell us the renewal notice never showed up, and when we check, it landed in their spam folder instead of the inbox.",
-     "account_id": "ACC-0005",
-     "account": "Sunbelt Literacy Network",
-     "account_type": "customer",
-     "tier": "Standard",
-     "arr": 41000,
-     "speaker": "Yolanda Pruitt",
+     "type": "feature",
+     "topic": "SCORM package upload without rebuilding",
+     "quote": "We need to upload SCORM 1.2 and SCORM 2004 packages straight into the learning module without rebuilding every course by hand.",
+     "account_id": "ACC-0007",
+     "account": "Northwoods Arborists Society",
+     "account_type": "prospect",
+     "tier": "Prospect",
+     "arr": 0,
+     "speaker": "Delphine Okerlund",
      "locator": {
-      "call_id": "7782934452008",
-      "speaker_id": "c-05",
-      "start_ms": 127685,
-      "end_ms": 167586
+      "call_id": "7782934451311",
+      "speaker_id": "4852",
+      "start_ms": 629690,
+      "end_ms": 675828
      },
-     "occurred_at": "2026-09-08T15:04:04Z"
+     "occurred_at": "2026-09-09T16:11:17Z"
+    }
+   ]
+  },
+  {
+   "id": "THEME-0010",
+   "title": "Course completion data sync to member records",
+   "type": "feature",
+   "summary": "Completion, score and time spent from the learning platform are not written back to the member record automatically. A membership clerk rekeys those values weekly, which is slow and leaves member training histories out of date and error prone.",
+   "claim_ids": [
+    "c-299d81776e9e"
+   ],
+   "first_seen": "2026-09-09",
+   "last_seen": "2026-09-09",
+   "log": [
+    {
+     "day": "2026-09-09",
+     "action": "open",
+     "claim_id": "c-299d81776e9e",
+     "why": "Nothing in the index covers moving completion, score and time spent onto member records, which is a distinct ask from importing course packages."
+    }
+   ],
+   "accounts": {
+    "customer": 0,
+    "prospect": 1
+   },
+   "open_cases": 0,
+   "score_parts": {
+    "accounts": 7.5,
+    "value": 0.0,
+    "cases": 0.0,
+    "recency": 15.0,
+    "bug": 0.0
+   },
+   "score": 22,
+   "claims": [
+    {
+     "id": "c-299d81776e9e",
+     "day": "2026-09-09",
+     "source": "gong",
+     "type": "feature",
+     "topic": "completion data to member records",
+     "quote": "The hosted platform writes completion, score and time spent to a file, and our membership clerk keys those three numbers onto the member record once a week.",
+     "account_id": "ACC-0007",
+     "account": "Northwoods Arborists Society",
+     "account_type": "prospect",
+     "tier": "Prospect",
+     "arr": 0,
+     "speaker": "Delphine Okerlund",
+     "locator": {
+      "call_id": "7782934451311",
+      "speaker_id": "4852",
+      "start_ms": 765578,
+      "end_ms": 793190
+     },
+     "occurred_at": "2026-09-09T16:13:33Z"
     }
    ]
   }

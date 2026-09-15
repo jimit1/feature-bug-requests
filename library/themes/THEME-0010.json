@@ -1,0 +1,32 @@
+{
+ "id": "THEME-0010",
+ "title": "Course completion data sync to member records",
+ "type": "feature",
+ "summary": "Completion, score and time spent from the learning platform are not written back to the member record automatically. A membership clerk rekeys those values weekly, which is slow and leaves member training histories out of date and error prone.",
+ "claim_ids": [
+  "c-299d81776e9e"
+ ],
+ "first_seen": "2026-09-09",
+ "last_seen": "2026-09-09",
+ "log": [
+  {
+   "day": "2026-09-09",
+   "action": "open",
+   "claim_id": "c-299d81776e9e",
+   "why": "Nothing in the index covers moving completion, score and time spent onto member records, which is a distinct ask from importing course packages."
+  }
+ ],
+ "accounts": {
+  "customer": 0,
+  "prospect": 1
+ },
+ "open_cases": 0,
+ "score_parts": {
+  "accounts": 7.5,
+  "value": 0.0,
+  "cases": 0.0,
+  "recency": 15.0,
+  "bug": 0.0
+ },
+ "score": 22
+}

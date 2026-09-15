@@ -2,31 +2,38 @@
  "id": "THEME-0005",
  "title": "Membership report export truncated at row limit",
  "type": "bug",
- "summary": "Staff exporting membership reports get files that stop partway through once the record count passes roughly ten thousand rows. The truncated export is silent, so incomplete data can be used without anyone noticing.",
+ "summary": "Report exports stop short once the result set passes a few thousand rows, affecting both membership lists and year end donor reports. Staff work around it by running several partial exports and stitching them together manually.",
  "claim_ids": [
-  "c-7d2a3f364428"
+  "c-7d2a3f364428",
+  "c-155dc035f7d8"
  ],
  "first_seen": "2026-09-08",
- "last_seen": "2026-09-08",
+ "last_seen": "2026-09-09",
  "log": [
   {
    "day": "2026-09-08",
    "action": "open",
    "claim_id": "c-7d2a3f364428",
    "why": "Exports cutting off above a row threshold is a reporting failure with no matching theme in the index."
+  },
+  {
+   "day": "2026-09-09",
+   "action": "append",
+   "claim_id": "c-155dc035f7d8",
+   "why": "A donor report cut off past a few thousand rows is the same export truncation at a row limit as the existing theme, only on a different report."
   }
  ],
  "accounts": {
-  "customer": 1,
+  "customer": 2,
   "prospect": 0
  },
- "open_cases": 6,
+ "open_cases": 8,
  "score_parts": {
-  "accounts": 7.5,
+  "accounts": 15.0,
   "value": 17.0,
   "cases": 20.0,
   "recency": 15.0,
   "bug": 10.0
  },
- "score": 70
+ "score": 77
 }

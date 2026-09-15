@@ -2,31 +2,45 @@
  "id": "THEME-0008",
  "title": "Pledge reminder schedule ignores donor contact preferences",
  "type": "bug",
- "summary": "Donors who asked for a single reminder before a campaign closes still receive the full standard reminder sequence. Fundraising staff face complaints and have to manage those preferences outside the system.",
+ "summary": "Pledge reminders go out by email to donors who have asked to be contacted by mail only, and staff have no way to hold those sends back. Donors repeat the request and fundraising teams lose trust with the people they are asking to give.",
  "claim_ids": [
-  "c-5d3a978f29d2"
+  "c-5d3a978f29d2",
+  "c-5b5f6e38062c",
+  "c-7a9d32ef25ab"
  ],
  "first_seen": "2026-09-08",
- "last_seen": "2026-09-08",
+ "last_seen": "2026-09-09",
  "log": [
   {
    "day": "2026-09-08",
    "action": "open",
    "claim_id": "c-5d3a978f29d2",
    "why": "Fundraising reminders overriding stored donor preferences is a separate ask from renewal notice delivery and opens its own theme."
+  },
+  {
+   "day": "2026-09-09",
+   "action": "append",
+   "claim_id": "c-5b5f6e38062c",
+   "why": "Pledge reminders emailed to donors who asked for paper only is the same failure as the existing theme about reminders ignoring donor contact preferences."
+  },
+  {
+   "day": "2026-09-09",
+   "action": "append",
+   "claim_id": "c-7a9d32ef25ab",
+   "why": "Mail-only donors still receiving emailed pledge reminders is the same preference being ignored that the existing theme describes."
   }
  ],
  "accounts": {
-  "customer": 1,
+  "customer": 2,
   "prospect": 0
  },
- "open_cases": 4,
+ "open_cases": 6,
  "score_parts": {
-  "accounts": 7.5,
+  "accounts": 15.0,
   "value": 13.4,
   "cases": 20.0,
   "recency": 15.0,
   "bug": 10.0
  },
- "score": 66
+ "score": 73
 }
