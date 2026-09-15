@@ -141,7 +141,7 @@ h1 { margin:0; font-size:24px; font-weight:600; letter-spacing:-0.01em; }
   function fday(d) { var p = parts(d); return MON[p[1] - 1] + " " + p[2]; }
   function fdate(d) { var p = parts(d); return MON[p[1] - 1] + " " + p[2] + ", " + p[0]; }
   function age(d) {
-    var a = parts(d), b = parts(D.generated);
+    var a = parts(d), b = parts(D.as_of);
     return Math.round((Date.UTC(b[0], b[1] - 1, b[2]) - Date.UTC(a[0], a[1] - 1, a[2])) / 86400000);
   }
   function keep(c) {
@@ -151,7 +151,7 @@ h1 { margin:0; font-size:24px; font-weight:600; letter-spacing:-0.01em; }
   }
   function accounts(claims) {
     var seen = { customer: {}, prospect: {} }, out = [];
-    claims.forEach(function (c) { seen[c.account_type][c.account_id] = 1; });
+    claims.forEach(function (c) { var b = seen[c.account_type]; if (b) { b[c.account_id] = 1; } });
     var cu = Object.keys(seen.customer).length, pr = Object.keys(seen.prospect).length;
     if (cu) { out.push(cu + " cust"); }
     if (pr) { out.push(pr + " pros"); }
@@ -219,9 +219,7 @@ h1 { margin:0; font-size:24px; font-weight:600; letter-spacing:-0.01em; }
     var b = e.target.closest(".opt");
     if (!b) { return; }
     F[b.dataset.f] = b.dataset.v;
-    [].forEach.call(this.querySelectorAll(".opt"), function (o) {
-      o.setAttribute("aria-pressed", F[o.dataset.f] === o.dataset.v);
-    });
+    pressed();
     render();
   });
   list.addEventListener("click", function (e) {
@@ -278,11 +276,14 @@ h1 { margin:0; font-size:24px; font-weight:600; letter-spacing:-0.01em; }
     try { pbox.value = localStorage.getItem("fbr_pass") || ""; } catch (e) {}
     pane.addEventListener("keydown", function (e) { if (e.key === "Enter") { doAsk(); } });
   }
-  document.getElementById("gen").textContent = "Generated " + fdate(D.generated) +
-    " from " + D.days.length + " days of calls and cases";
-  [].forEach.call(document.querySelectorAll(".opt"), function (o) {
-    o.setAttribute("aria-pressed", F[o.dataset.f] === o.dataset.v);
-  });
+  function pressed() {
+    [].forEach.call(document.querySelectorAll(".opt"), function (o) {
+      o.setAttribute("aria-pressed", F[o.dataset.f] === o.dataset.v);
+    });
+  }
+  document.getElementById("gen").textContent = "As of " + fdate(D.as_of) +
+    ", from " + D.days.length + " days of calls and cases";
+  pressed();
   render();
 })();
 </script>

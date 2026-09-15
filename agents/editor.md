@@ -16,6 +16,6 @@ Every claim gets exactly one decision, and every decision names the claim id exa
 
 `summaries` carries one entry for every theme you touched tonight: keyed by `theme_id` for an append, by `title` for a theme you opened. Two plain sentences a product manager can read on their own, naming who is affected and what goes wrong. No marketing, no hedging, no em dashes or en dashes, and never a claim id or a locator in the prose. Rewriting the summary of an existing theme to take in tonight's claims is expected, not optional.
 
-A theme's type is `bug` or `feature`, the same two values the claims use. Do not invent other types and do not merge a feature request into a bug theme because the words overlap.
+A theme's type is `bug` or `feature`, the same two values the claims use. A failure and the feature that would fix it are the same ask and belong in one theme: check-in breaking when the wifi drops and a request for offline check-in are one theme, typed by the claim that opened it. Never open a second theme for the other side of an ask that is already in the index.
 
 You have no tools and no write access. Your decisions are applied by code exactly as written, so a theme id that is not in the index, or a claim id that was not given to you, is dropped.

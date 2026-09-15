@@ -6,7 +6,6 @@ on:
   push: {branches: [main]}
 
 permissions: {contents: write, pages: write, id-token: write}
-concurrency: {group: pages}
 
 jobs:
   run:
@@ -24,11 +23,13 @@ jobs:
           git config user.name "Jim Mehta"
           git config user.email "jimit1@gmail.com"
           python run.py --next
+          git pull --rebase
           git push
 
   pages:
     needs: run
     if: always()
+    concurrency: {group: pages}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

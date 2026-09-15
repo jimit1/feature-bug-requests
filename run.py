@@ -4,7 +4,7 @@ from datetime import date, datetime, timedelta
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 def path(*a): return os.path.join(ROOT, *a)
-def load(rel): return json.load(open(path(rel), encoding="utf-8"))
+def load(rel): return json.load(open(path(rel), encoding="utf-8"))  # rel or absolute
 
 CFG = load("config.json")
 PRICE = {"reader": (1.0, 5.0), "editor": (5.0, 25.0), "ask": (5.0, 25.0)}
@@ -13,11 +13,9 @@ CLIENT = []
 
 def call_model(tier, system, user):
     import anthropic
-    key = os.environ.get("ANTHROPIC_API_KEY")
-    if not key:
+    if not os.environ.get("ANTHROPIC_API_KEY"):
         sys.exit("ANTHROPIC_API_KEY is not set in the environment. Export it and run again.")
-    if not CLIENT:
-        CLIENT.append(anthropic.Anthropic(api_key=key))
+    CLIENT.append(CLIENT[0] if CLIENT else anthropic.Anthropic())
     r = CLIENT[0].messages.create(model=CFG["models"][tier], max_tokens=4096, system=system,
                                   messages=[{"role": "user", "content": user}])
     USAGE[tier][0] += r.usage.input_tokens
@@ -44,10 +42,9 @@ def account_fields(a):
     return {"account_id": a["account_id"], "account": r["Name"], "account_type": a["account_type"],
             "tier": r.get("Tier__c"), "arr": r.get("ARR__c") or 0}
 
-def open_cases_per_account(by_sfid):
+def open_cases_per_account(cases, by_sfid):
     counts = {}
-    for f in sorted(glob.glob(path("data/salesforce/*.json"))):
-        c = json.load(open(f, encoding="utf-8"))["case"]
+    for c in (d["case"] for d in cases):
         if c.get("ClosedDate") or c.get("Status") == "Closed":
             continue
         a = by_sfid.get(c.get("AccountId"))
@@ -55,8 +52,7 @@ def open_cases_per_account(by_sfid):
             counts[a["account_id"]] = counts.get(a["account_id"], 0) + 1
     return counts
 
-def gong_doc(f, by_domain, day):
-    d = json.load(open(f, encoding="utf-8"))
+def gong_doc(d, by_domain, day):
     meta, parties = d["call"]["metaData"], {p["speakerId"]: p for p in d["call"]["parties"]}
     domains = [(p.get("emailAddress") or "@").rsplit("@", 1)[-1] for p in d["call"]["parties"]
                if p.get("affiliation") == "External"]
@@ -78,8 +74,7 @@ def gong_doc(f, by_domain, day):
     return {"source": "gong", "doc_id": meta["id"], "day": day, "account": account_fields(acct),
             "text": "\n".join(lines), "units": units, "hidden": set()}
 
-def case_doc(f, by_sfid, users, day):
-    d = json.load(open(f, encoding="utf-8"))
+def case_doc(d, by_sfid, users, day):
     c = d["case"]
     lines = ["Case %s, opened %s, run date %s. Subject: %s" % (c["Id"], c["CreatedDate"][:10], day, c.get("Subject", "")),
              "Comments oldest first. Each header reads [comment_id C | Name | side | DATE]."]
@@ -105,14 +100,14 @@ def documents_for(day):
     by_sfid = {a["record"]["Id"]: a for a in accs}
     users = {u["Id"]: u for u in load("data/users.json")["records"]}
     docs = []
-    for f in sorted(glob.glob(path("data/gong/*.json"))):
-        if json.load(open(f, encoding="utf-8"))["call"]["metaData"]["started"][:10] == day:
-            docs.append(gong_doc(f, by_domain, day))
-    for f in sorted(glob.glob(path("data/salesforce/*.json"))):
-        d = json.load(open(f, encoding="utf-8"))
+    for d in (load(f) for f in sorted(glob.glob(path("data/gong/*.json")))):
+        if d["call"]["metaData"]["started"][:10] == day:
+            docs.append(gong_doc(d, by_domain, day))
+    cases = [load(f) for f in sorted(glob.glob(path("data/salesforce/*.json")))]
+    for d in cases:
         if any(c.get("IsPublished") and c["CreatedDate"][:10] == day for c in d.get("comments", [])):
-            docs.append(case_doc(f, by_sfid, users, day))
-    return docs, by_sfid
+            docs.append(case_doc(d, by_sfid, users, day))
+    return docs, by_sfid, cases
 
 def unit_key(source, loc):
     if source == "gong":
@@ -133,7 +128,7 @@ def verify(claim, doc):
     if unit is None:
         return "internal comment" if key in doc["hidden"] else "unknown speaker"
     if unit["side"] != "client":
-        return "unknown speaker"
+        return "not the customer side"
     if unit["day"] != doc["day"]:
         return "comment outside the run day"
     if claim["quote"] not in unit["text"]:
@@ -175,7 +170,7 @@ def read_documents(docs, day):
 def apply_decisions(out, new_claims, themes, state, day):
     by_id = {c["id"]: c for c in new_claims}
     summaries = out.get("summaries") or {}
-    opened_by_title, appended, opened = {}, 0, 0
+    opened_by_title, appended, opened = {t["title"].lower(): t for t in themes.values()}, 0, 0
     for d in out.get("decisions") or []:
         c = by_id.get(d.get("claim_id"))
         if not c:
@@ -184,15 +179,15 @@ def apply_decisions(out, new_claims, themes, state, day):
         if action == "append" and tid in themes:
             theme = themes[tid]
             appended += 1
-        elif title in opened_by_title:
-            theme = opened_by_title[title]
+        elif title.lower() in opened_by_title:
+            theme = opened_by_title[title.lower()]
             action, appended = "append", appended + 1
         else:
             tid = "THEME-%04d" % state["next_theme"]
             state["next_theme"] += 1
             theme = {"id": tid, "title": title, "type": c["type"], "summary": summaries.get(title, ""),
                      "claim_ids": [], "first_seen": day, "last_seen": day, "log": []}
-            themes[tid] = opened_by_title[title] = theme
+            themes[tid] = opened_by_title[title.lower()] = theme
             action, opened = "open", opened + 1
         if c["id"] not in theme["claim_ids"]:
             theme["claim_ids"].append(c["id"])
@@ -236,18 +231,18 @@ def write_library(themes, claims, state, day):
     ranked = sorted(themes.values(), key=lambda t: -t["score"])
     for t in themes.values():
         json.dump(t, open(path("library/themes/%s.json" % t["id"]), "w", encoding="utf-8"), indent=1, ensure_ascii=False)
-    index = ["%s | %s | %s | %d accounts | last %s" % (t["id"], t["type"], t["title"],
+    index = ["%s | %s | %s | accounts %d | last %s" % (t["id"], t["type"], t["title"],
              sum(t["accounts"].values()), t["last_seen"]) for t in sorted(themes.values(), key=lambda t: t["id"])]
     open(path("library/themes/index.md"), "w", encoding="utf-8").write("\n".join(index) + ("\n" if index else ""))
-    view = {"generated": day, "days": state["days"], "ask_url": CFG.get("ask_url", ""),
+    view = {"as_of": day, "days": state["days"], "ask_url": CFG.get("ask_url", ""),
             "themes": [dict(t, claims=[claims[i] for i in t["claim_ids"] if i in claims]) for t in ranked]}
     open(path("ui/data.js"), "w", encoding="utf-8").write(
         "window.DIGEST = " + json.dumps(view, indent=1, ensure_ascii=False) + ";\n")
     json.dump(state, open(path("library/state.json"), "w", encoding="utf-8"), indent=1)
 
 def data_days():
-    calls = [load(os.path.relpath(f, ROOT))["call"]["metaData"]["started"][:10] for f in glob.glob(path("data/gong/*.json"))]
-    comments = [c["CreatedDate"][:10] for f in glob.glob(path("data/salesforce/*.json")) for c in load(os.path.relpath(f, ROOT))["comments"]]
+    calls = [load(f)["call"]["metaData"]["started"][:10] for f in glob.glob(path("data/gong/*.json"))]
+    comments = [c["CreatedDate"][:10] for f in glob.glob(path("data/salesforce/*.json")) for c in load(f)["comments"]]
     return sorted(set(calls + comments))
 
 def main():
@@ -257,43 +252,49 @@ def main():
     ap.add_argument("--no-commit", action="store_true")
     args = ap.parse_args()
     state = load("library/state.json") if os.path.exists(path("library/state.json")) else {"days": [], "next_theme": 1}
+    if not (args.day or args.next):
+        ap.error("use --day YYYY-MM-DD or --next")
     day = args.day or next((d for d in data_days() if d not in state["days"]), None)
     if not day or day in state["days"]:
         print("%s. Nothing to do." % ("%s is already in state.json" % day if day else "No day left to run"))
         return
-
-    docs, by_sfid = documents_for(day)
+    docs, by_sfid, cases = documents_for(day)
     claims, rejected = read_documents(docs, day)
     known = all_claims()
-    claims = [c for c in claims if c["id"] not in known]
+    seen = {(c.get("account_id"), c["quote"]) for c in known.values()}
+    claims = list({(c.get("account_id"), c["quote"]): c for c in claims
+                   if c["id"] not in known and (c.get("account_id"), c["quote"]) not in seen}.values())
     append_jsonl("library/claims/rejected.jsonl", rejected)
     append_jsonl("library/claims/%s.jsonl" % day, claims)
 
-    themes = {t["id"]: t for t in (json.load(open(f, encoding="utf-8"))
+    themes = {t["id"]: t for t in (load(f)
                                   for f in sorted(glob.glob(path("library/themes/*.json"))))}
+    known.update({c["id"]: c for c in claims})
+    filed = {i for t in themes.values() for i in t["claim_ids"]}
+    to_file = [c for c in known.values() if c["id"] not in filed]
     appended = opened = 0
-    if claims:
+    if to_file:
         index = open(path("library/themes/index.md"), encoding="utf-8").read() if os.path.exists(path("library/themes/index.md")) else ""
-        brief = [{k: c[k] for k in ("id", "type", "topic", "quote", "account", "account_type", "day")} for c in claims]
+        brief = [{k: c[k] for k in ("id", "type", "topic", "quote", "account", "account_type", "day")} for c in to_file]
         user = ("Theme index, one line per theme:\n%s\n\nTonight's verified claims, %s:\n%s"
                 % (index or "(empty, no themes yet)", day, json.dumps(brief, indent=1, ensure_ascii=False)))
         out = parse_json(call_model("editor", open(path("agents/editor.md"), encoding="utf-8").read(), user))
         if isinstance(out, dict):
-            appended, opened = apply_decisions(out, claims, themes, state, day)
+            appended, opened = apply_decisions(out, to_file, themes, state, day)
         else:
-            print("The editor returned no usable JSON. Claims are stored, themes are unchanged.")
+            print("The editor returned no usable JSON. The claims are stored and will be filed on the next run.")
 
-    known.update({c["id"]: c for c in claims})
-    open_cases = open_cases_per_account(by_sfid)
-    [score_theme(t, known, open_cases, day) for t in themes.values()]
+    open_cases = open_cases_per_account(cases, by_sfid)
+    for t in themes.values():
+        score_theme(t, known, open_cases, day)
     state["days"] = sorted(set(state["days"] + [day]))
     write_library(themes, known, state, day)
 
     cost = sum(USAGE[t][0] * PRICE[t][0] / 1e6 + USAGE[t][1] * PRICE[t][1] / 1e6 for t in USAGE)
     tin, tout = sum(USAGE[t][0] for t in USAGE), sum(USAGE[t][1] for t in USAGE)
-    msg = "%s: %d sources, %d claims, %d rejected, %d themes appended, %d opened" % (
-        day, len(docs), len(claims), len(rejected), appended, opened)
-    print("%s, %d themes total, %d in / %d out tokens, $%.4f" % (msg, len(themes), tin, tout, cost))
+    msg = "%s: %d sources, %d claims, %d rejected, %d themes appended, %d opened, %d themes total, %d in / %d out tokens, $%.4f" % (
+        day, len(docs), len(claims), len(rejected), appended, opened, len(themes), tin, tout, cost)
+    print(msg)
     if not args.no_commit:
         subprocess.run(["git", "add", "library", "ui/data.js"], cwd=ROOT, check=True)
         subprocess.run(["git", "commit", "-m", msg], cwd=ROOT, check=True)

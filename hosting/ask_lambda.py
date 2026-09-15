@@ -1,8 +1,9 @@
 import json, os, re, urllib.request
+from datetime import date
 
 import ask
 
-CALLS = 0
+CALLS = {}
 HEADERS = {"content-type": "application/json",
            "Access-Control-Allow-Origin": "*",
            "Access-Control-Allow-Headers": "content-type"}
@@ -28,17 +29,14 @@ def split_themes(text):
     return text[:found.start()].rstrip(), [n for n in named if n.startswith("THEME-")]
 
 def handler(event, context):
-    global CALLS
-    method = event.get("requestContext", {}).get("http", {}).get("method", "POST")
-    if method == "OPTIONS":
-        return {"statusCode": 204, "headers": HEADERS, "body": ""}
+    today = str(date.today())
     try:
         body = json.loads(event.get("body") or "{}")
         if body.get("passphrase") != os.environ.get("ASK_PASSPHRASE"):
             return reply(403, {"error": "wrong passphrase"})
-        if CALLS >= int(os.environ.get("ASK_DAILY_CAP", "200")):
+        if CALLS.get(today, 0) >= int(os.environ.get("ASK_DAILY_CAP", "200")):
             return reply(429, {"error": "too many questions today, try again tomorrow"})
-        CALLS += 1
+        CALLS[today] = CALLS.get(today, 0) + 1
         question = (body.get("question") or "").strip()[:500]
         if not question:
             return reply(400, {"error": "no question"})
