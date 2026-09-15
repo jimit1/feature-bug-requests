@@ -63,3 +63,9 @@ def test_a_known_day_is_skipped(tmp_path, monkeypatch, capsys):
 def test_parse_json_strips_a_code_fence():
     assert run.parse_json('```json\n{"claims": []}\n```') == {"claims": []}
     assert run.parse_json("not json at all") is None
+
+
+def test_unfiled_claims_are_sent_back_to_the_editor():
+    themes = {"THEME-0001": {"claim_ids": ["c-1"]}}
+    known = {"c-1": {"id": "c-1"}, "c-2": {"id": "c-2"}}
+    assert [c["id"] for c in run.unfiled(themes, known)] == ["c-2"]

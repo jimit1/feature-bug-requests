@@ -32,7 +32,6 @@ SETTINGS="Variables={ANTHROPIC_API_KEY=$API_KEY,ASK_PASSPHRASE=$PASSPHRASE,DATA_
 
 if aws lambda get-function --function-name "$NAME" >/dev/null 2>&1; then
   aws lambda update-function-code --function-name "$NAME" --zip-file "fileb://$ZIP" >/dev/null
-  aws lambda put-function-concurrency --function-name "$NAME" --reserved-concurrent-executions 1 >/dev/null
   aws lambda wait function-updated --function-name "$NAME"
   aws lambda update-function-configuration --function-name "$NAME" --runtime python3.12 \
     --handler ask_lambda.handler --timeout 60 --memory-size 512 --environment "$SETTINGS" >/dev/null
@@ -44,6 +43,7 @@ else
   aws lambda wait function-active --function-name "$NAME"
 fi
 
+aws lambda put-function-concurrency --function-name "$NAME" --reserved-concurrent-executions 1 >/dev/null
 if ! aws lambda get-function-url-config --function-name "$NAME" >/dev/null 2>&1; then
   aws lambda create-function-url-config --function-name "$NAME" --auth-type NONE \
     --cors '{"AllowOrigins":["*"],"AllowMethods":["*"],"AllowHeaders":["content-type"]}' >/dev/null

@@ -13,13 +13,12 @@ def call_model(tier, system, user):
     import anthropic
     if not os.environ.get("ANTHROPIC_API_KEY"):
         sys.exit("ANTHROPIC_API_KEY is not set in the environment. Export it and run again.")
-    CLIENT.append(CLIENT[0] if CLIENT else anthropic.Anthropic())
+    CLIENT[:] = CLIENT or [anthropic.Anthropic()]
     r = CLIENT[0].messages.create(model=CFG["models"][tier], max_tokens=4096, system=system,
                                   messages=[{"role": "user", "content": user}])
     USAGE[tier][0] += r.usage.input_tokens
     USAGE[tier][1] += r.usage.output_tokens
     return "".join(b.text for b in r.content if b.type == "text")
-
 def parse_json(text):
     t = text.strip()
     if t.startswith("```"):
@@ -28,11 +27,9 @@ def parse_json(text):
         return json.loads(t)
     except ValueError:
         return None
-
 def stamp(iso, ms=0):
     t = datetime.strptime(iso[:19], "%Y-%m-%dT%H:%M:%S") + timedelta(milliseconds=ms)
     return t.strftime("%Y-%m-%dT%H:%M:%SZ")
-
 def account_fields(a):
     if not a:
         return {"account_id": None, "account": None, "account_type": None, "tier": None, "arr": 0}
@@ -106,7 +103,6 @@ def documents_for(day):
         if any(c.get("IsPublished") and c["CreatedDate"][:10] == day for c in d.get("comments", [])):
             docs.append(case_doc(d, by_sfid, users, day))
     return docs, by_sfid, cases
-
 def unit_key(source, loc):
     if source == "gong":
         return (str(loc["speaker_id"]), int(loc["start_ms"]), int(loc["end_ms"]))
@@ -209,13 +205,16 @@ def score_theme(theme, claims, open_cases, day):
              "recency": round(w["recency"] * max(0, CFG["recency_days"] - since) / CFG["recency_days"], 1),
              "bug": float(w["bug"]) if theme["type"] == "bug" else 0.0}
     theme["score_parts"], theme["score"] = parts, round(sum(parts.values()))
+    theme["type"] = max(("bug", "feature"), key=lambda k: sum(c.get("type") == k for c in cs))
     return theme
+def unfiled(themes, known):
+    filed = {i for t in themes.values() for i in t["claim_ids"]}
+    return [c for c in known.values() if c["id"] not in filed]
 
 def all_claims():
     files = [f for f in sorted(glob.glob(path("library/claims/*.jsonl"))) if not f.endswith("rejected.jsonl")]
     rows = [json.loads(ln) for f in files for ln in open(f, encoding="utf-8") if ln.strip()]
     return {c["id"]: c for c in rows}
-
 def append_jsonl(rel, rows):
     if not rows:
         return
@@ -268,8 +267,7 @@ def main():
     themes = {t["id"]: t for t in (load(f)
                                   for f in sorted(glob.glob(path("library/themes/*.json"))))}
     known.update({c["id"]: c for c in claims})
-    filed = {i for t in themes.values() for i in t["claim_ids"]}
-    to_file = [c for c in known.values() if c["id"] not in filed]
+    to_file = unfiled(themes, known)
     appended = opened = 0
     if to_file:
         index = open(path("library/themes/index.md"), encoding="utf-8").read() if os.path.exists(path("library/themes/index.md")) else ""
@@ -290,8 +288,8 @@ def main():
 
     cost = sum(USAGE[t][0] * PRICE[t][0] / 1e6 + USAGE[t][1] * PRICE[t][1] / 1e6 for t in USAGE)
     tin, tout = sum(USAGE[t][0] for t in USAGE), sum(USAGE[t][1] for t in USAGE)
-    msg = "%s: %d sources, %d claims, %d rejected, %d themes appended, %d opened, %d themes total, %d in / %d out tokens, $%.4f" % (
-        day, len(docs), len(claims), len(rejected), appended, opened, len(themes), tin, tout, cost)
+    msg = "%s: %d sources, %d claims, %d rejected, %d appended, %d opened, %d unfiled, %d themes, %d in / %d out tokens, $%.4f" % (
+        day, len(docs), len(to_file), len(rejected), appended, opened, len(unfiled(themes, known)), len(themes), tin, tout, cost)
     print(msg)
     if not args.no_commit:
         subprocess.run(["git", "add", "library", "ui/data.js"], cwd=ROOT, check=True)
