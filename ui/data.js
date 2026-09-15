@@ -1,9 +1,10 @@
 window.DIGEST = {
- "generated": "2026-09-10",
+ "generated": "2026-09-11",
  "days": [
   "2026-09-08",
   "2026-09-09",
-  "2026-09-10"
+  "2026-09-10",
+  "2026-09-11"
  ],
  "ask_url": "https://g3kmsu2e2ikq7cyivffqi7i6oe0unrtk.lambda-url.us-east-1.on.aws/",
  "themes": [
@@ -48,10 +49,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 15.0,
+    "recency": 13.9,
     "bug": 10.0
    },
-   "score": 77,
+   "score": 76,
    "claims": [
     {
      "id": "c-915d4dd0bc13",
@@ -158,10 +159,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 15.0,
+    "recency": 13.9,
     "bug": 10.0
    },
-   "score": 77,
+   "score": 76,
    "claims": [
     {
      "id": "c-7d2a3f364428",
@@ -275,10 +276,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 15.0,
+    "recency": 13.9,
     "bug": 10.0
    },
-   "score": 73,
+   "score": 72,
    "claims": [
     {
      "id": "c-5d3a978f29d2",
@@ -405,10 +406,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 7.7,
     "cases": 20.0,
-    "recency": 15.0,
+    "recency": 13.9,
     "bug": 10.0
    },
-   "score": 68,
+   "score": 67,
    "claims": [
     {
      "id": "c-9e53583c6513",
@@ -500,10 +501,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 12.9,
+    "recency": 11.8,
     "bug": 10.0
    },
-   "score": 64,
+   "score": 63,
    "claims": [
     {
      "id": "c-6fdcefc76dcd",
@@ -569,10 +570,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 2.0,
     "cases": 20.0,
-    "recency": 15.0,
+    "recency": 13.9,
     "bug": 10.0
    },
-   "score": 62,
+   "score": 61,
    "claims": [
     {
      "id": "c-8fc57031470e",
@@ -665,10 +666,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 12.9,
+    "recency": 11.8,
     "bug": 0.0
    },
-   "score": 57,
+   "score": 56,
    "claims": [
     {
      "id": "c-16cd97e72e9e",
@@ -720,10 +721,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 12.9,
+    "recency": 11.8,
     "bug": 0.0
    },
-   "score": 54,
+   "score": 53,
    "claims": [
     {
      "id": "c-b58dd0db5d66",
@@ -781,10 +782,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 4.8,
     "cases": 15.0,
-    "recency": 13.9,
+    "recency": 12.9,
     "bug": 10.0
    },
-   "score": 51,
+   "score": 50,
    "claims": [
     {
      "id": "c-c44577763b5c",
@@ -863,10 +864,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 0.0,
     "cases": 0.0,
-    "recency": 13.9,
+    "recency": 12.9,
     "bug": 10.0
    },
-   "score": 31,
+   "score": 30,
    "claims": [
     {
      "id": "c-0d73633ed6f5",
@@ -939,10 +940,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 0.0,
     "cases": 0.0,
-    "recency": 13.9,
+    "recency": 12.9,
     "bug": 0.0
    },
-   "score": 21,
+   "score": 20,
    "claims": [
     {
      "id": "c-b696c3430eb3",
@@ -994,10 +995,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 0.0,
     "cases": 0.0,
-    "recency": 13.9,
+    "recency": 12.9,
     "bug": 0.0
    },
-   "score": 21,
+   "score": 20,
    "claims": [
     {
      "id": "c-299d81776e9e",
