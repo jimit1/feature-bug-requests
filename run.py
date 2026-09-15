@@ -1,11 +1,9 @@
 """Nightly pipeline: read one day of calls and cases, verify every quote, file claims into themes."""
 import argparse, glob, hashlib, json, os, re, subprocess, sys
 from datetime import date, datetime, timedelta
-
 ROOT = os.path.dirname(os.path.abspath(__file__))
 def path(*a): return os.path.join(ROOT, *a)
 def load(rel): return json.load(open(path(rel), encoding="utf-8"))  # rel or absolute
-
 CFG = load("config.json")
 PRICE = {"reader": (1.0, 5.0), "editor": (5.0, 25.0), "ask": (5.0, 25.0)}
 USAGE = {"reader": [0, 0], "editor": [0, 0], "ask": [0, 0]}
