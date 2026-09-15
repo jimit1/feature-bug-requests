@@ -7,8 +7,8 @@ def path(*a): return os.path.join(ROOT, *a)
 def load(rel): return json.load(open(path(rel), encoding="utf-8"))
 
 CFG = load("config.json")
-PRICE = {"reader": (1.0, 5.0), "editor": (5.0, 25.0)}
-USAGE = {"reader": [0, 0], "editor": [0, 0]}
+PRICE = {"reader": (1.0, 5.0), "editor": (5.0, 25.0), "ask": (5.0, 25.0)}
+USAGE = {"reader": [0, 0], "editor": [0, 0], "ask": [0, 0]}
 CLIENT = []
 
 def call_model(tier, system, user):
@@ -239,24 +239,28 @@ def write_library(themes, claims, state, day):
     index = ["%s | %s | %s | %d accounts | last %s" % (t["id"], t["type"], t["title"],
              sum(t["accounts"].values()), t["last_seen"]) for t in sorted(themes.values(), key=lambda t: t["id"])]
     open(path("library/themes/index.md"), "w", encoding="utf-8").write("\n".join(index) + ("\n" if index else ""))
-    view = {"generated": day, "days": state["days"],
+    view = {"generated": day, "days": state["days"], "ask_url": CFG.get("ask_url", ""),
             "themes": [dict(t, claims=[claims[i] for i in t["claim_ids"] if i in claims]) for t in ranked]}
     open(path("ui/data.js"), "w", encoding="utf-8").write(
         "window.DIGEST = " + json.dumps(view, indent=1, ensure_ascii=False) + ";\n")
     json.dump(state, open(path("library/state.json"), "w", encoding="utf-8"), indent=1)
 
+def data_days():
+    calls = [load(os.path.relpath(f, ROOT))["call"]["metaData"]["started"][:10] for f in glob.glob(path("data/gong/*.json"))]
+    comments = [c["CreatedDate"][:10] for f in glob.glob(path("data/salesforce/*.json")) for c in load(os.path.relpath(f, ROOT))["comments"]]
+    return sorted(set(calls + comments))
+
 def main():
     ap = argparse.ArgumentParser(description="Build one day of the feature and bug digest.")
-    ap.add_argument("--day", required=True, help="YYYY-MM-DD")
+    ap.add_argument("--day", help="YYYY-MM-DD, or --next for the earliest day not yet run")
+    ap.add_argument("--next", action="store_true")
     ap.add_argument("--no-commit", action="store_true")
     args = ap.parse_args()
-    day = args.day
     state = load("library/state.json") if os.path.exists(path("library/state.json")) else {"days": [], "next_theme": 1}
-    if day in state["days"]:
-        print("%s is already in state.json. Nothing to do." % day)
+    day = args.day or next((d for d in data_days() if d not in state["days"]), None)
+    if not day or day in state["days"]:
+        print("%s. Nothing to do." % ("%s is already in state.json" % day if day else "No day left to run"))
         return
-    if not os.environ.get("ANTHROPIC_API_KEY"):
-        sys.exit("ANTHROPIC_API_KEY is not set in the environment. Export it and run again.")
 
     docs, by_sfid = documents_for(day)
     claims, rejected = read_documents(docs, day)

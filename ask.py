@@ -38,7 +38,7 @@ def load_library(library_dir):
     return themes, claims
 
 def answer(question, themes, claims):
-    text, _usage = call_model(
+    text = call_model(
         "ask", (ROOT / "agents" / "ask.md").read_text(),
         "Library\n%s\n\nQuestion\n%s" % (render(themes, claims), question))
     return text
