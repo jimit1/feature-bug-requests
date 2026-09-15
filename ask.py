@@ -14,9 +14,10 @@ def source_line(loc):
 def render(themes, claims):
     lines = []
     for t in themes:
-        parts = ", ".join("%s %s" % kv for kv in t.get("score_parts", {}).items())
-        lines.append("\n%s | %s | score %s (%s)\n%s\n%s" % (
-            t["id"], t["type"], t.get("score"), parts, t["title"], t.get("summary", "")))
+        a = t.get("accounts", {})
+        facts = "customers %s, prospects %s, open cases %s" % (a.get("customer", 0), a.get("prospect", 0), t.get("open_cases", 0))
+        lines.append("\n%s | %s | score %s | %s\n%s\n%s" % (
+            t["id"], t["type"], t.get("score"), facts, t["title"], t.get("summary", "")))
         for c in (claims.get(i) for i in t.get("claim_ids", [])):
             if c:
                 lines.append('  "%s" %s (%s), %s, %s, %s' % (

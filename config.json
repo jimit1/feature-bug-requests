@@ -2,7 +2,7 @@
   "models": {
     "reader": "claude-haiku-4-5-20251001",
     "editor": "claude-opus-5",
-    "ask": "claude-opus-5"
+    "ask": "claude-sonnet-5"
   },
   "weights": {"accounts": 30, "value": 25, "cases": 20, "recency": 15, "bug": 10},
   "arr_cap": 500000,
