@@ -33,11 +33,11 @@ From the run summaries in the commit messages, first five nights on the API path
 
 | | |
 |---|---|
-| cost per nightly run | COST |
-| sources per run | SOURCES |
-| claims verified | CLAIMS |
-| themes after the first week | THEMES |
-| appended versus opened | APPENDED |
+| cost per nightly run | $0.051 average, $0.099 the busiest night |
+| sources per run | 5.8 average (calls plus cases with new comments) |
+| claims verified | 22 over five nights, 2 rejected with a reason, repeats of a quote dropped |
+| themes after the first week | 10 |
+| appended versus opened | 12 appended, 10 opened; after the first night 10 of 12 claims joined an existing theme |
 
 Extraction is most of the tokens and runs on the cheap tier; the editor only ever sees the index and the unfiled claims, so its cost stays flat as history grows.
 
