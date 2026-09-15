@@ -1,0 +1,9 @@
+THEME-0001 | bug | Renewal invoices omitting prior credits and balances | 1 accounts | last 2026-09-08
+THEME-0002 | feature | Reason codes for membership tier changes | 1 accounts | last 2026-09-08
+THEME-0003 | bug | Event check-in stops working when venue wifi drops | 1 accounts | last 2026-09-08
+THEME-0004 | bug | Renewal notices filtered into spam | 1 accounts | last 2026-09-08
+THEME-0005 | bug | Membership report export truncates at row limit | 1 accounts | last 2026-09-08
+THEME-0006 | bug | Duplicate journal entries in general ledger sync | 1 accounts | last 2026-09-08
+THEME-0007 | bug | No expiration warning before a posting comes down | 1 accounts | last 2026-09-08
+THEME-0008 | bug | Pledge reminders ignore donor contact preferences | 1 accounts | last 2026-09-08
+THEME-0009 | feature | Offline event check-in with deferred sync | 1 accounts | last 2026-09-08

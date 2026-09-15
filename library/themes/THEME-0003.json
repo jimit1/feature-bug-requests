@@ -1,0 +1,32 @@
+{
+ "id": "THEME-0003",
+ "title": "Event check-in stops working when venue wifi drops",
+ "type": "bug",
+ "summary": "Onsite event staff using tablets lose the ability to check attendees in whenever venue wifi becomes unavailable. Check-in halts until connectivity returns and there is no way to capture arrivals in the meantime.",
+ "claim_ids": [
+  "c-6fdcefc76dcd"
+ ],
+ "first_seen": "2026-09-08",
+ "last_seen": "2026-09-08",
+ "log": [
+  {
+   "day": "2026-09-08",
+   "action": "open",
+   "claim_id": "c-6fdcefc76dcd",
+   "why": "A reported failure of check-in on tablets during connectivity loss is not covered by any open theme."
+  }
+ ],
+ "accounts": {
+  "customer": 1,
+  "prospect": 0
+ },
+ "open_cases": 4,
+ "score_parts": {
+  "accounts": 7.5,
+  "value": 13.4,
+  "cases": 20.0,
+  "recency": 15.0,
+  "bug": 10.0
+ },
+ "score": 66
+}

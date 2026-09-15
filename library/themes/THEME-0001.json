@@ -1,0 +1,39 @@
+{
+ "id": "THEME-0001",
+ "title": "Renewal invoices omitting prior credits and balances",
+ "type": "bug",
+ "summary": "Members receiving renewal invoices and statements are billed a total that leaves out amounts they have already paid, including carried-over balances and credits from partial year adjustments. Association finance staff catch and correct the discrepancy manually every renewal cycle.",
+ "claim_ids": [
+  "c-915d4dd0bc13",
+  "c-deb7b49ebfd6"
+ ],
+ "first_seen": "2026-09-08",
+ "last_seen": "2026-09-08",
+ "log": [
+  {
+   "day": "2026-09-08",
+   "action": "open",
+   "claim_id": "c-915d4dd0bc13",
+   "why": "Nothing in the index covers renewal totals that leave out what the member already paid or carried over, so this opens the theme."
+  },
+  {
+   "day": "2026-09-08",
+   "action": "append",
+   "claim_id": "c-deb7b49ebfd6",
+   "why": "A missing credit line for a partial year adjustment is the same renewal total defect as the missing carried-over balance, described from the finance side."
+  }
+ ],
+ "accounts": {
+  "customer": 1,
+  "prospect": 0
+ },
+ "open_cases": 6,
+ "score_parts": {
+  "accounts": 7.5,
+  "value": 17.0,
+  "cases": 20.0,
+  "recency": 15.0,
+  "bug": 10.0
+ },
+ "score": 70
+}

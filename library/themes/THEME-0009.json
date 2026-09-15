@@ -1,0 +1,32 @@
+{
+ "id": "THEME-0009",
+ "title": "Offline event check-in with deferred sync",
+ "type": "feature",
+ "summary": "Event teams want check-in to continue running on tablets while the venue network is down and to sync the captured records once connectivity returns. Without this, onsite staff have no supported way to admit attendees during an outage.",
+ "claim_ids": [
+  "c-b58dd0db5d66"
+ ],
+ "first_seen": "2026-09-08",
+ "last_seen": "2026-09-08",
+ "log": [
+  {
+   "day": "2026-09-08",
+   "action": "open",
+   "claim_id": "c-b58dd0db5d66",
+   "why": "This is a feature request for offline capability and deferred sync, so it is filed separately from the reported check-in failure rather than merged into a bug theme."
+  }
+ ],
+ "accounts": {
+  "customer": 1,
+  "prospect": 0
+ },
+ "open_cases": 4,
+ "score_parts": {
+  "accounts": 7.5,
+  "value": 13.4,
+  "cases": 20.0,
+  "recency": 15.0,
+  "bug": 0.0
+ },
+ "score": 56
+}
