@@ -15,7 +15,7 @@ trap 'rm -rf "$TMP"' EXIT
 mkdir -p "$PKG/agents"
 cp "$ROOT/run.py" "$ROOT/ask.py" "$ROOT/config.json" "$ROOT/hosting/ask_lambda.py" "$PKG/"
 cp "$ROOT/agents/ask.md" "$PKG/agents/"
-pip install --quiet --target "$PKG" anthropic
+python3 -m pip install --quiet --target "$PKG" anthropic
 (cd "$PKG" && zip -qr "$ZIP" .)
 
 if ! aws iam get-role --role-name "$NAME" >/dev/null 2>&1; then
@@ -45,7 +45,7 @@ fi
 
 if ! aws lambda get-function-url-config --function-name "$NAME" >/dev/null 2>&1; then
   aws lambda create-function-url-config --function-name "$NAME" --auth-type NONE \
-    --cors '{"AllowOrigins":["*"],"AllowMethods":["POST","OPTIONS"],"AllowHeaders":["content-type"]}' >/dev/null
+    --cors '{"AllowOrigins":["*"],"AllowMethods":["*"],"AllowHeaders":["content-type"]}' >/dev/null
 fi
 aws lambda add-permission --function-name "$NAME" --statement-id public-url \
   --action lambda:InvokeFunctionUrl --principal '*' --function-url-auth-type NONE >/dev/null 2>&1 || true
