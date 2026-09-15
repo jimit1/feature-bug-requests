@@ -1,0 +1,39 @@
+name: nightly
+
+on:
+  schedule: [{cron: "0 6 * * *"}]
+  workflow_dispatch:
+  push: {branches: [main]}
+
+permissions: {contents: write, pages: write, id-token: write}
+concurrency: {group: pages}
+
+jobs:
+  run:
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install -r requirements.txt
+      - name: pipeline
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          git config user.name "Jim Mehta"
+          git config user.email "jimit1@gmail.com"
+          python run.py --next
+          git push
+
+  pages:
+    needs: run
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: main}
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with: {path: ui}
+      - uses: actions/deploy-pages@v4
