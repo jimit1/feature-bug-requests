@@ -1,22 +1,134 @@
 window.DIGEST = {
- "generated": "2026-09-09",
+ "generated": "2026-09-10",
  "days": [
   "2026-09-08",
-  "2026-09-09"
+  "2026-09-09",
+  "2026-09-10"
  ],
  "ask_url": "https://g3kmsu2e2ikq7cyivffqi7i6oe0unrtk.lambda-url.us-east-1.on.aws/",
  "themes": [
   {
+   "id": "THEME-0001",
+   "title": "Renewal invoices omitting prior credits and balances",
+   "type": "bug",
+   "summary": "Renewal invoices are calculated without accounting for what the member has already paid, including prior credits, outstanding balances, and mid-year tier upgrades. Members receive a bill for the full annual amount, and staff have to recalculate and correct the invoice manually.",
+   "claim_ids": [
+    "c-915d4dd0bc13",
+    "c-deb7b49ebfd6",
+    "c-a48464d88d04"
+   ],
+   "first_seen": "2026-09-08",
+   "last_seen": "2026-09-10",
+   "log": [
+    {
+     "day": "2026-09-08",
+     "action": "open",
+     "claim_id": "c-915d4dd0bc13",
+     "why": "Nothing in the index covers renewal totals that leave out what the member already paid or carried over, so this opens the theme."
+    },
+    {
+     "day": "2026-09-08",
+     "action": "append",
+     "claim_id": "c-deb7b49ebfd6",
+     "why": "A missing credit line for a partial year adjustment is the same renewal total defect as the missing carried-over balance, described from the finance side."
+    },
+    {
+     "day": "2026-09-10",
+     "action": "append",
+     "claim_id": "c-a48464d88d04",
+     "why": "Billing the full annual amount to a member who upgraded mid-year is the renewal total being computed without what the member already paid, the same ask as omitted credits and balances."
+    }
+   ],
+   "accounts": {
+    "customer": 2,
+    "prospect": 0
+   },
+   "open_cases": 9,
+   "score_parts": {
+    "accounts": 15.0,
+    "value": 17.0,
+    "cases": 20.0,
+    "recency": 15.0,
+    "bug": 10.0
+   },
+   "score": 77,
+   "claims": [
+    {
+     "id": "c-915d4dd0bc13",
+     "day": "2026-09-08",
+     "source": "gong",
+     "type": "bug",
+     "topic": "missing carried-over balance on renewal statements",
+     "quote": "Every renewal statement we send out is missing the balance that carried over from the previous period, so the invoice total reads far higher than it should.",
+     "account_id": "ACC-0001",
+     "account": "Great Lakes Museum Alliance",
+     "account_type": "customer",
+     "tier": "Enterprise",
+     "arr": 340000,
+     "speaker": "Rhonda Calloway",
+     "locator": {
+      "call_id": "7782934451002",
+      "speaker_id": "4521",
+      "start_ms": 663288,
+      "end_ms": 722760
+     },
+     "occurred_at": "2026-09-08T15:12:15Z"
+    },
+    {
+     "id": "c-deb7b49ebfd6",
+     "day": "2026-09-08",
+     "source": "gong",
+     "type": "bug",
+     "topic": "missing credit line on renewal invoices",
+     "quote": "Our renewal invoice keeps landing without a line for the credit we are owed from the partial year adjustment, and finance ends up chasing it every single cycle.",
+     "account_id": "ACC-0001",
+     "account": "Great Lakes Museum Alliance",
+     "account_type": "customer",
+     "tier": "Enterprise",
+     "arr": 340000,
+     "speaker": "Naomi Castellanos",
+     "locator": {
+      "call_id": "7782934452001",
+      "speaker_id": "c-01",
+      "start_ms": 187200,
+      "end_ms": 223200
+     },
+     "occurred_at": "2026-09-08T12:35:27Z"
+    },
+    {
+     "id": "c-a48464d88d04",
+     "day": "2026-09-10",
+     "source": "salesforce",
+     "type": "bug",
+     "topic": "mid-year upgrade renewal billing",
+     "quote": "Members who upgraded partway through the year are billed the whole annual figure again with nothing knocked off",
+     "account_id": "ACC-0003",
+     "account": "Prairie Land Trust Council",
+     "account_type": "customer",
+     "tier": "Professional",
+     "arr": 154000,
+     "speaker": "Unknown",
+     "locator": {
+      "case_id": "5008W00002aQpLrQAK",
+      "comment_id": "00a8W00000XfT2mQAF",
+      "case_number": "00001042"
+     },
+     "occurred_at": "2026-09-10T14:22:05Z"
+    }
+   ]
+  },
+  {
    "id": "THEME-0005",
    "title": "Membership report export truncates at row limit",
    "type": "bug",
-   "summary": "Report exports stop once they pass a few thousand rows, so the file staff receive is silently incomplete. Membership and development staff are stitching several partial exports together by hand to get a full year end list.",
+   "summary": "Staff exporting membership reports get a file that stops partway through once the record count passes roughly ten thousand rows. The export appears to finish but the data is incomplete, so any downstream reporting or mailing built from it is wrong.",
    "claim_ids": [
     "c-7d2a3f364428",
-    "c-155dc035f7d8"
+    "c-155dc035f7d8",
+    "c-75d5cbd07ce7"
    ],
    "first_seen": "2026-09-08",
-   "last_seen": "2026-09-09",
+   "last_seen": "2026-09-10",
    "log": [
     {
      "day": "2026-09-08",
@@ -29,6 +141,12 @@ window.DIGEST = {
      "action": "append",
      "claim_id": "c-155dc035f7d8",
      "why": "A donor report cut off past a few thousand rows is the same export row limit truncation, just noticed on a different report."
+    },
+    {
+     "day": "2026-09-10",
+     "action": "append",
+     "claim_id": "c-75d5cbd07ce7",
+     "why": "An export that stops partway once membership passes roughly ten thousand rows is the same row-limit truncation on report exports."
     }
    ],
    "accounts": {
@@ -86,6 +204,26 @@ window.DIGEST = {
       "end_ms": 259200
      },
      "occurred_at": "2026-09-09T15:20:51Z"
+    },
+    {
+     "id": "c-75d5cbd07ce7",
+     "day": "2026-09-10",
+     "source": "salesforce",
+     "type": "bug",
+     "topic": "export cuts off at 10,500 rows",
+     "quote": "Any report we try to export once membership crosses about ten thousand rows just cuts off partway through instead of finishing the file.",
+     "account_id": "ACC-0001",
+     "account": "Great Lakes Museum Alliance",
+     "account_type": "customer",
+     "tier": "Enterprise",
+     "arr": 340000,
+     "speaker": "Naomi Castellanos",
+     "locator": {
+      "case_id": "500000000000000006",
+      "comment_id": "00a000000000000017",
+      "case_number": "00005006"
+     },
+     "occurred_at": "2026-09-10T16:35:02Z"
     }
    ]
   },
@@ -93,14 +231,15 @@ window.DIGEST = {
    "id": "THEME-0008",
    "title": "Pledge reminders ignore donor contact preferences",
    "type": "bug",
-   "summary": "Pledge reminders continue to go out by email to donors who have recorded a paper-only or mail-only preference, and staff have no way to hold those sends back. Development teams are fielding repeat complaints from donors who already stated the preference more than once.",
+   "summary": "Pledge reminders continue to send on the default schedule even when a donor has asked for fewer or different contact. Development staff have to apologize for over-contacting donors and cannot rely on the stored preferences.",
    "claim_ids": [
     "c-5d3a978f29d2",
     "c-5b5f6e38062c",
-    "c-7a9d32ef25ab"
+    "c-7a9d32ef25ab",
+    "c-8cdbbd7323dd"
    ],
    "first_seen": "2026-09-08",
-   "last_seen": "2026-09-09",
+   "last_seen": "2026-09-10",
    "log": [
     {
      "day": "2026-09-08",
@@ -119,6 +258,12 @@ window.DIGEST = {
      "action": "append",
      "claim_id": "c-7a9d32ef25ab",
      "why": "Mail-only donors receiving pledge reminder email is the same stated preference being ignored by the reminder run."
+    },
+    {
+     "day": "2026-09-10",
+     "action": "append",
+     "claim_id": "c-8cdbbd7323dd",
+     "why": "Reminders going out on the standard cadence despite a donor asking for a single reminder is the existing failure to honor donor contact preferences."
     }
    ],
    "accounts": {
@@ -196,89 +341,26 @@ window.DIGEST = {
       "case_number": "00005017"
      },
      "occurred_at": "2026-09-09T09:45:54Z"
-    }
-   ]
-  },
-  {
-   "id": "THEME-0001",
-   "title": "Renewal invoices omitting prior credits and balances",
-   "type": "bug",
-   "summary": "Members receiving renewal invoices and statements are billed a total that leaves out amounts they have already paid, including carried-over balances and credits from partial year adjustments. Association finance staff catch and correct the discrepancy manually every renewal cycle.",
-   "claim_ids": [
-    "c-915d4dd0bc13",
-    "c-deb7b49ebfd6"
-   ],
-   "first_seen": "2026-09-08",
-   "last_seen": "2026-09-08",
-   "log": [
-    {
-     "day": "2026-09-08",
-     "action": "open",
-     "claim_id": "c-915d4dd0bc13",
-     "why": "Nothing in the index covers renewal totals that leave out what the member already paid or carried over, so this opens the theme."
     },
     {
-     "day": "2026-09-08",
-     "action": "append",
-     "claim_id": "c-deb7b49ebfd6",
-     "why": "A missing credit line for a partial year adjustment is the same renewal total defect as the missing carried-over balance, described from the finance side."
-    }
-   ],
-   "accounts": {
-    "customer": 1,
-    "prospect": 0
-   },
-   "open_cases": 6,
-   "score_parts": {
-    "accounts": 7.5,
-    "value": 17.0,
-    "cases": 20.0,
-    "recency": 13.9,
-    "bug": 10.0
-   },
-   "score": 68,
-   "claims": [
-    {
-     "id": "c-915d4dd0bc13",
-     "day": "2026-09-08",
-     "source": "gong",
+     "id": "c-8cdbbd7323dd",
+     "day": "2026-09-10",
+     "source": "salesforce",
      "type": "bug",
-     "topic": "missing carried-over balance on renewal statements",
-     "quote": "Every renewal statement we send out is missing the balance that carried over from the previous period, so the invoice total reads far higher than it should.",
-     "account_id": "ACC-0001",
-     "account": "Great Lakes Museum Alliance",
+     "topic": "reminder schedule ignores donor preference",
+     "quote": "Pledge reminders keep going out on the standard schedule even for donors who told us they only want a single reminder before the campaign closes.",
+     "account_id": "ACC-0002",
+     "account": "Cascadia Nurses Association",
      "account_type": "customer",
      "tier": "Enterprise",
-     "arr": 340000,
-     "speaker": "Rhonda Calloway",
+     "arr": 268000,
+     "speaker": "Renee Okafor",
      "locator": {
-      "call_id": "7782934451002",
-      "speaker_id": "4521",
-      "start_ms": 663288,
-      "end_ms": 722760
+      "case_id": "500000000000000012",
+      "comment_id": "00a000000000000045",
+      "case_number": "00005018"
      },
-     "occurred_at": "2026-09-08T15:12:15Z"
-    },
-    {
-     "id": "c-deb7b49ebfd6",
-     "day": "2026-09-08",
-     "source": "gong",
-     "type": "bug",
-     "topic": "missing credit line on renewal invoices",
-     "quote": "Our renewal invoice keeps landing without a line for the credit we are owed from the partial year adjustment, and finance ends up chasing it every single cycle.",
-     "account_id": "ACC-0001",
-     "account": "Great Lakes Museum Alliance",
-     "account_type": "customer",
-     "tier": "Enterprise",
-     "arr": 340000,
-     "speaker": "Naomi Castellanos",
-     "locator": {
-      "call_id": "7782934452001",
-      "speaker_id": "c-01",
-      "start_ms": 187200,
-      "end_ms": 223200
-     },
-     "occurred_at": "2026-09-08T12:35:27Z"
+     "occurred_at": "2026-09-10T12:05:49Z"
     }
    ]
   },
@@ -286,13 +368,14 @@ window.DIGEST = {
    "id": "THEME-0006",
    "title": "Duplicate journal entries in general ledger sync",
    "type": "bug",
-   "summary": "Batches of transactions appear twice in the general ledger after the accounting sync runs. Finance staff have to identify and delete the duplicate entries before they can close the books.",
+   "summary": "The general ledger sync posts the same journal entry more than once during closings at several organizations. Finance staff have to find and reverse the duplicates by hand before they can close the books.",
    "claim_ids": [
     "c-9e53583c6513",
-    "c-5c26d1b4bb94"
+    "c-5c26d1b4bb94",
+    "c-c5feba4cd6d7"
    ],
    "first_seen": "2026-09-08",
-   "last_seen": "2026-09-09",
+   "last_seen": "2026-09-10",
    "log": [
     {
      "day": "2026-09-08",
@@ -305,6 +388,12 @@ window.DIGEST = {
      "action": "append",
      "claim_id": "c-5c26d1b4bb94",
      "why": "Transactions appearing twice in the ledger after a sync run is the duplicate journal entry problem this theme already covers."
+    },
+    {
+     "day": "2026-09-10",
+     "action": "append",
+     "claim_id": "c-c5feba4cd6d7",
+     "why": "The same journal entry posted twice during general ledger sync and reversed by hand is the existing duplicate journal entry defect."
     }
    ],
    "accounts": {
@@ -361,6 +450,26 @@ window.DIGEST = {
       "case_number": "00005010"
      },
      "occurred_at": "2026-09-09T11:45:46Z"
+    },
+    {
+     "id": "c-c5feba4cd6d7",
+     "day": "2026-09-10",
+     "source": "salesforce",
+     "type": "bug",
+     "topic": "duplicate journal entry posting",
+     "quote": "The general ledger sync has posted the same journal entry twice on more than one closing, and our bookkeeper has to go back and reverse the duplicate by hand.",
+     "account_id": "ACC-0003",
+     "account": "Prairie Land Trust Council",
+     "account_type": "customer",
+     "tier": "Professional",
+     "arr": 154000,
+     "speaker": "Miguel Ferreira",
+     "locator": {
+      "case_id": "50000000000000000b",
+      "comment_id": "00a00000000000002a",
+      "case_number": "00005011"
+     },
+     "occurred_at": "2026-09-10T16:45:27Z"
     }
    ]
   },
@@ -391,10 +500,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 13.9,
+    "recency": 12.9,
     "bug": 10.0
    },
-   "score": 65,
+   "score": 64,
    "claims": [
     {
      "id": "c-6fdcefc76dcd",
@@ -423,13 +532,14 @@ window.DIGEST = {
    "id": "THEME-0004",
    "title": "Renewal notices filtered into spam",
    "type": "bug",
-   "summary": "Renewal reminder email is being classified as spam by major mail providers, so members never see the notice and lapse without knowing their renewal was due. Staff at membership organizations find out only after renewals are missed and then chase members by phone.",
+   "summary": "Members at multiple associations report that renewal notices never reach the inbox because they are delivered to the spam folder. Staff only discover the problem when members say they were never notified, which puts renewals at risk of lapsing.",
    "claim_ids": [
     "c-8fc57031470e",
-    "c-c3cc9482540b"
+    "c-c3cc9482540b",
+    "c-2cd3d99a5193"
    ],
    "first_seen": "2026-09-08",
-   "last_seen": "2026-09-09",
+   "last_seen": "2026-09-10",
    "log": [
     {
      "day": "2026-09-08",
@@ -442,6 +552,12 @@ window.DIGEST = {
      "action": "append",
      "claim_id": "c-c3cc9482540b",
      "why": "Renewal reminder mail being classified as spam by large providers is the same deliverability failure already open as renewal notices filtered into spam."
+    },
+    {
+     "day": "2026-09-10",
+     "action": "append",
+     "claim_id": "c-2cd3d99a5193",
+     "why": "Members not receiving renewal notices because the messages are delivered to spam is the same deliverability failure already tracked in this theme."
     }
    ],
    "accounts": {
@@ -499,6 +615,26 @@ window.DIGEST = {
       "end_ms": 324000
      },
      "occurred_at": "2026-09-09T13:23:01Z"
+    },
+    {
+     "id": "c-2cd3d99a5193",
+     "day": "2026-09-10",
+     "source": "salesforce",
+     "type": "bug",
+     "topic": "renewal notices routed to spam",
+     "quote": "A good number of our members tell us the renewal notice never showed up, and when we check, it landed in their spam folder instead of the inbox.",
+     "account_id": "ACC-0005",
+     "account": "Sunbelt Literacy Network",
+     "account_type": "customer",
+     "tier": "Standard",
+     "arr": 41000,
+     "speaker": "Yolanda Pruitt",
+     "locator": {
+      "case_id": "500000000000000004",
+      "comment_id": "00a00000000000000f",
+      "case_number": "00005004"
+     },
+     "occurred_at": "2026-09-10T12:55:59Z"
     }
    ]
   },
@@ -529,10 +665,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 13.9,
+    "recency": 12.9,
     "bug": 0.0
    },
-   "score": 58,
+   "score": 57,
    "claims": [
     {
      "id": "c-16cd97e72e9e",
@@ -584,10 +720,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 13.9,
+    "recency": 12.9,
     "bug": 0.0
    },
-   "score": 55,
+   "score": 54,
    "claims": [
     {
      "id": "c-b58dd0db5d66",
@@ -645,10 +781,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 4.8,
     "cases": 15.0,
-    "recency": 15.0,
+    "recency": 13.9,
     "bug": 10.0
    },
-   "score": 52,
+   "score": 51,
    "claims": [
     {
      "id": "c-c44577763b5c",
@@ -727,10 +863,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 0.0,
     "cases": 0.0,
-    "recency": 15.0,
+    "recency": 13.9,
     "bug": 10.0
    },
-   "score": 32,
+   "score": 31,
    "claims": [
     {
      "id": "c-0d73633ed6f5",
@@ -803,10 +939,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 0.0,
     "cases": 0.0,
-    "recency": 15.0,
+    "recency": 13.9,
     "bug": 0.0
    },
-   "score": 22,
+   "score": 21,
    "claims": [
     {
      "id": "c-b696c3430eb3",
@@ -858,10 +994,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 0.0,
     "cases": 0.0,
-    "recency": 15.0,
+    "recency": 13.9,
     "bug": 0.0
    },
-   "score": 22,
+   "score": 21,
    "claims": [
     {
      "id": "c-299d81776e9e",

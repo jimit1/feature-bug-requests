@@ -2,14 +2,15 @@
  "id": "THEME-0008",
  "title": "Pledge reminders ignore donor contact preferences",
  "type": "bug",
- "summary": "Pledge reminders continue to go out by email to donors who have recorded a paper-only or mail-only preference, and staff have no way to hold those sends back. Development teams are fielding repeat complaints from donors who already stated the preference more than once.",
+ "summary": "Pledge reminders continue to send on the default schedule even when a donor has asked for fewer or different contact. Development staff have to apologize for over-contacting donors and cannot rely on the stored preferences.",
  "claim_ids": [
   "c-5d3a978f29d2",
   "c-5b5f6e38062c",
-  "c-7a9d32ef25ab"
+  "c-7a9d32ef25ab",
+  "c-8cdbbd7323dd"
  ],
  "first_seen": "2026-09-08",
- "last_seen": "2026-09-09",
+ "last_seen": "2026-09-10",
  "log": [
   {
    "day": "2026-09-08",
@@ -28,6 +29,12 @@
    "action": "append",
    "claim_id": "c-7a9d32ef25ab",
    "why": "Mail-only donors receiving pledge reminder email is the same stated preference being ignored by the reminder run."
+  },
+  {
+   "day": "2026-09-10",
+   "action": "append",
+   "claim_id": "c-8cdbbd7323dd",
+   "why": "Reminders going out on the standard cadence despite a donor asking for a single reminder is the existing failure to honor donor contact preferences."
   }
  ],
  "accounts": {

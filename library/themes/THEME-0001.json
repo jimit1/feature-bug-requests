@@ -2,13 +2,14 @@
  "id": "THEME-0001",
  "title": "Renewal invoices omitting prior credits and balances",
  "type": "bug",
- "summary": "Members receiving renewal invoices and statements are billed a total that leaves out amounts they have already paid, including carried-over balances and credits from partial year adjustments. Association finance staff catch and correct the discrepancy manually every renewal cycle.",
+ "summary": "Renewal invoices are calculated without accounting for what the member has already paid, including prior credits, outstanding balances, and mid-year tier upgrades. Members receive a bill for the full annual amount, and staff have to recalculate and correct the invoice manually.",
  "claim_ids": [
   "c-915d4dd0bc13",
-  "c-deb7b49ebfd6"
+  "c-deb7b49ebfd6",
+  "c-a48464d88d04"
  ],
  "first_seen": "2026-09-08",
- "last_seen": "2026-09-08",
+ "last_seen": "2026-09-10",
  "log": [
   {
    "day": "2026-09-08",
@@ -21,19 +22,25 @@
    "action": "append",
    "claim_id": "c-deb7b49ebfd6",
    "why": "A missing credit line for a partial year adjustment is the same renewal total defect as the missing carried-over balance, described from the finance side."
+  },
+  {
+   "day": "2026-09-10",
+   "action": "append",
+   "claim_id": "c-a48464d88d04",
+   "why": "Billing the full annual amount to a member who upgraded mid-year is the renewal total being computed without what the member already paid, the same ask as omitted credits and balances."
   }
  ],
  "accounts": {
-  "customer": 1,
+  "customer": 2,
   "prospect": 0
  },
- "open_cases": 6,
+ "open_cases": 9,
  "score_parts": {
-  "accounts": 7.5,
+  "accounts": 15.0,
   "value": 17.0,
   "cases": 20.0,
-  "recency": 13.9,
+  "recency": 15.0,
   "bug": 10.0
  },
- "score": 68
+ "score": 77
 }

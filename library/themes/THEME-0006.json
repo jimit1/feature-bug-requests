@@ -2,13 +2,14 @@
  "id": "THEME-0006",
  "title": "Duplicate journal entries in general ledger sync",
  "type": "bug",
- "summary": "Batches of transactions appear twice in the general ledger after the accounting sync runs. Finance staff have to identify and delete the duplicate entries before they can close the books.",
+ "summary": "The general ledger sync posts the same journal entry more than once during closings at several organizations. Finance staff have to find and reverse the duplicates by hand before they can close the books.",
  "claim_ids": [
   "c-9e53583c6513",
-  "c-5c26d1b4bb94"
+  "c-5c26d1b4bb94",
+  "c-c5feba4cd6d7"
  ],
  "first_seen": "2026-09-08",
- "last_seen": "2026-09-09",
+ "last_seen": "2026-09-10",
  "log": [
   {
    "day": "2026-09-08",
@@ -21,6 +22,12 @@
    "action": "append",
    "claim_id": "c-5c26d1b4bb94",
    "why": "Transactions appearing twice in the ledger after a sync run is the duplicate journal entry problem this theme already covers."
+  },
+  {
+   "day": "2026-09-10",
+   "action": "append",
+   "claim_id": "c-c5feba4cd6d7",
+   "why": "The same journal entry posted twice during general ledger sync and reversed by hand is the existing duplicate journal entry defect."
   }
  ],
  "accounts": {
