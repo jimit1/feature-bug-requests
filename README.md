@@ -21,7 +21,7 @@ A prioritized digest for a product team, built from the conversations already in
 
 **First week on the API path** (from the commit messages): $0.05 per night on average, 22 claims verified, 2 rejected, 10 themes, and after the first night 10 of 12 claims joined an existing theme instead of opening a new one.
 
-**Not built, by choice** (drawn in `deck/png/slide-7.png`): PII scrub before the readers, live connectors, a golden-set eval, and an approve gate before anything reaches a backlog.
+**Not built, by choice** (the first four are drawn in `deck/png/slide-7.png`): a PII scrub before the readers; live read-only connectors for Gong and Salesforce; a golden-set eval diffed week over week; an approve gate before anything is filed into a backlog. Further out: a database behind the library once volume outgrows files (the git history stays as the audit trail); sign-in so the ask agent remembers a person across visits; a status on each theme (planned, in progress, shipped) that a product manager sets on the page and that flows back through the approve gate; a weekly note to Slack or email with what changed; more sources (Slack, Zendesk, app store reviews); a per-account view for customer success; and a trend view of themes rising or fading week over week.
 
 ```
 pip install -r requirements.txt && export ANTHROPIC_API_KEY=...

@@ -22,7 +22,7 @@ const titles = {
   4:'The whole system: two sources, three agents, one git library, one product team',
   5:'Reader agents turn conversations into records; the editor agent sorts records into themes',
   6:"Ask why a theme matters; the answer comes from the library, with the customer's words",
-  7:'Built to the brief; four add-ons are designed, not built',
+  7:'Built to the brief; everything else is designed, not built',
 };
 const notes = {
   2:'Situation and complication. Dozens of calls and cases a week hold what the market wants. What reaches product today is word of mouth with no source attached.',
@@ -30,7 +30,7 @@ const notes = {
   4:'System. One nightly job: readers write verified claims, the editor files claims into themes. themes/ is the single source; the digest UI and the ask agent both read it. Commits are the audit trail.',
   5:'Agents. Two cheap reader agents, one per source, return structured records. The frontier editor agent reads existing themes first, then files each new claim: append or open, with one line of why. All nightly.',
   6:'Ask. The ask agent answers only from the library. It never queries Gong or Salesforce live.',
-  7:'Scope. Built only what the brief asked for. PII scrub, live connectors, evals and an approve gate before a backlog are designed and shown here, not built.',
+  7:'Scope. Built only what the brief asked for. PII scrub, live connectors, evals and an approve gate are drawn on the system; a database, sign-in with memory, status per theme, weekly notes, more sources, per-account and trend views are listed for later. None of it is built.',
 };
 for (let n=2; n<=7; n++) {
   const s = pres.addSlide();
