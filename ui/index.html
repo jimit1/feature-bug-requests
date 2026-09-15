@@ -12,6 +12,20 @@ body { margin:0; background:#fff; color:var(--ink); -webkit-font-smoothing:antia
 .wrap { max-width:920px; margin:0 auto; padding:56px 32px 96px; }
 h1 { margin:0; font-size:24px; font-weight:600; letter-spacing:-0.01em; }
 .gen { margin:8px 0 0; color:var(--faint); font-size:13px; }
+#ask { margin-top:30px; }
+.askrow { display:flex; flex-wrap:wrap; gap:14px; align-items:center; }
+.askrow input { padding:9px 0; border:0; border-bottom:1px solid var(--line);
+  background:none; font:inherit; font-size:14px; color:var(--ink); }
+.askrow input::placeholder { color:var(--faint); }
+.askrow input:focus { outline:none; border-bottom-color:var(--ink); }
+#q { flex:1 1 320px; }
+#pass { flex:0 0 120px; }
+.askgo { padding:8px 16px; border:1px solid var(--line); border-radius:3px; background:none;
+  font:inherit; font-size:13px; color:var(--ink); cursor:pointer; }
+.askgo:hover { background:#FBFAF8; }
+.answer { max-width:66ch; margin:18px 0 0; color:var(--muted); font-size:14px;
+  white-space:pre-wrap; }
+.answer:empty { display:none; }
 .filters { display:flex; flex-wrap:wrap; gap:36px; margin-top:36px; padding:22px 0;
   border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
 .flabel { display:block; margin-bottom:9px; color:var(--faint); font-size:11px;
@@ -56,6 +70,14 @@ h1 { margin:0; font-size:24px; font-weight:600; letter-spacing:-0.01em; }
 <div class="wrap">
   <h1>Feature / Bug Requests</h1>
   <p class="gen" id="gen"></p>
+  <div id="ask" hidden>
+    <div class="askrow">
+      <input id="q" type="text" maxlength="500" placeholder="Ask about the themes below">
+      <input id="pass" type="password" placeholder="Passphrase">
+      <button class="askgo" id="askgo">Ask</button>
+    </div>
+    <p class="answer" id="answer"></p>
+  </div>
   <div class="filters" id="filters">
     <div>
       <span class="flabel">Type</span>
@@ -176,6 +198,30 @@ h1 { margin:0; font-size:24px; font-weight:600; letter-spacing:-0.01em; }
     if (open[id]) { delete open[id]; } else { open[id] = 1; }
     render();
   });
+  var box = document.getElementById("ask"), qbox = document.getElementById("q");
+  var pbox = document.getElementById("pass"), out = document.getElementById("answer");
+  function shout(text) { out.textContent = text; }
+  function doAsk() {
+    var question = qbox.value.trim();
+    if (!question) { return; }
+    try { localStorage.setItem("fbr_pass", pbox.value); } catch (e) {}
+    shout("Asking...");
+    fetch(D.ask_url, {
+      method: "POST", headers: { "content-type": "application/json" },
+      body: JSON.stringify({ question: question, passphrase: pbox.value })
+    }).then(function (r) {
+      return r.json().then(function (j) {
+        if (!r.ok) { throw new Error(j.error || "request failed"); }
+        return j.answer;
+      });
+    }).then(shout).catch(function (e) { shout("Could not answer: " + e.message); });
+  }
+  if (D.ask_url) {
+    box.hidden = false;
+    try { pbox.value = localStorage.getItem("fbr_pass") || ""; } catch (e) {}
+    document.getElementById("askgo").addEventListener("click", doAsk);
+    box.addEventListener("keydown", function (e) { if (e.key === "Enter") { doAsk(); } });
+  }
   document.getElementById("gen").textContent = "Generated " + fdate(D.generated) +
     " from " + D.days.length + " days of calls and cases";
   [].forEach.call(document.querySelectorAll(".opt"), function (o) {
