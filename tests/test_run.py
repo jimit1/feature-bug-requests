@@ -69,3 +69,21 @@ def test_unfiled_claims_are_sent_back_to_the_editor():
     themes = {"THEME-0001": {"claim_ids": ["c-1"]}}
     known = {"c-1": {"id": "c-1"}, "c-2": {"id": "c-2"}}
     assert [c["id"] for c in run.unfiled(themes, known)] == ["c-2"]
+
+
+def test_scrub_hides_contacts_and_customer_names_before_a_reader_sees_them():
+    said = "Call me on (612) 555-0147 or rhonda@glma.example.org."
+    doc = {"text": "[speaker_id 4521 | Rhonda Calloway | client | 100-900]\n" + said,
+           "units": {("4521", 100, 900): {"text": said}}}
+    run.REDACTED[0] = 0
+    out = run.scrub(doc, ["Rhonda Calloway"])
+    assert out["units"][("4521", 100, 900)]["text"] == "Call me on [PHONE] or [EMAIL]."
+    assert "[NAME]" in out["text"] and "Rhonda Calloway" not in out["text"]
+    assert "[speaker_id 4521" in out["text"] and "100-900]" in out["text"] and run.REDACTED[0] == 3
+
+
+def test_the_golden_set_checks_the_library_and_calls_no_model(monkeypatch, capsys):
+    monkeypatch.setattr(run, "call_model", None)
+    assert run.run_eval() == 0
+    printed = capsys.readouterr().out
+    assert "FAIL" not in printed and printed.strip().endswith("passed")

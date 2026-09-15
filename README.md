@@ -28,13 +28,15 @@ You can also just ask a question, and the answer comes back with the quotes behi
 
 Every line can be followed home. Theme THEME-0001 carries the sentence "Every renewal statement we send out is missing the balance that carried over from the previous period, so the invoice total reads far higher than it should.", said on call 7782934451002 at 11:03.
 
+The questions from our conversation, and where each answer lives, are on slide 7 of the deck.
+
 In its first week it ran for about five cents a night, verified 22 claims, and built 10 themes.
 
 ## What comes next
 
 Four groups of work, designed but not built.
 
-![the roadmap](deck/png/readme/slide-7.png)
+![the roadmap](deck/png/readme/slide-8.png)
 
 ## Run it yourself
 

@@ -1,0 +1,39 @@
+{
+ "about": "The golden set for `python run.py --eval`. Claims under `present` must still be in library/claims. Sentences under `absent` must never be quoted by any claim: one is an internal case comment the customer never saw, the other was spoken by the Momentive side of a call. Every claim in the library is also checked to make sure its locator still resolves to a real turn or comment under data/. The nightly job runs this after the pipeline and fails loudly when the library drifts.",
+ "present": [
+  {
+   "account": "Great Lakes Museum Alliance",
+   "quote": "Every renewal statement we send out is missing the balance that carried over from the previous period, so the invoice total reads far higher than it should."
+  },
+  {
+   "account": "Great Lakes Museum Alliance",
+   "quote": "Any report we try to export once membership crosses about ten thousand rows just cuts off partway through instead of finishing the file."
+  },
+  {
+   "account": "Prairie Land Trust Council",
+   "quote": "The general ledger sync has posted the same journal entry twice on more than one closing, and our bookkeeper has to go back and reverse the duplicate by hand."
+  },
+  {
+   "account": "Atlantic Shipwrights Guild",
+   "quote": "A posting expires and comes down with no warning to the person who placed it, so postings vanish while they still think it is live."
+  },
+  {
+   "account": "Northwoods Arborists Society",
+   "quote": "We need to upload SCORM 1.2 and SCORM 2004 packages straight into the learning module without rebuilding every course by hand."
+  },
+  {
+   "account": "Copper Ridge Youth Foundation",
+   "quote": "Our year end donor report stops at about 3,200 rows even though we have close to 5,000 donors on file."
+  }
+ ],
+ "absent": [
+  {
+   "why": "internal case comment, IsPublished false, case 5008W00002aQpLrQAK",
+   "quote": "Honestly I think this account is a churn risk if the invoice thing drags on."
+  },
+  {
+   "why": "spoken by the Momentive side on call 7782934451119",
+   "quote": "a pull that has to hold together past ten thousand rows is a concrete requirement that somebody can size"
+  }
+ ]
+}

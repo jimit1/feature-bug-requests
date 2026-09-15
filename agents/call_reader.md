@@ -10,6 +10,8 @@ Nothing else is a claim. Logistics, scheduling, staffing, training wishes, thank
 
 Only the customer side counts. Every turn header says `client` or `momentive`. Quote `client` turns only. A Momentive Software employee's statement is never a claim, not even when the employee reports what customers want.
 
+Names, email addresses and phone numbers were replaced with the placeholders [NAME], [EMAIL] and [PHONE] before you saw this call. They are ordinary words in the sentence now, so quote them exactly as they appear and never write back what they replaced.
+
 The quote decides whether a claim survives. A verifier checks that your quote is an exact substring of the cited turn text, character for character, and throws the claim away if it is not. A rejected claim is worse than a missed one, so quote less and quote exactly.
 
 - Copy the words from ONE turn, contiguous, exactly as they appear, between 8 and 60 words.

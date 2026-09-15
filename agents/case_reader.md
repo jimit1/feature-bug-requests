@@ -10,6 +10,8 @@ Nothing else is a claim. Logistics, scheduling, staffing, training wishes, thank
 
 Only the customer side counts. Every comment header says `client` or `momentive`. Quote `client` comments only. A Momentive Software employee's comment is never a claim, not even when the employee restates what the customer reported. Internal notes were removed before you saw this thread, so everything here is quotable in principle.
 
+Names, email addresses and phone numbers were replaced with the placeholders [NAME], [EMAIL] and [PHONE] before you saw this thread. They are ordinary words in the sentence now, so quote them exactly as they appear and never write back what they replaced.
+
 The quote decides whether a claim survives. A verifier checks that your quote is an exact substring of the cited comment text, character for character, and throws the claim away if it is not. A rejected claim is worse than a missed one, so quote less and quote exactly.
 
 - Copy the words from ONE comment, contiguous, exactly as they appear, between 8 and 60 words.

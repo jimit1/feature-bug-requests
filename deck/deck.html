@@ -316,9 +316,66 @@
   </svg>
   </div>
 </section>
-<!-- 7 what's next -->
+<!-- 7 the questions from the conversation -->
 <section class="slide" data-n="7">
   <div class="num">7</div>
+  <div class="title">The questions from our conversation, and where each answer lives</div>
+  <div class="body">
+  <style>
+    .qa{width:100%;border-collapse:collapse;font-size:15px;line-height:1.45;color:#5F5E5A;margin-top:2px}
+    .qa th{text-align:left;font-size:13px;font-weight:500;color:#888780;padding:0 26px 8px 0;border-bottom:1px solid #E5E3DA}
+    .qa th:last-child,.qa td:last-child{padding-right:0}
+    .qa td{padding:10px 26px 10px 0;border-top:0.5px solid #E5E3DA;vertical-align:top}
+    .qa td:first-child{width:34%;color:#2C2C2A}
+    .qa td:last-child{width:23%;color:#888780}
+    .qa .who{color:#888780;margin-right:6px}
+    body.bodyonly .qa{font-size:19px;line-height:1.5}
+    body.bodyonly .qa th{font-size:16px}
+    body.bodyonly .qa td{padding:14px 34px 14px 0}
+  </style>
+  <table class="qa">
+    <tr><th>What you asked</th><th>The answer</th><th>Where it lives</th></tr>
+    <tr>
+      <td><span class="who">Drew</span>"What would you use for the context library? Like, where would you store?"</td>
+      <td>One repository holds the claims, the themes and the run state, so a question reads yesterday's work instead of gathering it again.</td>
+      <td>library/, library/state.json, slide 4</td>
+    </tr>
+    <tr>
+      <td><span class="who">Drew</span>"Where would your agents be running... versus Bedrock."</td>
+      <td>One function makes the model call, so Bedrock is the swap when data must stay in the AWS account or identity should be IAM.</td>
+      <td>nightly.yml, ask_lambda.py, run.py call_model</td>
+    </tr>
+    <tr>
+      <td><span class="who">Drew</span>"What do you take into consideration... regarding risk and compliance?"</td>
+      <td>Agents answer only through a schema, code verifies every quote, rejects keep their reason, every run is a commit.</td>
+      <td>run.py verify, rejected.jsonl, the commit log</td>
+    </tr>
+    <tr>
+      <td><span class="who">Drew</span>"How would you make sure the system handled personally identifiable information?"</td>
+      <td>Addresses, numbers and customer names are replaced before a reader sees a word, and every run reports how many.</td>
+      <td>run.py scrub, the run summary</td>
+    </tr>
+    <tr>
+      <td><span class="who">Drew</span>"Hallucinations or agent drift... over time that data is staying consistent."</td>
+      <td>A golden set of claims that must be there, and sentences that must never appear, runs after every nightly build.</td>
+      <td>evals/golden.json, run.py --eval</td>
+    </tr>
+    <tr>
+      <td><span class="who">Andrew</span>"...a framework for, but not a full context library for all the agents."</td>
+      <td>The library is plain files in one repository, so another agent or another team reads it without a new integration.</td>
+      <td>library/themes, library/claims</td>
+    </tr>
+    <tr>
+      <td><span class="who">Andrew</span>"Where do you measure that ROI for AI?"</td>
+      <td>Every run commits its own tokens in, tokens out and cost, and the model tiers are named in one config file.</td>
+      <td>config.json, slide 9</td>
+    </tr>
+  </table>
+  </div>
+</section>
+<!-- 8 what's next -->
+<section class="slide" data-n="8">
+  <div class="num">8</div>
   <div class="title">Built to the brief; the next steps are designed, not built</div>
   <div class="body">
   <style>
@@ -337,7 +394,7 @@
     <div class="col">
       <svg viewBox="0 0 44 44" fill="none" stroke="#BA7517" stroke-width="2"><path d="M22 5 L36 10 V21 C36 30 29 36 22 39 C15 36 8 30 8 21 V10 Z"/><path d="M15 22 L20 27 L29 17" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <h4>Trust it</h4><p>Before it touches real data</p>
-      <ul><li>PII scrub before any reader sees a transcript</li><li>Golden-set eval, diffed week over week</li><li>Approve gate before anything reaches a backlog</li></ul>
+      <ul><li>The scrub widened to names said mid sentence, not only the named parties</li><li>The golden set widened to the editor's decisions, not only the claims</li><li>Approve gate before anything reaches a backlog</li></ul>
     </div>
     <div class="col">
       <svg viewBox="0 0 44 44" fill="none" stroke="#BA7517" stroke-width="2"><rect x="8" y="14" width="20" height="16" rx="3"/><path d="M28 19 H36 M28 25 H36 M13 8 V14 M23 8 V14" stroke-linecap="round"/></svg>
@@ -358,9 +415,9 @@
   </div>
 </section>
 
-<!-- 8 appendix -->
-<section class="slide" data-n="8">
-  <div class="num">8</div>
+<!-- 9 appendix -->
+<section class="slide" data-n="9">
+  <div class="num">9</div>
   <div class="title">Appendix: the decisions behind it</div>
   <div class="body">
   <style>
@@ -382,7 +439,7 @@
   </div>
 </section>
 </div>
-<div id="hud">1 / 8 &nbsp; ← → &nbsp; F fullscreen</div>
+<div id="hud">1 / 9 &nbsp; ← → &nbsp; F fullscreen</div>
 
 <script>
 (function(){

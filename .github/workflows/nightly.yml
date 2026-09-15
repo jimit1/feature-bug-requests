@@ -25,6 +25,8 @@ jobs:
           python run.py --next
           git pull --rebase
           git push
+      - name: golden set
+        run: python run.py --eval
 
   pages:
     needs: run

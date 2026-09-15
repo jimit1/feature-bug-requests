@@ -34,6 +34,23 @@ def call_model(tier, system, user):
     if tool:
         return next((b.input for b in r.content if b.type == "tool_use"), None)
     return "".join(b.text for b in r.content if b.type == "text")
+EMAIL, PHONE = re.compile(r"[\w.+-]+@[\w-]+\.[\w.-]+\w"), re.compile(r"(?:\+?\d{1,2}[ .-])?\(?\d{3}\)?[ .-]\d{3}[ .-]\d{4}")
+REDACTED = [0]
+
+def scrub(doc, names):
+    """Replace addresses, numbers and customer-side names before any of this text reaches a reader."""
+    pats = [(EMAIL, "[EMAIL]"), (PHONE, "[PHONE]")]
+    pats += [(re.compile(re.escape(n)), "[NAME]") for n in sorted(set(names)) if n and n != "Unknown"]
+    def clean(text, count=False):
+        for pat, tag in pats:
+            text, hits = pat.subn(tag, text)
+            REDACTED[0] += hits if count else 0
+        return text
+    doc["text"] = clean(doc["text"], True)
+    for unit in doc["units"].values():  # the verifier checks quotes against the same scrubbed text
+        unit["text"] = clean(unit["text"])
+    return doc
+
 def stamp(iso, ms=0):
     t = datetime.strptime(iso[:19], "%Y-%m-%dT%H:%M:%S") + timedelta(milliseconds=ms)
     return t.strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -73,8 +90,9 @@ def gong_doc(d, by_domain, day):
         units[(sid, start, end)] = {"text": text, "side": side, "speaker": p.get("name", "Unknown"),
                                     "day": meta["started"][:10], "occurred_at": stamp(meta["started"], start)}
         lines += ["", "[speaker_id %s | %s | %s | %d-%d]" % (sid, p.get("name", "Unknown"), side, start, end), text]
-    return {"source": "gong", "doc_id": meta["id"], "day": day, "account": account_fields(acct),
-            "text": "\n".join(lines), "units": units, "hidden": set()}
+    return scrub({"source": "gong", "doc_id": meta["id"], "day": day, "account": account_fields(acct),
+                  "text": "\n".join(lines), "units": units, "hidden": set()},
+                 [p.get("name") for p in d["call"]["parties"] if p.get("affiliation") == "External"])
 
 def case_doc(d, by_sfid, users, day):
     c = d["case"]
@@ -92,9 +110,10 @@ def case_doc(d, by_sfid, users, day):
                            "day": cm["CreatedDate"][:10], "occurred_at": stamp(cm["CreatedDate"])}
         lines += ["", "[comment_id %s | %s | %s | %s]" % (cm["Id"], name, side, cm["CreatedDate"][:10]),
                   cm["CommentBody"]]
-    return {"source": "salesforce", "doc_id": c["Id"], "day": day, "case_number": c.get("CaseNumber"),
-            "account": account_fields(by_sfid.get(c.get("AccountId"))),
-            "text": "\n".join(lines), "units": units, "hidden": hidden}
+    return scrub({"source": "salesforce", "doc_id": c["Id"], "day": day, "case_number": c.get("CaseNumber"),
+                  "account": account_fields(by_sfid.get(c.get("AccountId"))),
+                  "text": "\n".join(lines), "units": units, "hidden": hidden},
+                 [u["speaker"] for u in units.values()])
 
 def documents_for(day):
     accs = load("data/accounts.json")["accounts"]
@@ -174,7 +193,9 @@ def apply_decisions(out, new_claims, themes, state, day):
     opened_by_title, appended, opened = {t["title"].lower(): t for t in themes.values()}, 0, 0
     for d in out.get("decisions") or []:
         c = by_id.get(d.get("claim_id"))
-        if not c:
+        if not c:  # an editor decision that names nothing real is still part of the trail
+            append_jsonl("library/claims/rejected.jsonl", [dict(d, day=day, source="editor",
+                         reason="decision names a claim that was not in tonight's claims")])
             continue
         action, tid, title = d.get("action"), d.get("theme_id"), d.get("title") or c["topic"]
         if action == "append" and tid in themes:
@@ -249,12 +270,45 @@ def data_days():
     comments = [c["CreatedDate"][:10] for f in glob.glob(path("data/salesforce/*.json")) for c in load(f)["comments"]]
     return sorted(set(calls + comments))
 
+def all_units():
+    """Every turn and published comment under data/, keyed the way a claim locator keys it."""
+    accs = load("data/accounts.json")["accounts"]
+    users = {u["Id"]: u for u in load("data/users.json")["records"]}
+    docs = [gong_doc(load(f), {a["domain"]: a for a in accs}, "") for f in sorted(glob.glob(path("data/gong/*.json")))]
+    docs += [case_doc(load(f), {a["record"]["Id"]: a for a in accs}, users, "")
+             for f in sorted(glob.glob(path("data/salesforce/*.json")))]
+    return {(d["source"], k) for d in docs for k in d["units"]}
+
+def resolves(claim, units):
+    try:
+        return (claim["source"], unit_key(claim["source"], claim["locator"])) in units
+    except (KeyError, TypeError, ValueError):
+        return False
+
+def run_eval():
+    """The golden set: claims that must still be there, sentences that must never be, locators that must resolve."""
+    golden, claims = load("evals/golden.json"), list(all_claims().values())
+    checks = [(any(c["quote"] == g["quote"] and c["account"] == g["account"] for c in claims),
+               "present, %s: %s" % (g["account"], g["quote"][:56])) for g in golden["present"]]
+    checks += [(not any(g["quote"] in c["quote"] for c in claims), "absent, %s: %s" % (g["why"], g["quote"][:56]))
+               for g in golden["absent"]]
+    units = all_units()
+    lost = [c["id"] for c in claims if not resolves(c, units)]
+    checks.append((not lost, "every locator resolves in data, %d claims checked, %d lost" % (len(claims), len(lost))))
+    for ok, line in checks:
+        print("%s  %s" % ("pass" if ok else "FAIL", line))
+    print("%d of %d passed" % (sum(1 for ok, _ in checks if ok), len(checks)))
+    return 0 if all(ok for ok, _ in checks) else 1
+
 def main():
     ap = argparse.ArgumentParser(description="Build one day of the feature and bug digest.")
     ap.add_argument("--day", help="YYYY-MM-DD, or --next for the earliest day not yet run")
     ap.add_argument("--next", action="store_true")
     ap.add_argument("--no-commit", action="store_true")
+    ap.add_argument("--eval", action="store_true", help="run the golden set against the library and exit")
     args = ap.parse_args()
+    if args.eval:
+        sys.exit(run_eval())
     state = load("library/state.json") if os.path.exists(path("library/state.json")) else {"days": [], "next_theme": 1}
     if not (args.day or args.next):
         ap.error("use --day YYYY-MM-DD or --next")
@@ -285,18 +339,25 @@ def main():
         if isinstance(out, dict):
             appended, opened = apply_decisions(out, to_file, themes, state, day)
         else:
+            append_jsonl("library/claims/rejected.jsonl", [{"day": day, "source": "editor", "reason":
+                         "editor returned nothing usable", "claim_ids": [c["id"] for c in to_file]}])
             print("The editor returned nothing usable. The claims are stored and will be filed on the next run.")
 
     open_cases = open_cases_per_account(cases, by_sfid)
     for t in themes.values():
         score_theme(t, known, open_cases, day)
     state["days"] = sorted(set(state["days"] + [day]))
+    ranking = [t["id"] for t in sorted(themes.values(), key=lambda t: -t["score"])]
+    was = {t: i for i, t in enumerate(state.get("ranking") or [])}
+    moved = sum(1 for i, t in enumerate(ranking) if t in was and was[t] != i)
+    state["ranking"] = ranking
     write_library(themes, known, state, day)
 
     cost = sum(USAGE[t][0] * PRICE[t][0] / 1e6 + USAGE[t][1] * PRICE[t][1] / 1e6 for t in USAGE)
     tin, tout = sum(USAGE[t][0] for t in USAGE), sum(USAGE[t][1] for t in USAGE)
-    msg = "%s: %d sources, %d new, %d filed, %d rejected, %d appended, %d opened, %d unfiled, %d themes, %d in / %d out tokens, $%.4f" % (
-        day, len(docs), len(claims), len(to_file), len(rejected), appended, opened, len(unfiled(themes, known)), len(themes), tin, tout, cost)
+    msg = "%s: %d sources, %d redactions, %d new, %d filed, %d rejected, %d appended, %d opened, %d unfiled, %d themes, %d changed rank, %d in / %d out tokens, $%.4f" % (
+        day, len(docs), REDACTED[0], len(claims), len(to_file), len(rejected), appended, opened,
+        len(unfiled(themes, known)), len(themes), moved, tin, tout, cost)
     print(msg)
     if not args.no_commit:
         subprocess.run(["git", "add", "library", "ui/data.js"], cwd=ROOT, check=True)
