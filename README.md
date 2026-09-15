@@ -1,29 +1,46 @@
 # Feature / Bug Requests
 
-A prioritized digest for a product team, built from the conversations already in Gong (sales and customer success calls) and Salesforce (support cases). Every line traces back to the second in a call or the comment in a case where a customer said it. A scoped prototype for Momentive Software, on mocked data in the real API shapes.
+A prototype I built for Momentive Software. Every night it reads the sales calls and support cases, and turns them into one ranked list of what customers are asking for, in their own words.
 
-**Live page:** https://jimit1.github.io/feature-bug-requests/ (the passphrase in my email unlocks the ask panel; the digest data itself is a public file, as a prototype should be)
+**Live page:** https://jimit1.github.io/feature-bug-requests/ (the passphrase for the ask panel is in my email)
 
-![whole system](deck/png/body/slide-4.png)
+## How it works
 
-**Every night**, one job (`python run.py --next`, a GitHub Actions schedule here, one cron line in production):
+Customers ask for things all week, and only a little of it reaches the product team.
 
-1. Two reader agents, cheap tier, turn each call and case into claims: bug or feature, the customer's exact words, who said it, and where (call id plus turn start, or case and comment id).
-2. Code verifies each quote is an exact substring of the cited turn or comment. Failures are recorded with a reason, never patched.
-3. The editor agent, frontier tier, reads the theme index first, then every unfiled claim, and appends it to an existing theme or opens one, with one line of why. Code applies the decisions and scores every theme (accounts, value, open cases, recency, bug; the page shows the arithmetic).
-4. `library/themes/` is published as `ui/data.js` and the run commits. The commit log is the audit trail; the page and the ask agent both read that published library and nothing else.
+![what gets lost](deck/png/body/slide-2.png)
 
-**Ask** (`ask.py`, hosted as one Lambda in `hosting/`) answers in a few short sentences from the same library and names the themes it used; the page spotlights them. Passphrase and a daily cap protect the key.
+This puts all of it in one place, in the order I would work on it.
 
-**Traceability:** theme THEME-0001 carries claim `c-915d4dd0bc13`, "Every renewal statement we send out is missing the balance that carried over from the previous period, so the invoice total reads far higher than it should." It cites call 7782934451002, speaker 4521, 663288 ms (11:03 on the page), and that sentence is at exactly that turn in `data/gong/7782934451002.json`.
+![one ranked list](deck/png/body/slide-3.png)
 
-**In production:** swap the two mock loaders in `run.py` for read-only Gong and Salesforce connectors; nothing else changes. Only days not yet in `library/state.json` are read. Bedrock instead of the API makes sense when data must stay in the company's AWS account, identity should be IAM, or billing should consolidate under AWS; the model call is one function.
+The whole thing on one page.
 
-**First week on the API path** (from the commit messages): $0.05 per night on average, 22 claims verified, 2 rejected, 10 themes, and after the first night 10 of 12 claims joined an existing theme instead of opening a new one.
+![the whole system](deck/png/body/slide-4.png)
 
-**Not built, by choice**, in four groups (`deck/png/slide-7.png`). Trust it: a PII scrub before the readers, a golden-set eval diffed week over week, an approve gate before anything reaches a backlog. Connect it: read-only Gong and Salesforce connectors in place of the two mock loaders, Slack, Zendesk and app store reviews as new readers, a database behind the library once files are not enough. Work in it: a status on every theme set on the page, sign-in so the agent remembers who you are, a weekly note to Slack or email. See further: trends week over week, a per-account view for customer success, cost and drift dashboards.
+Two agents read the conversations and write down each request. A third one groups the requests into themes and ranks them.
+
+![the agents at work](deck/png/body/slide-5.png)
+
+You can also just ask a question, and the answer comes back with the quotes behind it.
+
+![the ask agent](deck/png/body/slide-6.png)
+
+Every line can be followed home. Theme THEME-0001 carries the sentence "Every renewal statement we send out is missing the balance that carried over from the previous period, so the invoice total reads far higher than it should.", said on call 7782934451002 at 11:03.
+
+In its first week it ran for about five cents a night, verified 22 claims, and built 10 themes.
+
+## What comes next
+
+Four groups of work, designed but not built.
+
+![the roadmap](deck/png/body/slide-7.png)
+
+## Run it yourself
 
 ```
-pip install -r requirements.txt && export ANTHROPIC_API_KEY=...
-python run.py --next && python ask.py "what should we fix first" && pytest -q
+pip install -r requirements.txt
+export ANTHROPIC_API_KEY=...
+python run.py --next
+python ask.py "what should we fix first"
 ```
