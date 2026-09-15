@@ -32,12 +32,12 @@ def handler(event, context):
         body = json.loads(event.get("body") or "{}")
         if body.get("passphrase") != os.environ.get("ASK_PASSPHRASE"):
             return reply(403, {"error": "wrong passphrase"})
-        if CALLS.get(today, 0) >= int(os.environ.get("ASK_DAILY_CAP", "200")):
-            return reply(429, {"error": "too many questions today, try again tomorrow"})
-        CALLS[today] = CALLS.get(today, 0) + 1
         question = (body.get("question") or "").strip()[:500]
         if not question:
             return reply(400, {"error": "no question"})
+        if CALLS.get(today, 0) >= int(os.environ.get("ASK_DAILY_CAP", "200")):
+            return reply(429, {"error": "too many questions today, try again tomorrow"})
+        CALLS[today] = CALLS.get(today, 0) + 1
         themes, claims = library()
         text, used = split_themes(ask.answer(question, themes, claims))
         return reply(200, {"answer": text, "themes": used})
