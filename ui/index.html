@@ -168,7 +168,7 @@ h1 { margin:0; font-size:24px; font-weight:600; letter-spacing:-0.01em; }
       var s = Math.floor(l.start_ms / 1000);
       return "call " + l.call_id + " at " + Math.floor(s / 60) + ":" + ("0" + (s % 60)).slice(-2);
     }
-    return "case " + l.case_id + ", comment " + l.comment_id;
+    return "case " + (l.case_number || l.case_id) + ", comment " + l.comment_id;
   }
   function claimHtml(c) {
     var tag = c.account_type === "customer" ? "customer" : "prospect";
