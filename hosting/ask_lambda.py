@@ -39,7 +39,7 @@ def handler(event, context):
             return reply(429, {"error": "too many questions today, try again tomorrow"})
         CALLS[today] = CALLS.get(today, 0) + 1
         themes, claims = library()
-        text, used = split_themes(ask.answer(question, themes, claims))
+        text, used = split_themes(ask.answer(question, themes, claims, [h for h in (body.get("history") or [])[-6:] if isinstance(h, dict)]))
         return reply(200, {"answer": text, "themes": used})
     except Exception as failure:
         return reply(500, {"error": ("%s: %s" % (type(failure).__name__, failure)).replace("\n", " ")[:200]})

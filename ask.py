@@ -30,9 +30,11 @@ def load_library():
     themes.sort(key=lambda t: t.get("score", 0), reverse=True)
     return themes, all_claims()
 
-def answer(question, themes, claims):
+def answer(question, themes, claims, history=()):
+    earlier = "".join("\nThey asked: %s\nYou answered: %s\n" % (h.get("q", ""), h.get("a", "")) for h in history)
     return call_model("ask", (ROOT / "agents" / "ask.md").read_text(),
-                      "Library\n%s\n\nQuestion\n%s" % (render(themes, claims), question))
+                      "Library\n%s\n\nEarlier in this conversation%s\n\nQuestion\n%s"
+                      % (render(themes, claims), earlier or "\n(nothing yet)", question))
 
 def main():
     question = " ".join(sys.argv[1:]).strip()
