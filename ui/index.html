@@ -325,7 +325,7 @@ input:focus { outline:none; border-bottom-color:var(--ink); }
     thread.scrollTop = thread.scrollHeight;
   }
   function lock(message) {
-    pass = "";
+    pass = ""; turns = []; spot = null;
     try { localStorage.removeItem("fbr_pass"); } catch (e) {}
     gpass.value = "";
     gerr.textContent = message || "";
@@ -363,10 +363,7 @@ input:focus { outline:none; border-bottom-color:var(--ink); }
       drawThread();
     });
   }
-  document.getElementById("gateform").addEventListener("submit", function (e) {
-    e.preventDefault();
-    var value = gpass.value.trim();
-    if (!value) { return; }
+  function check(value) {
     gerr.textContent = "Checking...";
     fetch(D.ask_url, {
       method: "POST", headers: HEADERS,
@@ -387,6 +384,10 @@ input:focus { outline:none; border-bottom-color:var(--ink); }
     }).catch(function (e) {
       gerr.textContent = "Could not check the passphrase: " + e.message;
     });
+  }
+  document.getElementById("gateform").addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (gpass.value.trim()) { check(gpass.value.trim()); }
   });
   document.getElementById("filters").addEventListener("click", function (e) {
     var b = e.target.closest(".opt");
@@ -415,7 +416,8 @@ input:focus { outline:none; border-bottom-color:var(--ink); }
   if (D.ask_url) {
     pane.hidden = false;
     try { pass = localStorage.getItem("fbr_pass") || ""; } catch (e) {}
-    if (!pass) { page.hidden = true; gate.hidden = false; }
+    page.hidden = true; gate.hidden = false;
+    if (pass) { check(pass); }
     drawThread();
   }
   document.getElementById("gen").textContent = "As of " + fdate(D.as_of) +

@@ -2,7 +2,7 @@
 
 A prioritized digest for a product team, built from the conversations already in Gong (sales and customer success calls) and Salesforce (support cases). Every line traces back to the second in a call or the comment in a case where a customer said it. A scoped prototype for Momentive Software, on mocked data in the real API shapes.
 
-**Live page:** https://jimit1.github.io/feature-bug-requests/ (passphrase in my email)
+**Live page:** https://jimit1.github.io/feature-bug-requests/ (the passphrase in my email unlocks the ask panel; the digest data itself is a public file, as a prototype should be)
 
 ![whole system](deck/png/body/slide-4.png)
 
@@ -13,7 +13,7 @@ A prioritized digest for a product team, built from the conversations already in
 3. The editor agent, frontier tier, reads the theme index first, then every unfiled claim, and appends it to an existing theme or opens one, with one line of why. Code applies the decisions and scores every theme (accounts, value, open cases, recency, bug; the page shows the arithmetic).
 4. `library/themes/` is published as `ui/data.js` and the run commits. The commit log is the audit trail; the page and the ask agent both read that published library and nothing else.
 
-**Ask** (`ask.py`, hosted as one Lambda in `hosting/`) answers in two sentences from the same library and names the themes it used; the page spotlights them. Passphrase and a daily cap protect the key.
+**Ask** (`ask.py`, hosted as one Lambda in `hosting/`) answers in a few short sentences from the same library and names the themes it used; the page spotlights them. Passphrase and a daily cap protect the key.
 
 **Traceability:** theme THEME-0001 carries claim `c-915d4dd0bc13`, "Every renewal statement we send out is missing the balance that carried over from the previous period, so the invoice total reads far higher than it should." It cites call 7782934451002, speaker 4521, 663288 ms (11:03 on the page), and that sentence is at exactly that turn in `data/gong/7782934451002.json`.
 

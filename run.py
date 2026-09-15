@@ -5,7 +5,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 def path(*a): return os.path.join(ROOT, *a)
 def load(rel): return json.load(open(path(rel), encoding="utf-8"))  # rel or absolute
 CFG = load("config.json")
-PRICE = {"reader": (1.0, 5.0), "editor": (5.0, 25.0), "ask": (5.0, 25.0)}
+PRICE = {"reader": (1.0, 5.0), "editor": (5.0, 25.0), "ask": (3.0, 15.0)}
 USAGE = {"reader": [0, 0], "editor": [0, 0], "ask": [0, 0]}
 CLIENT = []
 
@@ -205,7 +205,7 @@ def score_theme(theme, claims, open_cases, day):
              "recency": round(w["recency"] * max(0, CFG["recency_days"] - since) / CFG["recency_days"], 1),
              "bug": float(w["bug"]) if theme["type"] == "bug" else 0.0}
     theme["score_parts"], theme["score"] = parts, round(sum(parts.values()))
-    theme["type"] = max(("bug", "feature"), key=lambda k: sum(c.get("type") == k for c in cs))
+    theme["type"] = max(("bug", "feature"), key=lambda k: sum(c.get("type") == k for c in cs)) if cs else theme["type"]
     return theme
 def unfiled(themes, known):
     filed = {i for t in themes.values() for i in t["claim_ids"]}
@@ -288,8 +288,8 @@ def main():
 
     cost = sum(USAGE[t][0] * PRICE[t][0] / 1e6 + USAGE[t][1] * PRICE[t][1] / 1e6 for t in USAGE)
     tin, tout = sum(USAGE[t][0] for t in USAGE), sum(USAGE[t][1] for t in USAGE)
-    msg = "%s: %d sources, %d claims, %d rejected, %d appended, %d opened, %d unfiled, %d themes, %d in / %d out tokens, $%.4f" % (
-        day, len(docs), len(to_file), len(rejected), appended, opened, len(unfiled(themes, known)), len(themes), tin, tout, cost)
+    msg = "%s: %d sources, %d new, %d filed, %d rejected, %d appended, %d opened, %d unfiled, %d themes, %d in / %d out tokens, $%.4f" % (
+        day, len(docs), len(claims), len(to_file), len(rejected), appended, opened, len(unfiled(themes, known)), len(themes), tin, tout, cost)
     print(msg)
     if not args.no_commit:
         subprocess.run(["git", "add", "library", "ui/data.js"], cwd=ROOT, check=True)
