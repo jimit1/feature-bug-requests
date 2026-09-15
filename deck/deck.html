@@ -194,6 +194,10 @@
       <path d="M10 191 q4 -3 8 0 t8 0 t8 0 t8 0 t8 0 t8 0"/>
     </g>
     <text x="55" y="219" font-size="11" fill="#0C447C" text-anchor="middle">Salesforce cases</text>
+    <rect x="138" y="14" width="3" height="196" rx="1.5" fill="#B4B2A9"/>
+    <text x="140" y="226" font-size="10" fill="#5F5E5A" text-anchor="middle">PII scrub</text>
+    <rect x="288" y="14" width="3" height="196" rx="1.5" fill="#B4B2A9"/>
+    <text x="290" y="226" font-size="10" fill="#5F5E5A" text-anchor="middle">schema, quote check</text>
     <g transform="translate(200,50)">
       <line x1="0" y1="-30" x2="0" y2="-22" stroke="#534AB7" stroke-width="1.5"/>
       <circle cx="0" cy="-32" r="3" fill="#7F77DD"><animate attributeName="r" values="3;3;5;3;3" keyTimes="0;0.18;0.24;0.3;1" dur="8s" repeatCount="indefinite"/><animate attributeName="fill" values="#7F77DD;#7F77DD;#D85A30;#7F77DD;#7F77DD" keyTimes="0;0.18;0.24;0.3;1" dur="8s" repeatCount="indefinite"/></circle>
@@ -235,6 +239,7 @@
     <rect x="530" y="108" width="32" height="16" rx="3" fill="#888780"/>
     <rect x="530" y="132" width="22" height="16" rx="3" fill="#B4B2A9"/>
     <text x="600" y="170" font-size="11" fill="#888780" text-anchor="end">ranked themes</text>
+    <text x="600" y="186" font-size="10" fill="#5F5E5A" text-anchor="end">golden set check, nightly</text>
     <g opacity="0" data-static="hide">
       <path d="M-14 0 q3.5 -4 7 0 t7 0 t7 0 t7 0" fill="none" stroke="#D85A30" stroke-width="1.8" stroke-linecap="round"/>
       <animateMotion dur="8s" repeatCount="indefinite" calcMode="linear" path="M112 50 L176 45" keyPoints="0;1;1" keyTimes="0;0.2;1"/>
@@ -316,66 +321,9 @@
   </svg>
   </div>
 </section>
-<!-- 7 the questions from the conversation -->
+<!-- 7 what's next -->
 <section class="slide" data-n="7">
   <div class="num">7</div>
-  <div class="title">The questions from our conversation, and where each answer lives</div>
-  <div class="body">
-  <style>
-    .qa{width:100%;border-collapse:collapse;font-size:15px;line-height:1.45;color:#5F5E5A;margin-top:2px}
-    .qa th{text-align:left;font-size:13px;font-weight:500;color:#888780;padding:0 26px 8px 0;border-bottom:1px solid #E5E3DA}
-    .qa th:last-child,.qa td:last-child{padding-right:0}
-    .qa td{padding:10px 26px 10px 0;border-top:0.5px solid #E5E3DA;vertical-align:top}
-    .qa td:first-child{width:34%;color:#2C2C2A}
-    .qa td:last-child{width:23%;color:#888780}
-    .qa .who{color:#888780;margin-right:6px}
-    body.bodyonly .qa{font-size:19px;line-height:1.5}
-    body.bodyonly .qa th{font-size:16px}
-    body.bodyonly .qa td{padding:14px 34px 14px 0}
-  </style>
-  <table class="qa">
-    <tr><th>What you asked</th><th>The answer</th><th>Where it lives</th></tr>
-    <tr>
-      <td><span class="who">Drew</span>"What would you use for the context library? Like, where would you store?"</td>
-      <td>One repository holds the claims, the themes and the run state, so a question reads yesterday's work instead of gathering it again.</td>
-      <td>library/, library/state.json, slide 4</td>
-    </tr>
-    <tr>
-      <td><span class="who">Drew</span>"Where would your agents be running... versus Bedrock."</td>
-      <td>One function makes the model call, so Bedrock is the swap when data must stay in the AWS account or identity should be IAM.</td>
-      <td>nightly.yml, ask_lambda.py, run.py call_model</td>
-    </tr>
-    <tr>
-      <td><span class="who">Drew</span>"What do you take into consideration... regarding risk and compliance?"</td>
-      <td>Agents answer only through a schema, code verifies every quote, rejects keep their reason, every run is a commit.</td>
-      <td>run.py verify, rejected.jsonl, the commit log</td>
-    </tr>
-    <tr>
-      <td><span class="who">Drew</span>"How would you make sure the system handled personally identifiable information?"</td>
-      <td>Addresses, numbers and customer names are replaced before a reader sees a word, and every run reports how many.</td>
-      <td>run.py scrub, the run summary</td>
-    </tr>
-    <tr>
-      <td><span class="who">Drew</span>"Hallucinations or agent drift... over time that data is staying consistent."</td>
-      <td>A golden set of claims that must be there, and sentences that must never appear, runs after every nightly build.</td>
-      <td>evals/golden.json, run.py --eval</td>
-    </tr>
-    <tr>
-      <td><span class="who">Andrew</span>"...a framework for, but not a full context library for all the agents."</td>
-      <td>The library is plain files in one repository, so another agent or another team reads it without a new integration.</td>
-      <td>library/themes, library/claims</td>
-    </tr>
-    <tr>
-      <td><span class="who">Andrew</span>"Where do you measure that ROI for AI?"</td>
-      <td>Every run commits its own tokens in, tokens out and cost, and the model tiers are named in one config file.</td>
-      <td>config.json, slide 9</td>
-    </tr>
-  </table>
-  </div>
-</section>
-<!-- 8 what's next -->
-<section class="slide" data-n="8">
-  <div class="num">8</div>
   <div class="title">Built to the brief; the next steps are designed, not built</div>
   <div class="body">
   <style>
@@ -415,9 +363,9 @@
   </div>
 </section>
 
-<!-- 9 appendix -->
-<section class="slide" data-n="9">
-  <div class="num">9</div>
+<!-- 8 appendix -->
+<section class="slide" data-n="8">
+  <div class="num">8</div>
   <div class="title">Appendix: the decisions behind it</div>
   <div class="body">
   <style>
@@ -432,14 +380,14 @@
     <div><h4>Code</h4><ul><li>Python 3.12, one pipeline file (299 lines)</li><li>one ask file (48), one Lambda (45)</li><li>one HTML page, no framework (446)</li><li>8 tests, 1,100 lines in all, git is the database</li></ul></div>
     <div><h4>Models, by tier</h4><ul><li>readers: Haiku 4.5, cheap tier</li><li>editor: Opus 5, frontier tier</li><li>ask: Sonnet 5, fast tier</li><li>named in one config file, never in code</li></ul></div>
     <div><h4>Mock data, real API shapes</h4><ul><li>30 Gong calls, 1,407 turns, 16 hours</li><li>23 Salesforce cases, 95 comments</li><li>9 accounts: 6 customers, 3 prospects</li><li>decoys: a prospect, one issue in two voices, internal notes</li></ul></div>
-    <div><h4>Verification, in code</h4><ul><li>a quote must match the cited turn exactly</li><li>rejected with a reason, never patched</li><li>repeated quotes dropped, one theme per ask</li><li>agents answer only through a schema, never free text</li></ul></div>
-    <div><h4>Hosting</h4><ul><li>page: GitHub Pages</li><li>nightly job: GitHub Actions, one cron line</li><li>ask: one AWS Lambda, passphrase, daily cap</li><li>the key lives in a secret, never in code</li></ul></div>
+    <div><h4>Verification, in code</h4><ul><li>a quote must match the cited turn exactly</li><li>rejected with a reason, never patched</li><li>repeated quotes dropped, one theme per ask</li><li>agents answer only through a schema; a golden set runs nightly to catch drift</li></ul></div>
+    <div><h4>Hosting</h4><ul><li>page: GitHub Pages</li><li>nightly job: GitHub Actions, one cron line</li><li>ask: one AWS Lambda, passphrase, daily cap</li><li>Bedrock is the swap when data must stay in the account; the model call is one function</li></ul></div>
     <div><h4>First week, API path</h4><ul><li>$0.05 per night average, $0.10 busiest</li><li>22 claims verified, 2 rejected, 10 themes</li><li>10 of 12 later claims joined an existing theme</li><li>every run is a commit with tokens and cost</li></ul></div>
   </div>
   </div>
 </section>
 </div>
-<div id="hud">1 / 9 &nbsp; ← → &nbsp; F fullscreen</div>
+<div id="hud">1 / 8 &nbsp; ← → &nbsp; F fullscreen</div>
 
 <script>
 (function(){

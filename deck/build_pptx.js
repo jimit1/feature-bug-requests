@@ -22,21 +22,19 @@ const titles = {
   4:'The whole system: two sources, three agents, one git library, one product team',
   5:'Reader agents turn conversations into records; the editor agent sorts records into themes',
   6:"Ask why a theme matters; the answer comes from the library, with the customer's words",
-  7:'The questions from our conversation, and where each answer lives',
-  8:'Built to the brief; the next steps are designed, not built',
-  9:'Appendix: the decisions behind it',
+  7:'Built to the brief; the next steps are designed, not built',
+  8:'Appendix: the decisions behind it',
 };
 const notes = {
   2:'Situation and complication. Dozens of calls and cases a week hold what the market wants. What reaches product today is word of mouth with no source attached.',
   3:'The answer. Calls and cases collapse into a ranked list. Any line opens to the customer quote and the exact moment it was said.',
   4:'System. One nightly job: readers write verified claims, the editor files claims into themes. themes/ is the single source; the digest UI and the ask agent both read it. Commits are the audit trail.',
-  5:'Agents. Two cheap reader agents, one per source, return structured records. The frontier editor agent reads existing themes first, then files each new claim: append or open, with one line of why. All nightly.',
+  5:'Agents. Two cheap reader agents, one per source, return structured records. Two gates in code: a PII scrub before any reader sees a word, and a schema plus an exact quote check before anything is stored. The frontier editor agent reads existing themes first, then files each new claim: append or open, with one line of why. A golden set runs every night so drift fails the job. All nightly.',
   6:'Ask. The ask agent answers only from the library. It never queries Gong or Salesforce live.',
-  7:'The questions from the panel, answered in the build. Where the context lives between runs, where the agents run and when Bedrock is the right swap, what an agent can see and do and how it is audited, the PII scrub before any reader, the golden set against drift, the library as plain files, and the cost on every run.',
-  8:'Scope. Built only what the brief asked for. A wider scrub, a wider golden set, live connectors and an approve gate are drawn on the system; a database, sign-in with memory, status per theme, weekly notes, more sources, per-account and trend views are listed for later. None of it is built.',
-  9:'Appendix. The stack, the model tiers, the size of the mock data, the checks in code including that every agent answers only through a schema, the hosting, and the first week of real numbers. Every one of these was a choice; the point is that nothing here is accidental.',
+  7:'Scope. Built only what the brief asked for. A wider scrub, a wider golden set, live connectors and an approve gate are drawn on the system; a database, sign-in with memory, status per theme, weekly notes, more sources, per-account and trend views are listed for later. None of it is built.',
+  8:'Appendix. The stack, the model tiers, the size of the mock data, the checks in code including that every agent answers only through a schema, the hosting, and the first week of real numbers. Every one of these was a choice; the point is that nothing here is accidental.',
 };
-for (let n=2; n<=9; n++) {
+for (let n=2; n<=8; n++) {
   const s = pres.addSlide();
   s.background = { color: 'FFFFFF' };
   s.addText(String(n), { x:9.2, y:0.2, w:0.5, h:0.3, fontFace:'Arial', fontSize:10, color:FAINT, align:'right', margin:0, isTextBox:true });
