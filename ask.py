@@ -1,4 +1,6 @@
-import json, os, pathlib, sys
+import json, pathlib, sys
+
+from run import call_model
 
 ROOT = pathlib.Path(__file__).resolve().parent
 LIBRARY = ROOT / "library"
@@ -37,21 +39,10 @@ def main():
                 if line.strip():
                     claim = json.loads(line)
                     claims[claim["id"]] = claim
-    key = os.environ.get("ANTHROPIC_API_KEY")
-    if not key:
-        sys.exit("ANTHROPIC_API_KEY is not set in the environment.")
-    model, config = "claude-opus-5", ROOT / "config.json"
-    if config.is_file():
-        model = json.loads(config.read_text())["models"]["ask"]
-    else:
-        print("no config.json, falling back to %s\n" % model)
-    import anthropic
-    reply = anthropic.Anthropic(api_key=key).messages.create(
-        model=model, max_tokens=1024,
-        system=(ROOT / "agents" / "ask.md").read_text(),
-        messages=[{"role": "user", "content": "Library\n%s\n\nQuestion\n%s" % (
-            render(themes, claims), question)}])
-    print(reply.content[0].text)
+    answer, _usage = call_model(
+        "ask", (ROOT / "agents" / "ask.md").read_text(),
+        "Library\n%s\n\nQuestion\n%s" % (render(themes, claims), question))
+    print(answer)
 
 
 main()
