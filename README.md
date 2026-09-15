@@ -34,7 +34,7 @@ In its first week it ran for about five cents a night, verified 22 claims, and b
 
 Four groups of work, designed but not built.
 
-![the roadmap](deck/png/readme/slide-7.png)
+![the roadmap](deck/png/readme/slide-8.png)
 
 ## Run it yourself
 
