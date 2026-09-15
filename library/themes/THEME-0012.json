@@ -1,0 +1,39 @@
+{
+ "id": "THEME-0012",
+ "title": "Chapter records and remittances maintained by hand",
+ "type": "bug",
+ "summary": "Chapters and the national office keep separate record sets, so membership and financial data never line up on their own. The national office spends weeks each year reconciling those records, and finance staff calculate quarterly chapter remittances in a spreadsheet.",
+ "claim_ids": [
+  "c-0d73633ed6f5",
+  "c-e4157573bef0"
+ ],
+ "first_seen": "2026-09-09",
+ "last_seen": "2026-09-09",
+ "log": [
+  {
+   "day": "2026-09-09",
+   "action": "open",
+   "claim_id": "c-0d73633ed6f5",
+   "why": "Nothing in the index covers chapter and national records being kept apart and reconciled manually, so this opens a theme."
+  },
+  {
+   "day": "2026-09-09",
+   "action": "append",
+   "claim_id": "c-e4157573bef0",
+   "why": "Quarterly remittance math in a spreadsheet is the same underlying gap as the year end chapter reconciliation, both caused by chapter finance and membership data sitting outside the system."
+  }
+ ],
+ "accounts": {
+  "customer": 0,
+  "prospect": 1
+ },
+ "open_cases": 0,
+ "score_parts": {
+  "accounts": 7.5,
+  "value": 0.0,
+  "cases": 0.0,
+  "recency": 15.0,
+  "bug": 10.0
+ },
+ "score": 32
+}

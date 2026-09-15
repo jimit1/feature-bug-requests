@@ -2,31 +2,38 @@
  "id": "THEME-0004",
  "title": "Renewal notices filtered into spam",
  "type": "bug",
- "summary": "Members are not seeing renewal notices because the messages are delivered to spam folders instead of the inbox. Staff only discover this when members report the notice never arrived, which puts renewals at risk.",
+ "summary": "Renewal reminder email is being classified as spam by major mail providers, so members never see the notice and lapse without knowing their renewal was due. Staff at membership organizations find out only after renewals are missed and then chase members by phone.",
  "claim_ids": [
-  "c-8fc57031470e"
+  "c-8fc57031470e",
+  "c-c3cc9482540b"
  ],
  "first_seen": "2026-09-08",
- "last_seen": "2026-09-08",
+ "last_seen": "2026-09-09",
  "log": [
   {
    "day": "2026-09-08",
    "action": "open",
    "claim_id": "c-8fc57031470e",
    "why": "Delivery of renewal email to the wrong folder is an email deliverability problem distinct from invoice content, and no theme exists for it."
+  },
+  {
+   "day": "2026-09-09",
+   "action": "append",
+   "claim_id": "c-c3cc9482540b",
+   "why": "Renewal reminder mail being classified as spam by large providers is the same deliverability failure already open as renewal notices filtered into spam."
   }
  ],
  "accounts": {
-  "customer": 1,
+  "customer": 2,
   "prospect": 0
  },
- "open_cases": 2,
+ "open_cases": 4,
  "score_parts": {
-  "accounts": 7.5,
+  "accounts": 15.0,
   "value": 2.0,
-  "cases": 10.0,
+  "cases": 20.0,
   "recency": 15.0,
   "bug": 10.0
  },
- "score": 44
+ "score": 62
 }
