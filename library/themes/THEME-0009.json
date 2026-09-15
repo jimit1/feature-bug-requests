@@ -2,18 +2,25 @@
  "id": "THEME-0009",
  "title": "SCORM package import into learning module",
  "type": "feature",
- "summary": "Organizations moving from a hosted e-learning platform cannot upload existing SCORM 1.2 and SCORM 2004 packages directly into the learning module. Staff would have to rebuild every course by hand, which blocks migration for training heavy associations.",
+ "summary": "Associations with existing SCORM course libraries want to upload those packages directly into the learning module and have them run without rebuilding the content. Both customers and prospects raise this as a condition of moving their training online, including support for SCORM 1.2 packages.",
  "claim_ids": [
-  "c-b696c3430eb3"
+  "c-b696c3430eb3",
+  "c-c9934ceb9fc5"
  ],
  "first_seen": "2026-09-09",
- "last_seen": "2026-09-09",
+ "last_seen": "2026-09-15",
  "log": [
   {
    "day": "2026-09-09",
    "action": "open",
    "claim_id": "c-b696c3430eb3",
    "why": "No existing theme covers loading course content into the learning module, so this import ask needs a new heading."
+  },
+  {
+   "day": "2026-09-15",
+   "action": "append",
+   "claim_id": "c-c9934ceb9fc5",
+   "why": "The prospect is asking to bring existing SCORM course packages into the learning module and have them run as-is, which is the same import ask the theme already covers."
   }
  ],
  "accounts": {
@@ -25,8 +32,8 @@
   "accounts": 7.5,
   "value": 0.0,
   "cases": 0.0,
-  "recency": 9.6,
+  "recency": 15.0,
   "bug": 0.0
  },
- "score": 17
+ "score": 22
 }

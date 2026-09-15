@@ -1,11 +1,12 @@
 window.DIGEST = {
- "as_of": "2026-09-14",
+ "as_of": "2026-09-15",
  "days": [
   "2026-09-08",
   "2026-09-09",
   "2026-09-10",
   "2026-09-11",
-  "2026-09-14"
+  "2026-09-14",
+  "2026-09-15"
  ],
  "ask_url": "https://g3kmsu2e2ikq7cyivffqi7i6oe0unrtk.lambda-url.us-east-1.on.aws/",
  "themes": [
@@ -57,10 +58,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 11.8,
+    "recency": 10.7,
     "bug": 10.0
    },
-   "score": 74,
+   "score": 73,
    "claims": [
     {
      "id": "c-7d2a3f364428",
@@ -188,10 +189,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 10.7,
+    "recency": 9.6,
     "bug": 10.0
    },
-   "score": 73,
+   "score": 72,
    "claims": [
     {
      "id": "c-915d4dd0bc13",
@@ -298,10 +299,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 9.6,
+    "recency": 8.6,
     "bug": 10.0
    },
-   "score": 68,
+   "score": 67,
    "claims": [
     {
      "id": "c-5d3a978f29d2",
@@ -401,10 +402,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 7.7,
     "cases": 20.0,
-    "recency": 9.6,
+    "recency": 8.6,
     "bug": 10.0
    },
-   "score": 62,
+   "score": 61,
    "claims": [
     {
      "id": "c-9e53583c6513",
@@ -497,10 +498,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 11.8,
+    "recency": 10.7,
     "bug": 0.0
    },
-   "score": 60,
+   "score": 59,
    "claims": [
     {
      "id": "c-6fdcefc76dcd",
@@ -621,10 +622,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 2.0,
     "cases": 20.0,
-    "recency": 9.6,
+    "recency": 8.6,
     "bug": 10.0
    },
-   "score": 57,
+   "score": 56,
    "claims": [
     {
      "id": "c-8fc57031470e",
@@ -697,10 +698,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 8.6,
+    "recency": 7.5,
     "bug": 0.0
    },
-   "score": 53,
+   "score": 52,
    "claims": [
     {
      "id": "c-16cd97e72e9e",
@@ -752,10 +753,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 4.8,
     "cases": 15.0,
-    "recency": 8.6,
+    "recency": 7.5,
     "bug": 10.0
    },
-   "score": 46,
+   "score": 45,
    "claims": [
     {
      "id": "c-c44577763b5c",
@@ -784,18 +785,25 @@ window.DIGEST = {
    "id": "THEME-0009",
    "title": "SCORM package import into learning module",
    "type": "feature",
-   "summary": "Organizations moving from a hosted e-learning platform cannot upload existing SCORM 1.2 and SCORM 2004 packages directly into the learning module. Staff would have to rebuild every course by hand, which blocks migration for training heavy associations.",
+   "summary": "Associations with existing SCORM course libraries want to upload those packages directly into the learning module and have them run without rebuilding the content. Both customers and prospects raise this as a condition of moving their training online, including support for SCORM 1.2 packages.",
    "claim_ids": [
-    "c-b696c3430eb3"
+    "c-b696c3430eb3",
+    "c-c9934ceb9fc5"
    ],
    "first_seen": "2026-09-09",
-   "last_seen": "2026-09-09",
+   "last_seen": "2026-09-15",
    "log": [
     {
      "day": "2026-09-09",
      "action": "open",
      "claim_id": "c-b696c3430eb3",
      "why": "No existing theme covers loading course content into the learning module, so this import ask needs a new heading."
+    },
+    {
+     "day": "2026-09-15",
+     "action": "append",
+     "claim_id": "c-c9934ceb9fc5",
+     "why": "The prospect is asking to bring existing SCORM course packages into the learning module and have them run as-is, which is the same import ask the theme already covers."
     }
    ],
    "accounts": {
@@ -807,10 +815,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 0.0,
     "cases": 0.0,
-    "recency": 9.6,
+    "recency": 15.0,
     "bug": 0.0
    },
-   "score": 17,
+   "score": 22,
    "claims": [
     {
      "id": "c-b696c3430eb3",
@@ -832,6 +840,27 @@ window.DIGEST = {
       "end_ms": 675828
      },
      "occurred_at": "2026-09-09T16:11:17Z"
+    },
+    {
+     "id": "c-c9934ceb9fc5",
+     "day": "2026-09-15",
+     "source": "gong",
+     "type": "feature",
+     "topic": "SCORM 1.2 course package upload and execution",
+     "quote": "We need to be able to upload our existing SCORM 1.2 course packages and have them run inside the new learning module without rebuilding anything.",
+     "account_id": "ACC-0007",
+     "account": "Northwoods Arborists Society",
+     "account_type": "prospect",
+     "tier": "Prospect",
+     "arr": 0,
+     "speaker": "Grant Halverson",
+     "locator": {
+      "call_id": "7782934452006",
+      "speaker_id": "c-07",
+      "start_ms": 298776,
+      "end_ms": 303673
+     },
+     "occurred_at": "2026-09-15T12:07:12Z"
     }
    ]
   },
@@ -862,10 +891,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 0.0,
     "cases": 0.0,
-    "recency": 9.6,
+    "recency": 8.6,
     "bug": 0.0
    },
-   "score": 17,
+   "score": 16,
    "claims": [
     {
      "id": "c-299d81776e9e",

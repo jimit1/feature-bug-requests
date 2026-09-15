@@ -6,5 +6,5 @@ THEME-0005 | bug | Membership report export truncated at row limit | accounts 2 
 THEME-0006 | bug | Duplicate journal entries in general ledger sync | accounts 2 | last 2026-09-09
 THEME-0007 | bug | Expiration warnings for postings | accounts 1 | last 2026-09-08
 THEME-0008 | bug | Pledge reminder schedule ignores donor contact preferences | accounts 2 | last 2026-09-09
-THEME-0009 | feature | SCORM package import into learning module | accounts 1 | last 2026-09-09
+THEME-0009 | feature | SCORM package import into learning module | accounts 1 | last 2026-09-15
 THEME-0010 | feature | Course completion data sync to member records | accounts 1 | last 2026-09-09
