@@ -23,6 +23,7 @@ const titles = {
   5:'Reader agents turn conversations into records; the editor agent sorts records into themes',
   6:"Ask why a theme matters; the answer comes from the library, with the customer's words",
   7:'Built to the brief; everything else is designed, not built',
+  8:'Appendix: the decisions behind it',
 };
 const notes = {
   2:'Situation and complication. Dozens of calls and cases a week hold what the market wants. What reaches product today is word of mouth with no source attached.',
@@ -31,8 +32,9 @@ const notes = {
   5:'Agents. Two cheap reader agents, one per source, return structured records. The frontier editor agent reads existing themes first, then files each new claim: append or open, with one line of why. All nightly.',
   6:'Ask. The ask agent answers only from the library. It never queries Gong or Salesforce live.',
   7:'Scope. Built only what the brief asked for. PII scrub, live connectors, evals and an approve gate are drawn on the system; a database, sign-in with memory, status per theme, weekly notes, more sources, per-account and trend views are listed for later. None of it is built.',
+  8:'Appendix. The stack, the model tiers, the size of the mock data, the checks in code, the hosting, and the first week of real numbers. Every one of these was a choice; the point is that nothing here is accidental.',
 };
-for (let n=2; n<=7; n++) {
+for (let n=2; n<=8; n++) {
   const s = pres.addSlide();
   s.background = { color: 'FFFFFF' };
   s.addText(String(n), { x:9.2, y:0.2, w:0.5, h:0.3, fontFace:'Arial', fontSize:10, color:FAINT, align:'right', margin:0, isTextBox:true });
