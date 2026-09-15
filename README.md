@@ -58,7 +58,7 @@ Measured on the API path, from the run summaries in the commit messages.
 | sources per run | 5.8 average (calls plus cases with new comments) |
 | claims verified per run | 6.4 average, 32 in total, 1 rejected |
 | themes after the first week | 12 |
-| appended versus opened | 16 appended, 12 opened (every claim after night one was a 3 in 18 chance of being new) |
+| appended versus opened | 16 appended, 12 opened; after night one, 16 of 22 claims joined an existing theme |
 
 Extraction runs on the cheap tier and is most of the tokens; the editor sees only the index and the night's claims, so its cost stays flat as history grows. Volume grows the reader bill linearly and nothing else.
 
