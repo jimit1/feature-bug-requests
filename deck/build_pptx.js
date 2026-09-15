@@ -32,7 +32,7 @@ const notes = {
   5:'Agents. Two cheap reader agents, one per source, return structured records. The frontier editor agent reads existing themes first, then files each new claim: append or open, with one line of why. All nightly.',
   6:'Ask. The ask agent answers only from the library. It never queries Gong or Salesforce live.',
   7:'Scope. Built only what the brief asked for. PII scrub, live connectors, evals and an approve gate are drawn on the system; a database, sign-in with memory, status per theme, weekly notes, more sources, per-account and trend views are listed for later. None of it is built.',
-  8:'Appendix. The stack, the model tiers, the size of the mock data, the checks in code, the hosting, and the first week of real numbers. Every one of these was a choice; the point is that nothing here is accidental.',
+  8:'Appendix. The stack, the model tiers, the size of the mock data, the checks in code including that every agent answers only through a schema, the hosting, and the first week of real numbers. Every one of these was a choice; the point is that nothing here is accidental.',
 };
 for (let n=2; n<=8; n++) {
   const s = pres.addSlide();

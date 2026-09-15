@@ -60,9 +60,9 @@ def test_a_known_day_is_skipped(tmp_path, monkeypatch, capsys):
     assert "already in state.json" in capsys.readouterr().out
 
 
-def test_parse_json_strips_a_code_fence():
-    assert run.parse_json('```json\n{"claims": []}\n```') == {"claims": []}
-    assert run.parse_json("not json at all") is None
+def test_readers_and_editor_answer_only_through_a_schema():
+    assert run.SCHEMAS["reader"]["properties"]["claims"]["items"]["properties"]["type"]["enum"] == ["bug", "feature"]
+    assert run.SCHEMAS["editor"]["properties"]["decisions"]["items"]["properties"]["action"]["enum"] == ["append", "open"]
 
 
 def test_unfiled_claims_are_sent_back_to_the_editor():

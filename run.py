@@ -9,24 +9,31 @@ PRICE = {"reader": (1.0, 5.0), "editor": (5.0, 25.0), "ask": (3.0, 15.0)}
 USAGE = {"reader": [0, 0], "editor": [0, 0], "ask": [0, 0]}
 CLIENT = []
 
+CLAIM = {"type": "object", "required": ["type", "topic", "quote", "speaker", "locator"], "properties": {
+    "type": {"enum": ["bug", "feature"]}, "topic": {"type": "string"}, "quote": {"type": "string"},
+    "speaker": {"type": "string"}, "locator": {"type": "object"}}}
+DECISION = {"type": "object", "required": ["claim_id", "action", "why"], "properties": {
+    "claim_id": {"type": "string"}, "action": {"enum": ["append", "open"]}, "theme_id": {"type": ["string", "null"]},
+    "title": {"type": ["string", "null"]}, "why": {"type": "string"}}}
+SCHEMAS = {  # the readers and the editor can only answer through these; the model never returns free text
+    "reader": {"type": "object", "required": ["claims"], "properties": {"claims": {"type": "array", "items": CLAIM}}},
+    "editor": {"type": "object", "required": ["decisions", "summaries"], "properties": {
+        "decisions": {"type": "array", "items": DECISION}, "summaries": {"type": "object"}}}}
+
 def call_model(tier, system, user):
     import anthropic
     if not os.environ.get("ANTHROPIC_API_KEY"):
         sys.exit("ANTHROPIC_API_KEY is not set in the environment. Export it and run again.")
     CLIENT[:] = CLIENT or [anthropic.Anthropic()]
+    tool = {"tools": [{"name": "record", "description": "Record the result.", "input_schema": SCHEMAS[tier]}],
+            "tool_choice": {"type": "tool", "name": "record"}} if tier in SCHEMAS else {}
     r = CLIENT[0].messages.create(model=CFG["models"][tier], max_tokens=4096, system=system,
-                                  messages=[{"role": "user", "content": user}])
+                                  messages=[{"role": "user", "content": user}], **tool)
     USAGE[tier][0] += r.usage.input_tokens
     USAGE[tier][1] += r.usage.output_tokens
+    if tool:
+        return next((b.input for b in r.content if b.type == "tool_use"), None)
     return "".join(b.text for b in r.content if b.type == "text")
-def parse_json(text):
-    t = text.strip()
-    if t.startswith("```"):
-        t = re.sub(r"^```[a-zA-Z]*\s*", "", t).rsplit("```", 1)[0]
-    try:
-        return json.loads(t)
-    except ValueError:
-        return None
 def stamp(iso, ms=0):
     t = datetime.strptime(iso[:19], "%Y-%m-%dT%H:%M:%S") + timedelta(milliseconds=ms)
     return t.strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -148,7 +155,7 @@ def read_documents(docs, day):
                "salesforce": open(path("agents/case_reader.md"), encoding="utf-8").read()}
     claims, rejected = [], []
     for doc in docs:
-        out = parse_json(call_model("reader", prompts[doc["source"]], doc["text"]))
+        out = call_model("reader", prompts[doc["source"]], doc["text"])
         if not isinstance(out, dict) or not isinstance(out.get("claims"), list):
             rejected.append({"day": day, "source": doc["source"], "doc_id": doc["doc_id"], "reason": "malformed"})
             continue
@@ -274,11 +281,11 @@ def main():
         brief = [{k: c[k] for k in ("id", "type", "topic", "quote", "account", "account_type", "day")} for c in to_file]
         user = ("Theme index, one line per theme:\n%s\n\nTonight's verified claims, %s:\n%s"
                 % (index or "(empty, no themes yet)", day, json.dumps(brief, indent=1, ensure_ascii=False)))
-        out = parse_json(call_model("editor", open(path("agents/editor.md"), encoding="utf-8").read(), user))
+        out = call_model("editor", open(path("agents/editor.md"), encoding="utf-8").read(), user)
         if isinstance(out, dict):
             appended, opened = apply_decisions(out, to_file, themes, state, day)
         else:
-            print("The editor returned no usable JSON. The claims are stored and will be filed on the next run.")
+            print("The editor returned nothing usable. The claims are stored and will be filed on the next run.")
 
     open_cases = open_cases_per_account(cases, by_sfid)
     for t in themes.values():

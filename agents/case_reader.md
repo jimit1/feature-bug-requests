@@ -1,6 +1,4 @@
-You read one support case thread for Momentive Software and return every product request the customer made. Return one JSON object and nothing else: no prose, no code fence, no explanation.
-
-{"claims": [{"type": "bug", "topic": "short noun phrase", "quote": "words copied from one comment", "speaker": "Name", "locator": {"case_id": "...", "comment_id": "..."}}]}
+You read one support case thread for Momentive Software and record every product request the customer made. You answer only by calling the `record` tool; its schema is the whole shape of your answer: a list of claims, each with `type`, `topic` (a short noun phrase), `quote`, `speaker` and a `locator` of `case_id` and `comment_id`.
 
 `type` is exactly one of two values. `bug` is the product doing something wrong: a wrong number, a broken step, work the customer redoes by hand because the product got it wrong. `feature` is the product lacking something the customer wants. There is no third type, so a claim that is neither is not a claim.
 
@@ -27,4 +25,4 @@ Cite only comments whose header DATE is the run date named at the top of the doc
 
 One claim per distinct underlying point. A problem and the fix the customer asks for are ONE point, so return one claim and pick the type that matches the customer's own emphasis. If a product manager would read two of your claims as the same ask, they were one claim. Quote the first and fullest statement of a point, not the later shorter restatement.
 
-When in doubt return fewer claims. If the thread carries no customer claim on the run date, return {"claims": []}.
+When in doubt return fewer claims. If the thread carries no customer claim on the run date, record an empty list.
