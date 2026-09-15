@@ -1,6 +1,6 @@
 # BUILD.md: instructions for the agent building the prototype
 
-You are building a small, working prototype called **Feature / Bug Requests**: a prioritized digest for a product team, built from Gong call transcripts and Salesforce support cases. Read this whole file before writing anything. The deck in `deck/` is the spec. The pictures in `deck/png/slide-4.png` (whole system), `slide-5.png` (agents), `slide-6.png` (ask) and `slide-7.png` (what is not built) are the contract. Build exactly what they show, nothing more.
+You are building a small, working prototype called **Feature / Bug Requests**: a prioritized digest for a product team, built from Gong call transcripts and Salesforce support cases. Read this whole file and `CONTRACT.md` before writing anything. The deck in `deck/` is the spec. The pictures in `deck/png/slide-4.png` (whole system), `slide-5.png` (agents), `slide-6.png` (ask) and `slide-7.png` (what is not built) are the contract. Build exactly what they show, nothing more.
 
 ## 0. The two rules that override everything else
 
@@ -27,7 +27,7 @@ One job runs every night. Two reader agents, one per source, each read one docum
 
 The previous build lives at `~/momentive-bi-digest/bi-theme-digest-agent/`. It is **read-only reference**. Do not import, copy, or adapt its Python. Borrow exactly three things:
 
-1. **Mock data.** Copy `data/mock/gong/calls/*.json` to `data/gong/` and `data/mock/salesforce/cases/*.json` to `data/salesforce/`. Also copy `data/mock/accounts.json` to `data/accounts.json` (tier, ARR, customer versus prospect) and the six decoy files under `data/mock/traps/` into the same two folders (they are the tests for dedupe and classification: a prospect who is not a customer, two customers describing one issue in different words, an internal comment). Drop `index.json`, `seed_spec.yaml`, `pii_names.json`, `users.json`. The files are in the real Gong and Salesforce API response shapes; keep them that way and say so in the README: swapping the mock loader for the real connector is one function.
+1. **Mock data.** Copy `data/mock/gong/calls/*.json` to `data/gong/` and `data/mock/salesforce/cases/*.json` to `data/salesforce/`. Also copy `data/mock/accounts.json` to `data/accounts.json` (tier, ARR, customer versus prospect) and the six decoy files under `data/mock/traps/` into the same two folders (they are the tests for dedupe and classification: a prospect who is not a customer, two customers describing one issue in different words, an internal comment). Drop `index.json`, `seed_spec.yaml`, `pii_names.json`. Keep `users.json` (comment author names). This copy is already done and committed. The files are in the real Gong and Salesforce API response shapes; keep them that way and say so in the README: swapping the mock loader for the real connector is one function.
 2. **The two reader prompts** at `src/digest/agents/readers/gong_reader.prompt.md` and `sfdc_reader.prompt.md`. Read them once, then rewrite each to under 40 lines. Keep: recall first, client turns only, verbatim rules (one turn, contiguous, 8 to 60 words, exact characters), the locator rule, one claim per point, quote the first fullest statement. Change: claim type is now only `bug` or `feature`. Drop churn, pricing, praise, integration, importance, product_area. Drop the YAML front matter.
 3. **The old digest as a quality bar.** Read `~/momentive-bi-digest/bi-theme-digest-store/digests/2026-W37.md` once. Your theme summaries and the page should read that well, with less machinery behind it.
 
@@ -38,7 +38,8 @@ Leave everything else. No MCP servers, no schema JSON files, no PII scrubber, no
 ```
 feature-bug-requests/
   README.md            what it is, how to run, production context, cost. Under 120 lines.
-  BUILD.md             this file. Delete it when the build is done.
+  BUILD.md             this file. Deleted when the build is done.
+  CONTRACT.md          the exact file shapes everyone builds against. Deleted when the build is done.
   config.json          three model ids and the tier weights. The only file that names a model.
   requirements.txt     anthropic, pytest. Nothing else.
   run.py               the pipeline: `python run.py --day 2026-09-08` (readers, verify, editor, rank, regenerate, commit)
@@ -50,6 +51,7 @@ feature-bug-requests/
     ask.md             prompt, under 20 lines
   data/
     accounts.json      copied
+    users.json         copied
     gong/*.json        copied
     salesforce/*.json  copied
   library/             the store. Committed. Written only by run.py.
