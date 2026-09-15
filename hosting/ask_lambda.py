@@ -4,9 +4,7 @@ from datetime import date
 import ask
 
 CALLS = {}
-HEADERS = {"content-type": "application/json",
-           "Access-Control-Allow-Origin": "*",
-           "Access-Control-Allow-Headers": "content-type"}
+HEADERS = {"content-type": "application/json"}  # CORS is handled by the function URL
 
 def reply(status, body):
     return {"statusCode": status, "headers": HEADERS, "body": json.dumps(body)}
