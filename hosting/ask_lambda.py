@@ -1,4 +1,4 @@
-import json, os, urllib.request
+import json, os, re, urllib.request
 
 import ask
 
@@ -18,6 +18,15 @@ def library():
     claims = {c["id"]: c for t in themes for c in t.get("claims", [])}
     return themes, claims
 
+THEMES = re.compile(r"\s*^themes:[ \t]*(.*?)\s*\Z", re.M)
+
+def split_themes(text):
+    found = THEMES.search(text)
+    if not found:
+        return text, []
+    named = [n.strip() for n in found.group(1).split(",")]
+    return text[:found.start()].rstrip(), [n for n in named if n.startswith("THEME-")]
+
 def handler(event, context):
     global CALLS
     method = event.get("requestContext", {}).get("http", {}).get("method", "POST")
@@ -34,6 +43,7 @@ def handler(event, context):
         if not question:
             return reply(400, {"error": "no question"})
         themes, claims = library()
-        return reply(200, {"answer": ask.answer(question, themes, claims)})
+        text, used = split_themes(ask.answer(question, themes, claims))
+        return reply(200, {"answer": text, "themes": used})
     except Exception as failure:
         return reply(500, {"error": ("%s: %s" % (type(failure).__name__, failure)).replace("\n", " ")[:200]})
