@@ -9,23 +9,41 @@
 * { box-sizing:border-box; }
 body { margin:0; background:#fff; color:var(--ink); -webkit-font-smoothing:antialiased;
   font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; }
-.wrap { max-width:920px; margin:0 auto; padding:56px 32px 96px; }
+.page { display:flex; gap:44px; align-items:flex-start;
+  max-width:1380px; margin:0 auto; padding:52px 32px 96px; }
+.digest { flex:1 1 auto; min-width:0; max-width:920px; }
 h1 { margin:0; font-size:24px; font-weight:600; letter-spacing:-0.01em; }
 .gen { margin:8px 0 0; color:var(--faint); font-size:13px; }
-#ask { margin-top:30px; }
-.askrow { display:flex; flex-wrap:wrap; gap:14px; align-items:center; }
-.askrow input { padding:9px 0; border:0; border-bottom:1px solid var(--line);
-  background:none; font:inherit; font-size:14px; color:var(--ink); }
-.askrow input::placeholder { color:var(--faint); }
-.askrow input:focus { outline:none; border-bottom-color:var(--ink); }
-#q { flex:1 1 320px; }
-#pass { flex:0 0 120px; }
-.askgo { padding:8px 16px; border:1px solid var(--line); border-radius:3px; background:none;
-  font:inherit; font-size:13px; color:var(--ink); cursor:pointer; }
-.askgo:hover { background:#FBFAF8; }
-.answer { max-width:66ch; margin:18px 0 0; color:var(--muted); font-size:14px;
-  white-space:pre-wrap; }
-.answer:empty { display:none; }
+.ask { flex:0 0 380px; display:flex; flex-direction:column; position:sticky; top:24px;
+  max-height:calc(100vh - 48px); padding-left:28px; border-left:1px solid var(--line); }
+.ask[hidden] { display:none; }
+.asktitle { margin:0 0 5px; font-size:13px; font-weight:600; }
+.asknote { margin:0 0 20px; color:var(--faint); font-size:12.5px; }
+.thread { flex:1 1 auto; min-height:0; overflow-y:auto; margin-bottom:18px; }
+.thread:empty { display:none; }
+.turn { padding-bottom:20px; }
+.turn + .turn { margin-top:20px; border-top:1px solid var(--line); padding-top:20px; }
+.qtext { margin:0 0 9px; font-size:14px; font-weight:600; }
+.atext { margin:0; color:var(--muted); font-size:14px; white-space:pre-wrap; }
+.atext.err { color:#791F1F; }
+.askfoot { border-top:1px solid var(--line); padding-top:16px; }
+.askfoot input { width:100%; padding:9px 0; border:0; border-bottom:1px solid var(--line);
+  background:none; font:inherit; color:var(--ink); }
+.askfoot input::placeholder { color:var(--faint); }
+.askfoot input:focus { outline:none; border-bottom-color:var(--ink); }
+#q { font-size:14px; }
+#pass { margin-top:12px; font-size:12.5px; }
+.spot { display:flex; flex-wrap:wrap; gap:12px; align-items:baseline;
+  margin:0; padding:16px 6px 0; color:var(--muted); font-size:13px; }
+.spot button { padding:0; border:0; background:none; font:inherit; font-size:13px;
+  color:#185FA5; text-decoration:underline; text-underline-offset:2px; cursor:pointer; }
+@media (max-width:900px) {
+  .page { display:block; padding:44px 24px 80px; }
+  .digest { max-width:none; }
+  .ask { position:static; max-height:none; margin-top:44px; padding:26px 0 0;
+    border-left:0; border-top:1px solid var(--line); }
+  .thread { overflow:visible; }
+}
 .filters { display:flex; flex-wrap:wrap; gap:36px; margin-top:36px; padding:22px 0;
   border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
 .flabel { display:block; margin-bottom:9px; color:var(--faint); font-size:11px;
@@ -67,17 +85,10 @@ h1 { margin:0; font-size:24px; font-weight:600; letter-spacing:-0.01em; }
 </style>
 </head>
 <body>
-<div class="wrap">
+<div class="page">
+ <div class="digest">
   <h1>Feature / Bug Requests</h1>
   <p class="gen" id="gen"></p>
-  <div id="ask" hidden>
-    <div class="askrow">
-      <input id="q" type="text" maxlength="500" placeholder="Ask about the themes below">
-      <input id="pass" type="password" placeholder="Passphrase">
-      <button class="askgo" id="askgo">Ask</button>
-    </div>
-    <p class="answer" id="answer"></p>
-  </div>
   <div class="filters" id="filters">
     <div>
       <span class="flabel">Type</span>
@@ -98,13 +109,25 @@ h1 { margin:0; font-size:24px; font-weight:600; letter-spacing:-0.01em; }
       ><button class="opt" data-f="win" data-v="all">All time</button>
     </div>
   </div>
+  <div id="spot"></div>
   <div id="list"></div>
+ </div>
+ <aside class="ask" id="ask" hidden>
+  <p class="asktitle">Ask the library</p>
+  <p class="asknote">Answers come from the themes and quotes on this page.</p>
+  <div class="thread" id="thread"></div>
+  <div class="askfoot">
+   <input id="q" type="text" maxlength="500" placeholder="Ask a question, press Enter">
+   <input id="pass" type="password" placeholder="Passphrase">
+  </div>
+ </aside>
 </div>
 <script src="data.js"></script>
 <script>
 (function () {
   var D = window.DIGEST, F = { type: "all", aud: "all", win: "all" };
-  var open = {}, list = document.getElementById("list");
+  var open = {}, spot = null, turns = [];
+  var list = document.getElementById("list"), note = document.getElementById("spot");
   var MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
   var q = (location.search.match(/[?&]open=([^&]+)/) || [])[1];
   if (q) { open[decodeURIComponent(q)] = 1; }
@@ -163,9 +186,19 @@ h1 { margin:0; font-size:24px; font-weight:600; letter-spacing:-0.01em; }
       '<p class="math">' + esc(math(t)) + '</p>' + claims.map(claimHtml).join("") +
       (logs ? '<div class="log">' + logs + '</div>' : "") + '</div>';
   }
+  function spotted(t) { return spot && spot.indexOf(t.id) > -1; }
+  function drawNote() {
+    if (!spot) { note.innerHTML = ""; return; }
+    var n = D.themes.filter(spotted).length;
+    note.innerHTML = '<p class="spot"><span>Showing the ' +
+      (n === 1 ? "theme" : n + " themes") + ' this answer drew on</span>' +
+      '<button id="showall">show all</button></p>';
+  }
   function render() {
     var html = "", rank = 0;
+    drawNote();
     D.themes.slice().sort(function (a, b) { return b.score - a.score; }).forEach(function (t) {
+      if (spot && !spotted(t)) { return; }
       if (F.type !== "all" && t.type !== F.type) { return; }
       var claims = (t.claims || []).filter(keep);
       if (!claims.length) { return; }
@@ -198,29 +231,52 @@ h1 { margin:0; font-size:24px; font-weight:600; letter-spacing:-0.01em; }
     if (open[id]) { delete open[id]; } else { open[id] = 1; }
     render();
   });
-  var box = document.getElementById("ask"), qbox = document.getElementById("q");
-  var pbox = document.getElementById("pass"), out = document.getElementById("answer");
-  function shout(text) { out.textContent = text; }
+  note.addEventListener("click", function (e) {
+    if (e.target.id !== "showall") { return; }
+    spot = null;
+    render();
+  });
+  var pane = document.getElementById("ask"), qbox = document.getElementById("q");
+  var pbox = document.getElementById("pass"), thread = document.getElementById("thread");
+  function drawThread() {
+    thread.innerHTML = turns.map(function (t) {
+      return '<div class="turn"><p class="qtext">' + esc(t.q) + '</p>' +
+        '<p class="atext' + (t.err ? " err" : "") + '">' + esc(t.a) + '</p></div>';
+    }).join("");
+    thread.scrollTop = thread.scrollHeight;
+  }
   function doAsk() {
     var question = qbox.value.trim();
     if (!question) { return; }
+    qbox.value = "";
     try { localStorage.setItem("fbr_pass", pbox.value); } catch (e) {}
-    shout("Asking...");
+    var turn = { q: question, a: "Asking..." };
+    turns.push(turn);
+    drawThread();
     fetch(D.ask_url, {
       method: "POST", headers: { "content-type": "application/json" },
       body: JSON.stringify({ question: question, passphrase: pbox.value })
     }).then(function (r) {
       return r.json().then(function (j) {
         if (!r.ok) { throw new Error(j.error || "request failed"); }
-        return j.answer;
+        return j;
       });
-    }).then(shout).catch(function (e) { shout("Could not answer: " + e.message); });
+    }).then(function (j) {
+      turn.a = j.answer || "";
+      spot = j.themes && j.themes.length ? j.themes : null;
+      if (spot) { open = {}; spot.forEach(function (id) { open[id] = 1; }); }
+      drawThread();
+      render();
+    }).catch(function (e) {
+      turn.a = "Could not answer: " + e.message;
+      turn.err = 1;
+      drawThread();
+    });
   }
   if (D.ask_url) {
-    box.hidden = false;
+    pane.hidden = false;
     try { pbox.value = localStorage.getItem("fbr_pass") || ""; } catch (e) {}
-    document.getElementById("askgo").addEventListener("click", doAsk);
-    box.addEventListener("keydown", function (e) { if (e.key === "Enter") { doAsk(); } });
+    pane.addEventListener("keydown", function (e) { if (e.key === "Enter") { doAsk(); } });
   }
   document.getElementById("gen").textContent = "Generated " + fdate(D.generated) +
     " from " + D.days.length + " days of calls and cases";
