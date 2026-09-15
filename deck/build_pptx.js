@@ -22,7 +22,7 @@ const titles = {
   4:'The whole system: two sources, three agents, one git library, one product team',
   5:'Reader agents turn conversations into records; the editor agent sorts records into themes',
   6:"Ask why a theme matters; the answer comes from the library, with the customer's words",
-  7:'Built to the brief; everything else is designed, not built',
+  7:'Built to the brief; the next steps are designed, not built',
   8:'Appendix: the decisions behind it',
 };
 const notes = {
