@@ -2,14 +2,15 @@
  "id": "THEME-0005",
  "title": "Membership report export truncates at row limit",
  "type": "bug",
- "summary": "Staff exporting membership reports get a file that stops partway through once the record count passes roughly ten thousand rows. The export appears to finish but the data is incomplete, so any downstream reporting or mailing built from it is wrong.",
+ "summary": "Associations with larger membership files cannot get a complete report export once the record count grows past roughly ten thousand rows, because the file stops partway through instead of finishing. Staff are left with partial data and no warning that the export was cut short.",
  "claim_ids": [
   "c-7d2a3f364428",
   "c-155dc035f7d8",
-  "c-75d5cbd07ce7"
+  "c-75d5cbd07ce7",
+  "c-4682fe0026f9"
  ],
  "first_seen": "2026-09-08",
- "last_seen": "2026-09-10",
+ "last_seen": "2026-09-14",
  "log": [
   {
    "day": "2026-09-08",
@@ -28,6 +29,12 @@
    "action": "append",
    "claim_id": "c-75d5cbd07ce7",
    "why": "An export that stops partway once membership passes roughly ten thousand rows is the same row-limit truncation on report exports."
+  },
+  {
+   "day": "2026-09-14",
+   "action": "append",
+   "claim_id": "c-4682fe0026f9",
+   "why": "The report export failing partway once membership passes roughly ten thousand rows is the same row-limit truncation already tracked in this theme."
   }
  ],
  "accounts": {
@@ -39,8 +46,8 @@
   "accounts": 15.0,
   "value": 17.0,
   "cases": 20.0,
-  "recency": 13.9,
+  "recency": 15.0,
   "bug": 10.0
  },
- "score": 76
+ "score": 77
 }

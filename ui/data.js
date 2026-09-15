@@ -1,13 +1,152 @@
 window.DIGEST = {
- "generated": "2026-09-11",
+ "generated": "2026-09-14",
  "days": [
   "2026-09-08",
   "2026-09-09",
   "2026-09-10",
-  "2026-09-11"
+  "2026-09-11",
+  "2026-09-14"
  ],
  "ask_url": "https://g3kmsu2e2ikq7cyivffqi7i6oe0unrtk.lambda-url.us-east-1.on.aws/",
  "themes": [
+  {
+   "id": "THEME-0005",
+   "title": "Membership report export truncates at row limit",
+   "type": "bug",
+   "summary": "Associations with larger membership files cannot get a complete report export once the record count grows past roughly ten thousand rows, because the file stops partway through instead of finishing. Staff are left with partial data and no warning that the export was cut short.",
+   "claim_ids": [
+    "c-7d2a3f364428",
+    "c-155dc035f7d8",
+    "c-75d5cbd07ce7",
+    "c-4682fe0026f9"
+   ],
+   "first_seen": "2026-09-08",
+   "last_seen": "2026-09-14",
+   "log": [
+    {
+     "day": "2026-09-08",
+     "action": "open",
+     "claim_id": "c-7d2a3f364428",
+     "why": "Truncated export files for large membership lists are a reporting defect with no matching theme in the index."
+    },
+    {
+     "day": "2026-09-09",
+     "action": "append",
+     "claim_id": "c-155dc035f7d8",
+     "why": "A donor report cut off past a few thousand rows is the same export row limit truncation, just noticed on a different report."
+    },
+    {
+     "day": "2026-09-10",
+     "action": "append",
+     "claim_id": "c-75d5cbd07ce7",
+     "why": "An export that stops partway once membership passes roughly ten thousand rows is the same row-limit truncation on report exports."
+    },
+    {
+     "day": "2026-09-14",
+     "action": "append",
+     "claim_id": "c-4682fe0026f9",
+     "why": "The report export failing partway once membership passes roughly ten thousand rows is the same row-limit truncation already tracked in this theme."
+    }
+   ],
+   "accounts": {
+    "customer": 2,
+    "prospect": 0
+   },
+   "open_cases": 8,
+   "score_parts": {
+    "accounts": 15.0,
+    "value": 17.0,
+    "cases": 20.0,
+    "recency": 15.0,
+    "bug": 10.0
+   },
+   "score": 77,
+   "claims": [
+    {
+     "id": "c-7d2a3f364428",
+     "day": "2026-09-08",
+     "source": "gong",
+     "type": "bug",
+     "topic": "membership export cuts off at row limit",
+     "quote": "Any report we try to export once membership crosses about ten thousand rows just cuts off partway through instead of finishing the file.",
+     "account_id": "ACC-0001",
+     "account": "Great Lakes Museum Alliance",
+     "account_type": "customer",
+     "tier": "Enterprise",
+     "arr": 340000,
+     "speaker": "Naomi Castellanos",
+     "locator": {
+      "call_id": "7782934452010",
+      "speaker_id": "c-01",
+      "start_ms": 208421,
+      "end_ms": 271579
+     },
+     "occurred_at": "2026-09-08T09:04:55Z"
+    },
+    {
+     "id": "c-155dc035f7d8",
+     "day": "2026-09-09",
+     "source": "gong",
+     "type": "bug",
+     "topic": "donor report row limit",
+     "quote": "Our year end donor report stops short of the full list once it gets past a few thousand rows, so we are stitching multiple exports together by hand.",
+     "account_id": "ACC-0006",
+     "account": "Copper Ridge Youth Foundation",
+     "account_type": "customer",
+     "tier": "Standard",
+     "arr": 18000,
+     "speaker": "Denise Okonkwo",
+     "locator": {
+      "call_id": "7782934452011",
+      "speaker_id": "c-06",
+      "start_ms": 252720,
+      "end_ms": 259200
+     },
+     "occurred_at": "2026-09-09T15:20:51Z"
+    },
+    {
+     "id": "c-75d5cbd07ce7",
+     "day": "2026-09-10",
+     "source": "salesforce",
+     "type": "bug",
+     "topic": "export cuts off at 10,500 rows",
+     "quote": "Any report we try to export once membership crosses about ten thousand rows just cuts off partway through instead of finishing the file.",
+     "account_id": "ACC-0001",
+     "account": "Great Lakes Museum Alliance",
+     "account_type": "customer",
+     "tier": "Enterprise",
+     "arr": 340000,
+     "speaker": "Naomi Castellanos",
+     "locator": {
+      "case_id": "500000000000000006",
+      "comment_id": "00a000000000000017",
+      "case_number": "00005006"
+     },
+     "occurred_at": "2026-09-10T16:35:02Z"
+    },
+    {
+     "id": "c-4682fe0026f9",
+     "day": "2026-09-14",
+     "source": "gong",
+     "type": "bug",
+     "topic": "export cuts off at row limit",
+     "quote": "Any report we try to export once membership crosses about ten thousand rows just cuts off partway through instead of finishing the file.",
+     "account_id": "ACC-0001",
+     "account": "Great Lakes Museum Alliance",
+     "account_type": "customer",
+     "tier": "Enterprise",
+     "arr": 340000,
+     "speaker": "Naomi Castellanos",
+     "locator": {
+      "call_id": "7782934452012",
+      "speaker_id": "c-01",
+      "start_ms": 342759,
+      "end_ms": 386207
+     },
+     "occurred_at": "2026-09-14T10:23:25Z"
+    }
+   ]
+  },
   {
    "id": "THEME-0001",
    "title": "Renewal invoices omitting prior credits and balances",
@@ -49,10 +188,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 13.9,
+    "recency": 10.7,
     "bug": 10.0
    },
-   "score": 76,
+   "score": 73,
    "claims": [
     {
      "id": "c-915d4dd0bc13",
@@ -119,128 +258,19 @@ window.DIGEST = {
    ]
   },
   {
-   "id": "THEME-0005",
-   "title": "Membership report export truncates at row limit",
-   "type": "bug",
-   "summary": "Staff exporting membership reports get a file that stops partway through once the record count passes roughly ten thousand rows. The export appears to finish but the data is incomplete, so any downstream reporting or mailing built from it is wrong.",
-   "claim_ids": [
-    "c-7d2a3f364428",
-    "c-155dc035f7d8",
-    "c-75d5cbd07ce7"
-   ],
-   "first_seen": "2026-09-08",
-   "last_seen": "2026-09-10",
-   "log": [
-    {
-     "day": "2026-09-08",
-     "action": "open",
-     "claim_id": "c-7d2a3f364428",
-     "why": "Truncated export files for large membership lists are a reporting defect with no matching theme in the index."
-    },
-    {
-     "day": "2026-09-09",
-     "action": "append",
-     "claim_id": "c-155dc035f7d8",
-     "why": "A donor report cut off past a few thousand rows is the same export row limit truncation, just noticed on a different report."
-    },
-    {
-     "day": "2026-09-10",
-     "action": "append",
-     "claim_id": "c-75d5cbd07ce7",
-     "why": "An export that stops partway once membership passes roughly ten thousand rows is the same row-limit truncation on report exports."
-    }
-   ],
-   "accounts": {
-    "customer": 2,
-    "prospect": 0
-   },
-   "open_cases": 8,
-   "score_parts": {
-    "accounts": 15.0,
-    "value": 17.0,
-    "cases": 20.0,
-    "recency": 13.9,
-    "bug": 10.0
-   },
-   "score": 76,
-   "claims": [
-    {
-     "id": "c-7d2a3f364428",
-     "day": "2026-09-08",
-     "source": "gong",
-     "type": "bug",
-     "topic": "membership export cuts off at row limit",
-     "quote": "Any report we try to export once membership crosses about ten thousand rows just cuts off partway through instead of finishing the file.",
-     "account_id": "ACC-0001",
-     "account": "Great Lakes Museum Alliance",
-     "account_type": "customer",
-     "tier": "Enterprise",
-     "arr": 340000,
-     "speaker": "Naomi Castellanos",
-     "locator": {
-      "call_id": "7782934452010",
-      "speaker_id": "c-01",
-      "start_ms": 208421,
-      "end_ms": 271579
-     },
-     "occurred_at": "2026-09-08T09:04:55Z"
-    },
-    {
-     "id": "c-155dc035f7d8",
-     "day": "2026-09-09",
-     "source": "gong",
-     "type": "bug",
-     "topic": "donor report row limit",
-     "quote": "Our year end donor report stops short of the full list once it gets past a few thousand rows, so we are stitching multiple exports together by hand.",
-     "account_id": "ACC-0006",
-     "account": "Copper Ridge Youth Foundation",
-     "account_type": "customer",
-     "tier": "Standard",
-     "arr": 18000,
-     "speaker": "Denise Okonkwo",
-     "locator": {
-      "call_id": "7782934452011",
-      "speaker_id": "c-06",
-      "start_ms": 252720,
-      "end_ms": 259200
-     },
-     "occurred_at": "2026-09-09T15:20:51Z"
-    },
-    {
-     "id": "c-75d5cbd07ce7",
-     "day": "2026-09-10",
-     "source": "salesforce",
-     "type": "bug",
-     "topic": "export cuts off at 10,500 rows",
-     "quote": "Any report we try to export once membership crosses about ten thousand rows just cuts off partway through instead of finishing the file.",
-     "account_id": "ACC-0001",
-     "account": "Great Lakes Museum Alliance",
-     "account_type": "customer",
-     "tier": "Enterprise",
-     "arr": 340000,
-     "speaker": "Naomi Castellanos",
-     "locator": {
-      "case_id": "500000000000000006",
-      "comment_id": "00a000000000000017",
-      "case_number": "00005006"
-     },
-     "occurred_at": "2026-09-10T16:35:02Z"
-    }
-   ]
-  },
-  {
    "id": "THEME-0008",
    "title": "Pledge reminders ignore donor contact preferences",
    "type": "bug",
-   "summary": "Pledge reminders continue to send on the default schedule even when a donor has asked for fewer or different contact. Development staff have to apologize for over-contacting donors and cannot rely on the stored preferences.",
+   "summary": "Pledge reminders are sent on the default schedule regardless of the contact preferences donors have recorded, including donors who asked for only one reminder before a campaign closes. Fundraising teams risk over-contacting donors and have no reliable way to honor the preferences they collected.",
    "claim_ids": [
     "c-5d3a978f29d2",
     "c-5b5f6e38062c",
     "c-7a9d32ef25ab",
-    "c-8cdbbd7323dd"
+    "c-8cdbbd7323dd",
+    "c-ffd0b3fd9e9a"
    ],
    "first_seen": "2026-09-08",
-   "last_seen": "2026-09-10",
+   "last_seen": "2026-09-14",
    "log": [
     {
      "day": "2026-09-08",
@@ -265,6 +295,12 @@ window.DIGEST = {
      "action": "append",
      "claim_id": "c-8cdbbd7323dd",
      "why": "Reminders going out on the standard cadence despite a donor asking for a single reminder is the existing failure to honor donor contact preferences."
+    },
+    {
+     "day": "2026-09-14",
+     "action": "append",
+     "claim_id": "c-ffd0b3fd9e9a",
+     "why": "Reminders going out on the standard schedule despite a donor asking for a single reminder is the existing failure to honor donor contact preferences."
     }
    ],
    "accounts": {
@@ -276,10 +312,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 13.9,
+    "recency": 15.0,
     "bug": 10.0
    },
-   "score": 72,
+   "score": 73,
    "claims": [
     {
      "id": "c-5d3a978f29d2",
@@ -362,6 +398,26 @@ window.DIGEST = {
       "case_number": "00005018"
      },
      "occurred_at": "2026-09-10T12:05:49Z"
+    },
+    {
+     "id": "c-ffd0b3fd9e9a",
+     "day": "2026-09-14",
+     "source": "salesforce",
+     "type": "bug",
+     "topic": "pledge reminders ignoring single-reminder preference",
+     "quote": "Pledge reminders keep going out on the standard schedule even for donors who told us they only want a single reminder before the campaign closes.",
+     "account_id": "ACC-0002",
+     "account": "Cascadia Nurses Association",
+     "account_type": "customer",
+     "tier": "Enterprise",
+     "arr": 268000,
+     "speaker": "Renee Okafor",
+     "locator": {
+      "case_id": "500000000000000013",
+      "comment_id": "00a00000000000004a",
+      "case_number": "00005019"
+     },
+     "occurred_at": "2026-09-14T15:05:17Z"
     }
    ]
   },
@@ -369,14 +425,15 @@ window.DIGEST = {
    "id": "THEME-0006",
    "title": "Duplicate journal entries in general ledger sync",
    "type": "bug",
-   "summary": "The general ledger sync posts the same journal entry more than once during closings at several organizations. Finance staff have to find and reverse the duplicates by hand before they can close the books.",
+   "summary": "Finance staff at multiple customers are seeing the same journal entry posted twice by the general ledger sync, in some cases across more than one monthly close. Bookkeepers have to find and reverse the duplicates by hand before the books can be trusted.",
    "claim_ids": [
     "c-9e53583c6513",
     "c-5c26d1b4bb94",
-    "c-c5feba4cd6d7"
+    "c-c5feba4cd6d7",
+    "c-55b87e82cac1"
    ],
    "first_seen": "2026-09-08",
-   "last_seen": "2026-09-10",
+   "last_seen": "2026-09-14",
    "log": [
     {
      "day": "2026-09-08",
@@ -395,6 +452,12 @@ window.DIGEST = {
      "action": "append",
      "claim_id": "c-c5feba4cd6d7",
      "why": "The same journal entry posted twice during general ledger sync and reversed by hand is the existing duplicate journal entry defect."
+    },
+    {
+     "day": "2026-09-14",
+     "action": "append",
+     "claim_id": "c-55b87e82cac1",
+     "why": "The same journal entry posting twice during close and needing a manual reversal is the existing duplicate general ledger sync entry problem."
     }
    ],
    "accounts": {
@@ -406,10 +469,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 7.7,
     "cases": 20.0,
-    "recency": 13.9,
+    "recency": 15.0,
     "bug": 10.0
    },
-   "score": 67,
+   "score": 68,
    "claims": [
     {
      "id": "c-9e53583c6513",
@@ -471,6 +534,26 @@ window.DIGEST = {
       "case_number": "00005011"
      },
      "occurred_at": "2026-09-10T16:45:27Z"
+    },
+    {
+     "id": "c-55b87e82cac1",
+     "day": "2026-09-14",
+     "source": "salesforce",
+     "type": "bug",
+     "topic": "duplicate journal entries in general ledger sync",
+     "quote": "The general ledger sync has posted the same journal entry twice on more than one closing, and our bookkeeper has to go back and reverse the duplicate by hand.",
+     "account_id": "ACC-0003",
+     "account": "Prairie Land Trust Council",
+     "account_type": "customer",
+     "tier": "Professional",
+     "arr": 154000,
+     "speaker": "Miguel Ferreira",
+     "locator": {
+      "case_id": "50000000000000000c",
+      "comment_id": "00a00000000000002f",
+      "case_number": "00005012"
+     },
+     "occurred_at": "2026-09-14T16:25:27Z"
     }
    ]
   },
@@ -501,10 +584,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 11.8,
+    "recency": 8.6,
     "bug": 10.0
    },
-   "score": 63,
+   "score": 60,
    "claims": [
     {
      "id": "c-6fdcefc76dcd",
@@ -570,10 +653,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 2.0,
     "cases": 20.0,
-    "recency": 13.9,
+    "recency": 10.7,
     "bug": 10.0
    },
-   "score": 61,
+   "score": 58,
    "claims": [
     {
      "id": "c-8fc57031470e",
@@ -666,10 +749,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 11.8,
+    "recency": 8.6,
     "bug": 0.0
    },
-   "score": 56,
+   "score": 53,
    "claims": [
     {
      "id": "c-16cd97e72e9e",
@@ -721,10 +804,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 11.8,
+    "recency": 8.6,
     "bug": 0.0
    },
-   "score": 53,
+   "score": 50,
    "claims": [
     {
      "id": "c-b58dd0db5d66",
@@ -782,10 +865,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 4.8,
     "cases": 15.0,
-    "recency": 12.9,
+    "recency": 9.6,
     "bug": 10.0
    },
-   "score": 50,
+   "score": 47,
    "claims": [
     {
      "id": "c-c44577763b5c",
@@ -864,10 +947,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 0.0,
     "cases": 0.0,
-    "recency": 12.9,
+    "recency": 9.6,
     "bug": 10.0
    },
-   "score": 30,
+   "score": 27,
    "claims": [
     {
      "id": "c-0d73633ed6f5",
@@ -940,10 +1023,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 0.0,
     "cases": 0.0,
-    "recency": 12.9,
+    "recency": 9.6,
     "bug": 0.0
    },
-   "score": 20,
+   "score": 17,
    "claims": [
     {
      "id": "c-b696c3430eb3",
@@ -995,10 +1078,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 0.0,
     "cases": 0.0,
-    "recency": 12.9,
+    "recency": 9.6,
     "bug": 0.0
    },
-   "score": 20,
+   "score": 17,
    "claims": [
     {
      "id": "c-299d81776e9e",

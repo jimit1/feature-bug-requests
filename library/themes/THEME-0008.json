@@ -2,15 +2,16 @@
  "id": "THEME-0008",
  "title": "Pledge reminders ignore donor contact preferences",
  "type": "bug",
- "summary": "Pledge reminders continue to send on the default schedule even when a donor has asked for fewer or different contact. Development staff have to apologize for over-contacting donors and cannot rely on the stored preferences.",
+ "summary": "Pledge reminders are sent on the default schedule regardless of the contact preferences donors have recorded, including donors who asked for only one reminder before a campaign closes. Fundraising teams risk over-contacting donors and have no reliable way to honor the preferences they collected.",
  "claim_ids": [
   "c-5d3a978f29d2",
   "c-5b5f6e38062c",
   "c-7a9d32ef25ab",
-  "c-8cdbbd7323dd"
+  "c-8cdbbd7323dd",
+  "c-ffd0b3fd9e9a"
  ],
  "first_seen": "2026-09-08",
- "last_seen": "2026-09-10",
+ "last_seen": "2026-09-14",
  "log": [
   {
    "day": "2026-09-08",
@@ -35,6 +36,12 @@
    "action": "append",
    "claim_id": "c-8cdbbd7323dd",
    "why": "Reminders going out on the standard cadence despite a donor asking for a single reminder is the existing failure to honor donor contact preferences."
+  },
+  {
+   "day": "2026-09-14",
+   "action": "append",
+   "claim_id": "c-ffd0b3fd9e9a",
+   "why": "Reminders going out on the standard schedule despite a donor asking for a single reminder is the existing failure to honor donor contact preferences."
   }
  ],
  "accounts": {
@@ -46,8 +53,8 @@
   "accounts": 15.0,
   "value": 13.4,
   "cases": 20.0,
-  "recency": 13.9,
+  "recency": 15.0,
   "bug": 10.0
  },
- "score": 72
+ "score": 73
 }
