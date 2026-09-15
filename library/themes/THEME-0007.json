@@ -1,0 +1,32 @@
+{
+ "id": "THEME-0007",
+ "title": "Expiration warnings for postings",
+ "type": "bug",
+ "summary": "Postings expire and are removed without any notice to the person who created them. Owners keep assuming their posting is still live long after it has come down.",
+ "claim_ids": [
+  "c-c44577763b5c"
+ ],
+ "first_seen": "2026-09-08",
+ "last_seen": "2026-09-08",
+ "log": [
+  {
+   "day": "2026-09-08",
+   "action": "open",
+   "claim_id": "c-c44577763b5c",
+   "why": "Postings coming down with no notice to their owner is a new area not covered by any existing theme."
+  }
+ ],
+ "accounts": {
+  "customer": 1,
+  "prospect": 0
+ },
+ "open_cases": 3,
+ "score_parts": {
+  "accounts": 7.5,
+  "value": 4.8,
+  "cases": 15.0,
+  "recency": 15.0,
+  "bug": 10.0
+ },
+ "score": 52
+}

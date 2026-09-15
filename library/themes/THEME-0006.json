@@ -1,0 +1,32 @@
+{
+ "id": "THEME-0006",
+ "title": "Duplicate journal entries in general ledger sync",
+ "type": "bug",
+ "summary": "The general ledger sync has posted the same journal entry twice during more than one close. Bookkeepers must find and reverse the duplicates by hand before the books balance.",
+ "claim_ids": [
+  "c-9e53583c6513"
+ ],
+ "first_seen": "2026-09-08",
+ "last_seen": "2026-09-08",
+ "log": [
+  {
+   "day": "2026-09-08",
+   "action": "open",
+   "claim_id": "c-9e53583c6513",
+   "why": "Double-posted journal entries in the accounting sync are distinct from invoice and reporting issues and open a new theme."
+  }
+ ],
+ "accounts": {
+  "customer": 1,
+  "prospect": 0
+ },
+ "open_cases": 3,
+ "score_parts": {
+  "accounts": 7.5,
+  "value": 7.7,
+  "cases": 15.0,
+  "recency": 15.0,
+  "bug": 10.0
+ },
+ "score": 55
+}

@@ -1,0 +1,32 @@
+{
+ "id": "THEME-0004",
+ "title": "Renewal notice email deliverability",
+ "type": "bug",
+ "summary": "Members report that renewal notices never arrived, and staff find the messages were filtered into spam folders instead of the inbox. Renewals are missed and staff have to follow up individually to confirm delivery.",
+ "claim_ids": [
+  "c-8fc57031470e"
+ ],
+ "first_seen": "2026-09-08",
+ "last_seen": "2026-09-08",
+ "log": [
+  {
+   "day": "2026-09-08",
+   "action": "open",
+   "claim_id": "c-8fc57031470e",
+   "why": "This is about renewal emails being filtered to spam rather than about invoice amounts, and no theme covers message delivery."
+  }
+ ],
+ "accounts": {
+  "customer": 1,
+  "prospect": 0
+ },
+ "open_cases": 2,
+ "score_parts": {
+  "accounts": 7.5,
+  "value": 2.0,
+  "cases": 10.0,
+  "recency": 15.0,
+  "bug": 10.0
+ },
+ "score": 44
+}

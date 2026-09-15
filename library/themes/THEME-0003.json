@@ -1,0 +1,39 @@
+{
+ "id": "THEME-0003",
+ "title": "Offline event check-in with later sync",
+ "type": "feature",
+ "summary": "Onsite teams checking attendees in on tablets lose the ability to work when venue wifi drops, which stalls the line at the door. They need check-in to keep recording locally and sync back to the system once connectivity returns.",
+ "claim_ids": [
+  "c-6fdcefc76dcd",
+  "c-b58dd0db5d66"
+ ],
+ "first_seen": "2026-09-08",
+ "last_seen": "2026-09-08",
+ "log": [
+  {
+   "day": "2026-09-08",
+   "action": "open",
+   "claim_id": "c-6fdcefc76dcd",
+   "why": "Check-in failing when venue wifi drops and the ask for offline capture with sync are one theme, and none exists yet."
+  },
+  {
+   "day": "2026-09-08",
+   "action": "append",
+   "claim_id": "c-b58dd0db5d66",
+   "why": "Same ask as the other check-in claim from the same account: keep check-in running without connectivity and sync when back online."
+  }
+ ],
+ "accounts": {
+  "customer": 1,
+  "prospect": 0
+ },
+ "open_cases": 4,
+ "score_parts": {
+  "accounts": 7.5,
+  "value": 13.4,
+  "cases": 20.0,
+  "recency": 15.0,
+  "bug": 0.0
+ },
+ "score": 56
+}

@@ -1,0 +1,32 @@
+{
+ "id": "THEME-0002",
+ "title": "Reason codes for membership tier changes",
+ "type": "feature",
+ "summary": "Staff who report on movement between membership tiers have no reason codes for tiers added after the code list was built, such as a family tier. They track those transitions by hand, which makes tier change reporting slow and inconsistent.",
+ "claim_ids": [
+  "c-16cd97e72e9e"
+ ],
+ "first_seen": "2026-09-08",
+ "last_seen": "2026-09-08",
+ "log": [
+  {
+   "day": "2026-09-08",
+   "action": "open",
+   "claim_id": "c-16cd97e72e9e",
+   "why": "This is a request for reason code coverage of newer membership tiers, which no existing theme addresses."
+  }
+ ],
+ "accounts": {
+  "customer": 1,
+  "prospect": 0
+ },
+ "open_cases": 6,
+ "score_parts": {
+  "accounts": 7.5,
+  "value": 17.0,
+  "cases": 20.0,
+  "recency": 15.0,
+  "bug": 0.0
+ },
+ "score": 60
+}
