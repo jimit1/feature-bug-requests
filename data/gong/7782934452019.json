@@ -1,0 +1,563 @@
+{
+  "schema_version": "1.0.0",
+  "call": {
+    "metaData": {
+      "id": "7782934452019",
+      "url": "https://gong.invalid/call?id=7782934452019",
+      "title": "Cascadia Nurses Association - fundraising campaign review",
+      "scheduled": "2026-09-08T12:00:00Z",
+      "started": "2026-09-08T12:01:08Z",
+      "duration": 2040,
+      "primaryUserId": "2002",
+      "direction": "Conference",
+      "system": "Gong",
+      "scope": "External",
+      "media": "Video",
+      "language": "eng",
+      "workspaceId": "9911",
+      "sdrDisposition": null,
+      "clientUniqueId": null,
+      "customData": null,
+      "purpose": "fundraising campaign review",
+      "meetingUrl": null,
+      "isPrivate": false,
+      "calendarEventId": "cal-452019"
+    },
+    "parties": [
+      {
+        "id": "p-c02",
+        "emailAddress": "renee.okafor@cascadianurses.example.org",
+        "name": "Renee Okafor",
+        "title": "VP of Member Engagement",
+        "userId": null,
+        "speakerId": "c-02",
+        "context": [],
+        "affiliation": "External"
+      },
+      {
+        "id": "p-2002",
+        "emailAddress": "marcus.oyelaran@momentivesoftware.example.org",
+        "name": "Marcus Oyelaran",
+        "title": "Customer Success Manager",
+        "userId": "2002",
+        "speakerId": "2002",
+        "context": [],
+        "affiliation": "Internal"
+      }
+    ]
+  },
+  "transcript": {
+    "callId": "7782934452019",
+    "transcript": [
+      {
+        "speakerId": "c-02",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 0,
+            "end": 57555,
+            "text": "Hi, sorry if I am a minute behind, glad to be here now."
+          },
+          {
+            "start": 57556,
+            "end": 83135,
+            "text": "Hey, thanks for carving out time today."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 95925,
+            "end": 115110,
+            "text": "Hi, thanks for making room for this on your calendar."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-02",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 121505,
+            "end": 153480,
+            "text": "We put together a short list of items for today's call."
+          },
+          {
+            "start": 153481,
+            "end": 172665,
+            "text": "Overall things are going fine, just a few things we wanted to flag."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 191850,
+            "end": 230219,
+            "text": "Glad to hear things are generally steady, let's dig into the specifics."
+          },
+          {
+            "start": 230220,
+            "end": 294169,
+            "text": "Glad to make time for this, let's walk through the list."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-02",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 313354,
+            "end": 319749,
+            "text": "Pledge reminders keep going out on the standard schedule even for donors who told us they only want a single reminder before the campaign closes."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-02",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 332539,
+            "end": 396489,
+            "text": "We have around 140 donors who asked for a single reminder only, and the system sent all of them the full three part schedule anyway during our spring campaign."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 402884,
+            "end": 422069,
+            "text": "Thanks for the specifics, I have a quick question before we move on."
+          },
+          {
+            "start": 422070,
+            "end": 460439,
+            "text": "How many donors does that affect roughly, and was this during a specific campaign?"
+          }
+        ]
+      },
+      {
+        "speakerId": "c-02",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 473229,
+            "end": 479624,
+            "text": "It was about 140 donors, all during the spring campaign that closed in May."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 498809,
+            "end": 549969,
+            "text": "Thanks, let's take a quick detour, anything else new on your end?"
+          }
+        ]
+      },
+      {
+        "speakerId": "c-02",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 569154,
+            "end": 607524,
+            "text": "We are putting together handouts to bring to the conference."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 620313,
+            "end": 633103,
+            "text": "Sounds like a good lineup, hope the travel goes smoothly."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-02",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 639498,
+            "end": 671473,
+            "text": "We actually had one of our long time donors, Marguerite Odom, ask about this at the gala last month."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 677868,
+            "end": 716238,
+            "text": "Glad to hear the heat wave finally broke."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-02",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 735423,
+            "end": 754608,
+            "text": "We have had a bit of turnover on our team this quarter."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 761003,
+            "end": 812163,
+            "text": "Congrats to the new hire, glad you found someone."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-02",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 831348,
+            "end": 837743,
+            "text": "We are looking forward to catching up with a few peers at the conference next month."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 844138,
+            "end": 882508,
+            "text": "Good to know the registration is set."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-02",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 895298,
+            "end": 940063,
+            "text": "We are enjoying a nice stretch of mild weather right now."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 952853,
+            "end": 991223,
+            "text": "Good to know, glad everyone is doing okay after the frost."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-02",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 997618,
+            "end": 1055172,
+            "text": "A few staff shifted departments after our reorg."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1074357,
+            "end": 1099937,
+            "text": "That is a lot of change at once, hope it goes well."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-02",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1112727,
+            "end": 1163887,
+            "text": "Our executive director is speaking on a panel at next month's conference."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1176677,
+            "end": 1189467,
+            "text": "Nice that the board is joining, hope it is a good trip."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-02",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1202257,
+            "end": 1208652,
+            "text": "I have to say, the fundraising platform has been smooth to use with our team all season, genuinely impressed with how it holds up during a campaign push."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1227837,
+            "end": 1272602,
+            "text": "Sounds like a mild fall so far, hope it stays that way."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-02",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1285392,
+            "end": 1323762,
+            "text": "We just brought on a new coordinator last month."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1330157,
+            "end": 1374922,
+            "text": "Let us know if we can help get anyone up to speed."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-02",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1387712,
+            "end": 1406897,
+            "text": "We are finalizing our flights for the conference next month."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1419687,
+            "end": 1445266,
+            "text": "Nice, hope the booth setup goes well."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-02",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1451661,
+            "end": 1483636,
+            "text": "It has been raining here for what feels like a week straight."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1496426,
+            "end": 1502821,
+            "text": "That sounds like a lot of back and forth, hope it evens out."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-02",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1509216,
+            "end": 1547586,
+            "text": "Our new hire starts full time next week."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1560376,
+            "end": 1573166,
+            "text": "Congrats on the internal move, glad it worked out."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-02",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1579561,
+            "end": 1605141,
+            "text": "A few of us are heading to the regional conference next month."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1624326,
+            "end": 1649906,
+            "text": "Let us know if we can help with anything for the handouts."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-02",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1662696,
+            "end": 1681881,
+            "text": "The forecast is calling for snow later this week."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1694671,
+            "end": 1726646,
+            "text": "Glad everyone stayed safe with the office closed for the ice."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-02",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1739436,
+            "end": 1771411,
+            "text": "We added two people to the team this year."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1790596,
+            "end": 1822571,
+            "text": "Appreciate you letting us know, we can adjust support as needed."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-02",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1841755,
+            "end": 1867335,
+            "text": "We are printing name badges for our group ahead of the conference next month."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1886520,
+            "end": 1892915,
+            "text": "Good to know how many are attending, that helps with planning on our end."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-02",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1905705,
+            "end": 1912100,
+            "text": "The weather has been all over the place lately, hot one day and cold the next."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1918495,
+            "end": 1963260,
+            "text": "This gives me what I need, I will circle back shortly."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-02",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1982445,
+            "end": 2020815,
+            "text": "This covers what we needed, appreciate you making time."
+          },
+          {
+            "start": 2020816,
+            "end": 2033605,
+            "text": "This was helpful, thanks for making space for it."
+          }
+        ]
+      }
+    ]
+  }
+}

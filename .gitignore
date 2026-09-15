@@ -1,0 +1,8 @@
+node_modules/
+.qa/
+deck/qa-*.jpg
+deck/*.pdf
+__pycache__/
+.pytest_cache/
+.venv/
+.env

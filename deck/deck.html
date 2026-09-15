@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Feature / Bug Requests</title>
+<style>
+  html,body{margin:0;height:100%;background:#3A3937;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;color-scheme:light;overflow:hidden}
+  #stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+  .slide{width:1280px;height:720px;background:#FFFFFF;border-radius:8px;box-sizing:border-box;padding:64px 80px;position:absolute;transform-origin:center center;display:none;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+  .slide.active{display:block}
+  .slide.cover.active{display:flex}
+  .num{position:absolute;top:26px;right:36px;font-size:16px;color:#888780}
+  .title{font-size:40px;font-weight:500;color:#2C2C2A;line-height:1.3}
+  .body{margin-top:36px}
+  .body svg{width:100%;display:block}
+  .cover{display:flex;flex-direction:column;justify-content:center}
+  .cover .name{font-size:76px;font-weight:500;color:#2C2C2A;line-height:1.1;letter-spacing:-1px}
+  .cover .sub{font-size:32px;color:#5F5E5A;margin-top:24px}
+  .cover .foot{position:absolute;bottom:36px;left:44px;font-size:18px;color:#888780}
+  #hud{position:fixed;bottom:14px;right:18px;font-size:13px;color:#B4B2A9;font-family:ui-monospace,Menlo,monospace}
+  body.static{background:#FFFFFF}
+  body.static #stage{position:static;display:block}
+  body.static .slide{position:static;transform:none!important;box-shadow:none;border-radius:0;display:none}
+  body.static .slide.active{display:block}
+  body.static .slide.cover.active{display:flex}
+  body.bodyonly .slide{padding:0;width:1200px;height:auto}
+  body.bodyonly .title,body.bodyonly .num{display:none}
+  body.bodyonly .body{margin:0}
+  body.static #hud{display:none}
+</style>
+</head>
+<body>
+<div id="stage">
+
+<!-- 1 cover -->
+<section class="slide cover active" data-n="1">
+  <div class="name">Feature / Bug Requests</div>
+  <div class="sub">A prioritized digest for the product team</div>
+  <div class="foot">Jim Mehta &nbsp;·&nbsp; September 2026</div>
+</section>
+<!-- 2 problem -->
+<section class="slide" data-n="2">
+  <div class="num">2</div>
+  <div class="title">Product hears a fraction of what customers and prospects ask for</div>
+  <div class="body">
+  <svg viewBox="0 0 600 220" role="img"><title>Weekly volume versus what reaches product</title>
+    <defs><marker id="a2c" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#888780" stroke-width="1.5" stroke-linecap="round"/></marker></defs>
+    <text x="0" y="14" font-size="13" font-weight="500" fill="#2C2C2A">Every week</text>
+    <g fill="#F5C4B3" stroke="#D85A30" stroke-width="0.5">
+      <rect x="0" y="28" width="14" height="14" rx="2"/><rect x="18" y="28" width="14" height="14" rx="2"/><rect x="36" y="28" width="14" height="14" rx="2"/><rect x="54" y="28" width="14" height="14" rx="2"/><rect x="72" y="28" width="14" height="14" rx="2"/><rect x="90" y="28" width="14" height="14" rx="2"/><rect x="108" y="28" width="14" height="14" rx="2"/><rect x="126" y="28" width="14" height="14" rx="2"/>
+      <rect x="0" y="46" width="14" height="14" rx="2"/><rect x="18" y="46" width="14" height="14" rx="2"/><rect x="36" y="46" width="14" height="14" rx="2"/><rect x="54" y="46" width="14" height="14" rx="2"/><rect x="72" y="46" width="14" height="14" rx="2"/><rect x="90" y="46" width="14" height="14" rx="2"/><rect x="108" y="46" width="14" height="14" rx="2"/><rect x="126" y="46" width="14" height="14" rx="2"/>
+      <rect x="0" y="64" width="14" height="14" rx="2"/><rect x="18" y="64" width="14" height="14" rx="2"/><rect x="36" y="64" width="14" height="14" rx="2"/><rect x="54" y="64" width="14" height="14" rx="2"/><rect x="72" y="64" width="14" height="14" rx="2"/><rect x="90" y="64" width="14" height="14" rx="2"/><rect x="108" y="64" width="14" height="14" rx="2"/><rect x="126" y="64" width="14" height="14" rx="2"/>
+      <rect x="0" y="82" width="14" height="14" rx="2"/><rect x="18" y="82" width="14" height="14" rx="2"/><rect x="36" y="82" width="14" height="14" rx="2"/><rect x="54" y="82" width="14" height="14" rx="2"/><rect x="72" y="82" width="14" height="14" rx="2"/><rect x="90" y="82" width="14" height="14" rx="2"/><rect x="108" y="82" width="14" height="14" rx="2"/><rect x="126" y="82" width="14" height="14" rx="2"/>
+      <rect x="0" y="100" width="14" height="14" rx="2"/><rect x="18" y="100" width="14" height="14" rx="2"/><rect x="36" y="100" width="14" height="14" rx="2"/><rect x="54" y="100" width="14" height="14" rx="2"/><rect x="72" y="100" width="14" height="14" rx="2"/><rect x="90" y="100" width="14" height="14" rx="2"/><rect x="108" y="100" width="14" height="14" rx="2"/><rect x="126" y="100" width="14" height="14" rx="2"/>
+    </g>
+    <text x="0" y="132" font-size="12" fill="#5F5E5A">Sales and CS calls in Gong</text>
+    <g fill="#B5D4F4" stroke="#378ADD" stroke-width="0.5">
+      <rect x="0" y="148" width="14" height="14" rx="2"/><rect x="18" y="148" width="14" height="14" rx="2"/><rect x="36" y="148" width="14" height="14" rx="2"/><rect x="54" y="148" width="14" height="14" rx="2"/><rect x="72" y="148" width="14" height="14" rx="2"/><rect x="90" y="148" width="14" height="14" rx="2"/><rect x="108" y="148" width="14" height="14" rx="2"/><rect x="126" y="148" width="14" height="14" rx="2"/>
+      <rect x="0" y="166" width="14" height="14" rx="2"/><rect x="18" y="166" width="14" height="14" rx="2"/><rect x="36" y="166" width="14" height="14" rx="2"/><rect x="54" y="166" width="14" height="14" rx="2"/><rect x="72" y="166" width="14" height="14" rx="2"/><rect x="90" y="166" width="14" height="14" rx="2"/><rect x="108" y="166" width="14" height="14" rx="2"/><rect x="126" y="166" width="14" height="14" rx="2"/>
+      <rect x="0" y="184" width="14" height="14" rx="2"/><rect x="18" y="184" width="14" height="14" rx="2"/><rect x="36" y="184" width="14" height="14" rx="2"/><rect x="54" y="184" width="14" height="14" rx="2"/><rect x="72" y="184" width="14" height="14" rx="2"/><rect x="90" y="184" width="14" height="14" rx="2"/><rect x="108" y="184" width="14" height="14" rx="2"/><rect x="126" y="184" width="14" height="14" rx="2"/>
+    </g>
+    <text x="0" y="216" font-size="12" fill="#5F5E5A">Support cases in Salesforce</text>
+    <g fill="#F5C4B3" stroke="#D85A30" stroke-width="0.5"><rect x="-7" y="-7" width="14" height="14" rx="2"/><animateMotion path="M151 53 L387 99" dur="6s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.1;0.45;1"/><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.1;0.12;0.9;0.95;1" dur="6s" repeatCount="indefinite"/></g>
+    <g fill="#F5C4B3" stroke="#D85A30" stroke-width="0.5"><rect x="-7" y="-7" width="14" height="14" rx="2"/><animateMotion path="M151 89 L405 99" dur="6s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.2;0.55;1"/><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.2;0.22;0.9;0.95;1" dur="6s" repeatCount="indefinite"/></g>
+    <g fill="#B5D4F4" stroke="#378ADD" stroke-width="0.5"><rect x="-7" y="-7" width="14" height="14" rx="2"/><animateMotion path="M151 173 L423 99" dur="6s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.3;0.65;1"/><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.3;0.32;0.9;0.95;1" dur="6s" repeatCount="indefinite"/></g>
+    <line x1="200" y1="110" x2="330" y2="110" stroke="#888780" stroke-width="1.5" marker-end="url(#a2c)"/>
+    <text x="265" y="100" font-size="12" fill="#888780" text-anchor="middle">word of mouth</text>
+    <text x="380" y="14" font-size="13" font-weight="500" fill="#2C2C2A">What reaches product</text>
+    <text x="380" y="128" font-size="12" fill="#5F5E5A" opacity="0">A few Slack pings, no source attached<animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.66;0.72;0.9;0.95;1" dur="6s" repeatCount="indefinite"/></text>
+  </svg>
+  </div>
+</section>
+<!-- 3 answer -->
+<section class="slide" data-n="3">
+  <div class="num">3</div>
+  <div class="title">Every request lands in one ranked list, with the customer's own words attached</div>
+  <div class="body">
+  <svg viewBox="0 0 600 215" role="img"><title>Calls and cases sorted into ranked themes, each linked to its source</title>
+    <defs><marker id="a3b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round"/></marker></defs>
+    <g stroke="#E5E3DA" stroke-width="0.6" fill="none" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.1;0.2;0.94;1" dur="8s" repeatCount="indefinite"/>
+      <path d="M104 27 C170 27 170 40 228 40"/><path d="M104 99 C170 99 170 40 228 40"/><path d="M104 153 C170 153 170 40 228 40"/>
+      <path d="M104 45 C170 45 170 74 228 74"/><path d="M104 117 C170 117 170 74 228 74"/>
+      <path d="M104 81 C170 81 170 108 228 108"/><path d="M104 135 C170 135 170 108 228 108"/>
+      <path d="M104 63 C170 63 170 142 228 142"/>
+      <path d="M104 27 C170 27 170 176 228 176"/>
+    </g>
+    <path d="M104 63 C170 63 170 40 228 40" stroke="#D85A30" stroke-width="1.5" fill="none" stroke-dasharray="150" stroke-dashoffset="150"><animate attributeName="stroke-dashoffset" values="150;150;0;0;150" keyTimes="0;0.5;0.58;0.94;1" dur="8s" repeatCount="indefinite"/></path>
+    <g stroke-width="0.5">
+      <rect x="0" y="20" width="14" height="14" rx="2" fill="#F5C4B3" stroke="#D85A30"/><rect x="18" y="20" width="14" height="14" rx="2" fill="#B5D4F4" stroke="#378ADD"/><rect x="36" y="20" width="14" height="14" rx="2" fill="#F5C4B3" stroke="#D85A30"/><rect x="54" y="20" width="14" height="14" rx="2" fill="#F5C4B3" stroke="#D85A30"/><rect x="72" y="20" width="14" height="14" rx="2" fill="#B5D4F4" stroke="#378ADD"/><rect x="90" y="20" width="14" height="14" rx="2" fill="#F5C4B3" stroke="#D85A30"/>
+      <rect x="0" y="38" width="14" height="14" rx="2" fill="#B5D4F4" stroke="#378ADD"/><rect x="18" y="38" width="14" height="14" rx="2" fill="#F5C4B3" stroke="#D85A30"/><rect x="36" y="38" width="14" height="14" rx="2" fill="#F5C4B3" stroke="#D85A30"/><rect x="54" y="38" width="14" height="14" rx="2" fill="#B5D4F4" stroke="#378ADD"/><rect x="72" y="38" width="14" height="14" rx="2" fill="#F5C4B3" stroke="#D85A30"/><rect x="90" y="38" width="14" height="14" rx="2" fill="#B5D4F4" stroke="#378ADD"/>
+      <rect x="0" y="56" width="14" height="14" rx="2" fill="#F5C4B3" stroke="#D85A30"/><rect x="18" y="56" width="14" height="14" rx="2" fill="#F5C4B3" stroke="#D85A30"/><rect x="36" y="56" width="14" height="14" rx="2" fill="#B5D4F4" stroke="#378ADD"/><rect x="54" y="56" width="14" height="14" rx="2" fill="#F5C4B3" stroke="#D85A30"><animate attributeName="fill" values="#F5C4B3;#F5C4B3;#F0997B;#F0997B;#F5C4B3" keyTimes="0;0.48;0.52;0.94;1" dur="8s" repeatCount="indefinite"/><animate attributeName="stroke-width" values="0.5;0.5;1.5;1.5;0.5" keyTimes="0;0.48;0.52;0.94;1" dur="8s" repeatCount="indefinite"/></rect><rect x="72" y="56" width="14" height="14" rx="2" fill="#F5C4B3" stroke="#D85A30"/><rect x="90" y="56" width="14" height="14" rx="2" fill="#F5C4B3" stroke="#D85A30"/>
+      <rect x="0" y="74" width="14" height="14" rx="2" fill="#B5D4F4" stroke="#378ADD"/><rect x="18" y="74" width="14" height="14" rx="2" fill="#F5C4B3" stroke="#D85A30"/><rect x="36" y="74" width="14" height="14" rx="2" fill="#F5C4B3" stroke="#D85A30"/><rect x="54" y="74" width="14" height="14" rx="2" fill="#F5C4B3" stroke="#D85A30"/><rect x="72" y="74" width="14" height="14" rx="2" fill="#B5D4F4" stroke="#378ADD"/><rect x="90" y="74" width="14" height="14" rx="2" fill="#F5C4B3" stroke="#D85A30"/>
+      <rect x="0" y="92" width="14" height="14" rx="2" fill="#F5C4B3" stroke="#D85A30"/><rect x="18" y="92" width="14" height="14" rx="2" fill="#B5D4F4" stroke="#378ADD"/><rect x="36" y="92" width="14" height="14" rx="2" fill="#F5C4B3" stroke="#D85A30"/><rect x="54" y="92" width="14" height="14" rx="2" fill="#F5C4B3" stroke="#D85A30"/><rect x="72" y="92" width="14" height="14" rx="2" fill="#F5C4B3" stroke="#D85A30"/><rect x="90" y="92" width="14" height="14" rx="2" fill="#B5D4F4" stroke="#378ADD"/>
+      <rect x="0" y="110" width="14" height="14" rx="2" fill="#F5C4B3" stroke="#D85A30"/><rect x="18" y="110" width="14" height="14" rx="2" fill="#F5C4B3" stroke="#D85A30"/><rect x="36" y="110" width="14" height="14" rx="2" fill="#B5D4F4" stroke="#378ADD"/><rect x="54" y="110" width="14" height="14" rx="2" fill="#F5C4B3" stroke="#D85A30"/><rect x="72" y="110" width="14" height="14" rx="2" fill="#B5D4F4" stroke="#378ADD"/><rect x="90" y="110" width="14" height="14" rx="2" fill="#F5C4B3" stroke="#D85A30"/>
+      <rect x="0" y="128" width="14" height="14" rx="2" fill="#B5D4F4" stroke="#378ADD"/><rect x="18" y="128" width="14" height="14" rx="2" fill="#F5C4B3" stroke="#D85A30"/><rect x="36" y="128" width="14" height="14" rx="2" fill="#F5C4B3" stroke="#D85A30"/><rect x="54" y="128" width="14" height="14" rx="2" fill="#F5C4B3" stroke="#D85A30"/><rect x="72" y="128" width="14" height="14" rx="2" fill="#F5C4B3" stroke="#D85A30"/><rect x="90" y="128" width="14" height="14" rx="2" fill="#B5D4F4" stroke="#378ADD"/>
+      <rect x="0" y="146" width="14" height="14" rx="2" fill="#F5C4B3" stroke="#D85A30"/><rect x="18" y="146" width="14" height="14" rx="2" fill="#B5D4F4" stroke="#378ADD"/><rect x="36" y="146" width="14" height="14" rx="2" fill="#F5C4B3" stroke="#D85A30"/><rect x="54" y="146" width="14" height="14" rx="2" fill="#B5D4F4" stroke="#378ADD"/><rect x="72" y="146" width="14" height="14" rx="2" fill="#F5C4B3" stroke="#D85A30"/><rect x="90" y="146" width="14" height="14" rx="2" fill="#F5C4B3" stroke="#D85A30"/>
+    </g>
+    <text x="0" y="182" font-size="11" fill="#888780">calls and cases</text>
+    <text x="220" y="45" font-size="12" fill="#888780" text-anchor="end">1</text><rect x="230" y="30" width="0" height="20" rx="4" fill="#2C2C2A"><animate attributeName="width" values="0;0;170;170;0" keyTimes="0;0.2;0.28;0.94;1" dur="8s" repeatCount="indefinite"/></rect>
+    <text x="220" y="79" font-size="12" fill="#888780" text-anchor="end">2</text><rect x="230" y="64" width="0" height="20" rx="4" fill="#5F5E5A"><animate attributeName="width" values="0;0;140;140;0" keyTimes="0;0.24;0.32;0.94;1" dur="8s" repeatCount="indefinite"/></rect>
+    <text x="220" y="113" font-size="12" fill="#888780" text-anchor="end">3</text><rect x="230" y="98" width="0" height="20" rx="4" fill="#888780"><animate attributeName="width" values="0;0;110;110;0" keyTimes="0;0.28;0.36;0.94;1" dur="8s" repeatCount="indefinite"/></rect>
+    <text x="220" y="147" font-size="12" fill="#888780" text-anchor="end">4</text><rect x="230" y="132" width="0" height="20" rx="4" fill="#B4B2A9"><animate attributeName="width" values="0;0;80;80;0" keyTimes="0;0.32;0.4;0.94;1" dur="8s" repeatCount="indefinite"/></rect>
+    <text x="220" y="181" font-size="12" fill="#888780" text-anchor="end">5</text><rect x="230" y="166" width="0" height="20" rx="4" fill="#D3D1C7"><animate attributeName="width" values="0;0;60;60;0" keyTimes="0;0.36;0.44;0.94;1" dur="8s" repeatCount="indefinite"/></rect>
+    <text x="230" y="206" font-size="11" fill="#888780">ranked by impact</text>
+    <line x1="400" y1="40" x2="458" y2="40" stroke="#D85A30" stroke-width="1.5" marker-end="url(#a3b)" stroke-dasharray="60" stroke-dashoffset="60"><animate attributeName="stroke-dashoffset" values="60;60;0;0;60" keyTimes="0;0.6;0.66;0.94;1" dur="8s" repeatCount="indefinite"/></line>
+    <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.68;0.74;0.94;1" dur="8s" repeatCount="indefinite"/>
+      <rect x="460" y="20" width="140" height="100" rx="8" fill="#FAFAF7" stroke="#D3D1C7" stroke-width="0.5"/>
+      <text x="474" y="70" font-size="56" font-weight="500" fill="#D85A30" font-family="Georgia, serif">“</text>
+      <rect x="520" y="86" width="66" height="22" rx="11" fill="#E6F1FB"/>
+      <text x="553" y="101" font-size="12" fill="#185FA5" text-anchor="middle">▶ 11:03</text>
+      <text x="460" y="142" font-size="11" fill="#888780">the customer's words</text>
+    </g>
+  </svg>
+  </div>
+</section>
+<!-- 4 whole system -->
+<section class="slide" data-n="4">
+  <div class="num">4</div>
+  <div class="title">The whole system: two sources, three agents, one git library, one product team</div>
+  <div class="body">
+  <svg viewBox="0 0 600 240" role="img"><title>System diagram: Gong and Salesforce feed two reader agents that write claims; an editor agent reads claims and existing themes and writes themes; the product team reads themes through a digest UI and an ask agent</title>
+    <defs><marker id="a7" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round"/></marker></defs>
+    <rect x="0" y="48" width="100" height="40" rx="6" fill="#FAECE7" stroke="#D85A30" stroke-width="0.6"/>
+    <text x="50" y="72" font-size="12" font-weight="500" fill="#712B13" text-anchor="middle">Gong calls</text>
+    <rect x="0" y="112" width="100" height="40" rx="6" fill="#E6F1FB" stroke="#378ADD" stroke-width="0.6"/>
+    <text x="50" y="136" font-size="12" font-weight="500" fill="#0C447C" text-anchor="middle">Salesforce cases</text>
+    <rect x="128" y="8" width="154" height="222" rx="12" fill="#FFFFFF" stroke="#534AB7" stroke-width="0.6" stroke-dasharray="4 3"/>
+    <text x="205" y="26" font-size="12" font-weight="500" fill="#3C3489" text-anchor="middle">Agents</text>
+    <text x="205" y="39" font-size="10" fill="#534AB7" text-anchor="middle">one cron job, nightly</text>
+    <rect x="140" y="48" width="130" height="40" rx="6" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.6"/>
+    <text x="205" y="65" font-size="12" font-weight="500" fill="#3C3489" text-anchor="middle">Call reader</text><text x="205" y="79" font-size="10" fill="#534AB7" text-anchor="middle">extracts claims</text>
+    <rect x="140" y="112" width="130" height="40" rx="6" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.6"/>
+    <text x="205" y="129" font-size="12" font-weight="500" fill="#3C3489" text-anchor="middle">Case reader</text><text x="205" y="143" font-size="10" fill="#534AB7" text-anchor="middle">extracts claims</text>
+    <rect x="140" y="176" width="130" height="40" rx="6" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.6"/>
+    <text x="205" y="193" font-size="12" font-weight="500" fill="#3C3489" text-anchor="middle">Editor</text><text x="205" y="207" font-size="10" fill="#534AB7" text-anchor="middle">files claims into themes</text>
+    <rect x="320" y="8" width="150" height="222" rx="12" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.6"/>
+    <text x="395" y="26" font-size="12" font-weight="500" fill="#085041" text-anchor="middle">Library (git)</text>
+    <text x="395" y="39" font-size="10" fill="#0F6E56" text-anchor="middle">commits = audit trail</text>
+    <rect x="335" y="48" width="120" height="40" rx="6" fill="#FFFFFF" stroke="#5DCAA5" stroke-width="0.6"/><text x="395" y="66" font-size="12" fill="#085041" text-anchor="middle" font-family="ui-monospace,Menlo,monospace">claims/</text><text x="395" y="80" font-size="10" fill="#0F6E56" text-anchor="middle">verified quotes</text>
+    <rect x="335" y="140" width="120" height="76" rx="6" fill="#FFFFFF" stroke="#5DCAA5" stroke-width="0.6"/><text x="395" y="172" font-size="12" fill="#085041" text-anchor="middle" font-family="ui-monospace,Menlo,monospace">themes/</text><text x="395" y="188" font-size="10" fill="#0F6E56" text-anchor="middle">ranked, one source</text><text x="395" y="201" font-size="10" fill="#0F6E56" text-anchor="middle">for everything below</text>
+    <rect x="495" y="48" width="95" height="40" rx="6" fill="#F1EFE8" stroke="#888780" stroke-width="0.6"/>
+    <text x="542" y="72" font-size="12" font-weight="500" fill="#2C2C2A" text-anchor="middle">Product team</text>
+    <rect x="495" y="112" width="95" height="40" rx="6" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.6"/>
+    <text x="542" y="129" font-size="12" font-weight="500" fill="#3C3489" text-anchor="middle">Ask agent</text><text x="542" y="143" font-size="10" fill="#534AB7" text-anchor="middle">reads themes/</text>
+    <rect x="495" y="176" width="95" height="40" rx="6" fill="#F1EFE8" stroke="#888780" stroke-width="0.6"/>
+    <text x="542" y="193" font-size="12" font-weight="500" fill="#2C2C2A" text-anchor="middle">Digest UI</text><text x="542" y="207" font-size="10" fill="#5F5E5A" text-anchor="middle">reads themes/</text>
+    <g stroke="#888780" stroke-width="1" fill="none">
+      <line x1="100" y1="68" x2="138" y2="68" marker-end="url(#a7)"/>
+      <line x1="100" y1="132" x2="138" y2="132" marker-end="url(#a7)"/>
+      <line x1="270" y1="62" x2="333" y2="62" marker-end="url(#a7)"/>
+      <polyline points="270,132 300,132 300,74 333,74" marker-end="url(#a7)"/>
+      <polyline points="333,84 312,84 312,188 272,188" marker-end="url(#a7)"/>
+      <polyline points="272,204 322,204 322,178 333,178" marker-start="url(#a7)" marker-end="url(#a7)"/>
+      <polyline points="455,162 475,162 475,132 493,132" marker-end="url(#a7)"/>
+      <line x1="455" y1="196" x2="493" y2="196" marker-end="url(#a7)"/>
+      <line x1="542" y1="112" x2="542" y2="90" marker-start="url(#a7)" marker-end="url(#a7)"/>
+      <polyline points="590,196 597,196 597,68 592,68" marker-end="url(#a7)"/>
+    </g>
+    <circle data-static="hide" r="3.5" fill="#D85A30" opacity="0"><animateMotion path="M100 68 L136 68" dur="8s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.02;0.12;1"/><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.02;0.03;0.11;0.12;1" dur="8s" repeatCount="indefinite"/></circle>
+    <circle data-static="hide" r="3.5" fill="#378ADD" opacity="0"><animateMotion path="M100 132 L136 132" dur="8s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.02;0.12;1"/><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.02;0.03;0.11;0.12;1" dur="8s" repeatCount="indefinite"/></circle>
+    <circle data-static="hide" r="3.5" fill="#534AB7" opacity="0"><animateMotion path="M270 62 L330 62" dur="8s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.15;0.27;1"/><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.15;0.16;0.26;0.27;1" dur="8s" repeatCount="indefinite"/></circle>
+    <circle data-static="hide" r="3.5" fill="#534AB7" opacity="0"><animateMotion path="M270 132 L300 132 L300 74 L330 74" dur="8s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.15;0.27;1"/><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.15;0.16;0.26;0.27;1" dur="8s" repeatCount="indefinite"/></circle>
+    <circle data-static="hide" r="3.5" fill="#0F6E56" opacity="0"><animateMotion path="M333 84 L312 84 L312 188 L275 188" dur="8s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.31;0.43;1"/><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.31;0.32;0.42;0.43;1" dur="8s" repeatCount="indefinite"/></circle>
+    <circle data-static="hide" r="3.5" fill="#0F6E56" opacity="0"><animateMotion path="M333 178 L322 178 L322 204 L275 204" dur="8s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.31;0.43;1"/><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.31;0.32;0.42;0.43;1" dur="8s" repeatCount="indefinite"/></circle>
+    <circle data-static="hide" r="3.5" fill="#534AB7" opacity="0"><animateMotion path="M275 204 L322 204 L322 178 L330 178" dur="8s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.46;0.58;1"/><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.46;0.47;0.57;0.58;1" dur="8s" repeatCount="indefinite"/></circle>
+    <circle data-static="hide" r="3.5" fill="#0F6E56" opacity="0"><animateMotion path="M455 162 L475 162 L475 132 L490 132" dur="8s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.61;0.73;1"/><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.61;0.62;0.72;0.73;1" dur="8s" repeatCount="indefinite"/></circle>
+    <circle data-static="hide" r="3.5" fill="#0F6E56" opacity="0"><animateMotion path="M455 196 L490 196" dur="8s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.61;0.73;1"/><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.61;0.62;0.72;0.73;1" dur="8s" repeatCount="indefinite"/></circle>
+    <circle data-static="hide" r="3.5" fill="#5F5E5A" opacity="0"><animateMotion path="M542 112 L542 92" dur="8s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.76;0.88;1"/><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.76;0.77;0.87;0.88;1" dur="8s" repeatCount="indefinite"/></circle>
+    <circle data-static="hide" r="3.5" fill="#5F5E5A" opacity="0"><animateMotion path="M590 196 L597 196 L597 68 L594 68" dur="8s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.76;0.88;1"/><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.76;0.77;0.87;0.88;1" dur="8s" repeatCount="indefinite"/></circle>
+  </svg>
+  </div>
+</section>
+<!-- 5 agents at work -->
+<section class="slide" data-n="5">
+  <div class="num">5</div>
+  <div class="title">Reader agents turn conversations into records; the editor agent sorts records into themes</div>
+  <div class="body">
+  <svg viewBox="0 0 600 240" role="img"><title>Two reader robots convert Gong calls and Salesforce cases into structured records in a library; an editor robot sorts them into ranked themes</title>
+    <rect x="0" y="15" width="110" height="80" rx="6" fill="#FAECE7" stroke="#D85A30" stroke-width="0.5"/>
+    <g fill="none" stroke="#D85A30" stroke-width="1.4" stroke-linecap="round">
+      <path d="M10 31 q4 -3 8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0"/>
+      <path d="M10 45 q4 -3 8 0 t8 0 t8 0 t8 0 t8 0 t8 0"/>
+      <path d="M10 59 q4 -3 8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0"/>
+      <path d="M10 73 q4 -3 8 0 t8 0 t8 0 t8 0"/>
+      <path d="M10 87 q4 -3 8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0"/>
+    </g>
+    <text x="55" y="109" font-size="11" fill="#712B13" text-anchor="middle">Gong calls</text>
+    <rect x="0" y="125" width="110" height="80" rx="6" fill="#E6F1FB" stroke="#378ADD" stroke-width="0.5"/>
+    <g fill="none" stroke="#378ADD" stroke-width="1.4" stroke-linecap="round">
+      <path d="M10 143 q4 -3 8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0"/>
+      <path d="M10 159 q4 -3 8 0 t8 0 t8 0 t8 0 t8 0"/>
+      <path d="M10 175 q4 -3 8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0"/>
+      <path d="M10 191 q4 -3 8 0 t8 0 t8 0 t8 0 t8 0 t8 0"/>
+    </g>
+    <text x="55" y="219" font-size="11" fill="#0C447C" text-anchor="middle">Salesforce cases</text>
+    <g transform="translate(200,50)">
+      <line x1="0" y1="-30" x2="0" y2="-22" stroke="#534AB7" stroke-width="1.5"/>
+      <circle cx="0" cy="-32" r="3" fill="#7F77DD"><animate attributeName="r" values="3;3;5;3;3" keyTimes="0;0.18;0.24;0.3;1" dur="8s" repeatCount="indefinite"/><animate attributeName="fill" values="#7F77DD;#7F77DD;#D85A30;#7F77DD;#7F77DD" keyTimes="0;0.18;0.24;0.3;1" dur="8s" repeatCount="indefinite"/></circle>
+      <rect x="-20" y="-22" width="40" height="30" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="1"><animate attributeName="fill" values="#EEEDFE;#EEEDFE;#CECBF6;#EEEDFE;#EEEDFE" keyTimes="0;0.18;0.24;0.3;1" dur="8s" repeatCount="indefinite"/></rect>
+      <circle cx="-8" cy="-9" r="3.5" fill="#534AB7"/><circle cx="8" cy="-9" r="3.5" fill="#534AB7"/>
+      <rect x="-8" y="0" width="16" height="3" rx="1.5" fill="#534AB7"/>
+      <rect x="-14" y="10" width="28" height="18" rx="5" fill="#CECBF6" stroke="#534AB7" stroke-width="1"/>
+      <text x="0" y="46" font-size="11" fill="#534AB7" text-anchor="middle">call reader</text>
+    </g>
+    <g transform="translate(200,160)">
+      <line x1="0" y1="-30" x2="0" y2="-22" stroke="#534AB7" stroke-width="1.5"/>
+      <circle cx="0" cy="-32" r="3" fill="#7F77DD"><animate attributeName="r" values="3;3;5;3;3" keyTimes="0;0.44;0.5;0.56;1" dur="8s" repeatCount="indefinite"/><animate attributeName="fill" values="#7F77DD;#7F77DD;#378ADD;#7F77DD;#7F77DD" keyTimes="0;0.44;0.5;0.56;1" dur="8s" repeatCount="indefinite"/></circle>
+      <rect x="-20" y="-22" width="40" height="30" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="1"><animate attributeName="fill" values="#EEEDFE;#EEEDFE;#CECBF6;#EEEDFE;#EEEDFE" keyTimes="0;0.44;0.5;0.56;1" dur="8s" repeatCount="indefinite"/></rect>
+      <circle cx="-8" cy="-9" r="3.5" fill="#534AB7"/><circle cx="8" cy="-9" r="3.5" fill="#534AB7"/>
+      <rect x="-8" y="0" width="16" height="3" rx="1.5" fill="#534AB7"/>
+      <rect x="-14" y="10" width="28" height="18" rx="5" fill="#CECBF6" stroke="#534AB7" stroke-width="1"/>
+      <text x="0" y="46" font-size="11" fill="#534AB7" text-anchor="middle">case reader</text>
+    </g>
+    <rect x="320" y="30" width="70" height="185" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.6"/>
+    <text x="355" y="48" font-size="11" fill="#085041" text-anchor="middle">library</text>
+    <g>
+      <g transform="translate(355,198)"><rect x="-16" y="-6" width="32" height="12" rx="2" fill="#fff" stroke="#534AB7" stroke-width="0.6"/><rect x="-12" y="-2" width="6" height="4" rx="1" fill="#B4B2A9"/><rect x="-4" y="-2" width="9" height="4" rx="1" fill="#F0997B"/><rect x="7" y="-2" width="5" height="4" rx="1" fill="#B4B2A9"/></g>
+      <g transform="translate(355,182)"><rect x="-16" y="-6" width="32" height="12" rx="2" fill="#fff" stroke="#534AB7" stroke-width="0.6"/><rect x="-12" y="-2" width="6" height="4" rx="1" fill="#B4B2A9"/><rect x="-4" y="-2" width="9" height="4" rx="1" fill="#85B7EB"/><rect x="7" y="-2" width="5" height="4" rx="1" fill="#B4B2A9"/></g>
+      <g transform="translate(355,166)"><rect x="-16" y="-6" width="32" height="12" rx="2" fill="#fff" stroke="#534AB7" stroke-width="0.6"/><rect x="-12" y="-2" width="6" height="4" rx="1" fill="#B4B2A9"/><rect x="-4" y="-2" width="9" height="4" rx="1" fill="#F0997B"/><rect x="7" y="-2" width="5" height="4" rx="1" fill="#B4B2A9"/></g>
+      <g transform="translate(355,150)"><rect x="-16" y="-6" width="32" height="12" rx="2" fill="#fff" stroke="#534AB7" stroke-width="0.6"/><rect x="-12" y="-2" width="6" height="4" rx="1" fill="#B4B2A9"/><rect x="-4" y="-2" width="9" height="4" rx="1" fill="#F0997B"/><rect x="7" y="-2" width="5" height="4" rx="1" fill="#B4B2A9"/></g>
+      <g transform="translate(355,134)"><rect x="-16" y="-6" width="32" height="12" rx="2" fill="#fff" stroke="#534AB7" stroke-width="0.6"/><rect x="-12" y="-2" width="6" height="4" rx="1" fill="#B4B2A9"/><rect x="-4" y="-2" width="9" height="4" rx="1" fill="#85B7EB"/><rect x="7" y="-2" width="5" height="4" rx="1" fill="#B4B2A9"/></g>
+    </g>
+    <g transform="translate(460,112) scale(1.15)">
+      <line x1="0" y1="-30" x2="0" y2="-22" stroke="#534AB7" stroke-width="1.5"/>
+      <circle cx="0" cy="-32" r="3" fill="#7F77DD"><animate attributeName="r" values="3;3;5;3;3" keyTimes="0;0.76;0.82;0.88;1" dur="8s" repeatCount="indefinite"/><animate attributeName="fill" values="#7F77DD;#7F77DD;#1D9E75;#7F77DD;#7F77DD" keyTimes="0;0.76;0.82;0.88;1" dur="8s" repeatCount="indefinite"/></circle>
+      <rect x="-20" y="-22" width="40" height="30" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="1"><animate attributeName="fill" values="#EEEDFE;#EEEDFE;#CECBF6;#EEEDFE;#EEEDFE" keyTimes="0;0.76;0.82;0.88;1" dur="8s" repeatCount="indefinite"/></rect>
+      <circle cx="-8" cy="-9" r="3.5" fill="#534AB7"/><circle cx="8" cy="-9" r="3.5" fill="#534AB7"/>
+      <rect x="-8" y="0" width="16" height="3" rx="1.5" fill="#534AB7"/>
+      <rect x="-14" y="10" width="28" height="18" rx="5" fill="#CECBF6" stroke="#534AB7" stroke-width="1"/>
+      <text x="0" y="46" font-size="10" fill="#534AB7" text-anchor="middle">editor</text>
+    </g>
+    <rect x="530" y="60" width="50" height="16" rx="3" fill="#2C2C2A"><animate attributeName="width" values="50;50;70;70" keyTimes="0;0.95;0.98;1" dur="8s" repeatCount="indefinite"/></rect>
+    <rect x="530" y="84" width="45" height="16" rx="3" fill="#5F5E5A"/>
+    <rect x="530" y="108" width="32" height="16" rx="3" fill="#888780"/>
+    <rect x="530" y="132" width="22" height="16" rx="3" fill="#B4B2A9"/>
+    <text x="600" y="170" font-size="11" fill="#888780" text-anchor="end">ranked themes</text>
+    <g opacity="0" data-static="hide">
+      <path d="M-14 0 q3.5 -4 7 0 t7 0 t7 0 t7 0" fill="none" stroke="#D85A30" stroke-width="1.8" stroke-linecap="round"/>
+      <animateMotion dur="8s" repeatCount="indefinite" calcMode="linear" path="M112 50 L176 45" keyPoints="0;1;1" keyTimes="0;0.2;1"/>
+      <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.18;0.21;1" dur="8s" repeatCount="indefinite"/>
+    </g>
+    <g opacity="0" data-static="hide">
+      <rect x="-16" y="-6" width="32" height="12" rx="2" fill="#fff" stroke="#534AB7" stroke-width="0.8"/><rect x="-12" y="-2" width="6" height="4" rx="1" fill="#B4B2A9"/><rect x="-4" y="-2" width="9" height="4" rx="1" fill="#F0997B"/><rect x="7" y="-2" width="5" height="4" rx="1" fill="#B4B2A9"/>
+      <animateMotion dur="8s" repeatCount="indefinite" calcMode="linear" path="M226 45 L355 118" keyPoints="0;0;1;1" keyTimes="0;0.28;0.46;1"/>
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.28;0.3;0.46;0.48;1" dur="8s" repeatCount="indefinite"/>
+    </g>
+    <g opacity="0" data-static="hide">
+      <path d="M-14 0 q3.5 -4 7 0 t7 0 t7 0 t7 0" fill="none" stroke="#378ADD" stroke-width="1.8" stroke-linecap="round"/>
+      <animateMotion dur="8s" repeatCount="indefinite" calcMode="linear" path="M112 160 L176 155" keyPoints="0;0;1;1" keyTimes="0;0.28;0.46;1"/>
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.28;0.29;0.44;0.47;1" dur="8s" repeatCount="indefinite"/>
+    </g>
+    <g opacity="0" data-static="hide">
+      <rect x="-16" y="-6" width="32" height="12" rx="2" fill="#fff" stroke="#534AB7" stroke-width="0.8"/><rect x="-12" y="-2" width="6" height="4" rx="1" fill="#B4B2A9"/><rect x="-4" y="-2" width="9" height="4" rx="1" fill="#85B7EB"/><rect x="7" y="-2" width="5" height="4" rx="1" fill="#B4B2A9"/>
+      <animateMotion dur="8s" repeatCount="indefinite" calcMode="linear" path="M226 155 L355 102" keyPoints="0;0;1;1" keyTimes="0;0.54;0.72;1"/>
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.54;0.56;0.72;0.74;1" dur="8s" repeatCount="indefinite"/>
+    </g>
+    <g opacity="0" data-static="hide">
+      <rect x="-16" y="-6" width="32" height="12" rx="2" fill="#fff" stroke="#534AB7" stroke-width="0.8"/><rect x="-12" y="-2" width="6" height="4" rx="1" fill="#B4B2A9"/><rect x="-4" y="-2" width="9" height="4" rx="1" fill="#F0997B"/><rect x="7" y="-2" width="5" height="4" rx="1" fill="#B4B2A9"/>
+      <animateMotion dur="8s" repeatCount="indefinite" calcMode="linear" path="M390 118 L440 112 L560 68" keyPoints="0;0;0.4;1;1" keyTimes="0;0.7;0.8;0.95;1"/>
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.7;0.72;0.95;0.97;1" dur="8s" repeatCount="indefinite"/>
+    </g>
+  </svg>
+  </div>
+</section>
+<!-- 6 ask -->
+<section class="slide" data-n="6">
+  <div class="num">6</div>
+  <div class="title">Ask why a theme matters; the answer comes from the library, with the customer's words</div>
+  <div class="body">
+  <svg viewBox="0 0 600 230" role="img"><title>A product manager asks a question; the ask agent pulls a record from the library and answers with a playable quote</title>
+    <circle cx="90" cy="106" r="16" fill="#F1EFE8" stroke="#888780" stroke-width="1"/>
+    <path d="M58 156 C58 130 122 130 122 156 Z" fill="#F1EFE8" stroke="#888780" stroke-width="1"/>
+    <text x="90" y="180" font-size="11" fill="#5F5E5A" text-anchor="middle">product manager</text>
+    <g opacity="0">
+      <rect x="150" y="28" width="120" height="44" rx="10" fill="#FFFFFF" stroke="#888780" stroke-width="0.8"/>
+      <path d="M160 72 L150 88 L178 72 Z" fill="#FFFFFF" stroke="#888780" stroke-width="0.8"/>
+      <rect x="166" y="44" width="70" height="7" rx="3.5" fill="#B4B2A9"/>
+      <text x="252" y="58" font-size="20" fill="#2C2C2A" text-anchor="middle">?</text>
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.04;0.1;0.92;0.97;1" dur="8s" repeatCount="indefinite"/>
+    </g>
+    <g opacity="0">
+      <rect x="150" y="150" width="190" height="60" rx="10" fill="#FFFFFF" stroke="#534AB7" stroke-width="0.8"/>
+      <path d="M330 150 L340 134 L312 150 Z" fill="#FFFFFF" stroke="#534AB7" stroke-width="0.8"/>
+      <text x="164" y="196" font-size="40" fill="#534AB7" font-family="Georgia, serif">“</text>
+      <rect x="206" y="162" width="118" height="7" rx="3.5" fill="#B4B2A9"/>
+      <rect x="206" y="175" width="80" height="7" rx="3.5" fill="#B4B2A9"/>
+      <rect x="254" y="188" width="70" height="16" rx="8" fill="#E6F1FB"/>
+      <text x="289" y="200" font-size="11" fill="#185FA5" text-anchor="middle">▶ 11:03</text>
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.6;0.66;0.92;0.97;1" dur="8s" repeatCount="indefinite"/>
+    </g>
+    <g transform="translate(380,98) scale(1.25)">
+      <line x1="0" y1="-30" x2="0" y2="-22" stroke="#534AB7" stroke-width="1.5"/>
+      <circle cx="0" cy="-32" r="3" fill="#7F77DD"><animate attributeName="r" values="3;3;5;5;3;3" keyTimes="0;0.28;0.34;0.56;0.62;1" dur="8s" repeatCount="indefinite"/><animate attributeName="fill" values="#7F77DD;#7F77DD;#1D9E75;#1D9E75;#7F77DD;#7F77DD" keyTimes="0;0.28;0.34;0.56;0.62;1" dur="8s" repeatCount="indefinite"/></circle>
+      <rect x="-20" y="-22" width="40" height="30" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="1"><animate attributeName="fill" values="#EEEDFE;#EEEDFE;#CECBF6;#CECBF6;#EEEDFE;#EEEDFE" keyTimes="0;0.28;0.34;0.56;0.62;1" dur="8s" repeatCount="indefinite"/></rect>
+      <circle cx="-8" cy="-9" r="3.5" fill="#534AB7"/><circle cx="8" cy="-9" r="3.5" fill="#534AB7"/>
+      <rect x="-8" y="0" width="16" height="3" rx="1.5" fill="#534AB7"/>
+      <rect x="-14" y="10" width="28" height="18" rx="5" fill="#CECBF6" stroke="#534AB7" stroke-width="1"/>
+      <text x="0" y="46" font-size="10" fill="#534AB7" text-anchor="middle">ask agent</text>
+    </g>
+    <rect x="490" y="26" width="90" height="180" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.6"/>
+    <text x="535" y="46" font-size="11" fill="#085041" text-anchor="middle">library</text>
+    <g>
+      <g transform="translate(535,190)"><rect x="-20" y="-6" width="40" height="12" rx="2" fill="#fff" stroke="#534AB7" stroke-width="0.6"/><rect x="-15" y="-2" width="8" height="4" rx="1" fill="#B4B2A9"/><rect x="-4" y="-2" width="11" height="4" rx="1" fill="#F0997B"/><rect x="10" y="-2" width="6" height="4" rx="1" fill="#B4B2A9"/></g>
+      <g transform="translate(535,174)"><rect x="-20" y="-6" width="40" height="12" rx="2" fill="#fff" stroke="#534AB7" stroke-width="0.6"/><rect x="-15" y="-2" width="8" height="4" rx="1" fill="#B4B2A9"/><rect x="-4" y="-2" width="11" height="4" rx="1" fill="#85B7EB"/><rect x="10" y="-2" width="6" height="4" rx="1" fill="#B4B2A9"/></g>
+      <g transform="translate(535,158)"><rect x="-20" y="-6" width="40" height="12" rx="2" fill="#fff" stroke="#534AB7" stroke-width="0.6"/><rect x="-15" y="-2" width="8" height="4" rx="1" fill="#B4B2A9"/><rect x="-4" y="-2" width="11" height="4" rx="1" fill="#F0997B"/><rect x="10" y="-2" width="6" height="4" rx="1" fill="#B4B2A9"/></g>
+      <g transform="translate(535,142)"><rect x="-20" y="-6" width="40" height="12" rx="2" fill="#fff" stroke="#534AB7" stroke-width="0.6"/><rect x="-15" y="-2" width="8" height="4" rx="1" fill="#B4B2A9"/><rect x="-4" y="-2" width="11" height="4" rx="1" fill="#F0997B"/><rect x="10" y="-2" width="6" height="4" rx="1" fill="#B4B2A9"/></g>
+      <g transform="translate(535,126)"><rect x="-20" y="-6" width="40" height="12" rx="2" fill="#fff" stroke="#534AB7" stroke-width="0.6"/><rect x="-15" y="-2" width="8" height="4" rx="1" fill="#B4B2A9"/><rect x="-4" y="-2" width="11" height="4" rx="1" fill="#85B7EB"/><rect x="10" y="-2" width="6" height="4" rx="1" fill="#B4B2A9"/></g>
+      <g transform="translate(535,110)"><rect x="-20" y="-6" width="40" height="12" rx="2" fill="#fff" stroke="#534AB7" stroke-width="0.6"/><rect x="-15" y="-2" width="8" height="4" rx="1" fill="#B4B2A9"/><rect x="-4" y="-2" width="11" height="4" rx="1" fill="#F0997B"/><rect x="10" y="-2" width="6" height="4" rx="1" fill="#B4B2A9"/></g>
+    </g>
+    <g opacity="0" data-static="hide">
+      <rect x="-16" y="-6" width="32" height="12" rx="2" fill="#fff" stroke="#534AB7" stroke-width="0.8"/><rect x="-12" y="-2" width="6" height="4" rx="1" fill="#B4B2A9"/><rect x="-4" y="-2" width="9" height="4" rx="1" fill="#F0997B"/><rect x="7" y="-2" width="5" height="4" rx="1" fill="#B4B2A9"/>
+      <animateMotion dur="8s" repeatCount="indefinite" calcMode="linear" path="M535 94 L412 98" keyPoints="0;0;1;1" keyTimes="0;0.36;0.5;1"/>
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.36;0.38;0.52;0.56;1" dur="8s" repeatCount="indefinite"/>
+    </g>
+  </svg>
+  </div>
+</section>
+<!-- 7 what's next -->
+<section class="slide" data-n="7">
+  <div class="num">7</div>
+  <div class="title">Built to the brief; four add-ons are designed, not built</div>
+  <div class="body">
+  <svg viewBox="0 0 600 250" role="img"><title>The built system in grey with four outlined add-ons: live MCP connectors, PII scrub, evals, and an approve gate before a backlog</title>
+    <defs><marker id="a8s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round"/></marker></defs>
+    <g font-size="11" fill="#888780" text-anchor="middle">
+      <rect x="4" y="44" width="76" height="34" rx="5" fill="#F1EFE8" stroke="#D3D1C7" stroke-width="0.6"/><text x="42" y="65">Gong</text>
+      <rect x="4" y="98" width="76" height="34" rx="5" fill="#F1EFE8" stroke="#D3D1C7" stroke-width="0.6"/><text x="42" y="119">Salesforce</text>
+      <rect x="162" y="8" width="130" height="192" rx="10" fill="#FFFFFF" stroke="#D3D1C7" stroke-width="0.6" stroke-dasharray="4 3"/><text x="227" y="26" font-weight="500">Agents</text>
+      <rect x="172" y="44" width="110" height="34" rx="5" fill="#F1EFE8" stroke="#D3D1C7" stroke-width="0.6"/><text x="227" y="65">Call reader</text>
+      <rect x="172" y="98" width="110" height="34" rx="5" fill="#F1EFE8" stroke="#D3D1C7" stroke-width="0.6"/><text x="227" y="119">Case reader</text>
+      <rect x="172" y="152" width="110" height="34" rx="5" fill="#F1EFE8" stroke="#D3D1C7" stroke-width="0.6"/><text x="227" y="173">Editor</text>
+      <rect x="304" y="8" width="130" height="192" rx="10" fill="#F7F6F2" stroke="#D3D1C7" stroke-width="0.6"/><text x="369" y="26" font-weight="500">Library (git)</text>
+      <rect x="314" y="44" width="110" height="34" rx="5" fill="#FFFFFF" stroke="#D3D1C7" stroke-width="0.6"/><text x="369" y="65" font-family="ui-monospace,Menlo,monospace">claims/</text>
+      <rect x="314" y="122" width="110" height="64" rx="5" fill="#FFFFFF" stroke="#D3D1C7" stroke-width="0.6"/><text x="369" y="158" font-family="ui-monospace,Menlo,monospace">themes/</text>
+      <rect x="446" y="44" width="74" height="34" rx="5" fill="#F1EFE8" stroke="#D3D1C7" stroke-width="0.6"/><text x="483" y="65">Product team</text>
+      <rect x="446" y="98" width="74" height="34" rx="5" fill="#F1EFE8" stroke="#D3D1C7" stroke-width="0.6"/><text x="483" y="119">Ask agent</text>
+      <rect x="446" y="152" width="74" height="34" rx="5" fill="#F1EFE8" stroke="#D3D1C7" stroke-width="0.6"/><text x="483" y="173">Digest UI</text>
+    </g>
+    <g stroke="#D3D1C7" stroke-width="1" fill="none">
+      <line x1="80" y1="61" x2="90" y2="61"/><line x1="80" y1="115" x2="90" y2="115"/>
+      <line x1="150" y1="61" x2="170" y2="61" marker-end="url(#a8s)"/><line x1="150" y1="115" x2="170" y2="115" marker-end="url(#a8s)"/>
+      <line x1="282" y1="56" x2="312" y2="56" marker-end="url(#a8s)"/>
+      <polyline points="282,115 296,115 296,66 312,66" marker-end="url(#a8s)"/>
+      <polyline points="312,74 304,74 304,162 284,162" marker-end="url(#a8s)"/>
+      <polyline points="284,176 300,176 300,170 312,170" marker-start="url(#a8s)" marker-end="url(#a8s)"/>
+      <polyline points="424,140 434,140 434,115 444,115" marker-end="url(#a8s)"/>
+      <line x1="424" y1="169" x2="444" y2="169" marker-end="url(#a8s)"/>
+      <line x1="483" y1="98" x2="483" y2="80" marker-start="url(#a8s)" marker-end="url(#a8s)"/>
+      <polyline points="520,169 526,169 526,61 522,61" marker-end="url(#a8s)"/>
+    </g>
+    <rect x="0" y="38" width="84" height="122" rx="8" fill="none" stroke="#BA7517" stroke-width="1" stroke-dasharray="5 3"/>
+    <text x="42" y="152" font-size="10" fill="#854F0B" text-anchor="middle">live via MCP</text>
+    <rect x="92" y="44" width="58" height="88" rx="6" fill="#FAEEDA" stroke="#BA7517" stroke-width="1" stroke-dasharray="5 3"/>
+    <text x="121" y="84" font-size="11" font-weight="500" fill="#633806" text-anchor="middle">PII</text>
+    <text x="121" y="98" font-size="11" font-weight="500" fill="#633806" text-anchor="middle">scrub</text>
+    <line x1="332" y1="200" x2="332" y2="212" stroke="#BA7517" stroke-width="1" marker-end="url(#a8s)"/>
+    <rect x="304" y="214" width="56" height="32" rx="6" fill="#FAEEDA" stroke="#BA7517" stroke-width="1" stroke-dasharray="5 3"/>
+    <text x="332" y="234" font-size="11" font-weight="500" fill="#633806" text-anchor="middle">evals</text>
+    <line x1="402" y1="200" x2="402" y2="212" stroke="#BA7517" stroke-width="1" marker-end="url(#a8s)"/>
+    <rect x="370" y="214" width="64" height="32" rx="6" fill="#FAEEDA" stroke="#BA7517" stroke-width="1" stroke-dasharray="5 3"/>
+    <text x="402" y="234" font-size="11" font-weight="500" fill="#633806" text-anchor="middle">approve</text>
+    <line x1="434" y1="230" x2="444" y2="230" stroke="#BA7517" stroke-width="1" marker-end="url(#a8s)"/>
+    <rect x="446" y="214" width="74" height="32" rx="6" fill="#FFFFFF" stroke="#BA7517" stroke-width="1" stroke-dasharray="5 3"/>
+    <text x="483" y="234" font-size="11" fill="#633806" text-anchor="middle">backlog</text>
+  </svg>
+  </div>
+</section>
+
+</div>
+<div id="hud">1 / 7 &nbsp; ← → &nbsp; F fullscreen</div>
+
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide')),i=0,hud=document.getElementById('hud');
+  var q=new URLSearchParams(location.search);
+  var staticMode=q.get('static')==='1';
+  if(staticMode){document.body.classList.add('static');}
+  if(q.get('body')==='1'){document.body.classList.add('bodyonly');}
+  function fit(){
+    if(staticMode)return;
+    var s=Math.min(innerWidth/1280,innerHeight/720)*0.94;
+    slides.forEach(function(el){el.style.transform='scale('+s+')';});
+  }
+  function freeze(svg){
+    // static mode: put every animated element at its "shown" state, then strip animations
+    svg.querySelectorAll('animateMotion').forEach(function(am){
+      var el=am.parentNode,d=am.getAttribute('path');
+      var p=document.createElementNS('http://www.w3.org/2000/svg','path');p.setAttribute('d',d);svg.appendChild(p);
+      var pt=p.getPointAtLength(p.getTotalLength());svg.removeChild(p);
+      var tr=el.getAttribute('transform')||'';el.setAttribute('transform','translate('+pt.x+','+pt.y+') '+tr);
+    });
+    svg.querySelectorAll('animate').forEach(function(a){
+      var el=a.parentNode,n=a.getAttribute('attributeName'),vals=(a.getAttribute('values')||'').split(';');
+      var v;
+      if(n==='opacity'||n==='width'||n==='r'||n==='stroke-width'){v=vals.reduce(function(m,x){return Math.max(m,parseFloat(x));},-1);}
+      else if(n==='stroke-dashoffset'){v=0;}
+      else if(n==='fill'){v=vals[0];}
+      if(v!==undefined)el.setAttribute(n,v);
+    });
+    svg.querySelectorAll('animate,animateMotion').forEach(function(a){a.parentNode.removeChild(a);});
+    svg.querySelectorAll('[data-static="hide"]').forEach(function(el){el.setAttribute('opacity','0');});
+  }
+  function show(n){
+    i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach(function(el,k){
+      var on=k===i;el.classList.toggle('active',on);
+      el.querySelectorAll('svg').forEach(function(svg){
+        if(on){try{svg.setCurrentTime(0);svg.unpauseAnimations();}catch(e){}}
+        else{try{svg.pauseAnimations();}catch(e){}}
+      });
+    });
+    hud.textContent=(i+1)+' / '+slides.length+'   ← →   F fullscreen';
+    if(!staticMode)history.replaceState(null,'','#'+(i+1));
+  }
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown')show(i+1);
+    else if(e.key==='ArrowLeft'||e.key==='PageUp')show(i-1);
+    else if(e.key==='Home')show(0);
+    else if(e.key==='End')show(slides.length-1);
+    else if(e.key==='f'||e.key==='F'){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();}
+  });
+  document.getElementById('stage').addEventListener('click',function(e){show(e.clientX>innerWidth/2?i+1:i-1);});
+  addEventListener('resize',fit);
+  fit();
+  var start=parseInt(q.get('slide')||location.hash.slice(1)||'1',10)-1;
+  if(staticMode){document.querySelectorAll('svg').forEach(freeze);}
+  show(isNaN(start)?0:start);
+})();
+</script>
+</body>
+</html>
