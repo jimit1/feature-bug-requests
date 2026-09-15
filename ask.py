@@ -24,25 +24,34 @@ def render(themes, claims):
                     c["day"], source_line(c["locator"])))
     return "\n".join(lines)
 
-def main():
-    question = " ".join(sys.argv[1:]).strip()
-    if not question:
-        sys.exit('usage: python ask.py "why does the renewal credit issue matter"')
-    themes = [json.loads(p.read_text()) for p in sorted((LIBRARY / "themes").glob("*.json"))]
-    if not themes:
-        sys.exit("library/themes is empty, so there is nothing to ask about yet.")
+def load_library(library_dir):
+    library_dir = pathlib.Path(library_dir)
+    themes = [json.loads(p.read_text()) for p in sorted((library_dir / "themes").glob("*.json"))]
     themes.sort(key=lambda t: t.get("score", 0), reverse=True)
     claims = {}
-    for path in sorted((LIBRARY / "claims").glob("*.jsonl")):
+    for path in sorted((library_dir / "claims").glob("*.jsonl")):
         if path.name != "rejected.jsonl":
             for line in path.read_text().splitlines():
                 if line.strip():
                     claim = json.loads(line)
                     claims[claim["id"]] = claim
-    answer, _usage = call_model(
+    return themes, claims
+
+def answer(question, themes, claims):
+    text, _usage = call_model(
         "ask", (ROOT / "agents" / "ask.md").read_text(),
         "Library\n%s\n\nQuestion\n%s" % (render(themes, claims), question))
-    print(answer)
+    return text
+
+def main():
+    question = " ".join(sys.argv[1:]).strip()
+    if not question:
+        sys.exit('usage: python ask.py "why does the renewal credit issue matter"')
+    themes, claims = load_library(LIBRARY)
+    if not themes:
+        sys.exit("library/themes is empty, so there is nothing to ask about yet.")
+    print(answer(question, themes, claims))
 
 
-main()
+if __name__ == "__main__":
+    main()
