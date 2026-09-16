@@ -1,5 +1,5 @@
 {
- "about": "The golden set for `python run.py --eval`. Claims under `present` must still be in library/claims. Sentences under `absent` must never be quoted by any claim: one is an internal case comment the customer never saw, the other was spoken by the Momentive side of a call. Every claim in the library is also checked to make sure its locator still resolves to a real turn or comment under data/. The nightly job runs this after the pipeline and fails loudly when the library drifts.",
+ "about": "The golden set for `python run.py --eval`. Claims under `present` must still be in library/claims. Sentences under `absent` must never be quoted by any claim: one is an internal case comment the customer never saw, the other was spoken by the Momentive side of a call. Pairs under `together` were said by different accounts about one failure and must sit in one theme, and no two theme titles may say the same thing: that is the editor's side of the drift. Every claim in the library is also checked to make sure its locator still resolves to a real turn or comment under data/. The nightly job runs this after the pipeline and fails loudly when the library drifts.",
  "present": [
   {
    "account": "Great Lakes Museum Alliance",
@@ -34,6 +34,29 @@
   {
    "why": "spoken by the Momentive side on call 7782934451119",
    "quote": "a pull that has to hold together past ten thousand rows is a concrete requirement that somebody can size"
+  }
+ ],
+ "together": [
+  {
+   "why": "identity provider role changes, two accounts",
+   "quotes": [
+    "When someone changes roles in our identity provider the sync misses it, and they keep the old permission set until someone catches it manually.",
+    "Staff who move departments still show up with their prior access weeks later because the provisioning sync does not pick up the role change."
+   ]
+  },
+  {
+   "why": "renewal totals ignoring what was already paid, two accounts",
+   "quotes": [
+    "Every renewal statement we send out is missing the balance that carried over from the previous period, so the invoice total reads far higher than it should.",
+    "When one of our chapters upgrades partway through the year we get billed the full renewal amount again in the fall, with nothing knocked off for what was already collected."
+   ]
+  },
+  {
+   "why": "check-in through a wifi outage, two accounts",
+   "quotes": [
+    "Our onsite team needs event check-in to keep working even when the venue wifi drops, and then sync everything back once we are online again.",
+    "The attendee kiosk has to keep taking people in even if the venue connection goes down, and catch back up automatically the moment it reconnects."
+   ]
   }
  ]
 }

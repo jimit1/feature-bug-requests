@@ -54,7 +54,7 @@ window.DIGEST = {
     "customer": 2,
     "prospect": 0
    },
-   "open_cases": 9,
+   "open_cases": 11,
    "score_parts": {
     "accounts": 15.0,
     "value": 17.0,
@@ -150,6 +150,89 @@ window.DIGEST = {
    ]
   },
   {
+   "id": "THEME-0011",
+   "title": "Identity provider sync misses role changes",
+   "type": "bug",
+   "summary": "Customers who provision staff and volunteer accounts from an external identity provider find that role changes are not carried across. People who move departments or change roles keep their previous permission set for weeks until an administrator notices and fixes it manually.",
+   "claim_ids": [
+    "c-b35dfc0ea355",
+    "c-24607f31d72f"
+   ],
+   "first_seen": "2026-09-16",
+   "last_seen": "2026-09-16",
+   "log": [
+    {
+     "day": "2026-09-16",
+     "action": "open",
+     "claim_id": "c-b35dfc0ea355",
+     "why": "No theme in the index covers user provisioning or permission sync from an external identity provider, so this is a new heading."
+    },
+    {
+     "day": "2026-09-16",
+     "action": "append",
+     "claim_id": "c-24607f31d72f",
+     "why": "Merged from THEME-0012 by code: its title said the same thing as THEME-0011. Editor: Staff keeping prior access because the provisioning sync does not pick up a role change is the same failure opened tonight for identity provider role sync."
+    }
+   ],
+   "accounts": {
+    "customer": 2,
+    "prospect": 0
+   },
+   "open_cases": 12,
+   "score_parts": {
+    "accounts": 15.0,
+    "value": 17.0,
+    "cases": 20.0,
+    "recency": 15.0,
+    "bug": 10.0
+   },
+   "score": 77,
+   "claims": [
+    {
+     "id": "c-b35dfc0ea355",
+     "day": "2026-09-15",
+     "source": "gong",
+     "type": "bug",
+     "topic": "identity provider sync misses role changes",
+     "quote": "When someone changes roles in our identity provider the sync misses it, and they keep the old permission set until someone catches it manually.",
+     "account_id": "ACC-0001",
+     "account": "Great Lakes Museum Alliance",
+     "account_type": "customer",
+     "tier": "Enterprise",
+     "arr": 340000,
+     "speaker": "Naomi Castellanos",
+     "locator": {
+      "call_id": "7782934452022",
+      "speaker_id": "c-01",
+      "start_ms": 252458,
+      "end_ms": 270931
+     },
+     "occurred_at": "2026-09-15T09:36:53Z"
+    },
+    {
+     "id": "c-24607f31d72f",
+     "day": "2026-09-16",
+     "source": "gong",
+     "type": "bug",
+     "topic": "provisioning sync not updating role changes",
+     "quote": "Staff who move departments still show up with their prior access weeks later because the provisioning sync does not pick up the role change.",
+     "account_id": "ACC-0002",
+     "account": "Cascadia Nurses Association",
+     "account_type": "customer",
+     "tier": "Enterprise",
+     "arr": 268000,
+     "speaker": "Renee Okafor",
+     "locator": {
+      "call_id": "7782934452023",
+      "speaker_id": "c-02",
+      "start_ms": 284715,
+      "end_ms": 295665
+     },
+     "occurred_at": "2026-09-16T15:36:00Z"
+    }
+   ]
+  },
+  {
    "id": "THEME-0005",
    "title": "Membership report export truncated at row limit",
    "type": "bug",
@@ -192,7 +275,7 @@ window.DIGEST = {
     "customer": 2,
     "prospect": 0
    },
-   "open_cases": 8,
+   "open_cases": 10,
    "score_parts": {
     "accounts": 15.0,
     "value": 17.0,
@@ -288,61 +371,6 @@ window.DIGEST = {
    ]
   },
   {
-   "id": "THEME-0011",
-   "title": "Identity provider sync misses role changes",
-   "type": "bug",
-   "summary": "Customers who provision staff and volunteer accounts from an external identity provider find that role changes are not carried across. People who move departments or change roles keep their previous permission set for weeks until an administrator notices and fixes it manually.",
-   "claim_ids": [
-    "c-b35dfc0ea355"
-   ],
-   "first_seen": "2026-09-16",
-   "last_seen": "2026-09-16",
-   "log": [
-    {
-     "day": "2026-09-16",
-     "action": "open",
-     "claim_id": "c-b35dfc0ea355",
-     "why": "No theme in the index covers user provisioning or permission sync from an external identity provider, so this is a new heading."
-    }
-   ],
-   "accounts": {
-    "customer": 1,
-    "prospect": 0
-   },
-   "open_cases": 6,
-   "score_parts": {
-    "accounts": 7.5,
-    "value": 17.0,
-    "cases": 20.0,
-    "recency": 15.0,
-    "bug": 10.0
-   },
-   "score": 70,
-   "claims": [
-    {
-     "id": "c-b35dfc0ea355",
-     "day": "2026-09-15",
-     "source": "gong",
-     "type": "bug",
-     "topic": "identity provider sync misses role changes",
-     "quote": "When someone changes roles in our identity provider the sync misses it, and they keep the old permission set until someone catches it manually.",
-     "account_id": "ACC-0001",
-     "account": "Great Lakes Museum Alliance",
-     "account_type": "customer",
-     "tier": "Enterprise",
-     "arr": 340000,
-     "speaker": "Naomi Castellanos",
-     "locator": {
-      "call_id": "7782934452022",
-      "speaker_id": "c-01",
-      "start_ms": 252458,
-      "end_ms": 270931
-     },
-     "occurred_at": "2026-09-15T09:36:53Z"
-    }
-   ]
-  },
-  {
    "id": "THEME-0008",
    "title": "Pledge reminder schedule ignores donor contact preferences",
    "type": "bug",
@@ -378,7 +406,7 @@ window.DIGEST = {
     "customer": 2,
     "prospect": 0
    },
-   "open_cases": 6,
+   "open_cases": 7,
    "score_parts": {
     "accounts": 15.0,
     "value": 13.4,
@@ -453,61 +481,6 @@ window.DIGEST = {
    ]
   },
   {
-   "id": "THEME-0012",
-   "title": "provisioning sync not updating role changes",
-   "type": "bug",
-   "summary": "",
-   "claim_ids": [
-    "c-24607f31d72f"
-   ],
-   "first_seen": "2026-09-16",
-   "last_seen": "2026-09-16",
-   "log": [
-    {
-     "day": "2026-09-16",
-     "action": "open",
-     "claim_id": "c-24607f31d72f",
-     "why": "Staff keeping prior access because the provisioning sync does not pick up a role change is the same failure opened tonight for identity provider role sync."
-    }
-   ],
-   "accounts": {
-    "customer": 1,
-    "prospect": 0
-   },
-   "open_cases": 4,
-   "score_parts": {
-    "accounts": 7.5,
-    "value": 13.4,
-    "cases": 20.0,
-    "recency": 15.0,
-    "bug": 10.0
-   },
-   "score": 66,
-   "claims": [
-    {
-     "id": "c-24607f31d72f",
-     "day": "2026-09-16",
-     "source": "gong",
-     "type": "bug",
-     "topic": "provisioning sync not updating role changes",
-     "quote": "Staff who move departments still show up with their prior access weeks later because the provisioning sync does not pick up the role change.",
-     "account_id": "ACC-0002",
-     "account": "Cascadia Nurses Association",
-     "account_type": "customer",
-     "tier": "Enterprise",
-     "arr": 268000,
-     "speaker": "Renee Okafor",
-     "locator": {
-      "call_id": "7782934452023",
-      "speaker_id": "c-02",
-      "start_ms": 284715,
-      "end_ms": 295665
-     },
-     "occurred_at": "2026-09-16T15:36:00Z"
-    }
-   ]
-  },
-  {
    "id": "THEME-0003",
    "title": "Offline event check-in with later sync",
    "type": "feature",
@@ -557,7 +530,7 @@ window.DIGEST = {
     "customer": 2,
     "prospect": 0
    },
-   "open_cases": 7,
+   "open_cases": 9,
    "score_parts": {
     "accounts": 15.0,
     "value": 13.4,
@@ -702,7 +675,7 @@ window.DIGEST = {
     "customer": 2,
     "prospect": 0
    },
-   "open_cases": 5,
+   "open_cases": 6,
    "score_parts": {
     "accounts": 15.0,
     "value": 7.7,
@@ -784,7 +757,7 @@ window.DIGEST = {
     "customer": 2,
     "prospect": 0
    },
-   "open_cases": 4,
+   "open_cases": 5,
    "score_parts": {
     "accounts": 15.0,
     "value": 2.0,
@@ -860,7 +833,7 @@ window.DIGEST = {
     "customer": 1,
     "prospect": 0
    },
-   "open_cases": 6,
+   "open_cases": 7,
    "score_parts": {
     "accounts": 7.5,
     "value": 17.0,
@@ -915,15 +888,15 @@ window.DIGEST = {
     "customer": 1,
     "prospect": 0
    },
-   "open_cases": 3,
+   "open_cases": 4,
    "score_parts": {
     "accounts": 7.5,
     "value": 4.8,
-    "cases": 15.0,
+    "cases": 20.0,
     "recency": 6.4,
     "bug": 10.0
    },
-   "score": 44,
+   "score": 49,
    "claims": [
     {
      "id": "c-c44577763b5c",

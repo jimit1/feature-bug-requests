@@ -51,6 +51,17 @@ def test_decisions_apply_as_append_or_open():
     assert themes["THEME-0002"]["log"][0]["action"] == "open"
 
 
+def test_an_open_whose_title_matches_an_existing_theme_appends_instead():
+    claims = [{"id": "c-1", "type": "bug", "topic": "a"}]
+    themes = {"THEME-0001": {"id": "THEME-0001", "title": "Identity provider sync misses role changes", "type": "bug",
+                             "summary": "", "claim_ids": [], "first_seen": "2026-09-08", "last_seen": "2026-09-08", "log": []}}
+    out = {"decisions": [{"claim_id": "c-1", "action": "open", "theme_id": None,
+                          "title": "provisioning sync not updating role changes", "why": "new"}], "summaries": {}}
+    assert run.apply_decisions(out, claims, themes, {"days": [], "next_theme": 2}, "2026-09-16") == (1, 0)
+    assert list(themes) == ["THEME-0001"] and themes["THEME-0001"]["log"][0]["why"].startswith("Filed by code")
+    assert not run.same("Renewal invoices omit prior credits and balances", "Renewal notice email deliverability")
+
+
 def test_a_known_day_is_skipped(tmp_path, monkeypatch, capsys):
     (tmp_path / "library").mkdir()
     (tmp_path / "library" / "state.json").write_text(json.dumps({"days": ["2026-09-08"], "next_theme": 1}))

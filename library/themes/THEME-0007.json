@@ -20,13 +20,13 @@
   "customer": 1,
   "prospect": 0
  },
- "open_cases": 3,
+ "open_cases": 4,
  "score_parts": {
   "accounts": 7.5,
   "value": 4.8,
-  "cases": 15.0,
+  "cases": 20.0,
   "recency": 6.4,
   "bug": 10.0
  },
- "score": 44
+ "score": 49
 }

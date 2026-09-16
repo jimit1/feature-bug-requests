@@ -178,33 +178,41 @@ def read_documents(docs, day):
                 claims.append(build_claim(c, doc))
     return list({c["id"]: c for c in claims}.values()), rejected
 
+STOP = {"a", "an", "and", "at", "for", "in", "into", "is", "not", "of", "on", "the", "to", "with"}
+
+def same(a, b):
+    """Two theme titles that share most of their words name one theme, whatever the editor called it."""
+    ta, tb = ({w for w in re.findall(r"[a-z]+", x.lower()) if w not in STOP} for x in (a, b))
+    return len(ta & tb) / max(1, min(len(ta), len(tb))) >= 0.5
+
 def apply_decisions(out, new_claims, themes, state, day):
     by_id = {c["id"]: c for c in new_claims}
     summaries = out.get("summaries") or {}
-    opened_by_title, appended, opened = {t["title"].lower(): t for t in themes.values()}, 0, 0
+    appended = opened = 0
     for d in out.get("decisions") or []:
         c = by_id.get(d.get("claim_id"))
         if not c:  # an editor decision that names nothing real is still part of the trail
             append_jsonl("library/claims/rejected.jsonl", [dict(d, day=day, source="editor",
                          reason="decision names a claim that was not in tonight's claims")])
             continue
-        action, tid, title = d.get("action"), d.get("theme_id"), d.get("title") or c["topic"]
+        action, tid, title, why = d.get("action"), d.get("theme_id"), d.get("title") or c["topic"], d.get("why", "")
+        twin = next((t for t in themes.values() if same(title, t["title"])), None)  # includes themes opened tonight
         if action == "append" and tid in themes:
             theme = themes[tid]
             appended += 1
-        elif title.lower() in opened_by_title:
-            theme = opened_by_title[title.lower()]
-            action, appended = "append", appended + 1
+        elif twin:
+            theme, action, appended = twin, "append", appended + 1
+            why = "Filed by code into %s, whose title says the same thing. Editor: %s" % (twin["id"], why)
         else:
             tid = "THEME-%04d" % state["next_theme"]
             state["next_theme"] += 1
-            theme = {"id": tid, "title": title, "type": c["type"], "summary": summaries.get(title, ""),
+            theme = {"id": tid, "title": title, "type": c["type"], "summary": summaries.get(title) or c["topic"],
                      "claim_ids": [], "first_seen": day, "last_seen": day, "log": []}
-            themes[tid] = opened_by_title[title.lower()] = theme
+            themes[tid] = theme
             action, opened = "open", opened + 1
         if c["id"] not in theme["claim_ids"]:
             theme["claim_ids"].append(c["id"])
-        theme["log"].append({"day": day, "action": action, "claim_id": c["id"], "why": d.get("why", "")})
+        theme["log"].append({"day": day, "action": action, "claim_id": c["id"], "why": why})
         theme["last_seen"] = max(theme["last_seen"], day)
         if summaries.get(theme["id"]):
             theme["summary"] = summaries[theme["id"]]
@@ -286,6 +294,15 @@ def run_eval():
     units = all_units()
     lost = [c["id"] for c in claims if not resolves(c, units)]
     checks.append((not lost, "every locator resolves in data, %d claims checked, %d lost" % (len(claims), len(lost))))
+    themes = [load(f) for f in sorted(glob.glob(path("library/themes/*.json")))]
+    home = {i: t["id"] for t in themes for i in t["claim_ids"]}
+    by_quote = {c["quote"]: c["id"] for c in claims}
+    for g in golden["together"]:
+        homes = {home.get(by_quote.get(q)) for q in g["quotes"]}
+        checks.append((None not in homes and len(homes) == 1, "one theme, %s: %s" % (g["why"], g["quotes"][0][:56])))
+    twins = [(a["id"], b["id"]) for a in themes for b in themes if a["id"] < b["id"] and same(a["title"], b["title"])]
+    checks.append((not twins, "no two theme titles say the same thing, %d themes checked%s"
+                   % (len(themes), ", twins: %s" % twins if twins else "")))
     for ok, line in checks:
         print("%s  %s" % ("pass" if ok else "FAIL", line))
     print("%d of %d passed" % (sum(1 for ok, _ in checks if ok), len(checks)))
