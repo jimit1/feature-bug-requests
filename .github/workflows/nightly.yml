@@ -37,6 +37,7 @@ jobs:
       - uses: actions/checkout@v4
         with: {ref: main}
       - uses: actions/configure-pages@v5
+      - run: cp deck/deck.html ui/deck.html
       - uses: actions/upload-pages-artifact@v3
         with: {path: ui}
       - uses: actions/deploy-pages@v4
