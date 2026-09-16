@@ -1,0 +1,32 @@
+{
+ "id": "THEME-0011",
+ "title": "Identity provider sync misses role changes",
+ "type": "bug",
+ "summary": "Customers who provision staff and volunteer accounts from an external identity provider find that role changes are not carried across. People who move departments or change roles keep their previous permission set for weeks until an administrator notices and fixes it manually.",
+ "claim_ids": [
+  "c-b35dfc0ea355"
+ ],
+ "first_seen": "2026-09-16",
+ "last_seen": "2026-09-16",
+ "log": [
+  {
+   "day": "2026-09-16",
+   "action": "open",
+   "claim_id": "c-b35dfc0ea355",
+   "why": "No theme in the index covers user provisioning or permission sync from an external identity provider, so this is a new heading."
+  }
+ ],
+ "accounts": {
+  "customer": 1,
+  "prospect": 0
+ },
+ "open_cases": 6,
+ "score_parts": {
+  "accounts": 7.5,
+  "value": 17.0,
+  "cases": 20.0,
+  "recency": 15.0,
+  "bug": 10.0
+ },
+ "score": 70
+}

@@ -2,15 +2,16 @@
  "id": "THEME-0003",
  "title": "Offline event check-in with later sync",
  "type": "feature",
- "summary": "Event staff lose the ability to sign attendees in whenever venue network access drops, and some accounts need the on-site attendance record for insurance and compliance evidence. They are asking for the check-in kiosk to keep accepting arrivals during an outage and reconcile the entries once connectivity returns.",
+ "summary": "Event staff running check-in at venues with unreliable connectivity cannot admit attendees when the network drops. They need the attendee kiosk and check-in app to keep accepting people while offline and to sync the records automatically once the connection returns.",
  "claim_ids": [
   "c-6fdcefc76dcd",
   "c-b58dd0db5d66",
   "c-dd21af62c2f6",
-  "c-5814ec6d0a27"
+  "c-5814ec6d0a27",
+  "c-9e3ed5d027fc"
  ],
  "first_seen": "2026-09-08",
- "last_seen": "2026-09-11",
+ "last_seen": "2026-09-16",
  "log": [
   {
    "day": "2026-09-08",
@@ -35,6 +36,12 @@
    "action": "append",
    "claim_id": "c-5814ec6d0a27",
    "why": "The request for the kiosk to keep running through an outage and reconcile afterwards is exactly the offline check-in with later sync ask."
+  },
+  {
+   "day": "2026-09-16",
+   "action": "append",
+   "claim_id": "c-9e3ed5d027fc",
+   "why": "Asking the attendee kiosk to keep checking people in without a connection and sync on reconnect is the same ask as offline event check-in with later sync."
   }
  ],
  "accounts": {
@@ -46,8 +53,8 @@
   "accounts": 15.0,
   "value": 13.4,
   "cases": 20.0,
-  "recency": 10.7,
+  "recency": 15.0,
   "bug": 0.0
  },
- "score": 59
+ "score": 63
 }

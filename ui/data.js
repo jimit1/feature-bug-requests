@@ -1,15 +1,154 @@
 window.DIGEST = {
- "as_of": "2026-09-15",
+ "as_of": "2026-09-16",
  "days": [
   "2026-09-08",
   "2026-09-09",
   "2026-09-10",
   "2026-09-11",
   "2026-09-14",
-  "2026-09-15"
+  "2026-09-15",
+  "2026-09-16"
  ],
  "ask_url": "https://g3kmsu2e2ikq7cyivffqi7i6oe0unrtk.lambda-url.us-east-1.on.aws/",
  "themes": [
+  {
+   "id": "THEME-0001",
+   "title": "Renewal invoices omit prior credits and balances",
+   "type": "bug",
+   "summary": "Customers with multi-chapter and multi-tier memberships receive renewal invoices that bill the full amount again without subtracting what the member already paid. Prior credits, outstanding balances and mid-year upgrade payments are all ignored, so staff have to correct totals by hand before sending.",
+   "claim_ids": [
+    "c-915d4dd0bc13",
+    "c-deb7b49ebfd6",
+    "c-a48464d88d04",
+    "c-eb335972d011"
+   ],
+   "first_seen": "2026-09-08",
+   "last_seen": "2026-09-16",
+   "log": [
+    {
+     "day": "2026-09-08",
+     "action": "open",
+     "claim_id": "c-915d4dd0bc13",
+     "why": "Nothing in the empty index covers renewal totals being calculated without amounts the member already paid or carried over, so this opens that theme."
+    },
+    {
+     "day": "2026-09-08",
+     "action": "append",
+     "claim_id": "c-deb7b49ebfd6",
+     "why": "A missing partial-year credit line is the same failure as a missing carried-over balance: the renewal total ignores what the member already paid."
+    },
+    {
+     "day": "2026-09-10",
+     "action": "append",
+     "claim_id": "c-a48464d88d04",
+     "why": "The renewal total is computed without crediting what the member already paid during the year, which is the same underlying failure as the existing theme about renewal invoices omitting prior credits and balances."
+    },
+    {
+     "day": "2026-09-16",
+     "action": "append",
+     "claim_id": "c-eb335972d011",
+     "why": "The renewal total is computed without crediting what the chapter already paid mid-year, which is the same underlying failure as renewal invoices omitting prior credits and balances."
+    }
+   ],
+   "accounts": {
+    "customer": 2,
+    "prospect": 0
+   },
+   "open_cases": 9,
+   "score_parts": {
+    "accounts": 15.0,
+    "value": 17.0,
+    "cases": 20.0,
+    "recency": 15.0,
+    "bug": 10.0
+   },
+   "score": 77,
+   "claims": [
+    {
+     "id": "c-915d4dd0bc13",
+     "day": "2026-09-08",
+     "source": "gong",
+     "type": "bug",
+     "topic": "renewal statements missing carried-over balance",
+     "quote": "Every renewal statement we send out is missing the balance that carried over from the previous period, so the invoice total reads far higher than it should.",
+     "account_id": "ACC-0001",
+     "account": "Great Lakes Museum Alliance",
+     "account_type": "customer",
+     "tier": "Enterprise",
+     "arr": 340000,
+     "speaker": "Rhonda Calloway",
+     "locator": {
+      "call_id": "7782934451002",
+      "speaker_id": "4521",
+      "start_ms": 663288,
+      "end_ms": 722760
+     },
+     "occurred_at": "2026-09-08T15:12:15Z"
+    },
+    {
+     "id": "c-deb7b49ebfd6",
+     "day": "2026-09-08",
+     "source": "gong",
+     "type": "bug",
+     "topic": "missing credit line on renewal invoices",
+     "quote": "Our renewal invoice keeps landing without a line for the credit we are owed from the partial year adjustment, and finance ends up chasing it every single cycle.",
+     "account_id": "ACC-0001",
+     "account": "Great Lakes Museum Alliance",
+     "account_type": "customer",
+     "tier": "Enterprise",
+     "arr": 340000,
+     "speaker": "Naomi Castellanos",
+     "locator": {
+      "call_id": "7782934452001",
+      "speaker_id": "c-01",
+      "start_ms": 187200,
+      "end_ms": 223200
+     },
+     "occurred_at": "2026-09-08T12:35:27Z"
+    },
+    {
+     "id": "c-a48464d88d04",
+     "day": "2026-09-10",
+     "source": "salesforce",
+     "type": "bug",
+     "topic": "mid-year upgrade renewal billing",
+     "quote": "Members who upgraded partway through the year are billed the whole annual figure again with nothing knocked off",
+     "account_id": "ACC-0003",
+     "account": "Prairie Land Trust Council",
+     "account_type": "customer",
+     "tier": "Professional",
+     "arr": 154000,
+     "speaker": "Unknown",
+     "locator": {
+      "case_id": "5008W00002aQpLrQAK",
+      "comment_id": "00a8W00000XfT2mQAF",
+      "case_number": "00001042"
+     },
+     "occurred_at": "2026-09-10T14:22:05Z"
+    },
+    {
+     "id": "c-eb335972d011",
+     "day": "2026-09-16",
+     "source": "gong",
+     "type": "bug",
+     "topic": "renewal billing with mid-year upgrade",
+     "quote": "When one of our chapters upgrades partway through the year we get billed the full renewal amount again in the fall, with nothing knocked off for what was already collected.",
+     "account_id": "ACC-0003",
+     "account": "Prairie Land Trust Council",
+     "account_type": "customer",
+     "tier": "Professional",
+     "arr": 154000,
+     "speaker": "Miguel Ferreira",
+     "locator": {
+      "call_id": "7782934452002",
+      "speaker_id": "c-03",
+      "start_ms": 534447,
+      "end_ms": 596915
+     },
+     "occurred_at": "2026-09-16T10:56:14Z"
+    }
+   ]
+  },
   {
    "id": "THEME-0005",
    "title": "Membership report export truncated at row limit",
@@ -58,10 +197,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 10.7,
+    "recency": 9.6,
     "bug": 10.0
    },
-   "score": 73,
+   "score": 72,
    "claims": [
     {
      "id": "c-7d2a3f364428",
@@ -149,79 +288,44 @@ window.DIGEST = {
    ]
   },
   {
-   "id": "THEME-0001",
-   "title": "Renewal invoices omit prior credits and balances",
+   "id": "THEME-0011",
+   "title": "Identity provider sync misses role changes",
    "type": "bug",
-   "summary": "Staff at member organizations are sending renewal invoices that do not account for money the member has already paid, including prior credits, open balances, and payments made when a member upgraded tiers partway through the year. Members receive a bill for the full annual amount, forcing finance staff to catch and correct each invoice by hand before or after it goes out.",
+   "summary": "Customers who provision staff and volunteer accounts from an external identity provider find that role changes are not carried across. People who move departments or change roles keep their previous permission set for weeks until an administrator notices and fixes it manually.",
    "claim_ids": [
-    "c-915d4dd0bc13",
-    "c-deb7b49ebfd6",
-    "c-a48464d88d04"
+    "c-b35dfc0ea355"
    ],
-   "first_seen": "2026-09-08",
-   "last_seen": "2026-09-10",
+   "first_seen": "2026-09-16",
+   "last_seen": "2026-09-16",
    "log": [
     {
-     "day": "2026-09-08",
+     "day": "2026-09-16",
      "action": "open",
-     "claim_id": "c-915d4dd0bc13",
-     "why": "Nothing in the empty index covers renewal totals being calculated without amounts the member already paid or carried over, so this opens that theme."
-    },
-    {
-     "day": "2026-09-08",
-     "action": "append",
-     "claim_id": "c-deb7b49ebfd6",
-     "why": "A missing partial-year credit line is the same failure as a missing carried-over balance: the renewal total ignores what the member already paid."
-    },
-    {
-     "day": "2026-09-10",
-     "action": "append",
-     "claim_id": "c-a48464d88d04",
-     "why": "The renewal total is computed without crediting what the member already paid during the year, which is the same underlying failure as the existing theme about renewal invoices omitting prior credits and balances."
+     "claim_id": "c-b35dfc0ea355",
+     "why": "No theme in the index covers user provisioning or permission sync from an external identity provider, so this is a new heading."
     }
    ],
    "accounts": {
-    "customer": 2,
+    "customer": 1,
     "prospect": 0
    },
-   "open_cases": 9,
+   "open_cases": 6,
    "score_parts": {
-    "accounts": 15.0,
+    "accounts": 7.5,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 9.6,
+    "recency": 15.0,
     "bug": 10.0
    },
-   "score": 72,
+   "score": 70,
    "claims": [
     {
-     "id": "c-915d4dd0bc13",
-     "day": "2026-09-08",
+     "id": "c-b35dfc0ea355",
+     "day": "2026-09-15",
      "source": "gong",
      "type": "bug",
-     "topic": "renewal statements missing carried-over balance",
-     "quote": "Every renewal statement we send out is missing the balance that carried over from the previous period, so the invoice total reads far higher than it should.",
-     "account_id": "ACC-0001",
-     "account": "Great Lakes Museum Alliance",
-     "account_type": "customer",
-     "tier": "Enterprise",
-     "arr": 340000,
-     "speaker": "Rhonda Calloway",
-     "locator": {
-      "call_id": "7782934451002",
-      "speaker_id": "4521",
-      "start_ms": 663288,
-      "end_ms": 722760
-     },
-     "occurred_at": "2026-09-08T15:12:15Z"
-    },
-    {
-     "id": "c-deb7b49ebfd6",
-     "day": "2026-09-08",
-     "source": "gong",
-     "type": "bug",
-     "topic": "missing credit line on renewal invoices",
-     "quote": "Our renewal invoice keeps landing without a line for the credit we are owed from the partial year adjustment, and finance ends up chasing it every single cycle.",
+     "topic": "identity provider sync misses role changes",
+     "quote": "When someone changes roles in our identity provider the sync misses it, and they keep the old permission set until someone catches it manually.",
      "account_id": "ACC-0001",
      "account": "Great Lakes Museum Alliance",
      "account_type": "customer",
@@ -229,32 +333,12 @@ window.DIGEST = {
      "arr": 340000,
      "speaker": "Naomi Castellanos",
      "locator": {
-      "call_id": "7782934452001",
+      "call_id": "7782934452022",
       "speaker_id": "c-01",
-      "start_ms": 187200,
-      "end_ms": 223200
+      "start_ms": 252458,
+      "end_ms": 270931
      },
-     "occurred_at": "2026-09-08T12:35:27Z"
-    },
-    {
-     "id": "c-a48464d88d04",
-     "day": "2026-09-10",
-     "source": "salesforce",
-     "type": "bug",
-     "topic": "mid-year upgrade renewal billing",
-     "quote": "Members who upgraded partway through the year are billed the whole annual figure again with nothing knocked off",
-     "account_id": "ACC-0003",
-     "account": "Prairie Land Trust Council",
-     "account_type": "customer",
-     "tier": "Professional",
-     "arr": 154000,
-     "speaker": "Unknown",
-     "locator": {
-      "case_id": "5008W00002aQpLrQAK",
-      "comment_id": "00a8W00000XfT2mQAF",
-      "case_number": "00001042"
-     },
-     "occurred_at": "2026-09-10T14:22:05Z"
+     "occurred_at": "2026-09-15T09:36:53Z"
     }
    ]
   },
@@ -299,10 +383,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 8.6,
+    "recency": 7.5,
     "bug": 10.0
    },
-   "score": 67,
+   "score": 66,
    "claims": [
     {
      "id": "c-5d3a978f29d2",
@@ -369,84 +453,57 @@ window.DIGEST = {
    ]
   },
   {
-   "id": "THEME-0006",
-   "title": "Duplicate journal entries in general ledger sync",
+   "id": "THEME-0012",
+   "title": "provisioning sync not updating role changes",
    "type": "bug",
-   "summary": "A batch of transactions periodically posts twice to the general ledger after the accounting sync runs. Finance staff have to identify and remove the duplicate entries before the books reconcile.",
+   "summary": "",
    "claim_ids": [
-    "c-9e53583c6513",
-    "c-5c26d1b4bb94"
+    "c-24607f31d72f"
    ],
-   "first_seen": "2026-09-08",
-   "last_seen": "2026-09-09",
+   "first_seen": "2026-09-16",
+   "last_seen": "2026-09-16",
    "log": [
     {
-     "day": "2026-09-08",
+     "day": "2026-09-16",
      "action": "open",
-     "claim_id": "c-9e53583c6513",
-     "why": "Double-posted journal entries in the accounting sync are distinct from invoice and reporting issues and open a new theme."
-    },
-    {
-     "day": "2026-09-09",
-     "action": "append",
-     "claim_id": "c-5c26d1b4bb94",
-     "why": "Transactions appearing twice in the ledger after a sync run is the duplicate journal entry problem the existing theme covers."
+     "claim_id": "c-24607f31d72f",
+     "why": "Staff keeping prior access because the provisioning sync does not pick up a role change is the same failure opened tonight for identity provider role sync."
     }
    ],
    "accounts": {
-    "customer": 2,
+    "customer": 1,
     "prospect": 0
    },
-   "open_cases": 5,
+   "open_cases": 4,
    "score_parts": {
-    "accounts": 15.0,
-    "value": 7.7,
+    "accounts": 7.5,
+    "value": 13.4,
     "cases": 20.0,
-    "recency": 8.6,
+    "recency": 15.0,
     "bug": 10.0
    },
-   "score": 61,
+   "score": 66,
    "claims": [
     {
-     "id": "c-9e53583c6513",
-     "day": "2026-09-08",
+     "id": "c-24607f31d72f",
+     "day": "2026-09-16",
      "source": "gong",
      "type": "bug",
-     "topic": "duplicate journal entries in general ledger sync",
-     "quote": "The general ledger sync has posted the same journal entry twice on more than one closing, and our bookkeeper has to go back and reverse the duplicate by hand.",
-     "account_id": "ACC-0003",
-     "account": "Prairie Land Trust Council",
+     "topic": "provisioning sync not updating role changes",
+     "quote": "Staff who move departments still show up with their prior access weeks later because the provisioning sync does not pick up the role change.",
+     "account_id": "ACC-0002",
+     "account": "Cascadia Nurses Association",
      "account_type": "customer",
-     "tier": "Professional",
-     "arr": 154000,
-     "speaker": "Miguel Ferreira",
+     "tier": "Enterprise",
+     "arr": 268000,
+     "speaker": "Renee Okafor",
      "locator": {
-      "call_id": "7782934452015",
-      "speaker_id": "c-03",
-      "start_ms": 478615,
-      "end_ms": 486462
+      "call_id": "7782934452023",
+      "speaker_id": "c-02",
+      "start_ms": 284715,
+      "end_ms": 295665
      },
-     "occurred_at": "2026-09-08T09:08:48Z"
-    },
-    {
-     "id": "c-5c26d1b4bb94",
-     "day": "2026-09-09",
-     "source": "salesforce",
-     "type": "bug",
-     "topic": "duplicate transactions in ledger after sync",
-     "quote": "Every few weeks a batch of transactions shows up twice in the ledger after the sync runs, and finance has to hunt down which one to remove.",
-     "account_id": "ACC-0005",
-     "account": "Sunbelt Literacy Network",
-     "account_type": "customer",
-     "tier": "Standard",
-     "arr": 41000,
-     "speaker": "Yolanda Pruitt",
-     "locator": {
-      "case_id": "50000000000000000a",
-      "comment_id": "00a000000000000026",
-      "case_number": "00005010"
-     },
-     "occurred_at": "2026-09-09T11:45:46Z"
+     "occurred_at": "2026-09-16T15:36:00Z"
     }
    ]
   },
@@ -454,15 +511,16 @@ window.DIGEST = {
    "id": "THEME-0003",
    "title": "Offline event check-in with later sync",
    "type": "feature",
-   "summary": "Event staff lose the ability to sign attendees in whenever venue network access drops, and some accounts need the on-site attendance record for insurance and compliance evidence. They are asking for the check-in kiosk to keep accepting arrivals during an outage and reconcile the entries once connectivity returns.",
+   "summary": "Event staff running check-in at venues with unreliable connectivity cannot admit attendees when the network drops. They need the attendee kiosk and check-in app to keep accepting people while offline and to sync the records automatically once the connection returns.",
    "claim_ids": [
     "c-6fdcefc76dcd",
     "c-b58dd0db5d66",
     "c-dd21af62c2f6",
-    "c-5814ec6d0a27"
+    "c-5814ec6d0a27",
+    "c-9e3ed5d027fc"
    ],
    "first_seen": "2026-09-08",
-   "last_seen": "2026-09-11",
+   "last_seen": "2026-09-16",
    "log": [
     {
      "day": "2026-09-08",
@@ -487,6 +545,12 @@ window.DIGEST = {
      "action": "append",
      "claim_id": "c-5814ec6d0a27",
      "why": "The request for the kiosk to keep running through an outage and reconcile afterwards is exactly the offline check-in with later sync ask."
+    },
+    {
+     "day": "2026-09-16",
+     "action": "append",
+     "claim_id": "c-9e3ed5d027fc",
+     "why": "Asking the attendee kiosk to keep checking people in without a connection and sync on reconnect is the same ask as offline event check-in with later sync."
     }
    ],
    "accounts": {
@@ -498,10 +562,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 10.7,
+    "recency": 15.0,
     "bug": 0.0
    },
-   "score": 59,
+   "score": 63,
    "claims": [
     {
      "id": "c-6fdcefc76dcd",
@@ -585,6 +649,109 @@ window.DIGEST = {
       "end_ms": 506400
      },
      "occurred_at": "2026-09-11T13:09:29Z"
+    },
+    {
+     "id": "c-9e3ed5d027fc",
+     "day": "2026-09-16",
+     "source": "gong",
+     "type": "feature",
+     "topic": "attendee kiosk offline resilience",
+     "quote": "The attendee kiosk has to keep taking people in even if the venue connection goes down, and catch back up automatically the moment it reconnects.",
+     "account_id": "ACC-0004",
+     "account": "Atlantic Shipwrights Guild",
+     "account_type": "customer",
+     "tier": "Professional",
+     "arr": 96000,
+     "speaker": "Colin Bramwell",
+     "locator": {
+      "call_id": "7782934452004",
+      "speaker_id": "c-04",
+      "start_ms": 90586,
+      "end_ms": 105683
+     },
+     "occurred_at": "2026-09-16T12:33:17Z"
+    }
+   ]
+  },
+  {
+   "id": "THEME-0006",
+   "title": "Duplicate journal entries in general ledger sync",
+   "type": "bug",
+   "summary": "A batch of transactions periodically posts twice to the general ledger after the accounting sync runs. Finance staff have to identify and remove the duplicate entries before the books reconcile.",
+   "claim_ids": [
+    "c-9e53583c6513",
+    "c-5c26d1b4bb94"
+   ],
+   "first_seen": "2026-09-08",
+   "last_seen": "2026-09-09",
+   "log": [
+    {
+     "day": "2026-09-08",
+     "action": "open",
+     "claim_id": "c-9e53583c6513",
+     "why": "Double-posted journal entries in the accounting sync are distinct from invoice and reporting issues and open a new theme."
+    },
+    {
+     "day": "2026-09-09",
+     "action": "append",
+     "claim_id": "c-5c26d1b4bb94",
+     "why": "Transactions appearing twice in the ledger after a sync run is the duplicate journal entry problem the existing theme covers."
+    }
+   ],
+   "accounts": {
+    "customer": 2,
+    "prospect": 0
+   },
+   "open_cases": 5,
+   "score_parts": {
+    "accounts": 15.0,
+    "value": 7.7,
+    "cases": 20.0,
+    "recency": 7.5,
+    "bug": 10.0
+   },
+   "score": 60,
+   "claims": [
+    {
+     "id": "c-9e53583c6513",
+     "day": "2026-09-08",
+     "source": "gong",
+     "type": "bug",
+     "topic": "duplicate journal entries in general ledger sync",
+     "quote": "The general ledger sync has posted the same journal entry twice on more than one closing, and our bookkeeper has to go back and reverse the duplicate by hand.",
+     "account_id": "ACC-0003",
+     "account": "Prairie Land Trust Council",
+     "account_type": "customer",
+     "tier": "Professional",
+     "arr": 154000,
+     "speaker": "Miguel Ferreira",
+     "locator": {
+      "call_id": "7782934452015",
+      "speaker_id": "c-03",
+      "start_ms": 478615,
+      "end_ms": 486462
+     },
+     "occurred_at": "2026-09-08T09:08:48Z"
+    },
+    {
+     "id": "c-5c26d1b4bb94",
+     "day": "2026-09-09",
+     "source": "salesforce",
+     "type": "bug",
+     "topic": "duplicate transactions in ledger after sync",
+     "quote": "Every few weeks a batch of transactions shows up twice in the ledger after the sync runs, and finance has to hunt down which one to remove.",
+     "account_id": "ACC-0005",
+     "account": "Sunbelt Literacy Network",
+     "account_type": "customer",
+     "tier": "Standard",
+     "arr": 41000,
+     "speaker": "Yolanda Pruitt",
+     "locator": {
+      "case_id": "50000000000000000a",
+      "comment_id": "00a000000000000026",
+      "case_number": "00005010"
+     },
+     "occurred_at": "2026-09-09T11:45:46Z"
     }
    ]
   },
@@ -622,10 +789,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 2.0,
     "cases": 20.0,
-    "recency": 8.6,
+    "recency": 7.5,
     "bug": 10.0
    },
-   "score": 56,
+   "score": 54,
    "claims": [
     {
      "id": "c-8fc57031470e",
@@ -698,10 +865,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 7.5,
+    "recency": 6.4,
     "bug": 0.0
    },
-   "score": 52,
+   "score": 51,
    "claims": [
     {
      "id": "c-16cd97e72e9e",
@@ -753,10 +920,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 4.8,
     "cases": 15.0,
-    "recency": 7.5,
+    "recency": 6.4,
     "bug": 10.0
    },
-   "score": 45,
+   "score": 44,
    "claims": [
     {
      "id": "c-c44577763b5c",
@@ -815,10 +982,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 0.0,
     "cases": 0.0,
-    "recency": 15.0,
+    "recency": 13.9,
     "bug": 0.0
    },
-   "score": 22,
+   "score": 21,
    "claims": [
     {
      "id": "c-b696c3430eb3",
@@ -891,10 +1058,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 0.0,
     "cases": 0.0,
-    "recency": 8.6,
+    "recency": 7.5,
     "bug": 0.0
    },
-   "score": 16,
+   "score": 15,
    "claims": [
     {
      "id": "c-299d81776e9e",

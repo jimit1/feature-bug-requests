@@ -2,14 +2,15 @@
  "id": "THEME-0001",
  "title": "Renewal invoices omit prior credits and balances",
  "type": "bug",
- "summary": "Staff at member organizations are sending renewal invoices that do not account for money the member has already paid, including prior credits, open balances, and payments made when a member upgraded tiers partway through the year. Members receive a bill for the full annual amount, forcing finance staff to catch and correct each invoice by hand before or after it goes out.",
+ "summary": "Customers with multi-chapter and multi-tier memberships receive renewal invoices that bill the full amount again without subtracting what the member already paid. Prior credits, outstanding balances and mid-year upgrade payments are all ignored, so staff have to correct totals by hand before sending.",
  "claim_ids": [
   "c-915d4dd0bc13",
   "c-deb7b49ebfd6",
-  "c-a48464d88d04"
+  "c-a48464d88d04",
+  "c-eb335972d011"
  ],
  "first_seen": "2026-09-08",
- "last_seen": "2026-09-10",
+ "last_seen": "2026-09-16",
  "log": [
   {
    "day": "2026-09-08",
@@ -28,6 +29,12 @@
    "action": "append",
    "claim_id": "c-a48464d88d04",
    "why": "The renewal total is computed without crediting what the member already paid during the year, which is the same underlying failure as the existing theme about renewal invoices omitting prior credits and balances."
+  },
+  {
+   "day": "2026-09-16",
+   "action": "append",
+   "claim_id": "c-eb335972d011",
+   "why": "The renewal total is computed without crediting what the chapter already paid mid-year, which is the same underlying failure as renewal invoices omitting prior credits and balances."
   }
  ],
  "accounts": {
@@ -39,8 +46,8 @@
   "accounts": 15.0,
   "value": 17.0,
   "cases": 20.0,
-  "recency": 9.6,
+  "recency": 15.0,
   "bug": 10.0
  },
- "score": 72
+ "score": 77
 }
