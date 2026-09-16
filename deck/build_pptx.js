@@ -22,7 +22,7 @@ const titles = {
   4:'The whole system: two sources, three agents, one git library, one product team',
   5:'Reader agents turn conversations into records; the editor agent sorts records into themes',
   6:"Ask why a theme matters; the answer comes from the library, with the customer's words",
-  7:'Nothing invented can reach the page: six checks, in the order the data meets them',
+  7:'Six checks that stop hallucination, in the order the data meets them',
   8:'Built to the brief; the next steps are designed, not built',
   9:'Appendix: the decisions behind it',
 };

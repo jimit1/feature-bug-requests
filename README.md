@@ -28,7 +28,7 @@ You can also just ask a question, and the answer comes back with the quotes behi
 
 ![the ask agent](deck/png/readme/slide-6.png)
 
-Nothing invented can reach the page. Six checks, in the order the data meets them.
+Six checks that stop hallucination, in the order the data meets them.
 
 ![six checks](deck/png/readme/slide-7.png)
 
