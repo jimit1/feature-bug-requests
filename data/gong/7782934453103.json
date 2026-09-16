@@ -1,0 +1,312 @@
+{
+ "schema_version": "1.0.0",
+ "call": {
+  "metaData": {
+   "id": "7782934453103",
+   "url": "https://gong.invalid/call?id=7782934453103",
+   "title": "Cascadia Nurses Association learning programme check in",
+   "scheduled": "2026-09-21T14:00:00Z",
+   "started": "2026-09-21T14:01:55Z",
+   "duration": 444,
+   "primaryUserId": "1233",
+   "direction": "Conference",
+   "system": "Gong",
+   "scope": "External",
+   "media": "Video",
+   "language": "eng",
+   "workspaceId": "9911",
+   "sdrDisposition": null,
+   "clientUniqueId": null,
+   "customData": null,
+   "purpose": "Learning programme check in",
+   "meetingUrl": null,
+   "isPrivate": false,
+   "calendarEventId": "cal-453103"
+  },
+  "parties": [
+   {
+    "id": "p-1233",
+    "emailAddress": "elena.kowalczyk@momentivesoftware.example.org",
+    "name": "Elena Kowalczyk",
+    "title": "Solutions Consultant",
+    "userId": "1233",
+    "speakerId": "1233",
+    "context": [],
+    "affiliation": "Internal"
+   },
+   {
+    "id": "p-4803",
+    "emailAddress": "ingrid.solheim@cascadianurses.example.org",
+    "name": "Ingrid Solheim",
+    "title": "Director of Education",
+    "userId": null,
+    "speakerId": "4803",
+    "context": [],
+    "affiliation": "External"
+   }
+  ]
+ },
+ "transcript": {
+  "callId": "7782934453103",
+  "transcript": [
+   {
+    "speakerId": "1233",
+    "topic": "Opening",
+    "sentences": [
+     {
+      "start": 8000,
+      "end": 21160,
+      "text": "Afternoon. We have forty minutes and I would like to use most of it on the continuing education programme."
+     }
+    ]
+   },
+   {
+    "speakerId": "4803",
+    "topic": "Opening",
+    "sentences": [
+     {
+      "start": 25160,
+      "end": 36450,
+      "text": "Afternoon. That suits me, the autumn term opened a fortnight ago so it is all very fresh."
+     }
+    ]
+   },
+   {
+    "speakerId": "1233",
+    "topic": "Learning",
+    "sentences": [
+     {
+      "start": 40450,
+      "end": 52400,
+      "text": "How did the opening go? Last year you had a rush on the first morning that caused some trouble."
+     }
+    ]
+   },
+   {
+    "speakerId": "4803",
+    "topic": "Learning",
+    "sentences": [
+     {
+      "start": 56400,
+      "end": 69340,
+      "text": "Much better this year. We staggered the enrolment across three days by speciality and nothing fell over."
+     },
+     {
+      "start": 69340,
+      "end": 83600,
+      "text": "Two thousand one hundred nurses enrolled in at least one course, which is up on last autumn by roughly nine percent."
+     }
+    ]
+   },
+   {
+    "speakerId": "1233",
+    "topic": "Learning",
+    "sentences": [
+     {
+      "start": 87600,
+      "end": 95260,
+      "text": "That is a healthy number. Which courses are carrying it?"
+     }
+    ]
+   },
+   {
+    "speakerId": "4803",
+    "topic": "Learning",
+    "sentences": [
+     {
+      "start": 99260,
+      "end": 112420,
+      "text": "The pharmacology refresher, as always, and a new one on paediatric assessment that we were not sure about."
+     },
+     {
+      "start": 112420,
+      "end": 123270,
+      "text": "The paediatric one filled in two days and we have opened a second cohort for January."
+     }
+    ]
+   },
+   {
+    "speakerId": "1233",
+    "topic": "Scheduling",
+    "sentences": [
+     {
+      "start": 127270,
+      "end": 136910,
+      "text": "Good problem to have. How are the live sessions being scheduled this term?"
+     }
+    ]
+   },
+   {
+    "speakerId": "4803",
+    "topic": "Scheduling",
+    "sentences": [
+     {
+      "start": 140910,
+      "end": 153520,
+      "text": "That is the first thing on my list, actually, and it is the one that costs us the most in small ways."
+     },
+     {
+      "start": 153520,
+      "end": 171080,
+      "text": "None of the session dates land in a learner's own calendar, so we paste them into a reminder note and trust people to copy them across themselves."
+     },
+     {
+      "start": 171080,
+      "end": 186110,
+      "text": "A nurse on shift work cannot hold four session dates in her head across a twelve week term, and we would not expect her to."
+     },
+     {
+      "start": 186110,
+      "end": 202350,
+      "text": "Attendance at the second and third session of a series is always about a fifth lower than the first, and I am fairly sure that is why."
+     }
+    ]
+   },
+   {
+    "speakerId": "1233",
+    "topic": "Scheduling",
+    "sentences": [
+     {
+      "start": 206350,
+      "end": 221820,
+      "text": "Let me make sure I have the shape of it. You want the dates to reach the learner's own calendar rather than a list in an email."
+     }
+    ]
+   },
+   {
+    "speakerId": "4803",
+    "topic": "Scheduling",
+    "sentences": [
+     {
+      "start": 225820,
+      "end": 237220,
+      "text": "Yes, and to update themselves if we move a session, which we do two or three times a term."
+     },
+     {
+      "start": 237220,
+      "end": 248070,
+      "text": "When we move one now we send a second email and a good number of people never see it."
+     }
+    ]
+   },
+   {
+    "speakerId": "1233",
+    "topic": "Scheduling",
+    "sentences": [
+     {
+      "start": 252070,
+      "end": 262480,
+      "text": "Understood. That is a clean requirement and I will take it forward in your words."
+     }
+    ]
+   },
+   {
+    "speakerId": "4803",
+    "topic": "Records",
+    "sentences": [
+     {
+      "start": 266480,
+      "end": 277440,
+      "text": "The second thing is the one I have raised before, so I will say it once and then stop."
+     },
+     {
+      "start": 277440,
+      "end": 293130,
+      "text": "Completion still does not reach the member record on its own, so our registrar keys the finished hours in every Friday afternoon."
+     },
+     {
+      "start": 293130,
+      "end": 306400,
+      "text": "It is about three hours a week for her and it is three hours of copying numbers from one screen to another."
+     },
+     {
+      "start": 306400,
+      "end": 319560,
+      "text": "She has never once got one wrong, which I mention because the day she does we will not notice for a month."
+     }
+    ]
+   },
+   {
+    "speakerId": "1233",
+    "topic": "Records",
+    "sentences": [
+     {
+      "start": 323560,
+      "end": 333310,
+      "text": "I have that on the account already and I will add this week's figure to it."
+     },
+     {
+      "start": 333310,
+      "end": 346690,
+      "text": "Three hours a week is a more useful number than the general complaint, so thank you for putting it that way."
+     }
+    ]
+   },
+   {
+    "speakerId": "4803",
+    "topic": "Records",
+    "sentences": [
+     {
+      "start": 350690,
+      "end": 362420,
+      "text": "It is the number the board understands. Anything I can put in hours tends to get listened to."
+     }
+    ]
+   },
+   {
+    "speakerId": "1233",
+    "topic": "Accreditation",
+    "sentences": [
+     {
+      "start": 366420,
+      "end": 376500,
+      "text": "Last thing from me. The accreditation renewal was due this autumn, was it not?"
+     }
+    ]
+   },
+   {
+    "speakerId": "4803",
+    "topic": "Accreditation",
+    "sentences": [
+     {
+      "start": 380500,
+      "end": 393000,
+      "text": "Submitted in August and we heard back three weeks ago. Four years rather than the two we had before."
+     },
+     {
+      "start": 393000,
+      "end": 408690,
+      "text": "The reviewers commented on how quickly we produced the attendance evidence, which I found quietly funny given how it is produced."
+     }
+    ]
+   },
+   {
+    "speakerId": "1233",
+    "topic": "Next steps",
+    "sentences": [
+     {
+      "start": 412690,
+      "end": 425080,
+      "text": "Then I have two items to write up, the calendar one and this week's number on the registrar's time."
+     },
+     {
+      "start": 425080,
+      "end": 429990,
+      "text": "Anything else before we finish?"
+     }
+    ]
+   },
+   {
+    "speakerId": "4803",
+    "topic": "Next steps",
+    "sentences": [
+     {
+      "start": 433990,
+      "end": 440220,
+      "text": "Nothing else today. Thank you for the time."
+     }
+    ]
+   }
+  ]
+ }
+}

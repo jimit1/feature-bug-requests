@@ -1,0 +1,297 @@
+{
+ "schema_version": "1.0.0",
+ "call": {
+  "metaData": {
+   "id": "7782934453108",
+   "url": "https://gong.invalid/call?id=7782934453108",
+   "title": "Copper Ridge Youth Foundation autumn events check in",
+   "scheduled": "2026-09-24T15:00:00Z",
+   "started": "2026-09-24T15:16:40Z",
+   "duration": 390,
+   "primaryUserId": "1187",
+   "direction": "Conference",
+   "system": "Gong",
+   "scope": "External",
+   "media": "Video",
+   "language": "eng",
+   "workspaceId": "9911",
+   "sdrDisposition": null,
+   "clientUniqueId": null,
+   "customData": null,
+   "purpose": "Autumn events check in",
+   "meetingUrl": null,
+   "isPrivate": false,
+   "calendarEventId": "cal-453108"
+  },
+  "parties": [
+   {
+    "id": "p-1187",
+    "emailAddress": "marcus.oyelaran@momentivesoftware.example.org",
+    "name": "Marcus Oyelaran",
+    "title": "Customer Success Manager",
+    "userId": "1187",
+    "speakerId": "1187",
+    "context": [],
+    "affiliation": "Internal"
+   },
+   {
+    "id": "p-5308",
+    "emailAddress": "devon.hargreaves@copperridgeyouth.example.org",
+    "name": "Devon Hargreaves",
+    "title": "Events Coordinator",
+    "userId": null,
+    "speakerId": "5308",
+    "context": [],
+    "affiliation": "External"
+   }
+  ]
+ },
+ "transcript": {
+  "callId": "7782934453108",
+  "transcript": [
+   {
+    "speakerId": "1187",
+    "topic": "Opening",
+    "sentences": [
+     {
+      "start": 8000,
+      "end": 20940,
+      "text": "Afternoon. You have four events between now and the end of November, so I thought a session was overdue."
+     }
+    ]
+   },
+   {
+    "speakerId": "5308",
+    "topic": "Opening",
+    "sentences": [
+     {
+      "start": 24940,
+      "end": 34690,
+      "text": "Afternoon. Five now, we added a sports day at the end of October last week."
+     }
+    ]
+   },
+   {
+    "speakerId": "1187",
+    "topic": "Events",
+    "sentences": [
+     {
+      "start": 38690,
+      "end": 44260,
+      "text": "Five then. Where are they being held?"
+     }
+    ]
+   },
+   {
+    "speakerId": "5308",
+    "topic": "Events",
+    "sentences": [
+     {
+      "start": 48260,
+      "end": 58340,
+      "text": "All five are in school buildings, which is how nearly everything we run works."
+     },
+     {
+      "start": 58340,
+      "end": 70070,
+      "text": "Two school gyms, a cafeteria, a sports field and one community hall that used to be a school."
+     },
+     {
+      "start": 70070,
+      "end": 83670,
+      "text": "We go to where the young people already are, because asking families to travel to us loses about half of them."
+     }
+    ]
+   },
+   {
+    "speakerId": "1187",
+    "topic": "Events",
+    "sentences": [
+     {
+      "start": 87670,
+      "end": 95880,
+      "text": "That makes sense for your programme. How many people at each?"
+     }
+    ]
+   },
+   {
+    "speakerId": "5308",
+    "topic": "Events",
+    "sentences": [
+     {
+      "start": 99880,
+      "end": 112820,
+      "text": "Between eighty and three hundred. The sports day will be the biggest and the reading night the smallest."
+     }
+    ]
+   },
+   {
+    "speakerId": "1187",
+    "topic": "Check in",
+    "sentences": [
+     {
+      "start": 116820,
+      "end": 123050,
+      "text": "And how are you signing people in at those?"
+     }
+    ]
+   },
+   {
+    "speakerId": "5308",
+    "topic": "Check in",
+    "sentences": [
+     {
+      "start": 127050,
+      "end": 134820,
+      "text": "Badly, and this is the thing I most wanted to talk about."
+     },
+     {
+      "start": 134820,
+      "end": 151830,
+      "text": "We want something our volunteers can run on their own phones to sign people in at the door, because the kiosks do not travel to a school gym."
+     },
+     {
+      "start": 151830,
+      "end": 169280,
+      "text": "There is rarely a spare table, almost never a power socket where we need one, and last month a gym teacher unplugged ours to charge a scoreboard."
+     },
+     {
+      "start": 169280,
+      "end": 185740,
+      "text": "Our volunteers all have a phone in their pocket and they all know how to use it, and that is the only piece of equipment I can count on."
+     }
+    ]
+   },
+   {
+    "speakerId": "1187",
+    "topic": "Check in",
+    "sentences": [
+     {
+      "start": 189740,
+      "end": 208510,
+      "text": "Let me be precise about this before I take it anywhere. You are not asking for the kiosk to work better, you are asking for something different in its place."
+     }
+    ]
+   },
+   {
+    "speakerId": "5308",
+    "topic": "Check in",
+    "sentences": [
+     {
+      "start": 212510,
+      "end": 224900,
+      "text": "Something different, yes. The kiosk is right for a conference hall and wrong for a school corridor."
+     },
+     {
+      "start": 224900,
+      "end": 239050,
+      "text": "Four or five volunteers each signing in their own queue on their own phone is what the evening actually looks like."
+     }
+    ]
+   },
+   {
+    "speakerId": "1187",
+    "topic": "Check in",
+    "sentences": [
+     {
+      "start": 243050,
+      "end": 256210,
+      "text": "That is a distinct thing and I will write it up as one rather than folding it into the kiosk conversation."
+     }
+    ]
+   },
+   {
+    "speakerId": "5308",
+    "topic": "Check in",
+    "sentences": [
+     {
+      "start": 260210,
+      "end": 272270,
+      "text": "I would appreciate that. They get treated as the same request and they are not the same request."
+     }
+    ]
+   },
+   {
+    "speakerId": "1187",
+    "topic": "Safeguarding",
+    "sentences": [
+     {
+      "start": 276270,
+      "end": 286790,
+      "text": "Understood. On a related note, how is the safeguarding paperwork handled at these?"
+     }
+    ]
+   },
+   {
+    "speakerId": "5308",
+    "topic": "Safeguarding",
+    "sentences": [
+     {
+      "start": 290790,
+      "end": 301640,
+      "text": "On paper, deliberately, and that is one thing we are not looking to change this year."
+     },
+     {
+      "start": 301640,
+      "end": 313920,
+      "text": "Every volunteer is checked before the season and the forms live in a locked cabinet in our office."
+     },
+     {
+      "start": 313920,
+      "end": 326530,
+      "text": "Our board is comfortable with that and I am not going to reopen it in the middle of an events season."
+     }
+    ]
+   },
+   {
+    "speakerId": "1187",
+    "topic": "Safeguarding",
+    "sentences": [
+     {
+      "start": 330530,
+      "end": 342920,
+      "text": "That is a sensible place to leave it. I only asked because it comes up with foundations like yours."
+     }
+    ]
+   },
+   {
+    "speakerId": "5308",
+    "topic": "Next steps",
+    "sentences": [
+     {
+      "start": 346920,
+      "end": 354800,
+      "text": "It comes up constantly, and the answer is always the same."
+     }
+    ]
+   },
+   {
+    "speakerId": "1187",
+    "topic": "Next steps",
+    "sentences": [
+     {
+      "start": 358800,
+      "end": 368220,
+      "text": "One action for me then, the sign in request written up on its own terms."
+     },
+     {
+      "start": 368220,
+      "end": 373020,
+      "text": "Good luck with the sports day."
+     }
+    ]
+   },
+   {
+    "speakerId": "5308",
+    "topic": "Next steps",
+    "sentences": [
+     {
+      "start": 377020,
+      "end": 386440,
+      "text": "Thank you. Ask me in November how it went and I will tell you the truth."
+     }
+    ]
+   }
+  ]
+ }
+}

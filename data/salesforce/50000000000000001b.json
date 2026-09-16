@@ -1,0 +1,67 @@
+{
+ "schema_version": "1.0.0",
+ "case": {
+  "attributes": {
+   "type": "Case",
+   "url": "/services/data/v62.0/sobjects/Case/50000000000000001b"
+  },
+  "Id": "50000000000000001b",
+  "CaseNumber": "00005027",
+  "AccountId": "0018W00002HkLmOQAV",
+  "Subject": "Getting our existing course catalogue into the learning module",
+  "Status": "Escalated",
+  "Priority": "High",
+  "CreatedDate": "2026-09-22T13:22:37Z",
+  "ClosedDate": null
+ },
+ "comments": [
+  {
+   "attributes": {
+    "type": "CaseComment",
+    "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000006b"
+   },
+   "Id": "00a00000000000006b",
+   "ParentId": "50000000000000001b",
+   "CommentBody": "Following on from the migration call last month. We have forty courses built over six years with an outside developer, all packaged in the standard format, and the plan we agreed was that they would come across in the autumn and be live for the January term.",
+   "IsPublished": true,
+   "CreatedById": "005000000000000066",
+   "CreatedDate": "2026-09-22T13:40:11Z"
+  },
+  {
+   "attributes": {
+    "type": "CaseComment",
+    "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000006c"
+   },
+   "Id": "00a00000000000006c",
+   "ParentId": "50000000000000001b",
+   "CommentBody": "I have been through the sample you sent with the learning team and I want to give you the position honestly rather than optimistically. The packages are valid, the problem is on our side in what the module will accept today. Tell me what this means for your January term so that I can put the right weight behind it internally.",
+   "IsPublished": true,
+   "CreatedById": "005000000000000003",
+   "CreatedDate": "2026-09-23T08:55:20Z"
+  },
+  {
+   "attributes": {
+    "type": "CaseComment",
+    "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000006d"
+   },
+   "Id": "00a00000000000006d",
+   "ParentId": "50000000000000001b",
+   "CommentBody": "It means January is at risk. Every one of our existing course packages has to be rebuilt page by page in your editor before it will run, and we have forty of them sitting in a folder waiting. We costed a rebuild at about eleven thousand dollars with the original developer, which is money the education committee has not got and would not spend on work that has already been done once.",
+   "IsPublished": true,
+   "CreatedById": "005000000000000066",
+   "CreatedDate": "2026-09-23T10:31:48Z"
+  },
+  {
+   "attributes": {
+    "type": "CaseComment",
+    "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000006e"
+   },
+   "Id": "00a00000000000006e",
+   "ParentId": "50000000000000001b",
+   "CommentBody": "That is the number I needed. I have escalated this with the eleven thousand dollar figure and the January date attached, and I have asked for an answer by the end of next week rather than a place in a queue. I will tell you what I hear even if what I hear is unwelcome.",
+   "IsPublished": true,
+   "CreatedById": "005000000000000003",
+   "CreatedDate": "2026-09-23T15:12:04Z"
+  }
+ ]
+}

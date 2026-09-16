@@ -1,0 +1,364 @@
+{
+ "schema_version": "1.0.0",
+ "call": {
+  "metaData": {
+   "id": "7782934453101",
+   "url": "https://gong.invalid/call?id=7782934453101",
+   "title": "Ozark Valley Arts Council membership check in",
+   "scheduled": "2026-09-17T13:00:00Z",
+   "started": "2026-09-17T13:02:44Z",
+   "duration": 550,
+   "primaryUserId": "1201",
+   "direction": "Conference",
+   "system": "Gong",
+   "scope": "External",
+   "media": "Video",
+   "language": "eng",
+   "workspaceId": "9911",
+   "sdrDisposition": null,
+   "clientUniqueId": null,
+   "customData": null,
+   "purpose": "Membership check in",
+   "meetingUrl": null,
+   "isPrivate": false,
+   "calendarEventId": "cal-453101"
+  },
+  "parties": [
+   {
+    "id": "p-1201",
+    "emailAddress": "priya.natarajan@momentivesoftware.example.org",
+    "name": "Priya Natarajan",
+    "title": "Customer Success Manager",
+    "userId": "1201",
+    "speakerId": "1201",
+    "context": [],
+    "affiliation": "Internal"
+   },
+   {
+    "id": "p-4601",
+    "emailAddress": "alina.petrosyan@ozarkvalleyarts.example.org",
+    "name": "Alina Petrosyan",
+    "title": "Director of Membership",
+    "userId": null,
+    "speakerId": "4601",
+    "context": [],
+    "affiliation": "External"
+   }
+  ]
+ },
+ "transcript": {
+  "callId": "7782934453101",
+  "transcript": [
+   {
+    "speakerId": "1201",
+    "topic": "Opening",
+    "sentences": [
+     {
+      "start": 8000,
+      "end": 16100,
+      "text": "Good afternoon, thanks for finding the slot at short notice."
+     },
+     {
+      "start": 16100,
+      "end": 28160,
+      "text": "I have half an hour down and I would like to spend most of it on how the autumn intake is going."
+     }
+    ]
+   },
+   {
+    "speakerId": "4601",
+    "topic": "Opening",
+    "sentences": [
+     {
+      "start": 32160,
+      "end": 42130,
+      "text": "Afternoon. Half an hour is fine, I have a studio visit at two but not before."
+     },
+     {
+      "start": 42130,
+      "end": 55180,
+      "text": "I made a short list this morning so I do not forget the things that only come to mind when somebody asks."
+     }
+    ]
+   },
+   {
+    "speakerId": "1201",
+    "topic": "Membership",
+    "sentences": [
+     {
+      "start": 59180,
+      "end": 70690,
+      "text": "Start me off with the intake then. Where did you land against the target the board set you?"
+     }
+    ]
+   },
+   {
+    "speakerId": "4601",
+    "topic": "Membership",
+    "sentences": [
+     {
+      "start": 74690,
+      "end": 87520,
+      "text": "We are at two thousand nine hundred paid members, which is about sixty ahead of where we planned to be."
+     },
+     {
+      "start": 87520,
+      "end": 102660,
+      "text": "The growth is nearly all in the working artist category rather than the patron category, which is not what anyone predicted."
+     },
+     {
+      "start": 102660,
+      "end": 115930,
+      "text": "Patrons are flat and have been flat for two years, and the board has stopped pretending that is a surprise."
+     }
+    ]
+   },
+   {
+    "speakerId": "1201",
+    "topic": "Membership",
+    "sentences": [
+     {
+      "start": 119930,
+      "end": 126820,
+      "text": "Sixty ahead is a decent place to be in September."
+     },
+     {
+      "start": 126820,
+      "end": 140860,
+      "text": "Is the working artist category behaving differently once people are in, or does it look like the rest of the base?"
+     }
+    ]
+   },
+   {
+    "speakerId": "4601",
+    "topic": "Membership",
+    "sentences": [
+     {
+      "start": 144860,
+      "end": 161760,
+      "text": "It behaves quite differently. They join for the exhibition calls and the studio insurance, and they renew if they got something out of both."
+     },
+     {
+      "start": 161760,
+      "end": 177780,
+      "text": "Patrons join because somebody they know asked them to, and they renew for the same reason, which makes them steady but hard to grow."
+     }
+    ]
+   },
+   {
+    "speakerId": "1201",
+    "topic": "Membership",
+    "sentences": [
+     {
+      "start": 181780,
+      "end": 193290,
+      "text": "That matches what I see at councils of your size. Has the insurance benefit been used much?"
+     }
+    ]
+   },
+   {
+    "speakerId": "4601",
+    "topic": "Membership",
+    "sentences": [
+     {
+      "start": 197290,
+      "end": 207590,
+      "text": "Two hundred and forty claims of one kind or another since January, mostly small."
+     },
+     {
+      "start": 207590,
+      "end": 221520,
+      "text": "One member had a kiln fire and that single claim justified the whole scheme in the eyes of the finance committee."
+     }
+    ]
+   },
+   {
+    "speakerId": "1201",
+    "topic": "Directory",
+    "sentences": [
+     {
+      "start": 225520,
+      "end": 232520,
+      "text": "Good. Now, you said you had a list. What is on it?"
+     }
+    ]
+   },
+   {
+    "speakerId": "4601",
+    "topic": "Directory",
+    "sentences": [
+     {
+      "start": 236520,
+      "end": 248910,
+      "text": "The first thing is the member directory, and it is the one that comes up at every regional meeting."
+     },
+     {
+      "start": 248910,
+      "end": 266800,
+      "text": "Our members cannot look one another up by county or by the craft they work in, so the directory is only useful if you already know the person's name."
+     },
+     {
+      "start": 266800,
+      "end": 283810,
+      "text": "A weaver in the south of the state wants to find the other weavers within an hour's drive, and there is no way for her to do that on her own."
+     },
+     {
+      "start": 283810,
+      "end": 300380,
+      "text": "Our office answers about fifteen of those requests a month by hand, and the answer we give is a guess based on who we happen to remember."
+     }
+    ]
+   },
+   {
+    "speakerId": "1201",
+    "topic": "Directory",
+    "sentences": [
+     {
+      "start": 304380,
+      "end": 316440,
+      "text": "Let me make sure I have that right, because I will be passing it on to people who were not here."
+     },
+     {
+      "start": 316440,
+      "end": 332020,
+      "text": "You want a member to be able to search other members by where they are and by what they make, without going through your office."
+     }
+    ]
+   },
+   {
+    "speakerId": "4601",
+    "topic": "Directory",
+    "sentences": [
+     {
+      "start": 336020,
+      "end": 339610,
+      "text": "That is exactly it."
+     },
+     {
+      "start": 339610,
+      "end": 354970,
+      "text": "The information is already sitting on the member record, because we ask for the county and the discipline when somebody joins."
+     },
+     {
+      "start": 354970,
+      "end": 370110,
+      "text": "It simply is not something anybody can search on, so it only ever comes back out when a person on staff goes looking for it."
+     }
+    ]
+   },
+   {
+    "speakerId": "1201",
+    "topic": "Directory",
+    "sentences": [
+     {
+      "start": 374110,
+      "end": 385840,
+      "text": "Understood. I will write it up today and put your words on it rather than my summary of them."
+     },
+     {
+      "start": 385840,
+      "end": 402410,
+      "text": "If you have two or three of those requests in writing, send them to priya.natarajan@momentivesoftware.example.org and I will attach them."
+     }
+    ]
+   },
+   {
+    "speakerId": "4601",
+    "topic": "Directory",
+    "sentences": [
+     {
+      "start": 406410,
+      "end": 423090,
+      "text": "I will pull three from the last fortnight. They read almost identically, which I think makes the point better than anything I could write."
+     }
+    ]
+   },
+   {
+    "speakerId": "1201",
+    "topic": "Events",
+    "sentences": [
+     {
+      "start": 427090,
+      "end": 432440,
+      "text": "Helpful. What else was on the list?"
+     }
+    ]
+   },
+   {
+    "speakerId": "4601",
+    "topic": "Events",
+    "sentences": [
+     {
+      "start": 436440,
+      "end": 446300,
+      "text": "The autumn festival, which is in five weeks and is the largest thing we run."
+     },
+     {
+      "start": 446300,
+      "end": 460670,
+      "text": "Eleven hundred people over two days across six venues in the town, and every one of them needs a badge on the way in."
+     },
+     {
+      "start": 460670,
+      "end": 474050,
+      "text": "That is already a support case so I will not use your time on it here, but it is the thing keeping me awake."
+     }
+    ]
+   },
+   {
+    "speakerId": "1201",
+    "topic": "Events",
+    "sentences": [
+     {
+      "start": 478050,
+      "end": 487470,
+      "text": "I saw the case come through this morning and it is with the right group."
+     },
+     {
+      "start": 487470,
+      "end": 499860,
+      "text": "I will keep an eye on it from my side and chase it if it goes quiet for more than a couple of days."
+     }
+    ]
+   },
+   {
+    "speakerId": "4601",
+    "topic": "Events",
+    "sentences": [
+     {
+      "start": 503860,
+      "end": 513390,
+      "text": "That is all I need on it. It is a known quantity, just an unpleasant one."
+     }
+    ]
+   },
+   {
+    "speakerId": "1201",
+    "topic": "Next steps",
+    "sentences": [
+     {
+      "start": 517390,
+      "end": 527470,
+      "text": "So my actions are the directory write up and keeping the festival case moving."
+     },
+     {
+      "start": 527470,
+      "end": 534360,
+      "text": "Anything else before you go and look at a studio?"
+     }
+    ]
+   },
+   {
+    "speakerId": "4601",
+    "topic": "Next steps",
+    "sentences": [
+     {
+      "start": 538360,
+      "end": 546240,
+      "text": "Nothing else. Thank you for making the time on a Thursday."
+     }
+    ]
+   }
+  ]
+ }
+}

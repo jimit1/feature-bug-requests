@@ -1,0 +1,309 @@
+{
+ "schema_version": "1.0.0",
+ "call": {
+  "metaData": {
+   "id": "7782934453104",
+   "url": "https://gong.invalid/call?id=7782934453104",
+   "title": "Blue Ridge Beekeepers Federation introductory call",
+   "scheduled": "2026-09-21T16:00:00Z",
+   "started": "2026-09-21T16:16:05Z",
+   "duration": 399,
+   "primaryUserId": "1201",
+   "direction": "Conference",
+   "system": "Gong",
+   "scope": "External",
+   "media": "Video",
+   "language": "eng",
+   "workspaceId": "9911",
+   "sdrDisposition": null,
+   "clientUniqueId": null,
+   "customData": null,
+   "purpose": "Introductory call",
+   "meetingUrl": null,
+   "isPrivate": false,
+   "calendarEventId": "cal-453104"
+  },
+  "parties": [
+   {
+    "id": "p-1201",
+    "emailAddress": "priya.natarajan@momentivesoftware.example.org",
+    "name": "Priya Natarajan",
+    "title": "Customer Success Manager",
+    "userId": "1201",
+    "speakerId": "1201",
+    "context": [],
+    "affiliation": "Internal"
+   },
+   {
+    "id": "p-4904",
+    "emailAddress": "teodor.brandt@blueridgebeekeepers.example.org",
+    "name": "Teodor Brandt",
+    "title": "Executive Director",
+    "userId": null,
+    "speakerId": "4904",
+    "context": [],
+    "affiliation": "External"
+   }
+  ]
+ },
+ "transcript": {
+  "callId": "7782934453104",
+  "transcript": [
+   {
+    "speakerId": "1201",
+    "topic": "Opening",
+    "sentences": [
+     {
+      "start": 8000,
+      "end": 21710,
+      "text": "Good afternoon. This is really a call to work out who needs to be in the room rather than to show you anything."
+     }
+    ]
+   },
+   {
+    "speakerId": "4904",
+    "topic": "Opening",
+    "sentences": [
+     {
+      "start": 25710,
+      "end": 36340,
+      "text": "That suits me. I have twenty five minutes and then a call with our regional chairs."
+     }
+    ]
+   },
+   {
+    "speakerId": "1201",
+    "topic": "Process",
+    "sentences": [
+     {
+      "start": 40340,
+      "end": 49650,
+      "text": "Tell me how a decision like this actually gets made at your federation."
+     }
+    ]
+   },
+   {
+    "speakerId": "4904",
+    "topic": "Process",
+    "sentences": [
+     {
+      "start": 53650,
+      "end": 59000,
+      "text": "Slowly, and through two committees."
+     },
+     {
+      "start": 59000,
+      "end": 72380,
+      "text": "Anything over twenty thousand dollars a year goes to the finance committee first and then to the full board."
+     },
+     {
+      "start": 72380,
+      "end": 87410,
+      "text": "Finance meets on the second Tuesday of the month and the board meets quarterly, with the next one on the third of December."
+     }
+    ]
+   },
+   {
+    "speakerId": "1201",
+    "topic": "Process",
+    "sentences": [
+     {
+      "start": 91410,
+      "end": 102700,
+      "text": "So realistically the December board meeting is the first point a decision could be taken."
+     }
+    ]
+   },
+   {
+    "speakerId": "4904",
+    "topic": "Process",
+    "sentences": [
+     {
+      "start": 106700,
+      "end": 113810,
+      "text": "It is, and only if finance has seen it in November."
+     },
+     {
+      "start": 113810,
+      "end": 127960,
+      "text": "If it misses November it goes to the March board, and nobody wants that because our membership year opens in April."
+     }
+    ]
+   },
+   {
+    "speakerId": "1201",
+    "topic": "Process",
+    "sentences": [
+     {
+      "start": 131960,
+      "end": 144020,
+      "text": "Then let us work backwards from November. What does the finance committee need in front of them?"
+     }
+    ]
+   },
+   {
+    "speakerId": "4904",
+    "topic": "Process",
+    "sentences": [
+     {
+      "start": 148020,
+      "end": 160080,
+      "text": "A one page summary, a three year cost, and the name of a comparable federation we can telephone."
+     },
+     {
+      "start": 160080,
+      "end": 170160,
+      "text": "They will not read anything longer than a page, and I say that with affection."
+     }
+    ]
+   },
+   {
+    "speakerId": "1201",
+    "topic": "People",
+    "sentences": [
+     {
+      "start": 174160,
+      "end": 181930,
+      "text": "Who else should be on a demonstration when we get to one?"
+     }
+    ]
+   },
+   {
+    "speakerId": "4904",
+    "topic": "People",
+    "sentences": [
+     {
+      "start": 185930,
+      "end": 198980,
+      "text": "Myself, our membership secretary, and one of the regional chairs so that the volunteers feel represented."
+     },
+     {
+      "start": 198980,
+      "end": 213240,
+      "text": "Our treasurer will want to be there for anything touching money, but he travels a great deal and we work around him."
+     }
+    ]
+   },
+   {
+    "speakerId": "1201",
+    "topic": "People",
+    "sentences": [
+     {
+      "start": 217240,
+      "end": 227100,
+      "text": "Four people is a workable number. How long a session would they sit through?"
+     }
+    ]
+   },
+   {
+    "speakerId": "4904",
+    "topic": "People",
+    "sentences": [
+     {
+      "start": 231100,
+      "end": 237880,
+      "text": "An hour, no more, and preferably in the morning."
+     },
+     {
+      "start": 237880,
+      "end": 253020,
+      "text": "Our membership secretary is a volunteer with a day job, so evenings are worse for her than mornings, which surprises people."
+     }
+    ]
+   },
+   {
+    "speakerId": "1201",
+    "topic": "Logistics",
+    "sentences": [
+     {
+      "start": 257020,
+      "end": 266000,
+      "text": "Would that be in person or would a video call be acceptable to them?"
+     }
+    ]
+   },
+   {
+    "speakerId": "4904",
+    "topic": "Logistics",
+    "sentences": [
+     {
+      "start": 270000,
+      "end": 285580,
+      "text": "A video call is fine and frankly better. We are spread across three states and getting four of us in one building takes a month."
+     },
+     {
+      "start": 285580,
+      "end": 296100,
+      "text": "We did the whole of our insurance review on video last year and nobody complained."
+     }
+    ]
+   },
+   {
+    "speakerId": "1201",
+    "topic": "Logistics",
+    "sentences": [
+     {
+      "start": 300100,
+      "end": 311720,
+      "text": "Then I will hold an hour in the first half of October and send it round for the four of you."
+     }
+    ]
+   },
+   {
+    "speakerId": "4904",
+    "topic": "Logistics",
+    "sentences": [
+     {
+      "start": 315720,
+      "end": 333060,
+      "text": "The week of the sixth is better than the week of the thirteenth. Our autumn field day is on the eighteenth and the fortnight before it is chaos."
+     }
+    ]
+   },
+   {
+    "speakerId": "1201",
+    "topic": "Next steps",
+    "sentences": [
+     {
+      "start": 337060,
+      "end": 348900,
+      "text": "The week of the sixth then. I will send something over tomorrow with two or three times in it."
+     }
+    ]
+   },
+   {
+    "speakerId": "4904",
+    "topic": "Next steps",
+    "sentences": [
+     {
+      "start": 352900,
+      "end": 366940,
+      "text": "Good. And send the one page summary separately, because our membership secretary likes to read before she listens."
+     }
+    ]
+   },
+   {
+    "speakerId": "1201",
+    "topic": "Next steps",
+    "sentences": [
+     {
+      "start": 370940,
+      "end": 385090,
+      "text": "Understood. Thank you for the twenty five minutes, that was more useful than a demonstration would have been today."
+     }
+    ]
+   },
+   {
+    "speakerId": "4904",
+    "topic": "Next steps",
+    "sentences": [
+     {
+      "start": 389090,
+      "end": 394990,
+      "text": "I thought it might be. Speak in October."
+     }
+    ]
+   }
+  ]
+ }
+}

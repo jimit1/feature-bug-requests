@@ -1,0 +1,67 @@
+{
+ "schema_version": "1.0.0",
+ "case": {
+  "attributes": {
+   "type": "Case",
+   "url": "/services/data/v62.0/sobjects/Case/50000000000000001c"
+  },
+  "Id": "50000000000000001c",
+  "CaseNumber": "00005028",
+  "AccountId": "0018W00002HkLmNQAV",
+  "Subject": "Members cannot find other members in the directory",
+  "Status": "New",
+  "Priority": "Medium",
+  "CreatedDate": "2026-09-24T10:44:52Z",
+  "ClosedDate": null
+ },
+ "comments": [
+  {
+   "attributes": {
+    "type": "CaseComment",
+    "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000006f"
+   },
+   "Id": "00a00000000000006f",
+   "ParentId": "50000000000000001c",
+   "CommentBody": "This comes from our volunteer coordinators across the eleven museums rather than from me, and it has come up at three of the last four coordinator meetings, so I said I would raise it properly.",
+   "IsPublished": true,
+   "CreatedById": "005000000000000065",
+   "CreatedDate": "2026-09-24T10:58:13Z"
+  },
+  {
+   "attributes": {
+    "type": "CaseComment",
+    "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000070"
+   },
+   "Id": "00a000000000000070",
+   "ParentId": "50000000000000001c",
+   "CommentBody": "Members ask us for other members by region almost every week and all we can offer them is a search on a name, so our staff answer that by email one at a time. The volunteer coordinators get most of these because the person asking usually wants somebody near enough to share a lift to an opening, and a lift is a regional question, not a name question.",
+   "IsPublished": true,
+   "CreatedById": "005000000000000065",
+   "CreatedDate": "2026-09-24T11:26:39Z"
+  },
+  {
+   "attributes": {
+    "type": "CaseComment",
+    "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000071"
+   },
+   "Id": "00a000000000000071",
+   "ParentId": "50000000000000001c",
+   "CommentBody": "Thank you, and the lift sharing detail is the part that makes this concrete. Roughly how many of these does a coordinator field in a month, if you have any sense of it across the eleven sites?",
+   "IsPublished": true,
+   "CreatedById": "005000000000000001",
+   "CreatedDate": "2026-09-24T13:09:27Z"
+  },
+  {
+   "attributes": {
+    "type": "CaseComment",
+    "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000072"
+   },
+   "Id": "00a000000000000072",
+   "ParentId": "50000000000000001c",
+   "CommentBody": "I asked three of them before writing this. Between four and twelve each a month, with the larger museums at the top of that range, so call it sixty across the alliance. None of them is a hardship on its own, which is precisely why it has taken three meetings to say out loud.",
+   "IsPublished": true,
+   "CreatedById": "005000000000000065",
+   "CreatedDate": "2026-09-24T16:02:58Z"
+  }
+ ]
+}

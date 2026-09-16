@@ -1,0 +1,302 @@
+{
+ "schema_version": "1.0.0",
+ "call": {
+  "metaData": {
+   "id": "7782934453105",
+   "url": "https://gong.invalid/call?id=7782934453105",
+   "title": "Great Lakes Museum Alliance reporting review",
+   "scheduled": "2026-09-22T09:00:00Z",
+   "started": "2026-09-22T09:32:12Z",
+   "duration": 407,
+   "primaryUserId": "1187",
+   "direction": "Conference",
+   "system": "Gong",
+   "scope": "External",
+   "media": "Video",
+   "language": "eng",
+   "workspaceId": "9911",
+   "sdrDisposition": null,
+   "clientUniqueId": null,
+   "customData": null,
+   "purpose": "Reporting review",
+   "meetingUrl": null,
+   "isPrivate": false,
+   "calendarEventId": "cal-453105"
+  },
+  "parties": [
+   {
+    "id": "p-1187",
+    "emailAddress": "marcus.oyelaran@momentivesoftware.example.org",
+    "name": "Marcus Oyelaran",
+    "title": "Customer Success Manager",
+    "userId": "1187",
+    "speakerId": "1187",
+    "context": [],
+    "affiliation": "Internal"
+   },
+   {
+    "id": "p-5005",
+    "emailAddress": "louisa.hartmann@greatlakesmuseums.example.org",
+    "name": "Louisa Hartmann",
+    "title": "Data and Insight Lead",
+    "userId": null,
+    "speakerId": "5005",
+    "context": [],
+    "affiliation": "External"
+   }
+  ]
+ },
+ "transcript": {
+  "callId": "7782934453105",
+  "transcript": [
+   {
+    "speakerId": "1187",
+    "topic": "Opening",
+    "sentences": [
+     {
+      "start": 8000,
+      "end": 19840,
+      "text": "Morning. This is the reporting session we put in after the last quarterly, so it is all yours."
+     }
+    ]
+   },
+   {
+    "speakerId": "5005",
+    "topic": "Opening",
+    "sentences": [
+     {
+      "start": 23840,
+      "end": 34360,
+      "text": "Morning. I have a list, and I am afraid most of it is the same list I had in July."
+     }
+    ]
+   },
+   {
+    "speakerId": "1187",
+    "topic": "Reporting",
+    "sentences": [
+     {
+      "start": 38360,
+      "end": 48220,
+      "text": "Then let us go through it properly rather than politely. What is at the top?"
+     }
+    ]
+   },
+   {
+    "speakerId": "5005",
+    "topic": "Reporting",
+    "sentences": [
+     {
+      "start": 52220,
+      "end": 63180,
+      "text": "The board pack, which I build once a month from four separate pulls out of the system."
+     },
+     {
+      "start": 63180,
+      "end": 78100,
+      "text": "Once a report runs past about ten thousand records the file comes back short, and nothing on it tells us it stopped early."
+     },
+     {
+      "start": 78100,
+      "end": 90710,
+      "text": "I only know it has happened because I total the file against the count on the screen before I use it."
+     },
+     {
+      "start": 90710,
+      "end": 105080,
+      "text": "The first time I missed that check I put a number in front of eleven trustees that was wrong by nine thousand people."
+     }
+    ]
+   },
+   {
+    "speakerId": "1187",
+    "topic": "Reporting",
+    "sentences": [
+     {
+      "start": 109080,
+      "end": 116190,
+      "text": "I remember that one. That was February, was it not?"
+     }
+    ]
+   },
+   {
+    "speakerId": "5005",
+    "topic": "Reporting",
+    "sentences": [
+     {
+      "start": 120190,
+      "end": 128730,
+      "text": "February, and I have checked every file since without exception."
+     },
+     {
+      "start": 128730,
+      "end": 142990,
+      "text": "It adds twenty minutes to a job that should not need checking at all, and it means a junior cannot be given the job."
+     }
+    ]
+   },
+   {
+    "speakerId": "1187",
+    "topic": "Reporting",
+    "sentences": [
+     {
+      "start": 146990,
+      "end": 164880,
+      "text": "So what I am hearing is that exports are cutting off silently past ten thousand records and your team stitches the files together by hand afterwards."
+     },
+     {
+      "start": 164880,
+      "end": 177270,
+      "text": "I want to be sure I am describing it the way you would describe it, because I will be repeating it."
+     }
+    ]
+   },
+   {
+    "speakerId": "5005",
+    "topic": "Reporting",
+    "sentences": [
+     {
+      "start": 181270,
+      "end": 194870,
+      "text": "That is close. We do not stitch them together so much as run the same pull three times with different filters."
+     },
+     {
+      "start": 194870,
+      "end": 207040,
+      "text": "Each one comes back under the limit that way, and then I put the three together in a spreadsheet."
+     }
+    ]
+   },
+   {
+    "speakerId": "1187",
+    "topic": "Reporting",
+    "sentences": [
+     {
+      "start": 211040,
+      "end": 225080,
+      "text": "That is a meaningful difference and I am glad I checked. Three pulls and a spreadsheet, not one pull and a repair."
+     }
+    ]
+   },
+   {
+    "speakerId": "5005",
+    "topic": "Reporting",
+    "sentences": [
+     {
+      "start": 229080,
+      "end": 238610,
+      "text": "Three pulls and a spreadsheet. It takes about an hour and a half a month."
+     }
+    ]
+   },
+   {
+    "speakerId": "1187",
+    "topic": "Reporting",
+    "sentences": [
+     {
+      "start": 242610,
+      "end": 249390,
+      "text": "Noted with the figure. What is next on the list?"
+     }
+    ]
+   },
+   {
+    "speakerId": "5005",
+    "topic": "Visitors",
+    "sentences": [
+     {
+      "start": 253390,
+      "end": 262700,
+      "text": "The visitor numbers, and this one is a request rather than a complaint."
+     },
+     {
+      "start": 262700,
+      "end": 279710,
+      "text": "We are being asked to show member visits against non member visits by site, and we cannot get that without going to each museum individually."
+     },
+     {
+      "start": 279710,
+      "end": 294850,
+      "text": "Eleven museums means eleven emails and eleven different spreadsheet layouts coming back, and two of them always arrive late."
+     }
+    ]
+   },
+   {
+    "speakerId": "1187",
+    "topic": "Visitors",
+    "sentences": [
+     {
+      "start": 298850,
+      "end": 310910,
+      "text": "Is that because the visit data lives in the ticketing systems at each site rather than with you?"
+     }
+    ]
+   },
+   {
+    "speakerId": "5005",
+    "topic": "Visitors",
+    "sentences": [
+     {
+      "start": 314910,
+      "end": 325100,
+      "text": "Exactly that, and I accept it is partly our own architecture rather than yours."
+     },
+     {
+      "start": 325100,
+      "end": 338370,
+      "text": "I mention it because if there were ever a sensible way to bring it in, it would save eleven emails a month."
+     }
+    ]
+   },
+   {
+    "speakerId": "1187",
+    "topic": "Visitors",
+    "sentences": [
+     {
+      "start": 342370,
+      "end": 352560,
+      "text": "I will note it as context rather than a request, and say so when I write it up."
+     }
+    ]
+   },
+   {
+    "speakerId": "5005",
+    "topic": "Next steps",
+    "sentences": [
+     {
+      "start": 356560,
+      "end": 368070,
+      "text": "That is fair. The export one is the real item and it has been the real item since February."
+     }
+    ]
+   },
+   {
+    "speakerId": "1187",
+    "topic": "Next steps",
+    "sentences": [
+     {
+      "start": 372070,
+      "end": 385230,
+      "text": "It is on the account and I will add this morning's numbers to it, the hour and a half and the three pulls."
+     },
+     {
+      "start": 385230,
+      "end": 390470,
+      "text": "Anything else before I let you go?"
+     }
+    ]
+   },
+   {
+    "speakerId": "5005",
+    "topic": "Next steps",
+    "sentences": [
+     {
+      "start": 394470,
+      "end": 402680,
+      "text": "No, that is the list. Thank you for sitting through it again."
+     }
+    ]
+   }
+  ]
+ }
+}

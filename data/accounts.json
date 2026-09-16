@@ -153,6 +153,40 @@
         "Renewal_Date__c": null,
         "Products__c": ""
       }
+    },
+    {
+      "account_id": "ACC-0010",
+      "account_type": "customer",
+      "domain": "ozarkvalleyarts.example.org",
+      "record": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v62.0/sobjects/Account/0018W00002HkLmWQAV"
+        },
+        "Id": "0018W00002HkLmWQAV",
+        "Name": "Ozark Valley Arts Council",
+        "Tier__c": "Professional",
+        "ARR__c": 128000,
+        "Renewal_Date__c": "2027-04-30",
+        "Products__c": "membership;events;accounting"
+      }
+    },
+    {
+      "account_id": "ACC-0011",
+      "account_type": "prospect",
+      "domain": "blueridgebeekeepers.example.org",
+      "record": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v62.0/sobjects/Account/0018W00002HkLmXQAV"
+        },
+        "Id": "0018W00002HkLmXQAV",
+        "Name": "Blue Ridge Beekeepers Federation",
+        "Tier__c": "Prospect",
+        "ARR__c": 0,
+        "Renewal_Date__c": null,
+        "Products__c": ""
+      }
     }
   ]
 }

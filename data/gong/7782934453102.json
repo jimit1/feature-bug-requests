@@ -1,0 +1,329 @@
+{
+ "schema_version": "1.0.0",
+ "call": {
+  "metaData": {
+   "id": "7782934453102",
+   "url": "https://gong.invalid/call?id=7782934453102",
+   "title": "Atlantic Shipwrights Guild job board review",
+   "scheduled": "2026-09-18T10:00:00Z",
+   "started": "2026-09-18T10:31:18Z",
+   "duration": 443,
+   "primaryUserId": "1244",
+   "direction": "Conference",
+   "system": "Gong",
+   "scope": "External",
+   "media": "Video",
+   "language": "eng",
+   "workspaceId": "9911",
+   "sdrDisposition": null,
+   "clientUniqueId": null,
+   "customData": null,
+   "purpose": "Job board review",
+   "meetingUrl": null,
+   "isPrivate": false,
+   "calendarEventId": "cal-453102"
+  },
+  "parties": [
+   {
+    "id": "p-1244",
+    "emailAddress": "tom.bradshaw@momentivesoftware.example.org",
+    "name": "Tom Bradshaw",
+    "title": "Account Director",
+    "userId": "1244",
+    "speakerId": "1244",
+    "context": [],
+    "affiliation": "Internal"
+   },
+   {
+    "id": "p-4702",
+    "emailAddress": "harriet.vandermeer@atlanticshipwrights.example.org",
+    "name": "Harriet Vandermeer",
+    "title": "Programs Manager",
+    "userId": null,
+    "speakerId": "4702",
+    "context": [],
+    "affiliation": "External"
+   }
+  ]
+ },
+ "transcript": {
+  "callId": "7782934453102",
+  "transcript": [
+   {
+    "speakerId": "1244",
+    "topic": "Opening",
+    "sentences": [
+     {
+      "start": 8000,
+      "end": 20610,
+      "text": "Morning. This is the job board review we pushed from last month, so I have kept it to thirty minutes."
+     }
+    ]
+   },
+   {
+    "speakerId": "4702",
+    "topic": "Opening",
+    "sentences": [
+     {
+      "start": 24610,
+      "end": 37110,
+      "text": "Morning. Thirty is plenty, the board is a small part of what we do but it is the part people notice."
+     }
+    ]
+   },
+   {
+    "speakerId": "1244",
+    "topic": "Job board",
+    "sentences": [
+     {
+      "start": 41110,
+      "end": 51410,
+      "text": "Give me the volume first. How many live listings are you carrying at the moment?"
+     }
+    ]
+   },
+   {
+    "speakerId": "4702",
+    "topic": "Job board",
+    "sentences": [
+     {
+      "start": 55410,
+      "end": 66040,
+      "text": "Between seventy and ninety at any point in the year, and it swings with the season."
+     },
+     {
+      "start": 66040,
+      "end": 78760,
+      "text": "Yards hire in late winter for the spring haul out, so February and March are busy and August is quiet."
+     },
+     {
+      "start": 78760,
+      "end": 87630,
+      "text": "Right now we have seventy four live, which is normal for September."
+     }
+    ]
+   },
+   {
+    "speakerId": "1244",
+    "topic": "Job board",
+    "sentences": [
+     {
+      "start": 91630,
+      "end": 99400,
+      "text": "And who places them, the yards themselves or your office?"
+     }
+    ]
+   },
+   {
+    "speakerId": "4702",
+    "topic": "Job board",
+    "sentences": [
+     {
+      "start": 103400,
+      "end": 114690,
+      "text": "The yards place them. We give each member yard a login and they post their own vacancies."
+     },
+     {
+      "start": 114690,
+      "end": 125650,
+      "text": "That was the whole point of moving off the newsletter, and on the whole it has worked."
+     }
+    ]
+   },
+   {
+    "speakerId": "1244",
+    "topic": "Job board",
+    "sentences": [
+     {
+      "start": 129650,
+      "end": 135990,
+      "text": "On the whole. What is the part that has not?"
+     }
+    ]
+   },
+   {
+    "speakerId": "4702",
+    "topic": "Job board",
+    "sentences": [
+     {
+      "start": 139990,
+      "end": 150290,
+      "text": "Listings come down when they expire and nothing tells the yard that it happened."
+     },
+     {
+      "start": 150290,
+      "end": 167850,
+      "text": "Nobody gets a note before a listing drops off the board, so the yard that placed it finds out only when somebody phones to ask why it disappeared."
+     },
+     {
+      "start": 167850,
+      "end": 179580,
+      "text": "That call comes to us rather than to them, because we are the ones whose name is on the site."
+     },
+     {
+      "start": 179580,
+      "end": 193180,
+      "text": "It happened four times in August alone and one of those yards had been paying for a featured slot at the time."
+     }
+    ]
+   },
+   {
+    "speakerId": "1244",
+    "topic": "Job board",
+    "sentences": [
+     {
+      "start": 197180,
+      "end": 205500,
+      "text": "The featured slot makes that worse. Did you have to refund it?"
+     }
+    ]
+   },
+   {
+    "speakerId": "4702",
+    "topic": "Job board",
+    "sentences": [
+     {
+      "start": 209500,
+      "end": 223760,
+      "text": "We refunded half of it and they were reasonable about the rest, but I would rather not have the conversation at all."
+     },
+     {
+      "start": 223760,
+      "end": 237800,
+      "text": "The yard had assumed the listing was live for the full month they paid for, and from their side it simply stopped."
+     }
+    ]
+   },
+   {
+    "speakerId": "1244",
+    "topic": "Job board",
+    "sentences": [
+     {
+      "start": 241800,
+      "end": 255840,
+      "text": "Let me play that back. The expiry itself is working as it should, it is the silence around it that is the problem."
+     }
+    ]
+   },
+   {
+    "speakerId": "4702",
+    "topic": "Job board",
+    "sentences": [
+     {
+      "start": 259840,
+      "end": 272120,
+      "text": "Yes. If the yard got a message a few days out they would either extend it or let it go on purpose."
+     },
+     {
+      "start": 272120,
+      "end": 280880,
+      "text": "Instead it goes quietly and the first anyone hears is a complaint."
+     }
+    ]
+   },
+   {
+    "speakerId": "1244",
+    "topic": "Job board",
+    "sentences": [
+     {
+      "start": 284880,
+      "end": 298480,
+      "text": "That is clear enough for me to take forward. I will write it up with the August examples if you can send them."
+     }
+    ]
+   },
+   {
+    "speakerId": "4702",
+    "topic": "Job board",
+    "sentences": [
+     {
+      "start": 302480,
+      "end": 314430,
+      "text": "I will send the four. Two of them are from the same yard, which tells you something on its own."
+     }
+    ]
+   },
+   {
+    "speakerId": "1244",
+    "topic": "Apprenticeships",
+    "sentences": [
+     {
+      "start": 318430,
+      "end": 329390,
+      "text": "Noted. While I have you, how is the apprenticeship scheme sitting alongside the board?"
+     }
+    ]
+   },
+   {
+    "speakerId": "4702",
+    "topic": "Apprenticeships",
+    "sentences": [
+     {
+      "start": 333390,
+      "end": 345340,
+      "text": "It is growing faster than the board is. Nineteen placements this year against eleven last year."
+     },
+     {
+      "start": 345340,
+      "end": 362350,
+      "text": "They are advertised in the same place but they are a different animal, because a placement runs for two years and a vacancy runs for a month."
+     }
+    ]
+   },
+   {
+    "speakerId": "1244",
+    "topic": "Apprenticeships",
+    "sentences": [
+     {
+      "start": 366350,
+      "end": 373900,
+      "text": "Does that difference cause you any trouble in practice?"
+     }
+    ]
+   },
+   {
+    "speakerId": "4702",
+    "topic": "Apprenticeships",
+    "sentences": [
+     {
+      "start": 377900,
+      "end": 387760,
+      "text": "Not so far. We set a long date on them and check them once a quarter by eye."
+     },
+     {
+      "start": 387760,
+      "end": 402680,
+      "text": "The volume is low enough that a person can hold it in their head, which is a sentence I know I will regret saying one day."
+     }
+    ]
+   },
+   {
+    "speakerId": "1244",
+    "topic": "Next steps",
+    "sentences": [
+     {
+      "start": 406680,
+      "end": 415880,
+      "text": "I will take the expiry item away and come back to you within the week."
+     },
+     {
+      "start": 415880,
+      "end": 426620,
+      "text": "Send the four examples when you get a moment and I will attach them to what I write."
+     }
+    ]
+   },
+   {
+    "speakerId": "4702",
+    "topic": "Next steps",
+    "sentences": [
+     {
+      "start": 430620,
+      "end": 439380,
+      "text": "They will be with you this afternoon. Thanks for keeping the slot."
+     }
+    ]
+   }
+  ]
+ }
+}

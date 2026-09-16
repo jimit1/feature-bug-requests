@@ -1,0 +1,67 @@
+{
+ "schema_version": "1.0.0",
+ "case": {
+  "attributes": {
+   "type": "Case",
+   "url": "/services/data/v62.0/sobjects/Case/50000000000000001a"
+  },
+  "Id": "50000000000000001a",
+  "CaseNumber": "00005026",
+  "AccountId": "0018W00002HkLmRQAV",
+  "Subject": "Pulling membership data into our own systems on a schedule",
+  "Status": "Working",
+  "Priority": "Medium",
+  "CreatedDate": "2026-09-22T09:12:18Z",
+  "ClosedDate": null
+ },
+ "comments": [
+  {
+   "attributes": {
+    "type": "CaseComment",
+    "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000067"
+   },
+   "Id": "00a000000000000067",
+   "ParentId": "50000000000000001a",
+   "CommentBody": "We have two systems of our own that need to know who our current members are, the certification register and the yard insurance scheme. At the moment a member of staff downloads a file every Monday morning and uploads it into both of them, and if she is on holiday nobody does it and the insurance scheme goes stale for a week.",
+   "IsPublished": true,
+   "CreatedById": "005000000000000068",
+   "CreatedDate": "2026-09-22T09:29:41Z"
+  },
+  {
+   "attributes": {
+    "type": "CaseComment",
+    "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000068"
+   },
+   "Id": "00a000000000000068",
+   "ParentId": "50000000000000001a",
+   "CommentBody": "What we need is an interface our own systems can call for the membership data on a schedule, because one person downloading a file every Monday morning is not something we can keep doing. Our insurer has started asking how current the list is when we send it, and last quarter the honest answer was nine days old.",
+   "IsPublished": true,
+   "CreatedById": "005000000000000068",
+   "CreatedDate": "2026-09-22T09:34:16Z"
+  },
+  {
+   "attributes": {
+    "type": "CaseComment",
+    "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000069"
+   },
+   "Id": "00a000000000000069",
+   "ParentId": "50000000000000001a",
+   "CommentBody": "Understood, and the insurer question makes the case better than anything else in this thread. I am raising it with the platform group today. So that I describe it accurately, is it fair to say you would want this to run nightly rather than on demand, and that the certification register and the insurance scheme would each call it separately?",
+   "IsPublished": true,
+   "CreatedById": "005000000000000002",
+   "CreatedDate": "2026-09-22T11:47:29Z"
+  },
+  {
+   "attributes": {
+    "type": "CaseComment",
+    "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000006a"
+   },
+   "Id": "00a00000000000006a",
+   "ParentId": "50000000000000001a",
+   "CommentBody": "Nightly would be more than enough, we are not chasing minutes here. And yes, two separate callers, because the two systems are run by different people and neither wants to depend on the other one having run first.",
+   "IsPublished": true,
+   "CreatedById": "005000000000000068",
+   "CreatedDate": "2026-09-22T15:03:02Z"
+  }
+ ]
+}

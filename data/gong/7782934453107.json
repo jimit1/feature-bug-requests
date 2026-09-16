@@ -1,0 +1,287 @@
+{
+ "schema_version": "1.0.0",
+ "call": {
+  "metaData": {
+   "id": "7782934453107",
+   "url": "https://gong.invalid/call?id=7782934453107",
+   "title": "Ozark Valley Arts Council finance sync check in",
+   "scheduled": "2026-09-24T10:00:00Z",
+   "started": "2026-09-24T10:02:31Z",
+   "duration": 366,
+   "primaryUserId": "1244",
+   "direction": "Conference",
+   "system": "Gong",
+   "scope": "External",
+   "media": "Video",
+   "language": "eng",
+   "workspaceId": "9911",
+   "sdrDisposition": null,
+   "clientUniqueId": null,
+   "customData": null,
+   "purpose": "Finance sync check in",
+   "meetingUrl": null,
+   "isPrivate": false,
+   "calendarEventId": "cal-453107"
+  },
+  "parties": [
+   {
+    "id": "p-1244",
+    "emailAddress": "tom.bradshaw@momentivesoftware.example.org",
+    "name": "Tom Bradshaw",
+    "title": "Account Director",
+    "userId": "1244",
+    "speakerId": "1244",
+    "context": [],
+    "affiliation": "Internal"
+   },
+   {
+    "id": "p-5207",
+    "emailAddress": "rosalind.achterberg@ozarkvalleyarts.example.org",
+    "name": "Rosalind Achterberg",
+    "title": "Finance Manager",
+    "userId": null,
+    "speakerId": "5207",
+    "context": [],
+    "affiliation": "External"
+   }
+  ]
+ },
+ "transcript": {
+  "callId": "7782934453107",
+  "transcript": [
+   {
+    "speakerId": "1244",
+    "topic": "Opening",
+    "sentences": [
+     {
+      "start": 8000,
+      "end": 21930,
+      "text": "Morning. This is the finance session we agreed when you came across in the spring, so it is the first proper one."
+     }
+    ]
+   },
+   {
+    "speakerId": "5207",
+    "topic": "Opening",
+    "sentences": [
+     {
+      "start": 25930,
+      "end": 34470,
+      "text": "Morning. Six months in feels about right for a first proper one."
+     }
+    ]
+   },
+   {
+    "speakerId": "1244",
+    "topic": "Ledger",
+    "sentences": [
+     {
+      "start": 38470,
+      "end": 45690,
+      "text": "How has the month end been running since the summer?"
+     }
+    ]
+   },
+   {
+    "speakerId": "5207",
+    "topic": "Ledger",
+    "sentences": [
+     {
+      "start": 49690,
+      "end": 62630,
+      "text": "Smoothly for the most part, and I want to say that first because the rest of what I have is a complaint."
+     },
+     {
+      "start": 62630,
+      "end": 77110,
+      "text": "The close takes three days now rather than the eight it took on the old system, and nobody here misses the old system."
+     }
+    ]
+   },
+   {
+    "speakerId": "1244",
+    "topic": "Ledger",
+    "sentences": [
+     {
+      "start": 81110,
+      "end": 89870,
+      "text": "Three days from eight is a real change. Now tell me the complaint."
+     }
+    ]
+   },
+   {
+    "speakerId": "5207",
+    "topic": "Ledger",
+    "sentences": [
+     {
+      "start": 93870,
+      "end": 111980,
+      "text": "The month end posting has come through twice into our ledger on three closings since the spring, and our treasurer reverses the copy by hand each time."
+     },
+     {
+      "start": 111980,
+      "end": 128110,
+      "text": "It is always the same shape. One batch arrives, and then some minutes later the identical batch arrives again with its own reference."
+     },
+     {
+      "start": 128110,
+      "end": 140170,
+      "text": "May, July and August. June was clean and September is not closed yet, so I am holding my breath."
+     },
+     {
+      "start": 140170,
+      "end": 153880,
+      "text": "Reversing it is perhaps forty minutes of work, but the worry beforehand costs more than the forty minutes does."
+     }
+    ]
+   },
+   {
+    "speakerId": "1244",
+    "topic": "Ledger",
+    "sentences": [
+     {
+      "start": 157880,
+      "end": 164990,
+      "text": "What does the worry actually look like in practice?"
+     }
+    ]
+   },
+   {
+    "speakerId": "5207",
+    "topic": "Ledger",
+    "sentences": [
+     {
+      "start": 168990,
+      "end": 184570,
+      "text": "Our treasurer checks the ledger line by line on the first morning after every close, because he no longer trusts it to be right."
+     },
+     {
+      "start": 184570,
+      "end": 195750,
+      "text": "That is a volunteer with a full time job giving us two hours he should not have to give."
+     }
+    ]
+   },
+   {
+    "speakerId": "1244",
+    "topic": "Ledger",
+    "sentences": [
+     {
+      "start": 199750,
+      "end": 207740,
+      "text": "Do you have the reference numbers from the three occasions?"
+     }
+    ]
+   },
+   {
+    "speakerId": "5207",
+    "topic": "Ledger",
+    "sentences": [
+     {
+      "start": 211740,
+      "end": 223250,
+      "text": "I have all six, three originals and three copies, and I can send them over within the hour."
+     }
+    ]
+   },
+   {
+    "speakerId": "1244",
+    "topic": "Ledger",
+    "sentences": [
+     {
+      "start": 227250,
+      "end": 238540,
+      "text": "Send them and I will get them in front of the right people today with the dates attached."
+     }
+    ]
+   },
+   {
+    "speakerId": "5207",
+    "topic": "Audit",
+    "sentences": [
+     {
+      "start": 242540,
+      "end": 256800,
+      "text": "Thank you. The other thing on my list is the audit, which is in February and is our first under the new arrangement."
+     }
+    ]
+   },
+   {
+    "speakerId": "1244",
+    "topic": "Audit",
+    "sentences": [
+     {
+      "start": 260800,
+      "end": 268240,
+      "text": "Have the auditors told you what they will want to see?"
+     }
+    ]
+   },
+   {
+    "speakerId": "5207",
+    "topic": "Audit",
+    "sentences": [
+     {
+      "start": 272240,
+      "end": 285400,
+      "text": "The usual list, and they have asked for a walkthrough of the close in January before the fieldwork begins."
+     },
+     {
+      "start": 285400,
+      "end": 299440,
+      "text": "That is a meeting about process rather than anything technical, so I do not think I need anything from you for it."
+     }
+    ]
+   },
+   {
+    "speakerId": "1244",
+    "topic": "Audit",
+    "sentences": [
+     {
+      "start": 303440,
+      "end": 316050,
+      "text": "Say the word if that changes. I would rather sit in an unnecessary meeting than miss a necessary one."
+     }
+    ]
+   },
+   {
+    "speakerId": "5207",
+    "topic": "Audit",
+    "sentences": [
+     {
+      "start": 320050,
+      "end": 331670,
+      "text": "Noted, and I may take you up on it in January once I know what they are actually asking for."
+     }
+    ]
+   },
+   {
+    "speakerId": "1244",
+    "topic": "Next steps",
+    "sentences": [
+     {
+      "start": 335670,
+      "end": 345090,
+      "text": "One action for me then, the duplicate postings with your six references."
+     },
+     {
+      "start": 345090,
+      "end": 349780,
+      "text": "Anything else before we stop?"
+     }
+    ]
+   },
+   {
+    "speakerId": "5207",
+    "topic": "Next steps",
+    "sentences": [
+     {
+      "start": 353780,
+      "end": 362430,
+      "text": "That is everything. The references will be with you before lunch."
+     }
+    ]
+   }
+  ]
+ }
+}

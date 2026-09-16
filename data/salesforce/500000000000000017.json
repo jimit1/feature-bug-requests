@@ -1,0 +1,67 @@
+{
+ "schema_version": "1.0.0",
+ "case": {
+  "attributes": {
+   "type": "Case",
+   "url": "/services/data/v62.0/sobjects/Case/500000000000000017"
+  },
+  "Id": "500000000000000017",
+  "CaseNumber": "00005023",
+  "AccountId": "0018W00002HkLmTQAV",
+  "Subject": "Year end tax receipts for donors who gave more than once",
+  "Status": "Working",
+  "Priority": "High",
+  "CreatedDate": "2026-09-16T14:11:02Z",
+  "ClosedDate": null
+ },
+ "comments": [
+  {
+   "attributes": {
+    "type": "CaseComment",
+    "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000005b"
+   },
+   "Id": "00a00000000000005b",
+   "ParentId": "500000000000000017",
+   "CommentBody": "Opening this now because January will be too late to start. We close the giving year on the thirty first of December and every donor who gave anything at all has to have a receipt in hand by the end of January for their taxes. Last year we had four thousand one hundred donors and about nine hundred of them gave more than once.",
+   "IsPublished": true,
+   "CreatedById": "00500000000000006a",
+   "CreatedDate": "2026-09-16T14:18:37Z"
+  },
+  {
+   "attributes": {
+    "type": "CaseComment",
+    "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000005c"
+   },
+   "Id": "00a00000000000005c",
+   "ParentId": "500000000000000017",
+   "CommentBody": "Here is the part that costs us the month of January. There is no way to produce a single year end tax receipt for a donor who gave across several appeals, so we build each one in a mail merge from three separate exports. Nine hundred donors done that way is the best part of two weeks for one person, and it has to be right because people file it with their return.",
+   "IsPublished": true,
+   "CreatedById": "00500000000000006a",
+   "CreatedDate": "2026-09-17T09:24:50Z"
+  },
+  {
+   "attributes": {
+    "type": "CaseComment",
+    "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000005d"
+   },
+   "Id": "00a00000000000005d",
+   "ParentId": "500000000000000017",
+   "CommentBody": "Thank you for getting ahead of this rather than raising it in January. I want to make sure I have the shape of it before I take it further. Am I right that a single gift receipts cleanly today, and it is only the donor with several gifts across the year who has to be assembled by hand?",
+   "IsPublished": true,
+   "CreatedById": "005000000000000003",
+   "CreatedDate": "2026-09-17T11:02:15Z"
+  },
+  {
+   "attributes": {
+    "type": "CaseComment",
+    "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000005e"
+   },
+   "Id": "00a00000000000005e",
+   "ParentId": "500000000000000017",
+   "CommentBody": "That is right, one gift is fine and always has been. While I have you on this, two of the donors on that list also told us in writing that they only want to hear from us once a year, and the pledge reminders went out to them anyway in the spring. If it is quicker to talk any of this through, our office line is (417) 555 0198 and I am there most mornings before eleven.",
+   "IsPublished": true,
+   "CreatedById": "00500000000000006a",
+   "CreatedDate": "2026-09-17T13:40:28Z"
+  }
+ ]
+}

@@ -1,0 +1,285 @@
+{
+ "schema_version": "1.0.0",
+ "call": {
+  "metaData": {
+   "id": "7782934453106",
+   "url": "https://gong.invalid/call?id=7782934453106",
+   "title": "Sunbelt Literacy Network autumn appeal review",
+   "scheduled": "2026-09-23T13:00:00Z",
+   "started": "2026-09-23T13:47:09Z",
+   "duration": 399,
+   "primaryUserId": "1201",
+   "direction": "Conference",
+   "system": "Gong",
+   "scope": "External",
+   "media": "Video",
+   "language": "eng",
+   "workspaceId": "9911",
+   "sdrDisposition": null,
+   "clientUniqueId": null,
+   "customData": null,
+   "purpose": "Autumn appeal review",
+   "meetingUrl": null,
+   "isPrivate": false,
+   "calendarEventId": "cal-453106"
+  },
+  "parties": [
+   {
+    "id": "p-1201",
+    "emailAddress": "priya.natarajan@momentivesoftware.example.org",
+    "name": "Priya Natarajan",
+    "title": "Customer Success Manager",
+    "userId": "1201",
+    "speakerId": "1201",
+    "context": [],
+    "affiliation": "Internal"
+   },
+   {
+    "id": "p-5106",
+    "emailAddress": "curtis.ellsworth@sunbeltliteracy.example.org",
+    "name": "Curtis Ellsworth",
+    "title": "Development Director",
+    "userId": null,
+    "speakerId": "5106",
+    "context": [],
+    "affiliation": "External"
+   }
+  ]
+ },
+ "transcript": {
+  "callId": "7782934453106",
+  "transcript": [
+   {
+    "speakerId": "1201",
+    "topic": "Opening",
+    "sentences": [
+     {
+      "start": 8000,
+      "end": 20390,
+      "text": "Afternoon. The autumn appeal goes out next week, so I wanted to catch you before rather than after."
+     }
+    ]
+   },
+   {
+    "speakerId": "5106",
+    "topic": "Opening",
+    "sentences": [
+     {
+      "start": 24390,
+      "end": 36780,
+      "text": "Afternoon, and I appreciate that. After is when I have opinions and before is when they are useful."
+     }
+    ]
+   },
+   {
+    "speakerId": "1201",
+    "topic": "Appeal",
+    "sentences": [
+     {
+      "start": 40780,
+      "end": 45800,
+      "text": "How large is the send this year?"
+     }
+    ]
+   },
+   {
+    "speakerId": "5106",
+    "topic": "Appeal",
+    "sentences": [
+     {
+      "start": 49800,
+      "end": 60650,
+      "text": "Just under nine thousand households, which is about a thousand more than last autumn."
+     },
+     {
+      "start": 60650,
+      "end": 74580,
+      "text": "We are asking for a little less per household and hoping more of them say yes, which is the advice we were given."
+     }
+    ]
+   },
+   {
+    "speakerId": "1201",
+    "topic": "Appeal",
+    "sentences": [
+     {
+      "start": 78580,
+      "end": 88330,
+      "text": "That is the advice I would have given too. How did the spring send perform?"
+     }
+    ]
+   },
+   {
+    "speakerId": "5106",
+    "topic": "Appeal",
+    "sentences": [
+     {
+      "start": 92330,
+      "end": 101200,
+      "text": "Poorly, and we know why now, which is the only good thing about it."
+     },
+     {
+      "start": 101200,
+      "end": 120300,
+      "text": "Our appeal letters are landing in junk for anyone on the two large free mail providers, and we only learned that because a board member mentioned it in passing."
+     },
+     {
+      "start": 120300,
+      "end": 130710,
+      "text": "He asked why we had stopped writing to him, and we had written to him four times."
+     },
+     {
+      "start": 130710,
+      "end": 145960,
+      "text": "When we went looking, roughly a third of the list was in the same position, and that third gave almost nothing in the spring."
+     }
+    ]
+   },
+   {
+    "speakerId": "1201",
+    "topic": "Appeal",
+    "sentences": [
+     {
+      "start": 149960,
+      "end": 161690,
+      "text": "A third of the list is a serious share. Did you get any figures on how it varied by provider?"
+     }
+    ]
+   },
+   {
+    "speakerId": "5106",
+    "topic": "Appeal",
+    "sentences": [
+     {
+      "start": 165690,
+      "end": 179950,
+      "text": "The two big consumer providers were the worst by a distance. Anyone on a work address seemed to receive it normally."
+     },
+     {
+      "start": 179950,
+      "end": 195640,
+      "text": "We have no way of seeing that from inside the system, so all of this came from telephoning forty donors and asking them to check."
+     }
+    ]
+   },
+   {
+    "speakerId": "1201",
+    "topic": "Appeal",
+    "sentences": [
+     {
+      "start": 199640,
+      "end": 211370,
+      "text": "Forty telephone calls to diagnose a mail problem is not a reasonable thing to have had to do."
+     },
+     {
+      "start": 211370,
+      "end": 222000,
+      "text": "I will put the spring figures and this week's list size into the write up together."
+     }
+    ]
+   },
+   {
+    "speakerId": "5106",
+    "topic": "Appeal",
+    "sentences": [
+     {
+      "start": 226000,
+      "end": 236520,
+      "text": "If it helps, I kept the notes from all forty calls and they are fairly consistent."
+     }
+    ]
+   },
+   {
+    "speakerId": "1201",
+    "topic": "Access",
+    "sentences": [
+     {
+      "start": 240520,
+      "end": 250380,
+      "text": "Send them over and I will attach them. Was there anything else on your side?"
+     }
+    ]
+   },
+   {
+    "speakerId": "5106",
+    "topic": "Access",
+    "sentences": [
+     {
+      "start": 254380,
+      "end": 267430,
+      "text": "One thing that is nothing to do with the appeal, and it comes from our operations manager rather than me."
+     },
+     {
+      "start": 267430,
+      "end": 286750,
+      "text": "Our staff keep a separate password for this system and nothing else, and we want them signing in with the same account they use for everything else in the office."
+     },
+     {
+      "start": 286750,
+      "end": 299910,
+      "text": "We have twenty six staff and four of them lock themselves out in any given month, which lands on her desk."
+     },
+     {
+      "start": 299910,
+      "end": 312190,
+      "text": "It is a small thing that happens often, which in my experience is the most annoying kind of thing."
+     }
+    ]
+   },
+   {
+    "speakerId": "1201",
+    "topic": "Access",
+    "sentences": [
+     {
+      "start": 316190,
+      "end": 327920,
+      "text": "That is a clear enough ask and it is one I hear from organisations of your size fairly often."
+     },
+     {
+      "start": 327920,
+      "end": 339870,
+      "text": "Let me take it back with the same words you have just used rather than my own shorthand for it."
+     }
+    ]
+   },
+   {
+    "speakerId": "5106",
+    "topic": "Access",
+    "sentences": [
+     {
+      "start": 343870,
+      "end": 357030,
+      "text": "Please take it back in her words. She will be pleased I remembered to mention it, which is not something that happens every week."
+     }
+    ]
+   },
+   {
+    "speakerId": "1201",
+    "topic": "Next steps",
+    "sentences": [
+     {
+      "start": 361030,
+      "end": 374630,
+      "text": "Two items then, the mail problem with the spring figures and the sign in request from your operations manager."
+     },
+     {
+      "start": 374630,
+      "end": 383280,
+      "text": "I will have both written up before the appeal goes out next week."
+     }
+    ]
+   },
+   {
+    "speakerId": "5106",
+    "topic": "Next steps",
+    "sentences": [
+     {
+      "start": 387280,
+      "end": 394940,
+      "text": "That is all I wanted. Good luck to all of us on Tuesday."
+     }
+    ]
+   }
+  ]
+ }
+}

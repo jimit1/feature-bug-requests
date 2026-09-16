@@ -1,0 +1,67 @@
+{
+ "schema_version": "1.0.0",
+ "case": {
+  "attributes": {
+   "type": "Case",
+   "url": "/services/data/v62.0/sobjects/Case/500000000000000018"
+  },
+  "Id": "500000000000000018",
+  "CaseNumber": "00005024",
+  "AccountId": "0018W00002HkLmWQAV",
+  "Subject": "Printing name badges for the autumn festival",
+  "Status": "Working",
+  "Priority": "High",
+  "CreatedDate": "2026-09-17T16:40:19Z",
+  "ClosedDate": null
+ },
+ "comments": [
+  {
+   "attributes": {
+    "type": "CaseComment",
+    "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000005f"
+   },
+   "Id": "00a00000000000005f",
+   "ParentId": "500000000000000018",
+   "CommentBody": "Our autumn festival is five weeks out and I am trying to work out the door process before I brief the volunteers. Eleven hundred people across two days and six venues, and every one of them needs a badge because the venues are scattered around the town and the badge is what gets somebody into the next building.",
+   "IsPublished": true,
+   "CreatedById": "00500000000000006e",
+   "CreatedDate": "2026-09-17T16:52:44Z"
+  },
+  {
+   "attributes": {
+    "type": "CaseComment",
+    "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000060"
+   },
+   "Id": "00a000000000000060",
+   "ParentId": "500000000000000018",
+   "CommentBody": "I have looked everywhere in the events area and I cannot find it, so I think the answer is that it is not there. We cannot print name badges from the attendee list at all, so we export to a spreadsheet and run the whole thing through a separate label program the night before. That was two volunteers and most of an evening last year, and the sorting afterwards took longer than the printing.",
+   "IsPublished": true,
+   "CreatedById": "00500000000000006e",
+   "CreatedDate": "2026-09-18T08:31:06Z"
+  },
+  {
+   "attributes": {
+    "type": "CaseComment",
+    "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000061"
+   },
+   "Id": "00a000000000000061",
+   "ParentId": "500000000000000018",
+   "CommentBody": "You have looked in the right place and you are right that it is not there today. I am recording this as a request rather than a fault so that it reaches the group who would build it. For the festival itself I will come back to you before the end of the week with the cleanest export layout for the label program you are already using, which will at least save you the sorting.",
+   "IsPublished": true,
+   "CreatedById": "005000000000000004",
+   "CreatedDate": "2026-09-18T10:15:52Z"
+  },
+  {
+   "attributes": {
+    "type": "CaseComment",
+    "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000062"
+   },
+   "Id": "00a000000000000062",
+   "ParentId": "500000000000000018",
+   "CommentBody": "That would genuinely help for this year. The sorting is the part the volunteers dislike most, because the export comes out in the order people registered and the badges need to be in alphabetical order by venue.",
+   "IsPublished": true,
+   "CreatedById": "00500000000000006e",
+   "CreatedDate": "2026-09-18T14:58:33Z"
+  }
+ ]
+}

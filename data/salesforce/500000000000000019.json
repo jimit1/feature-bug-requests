@@ -1,0 +1,67 @@
+{
+ "schema_version": "1.0.0",
+ "case": {
+  "attributes": {
+   "type": "Case",
+   "url": "/services/data/v62.0/sobjects/Case/500000000000000019"
+  },
+  "Id": "500000000000000019",
+  "CaseNumber": "00005025",
+  "AccountId": "0018W00002HkLmQQAV",
+  "Subject": "Splitting a dues payment between the council and the chapter",
+  "Status": "New",
+  "Priority": "Medium",
+  "CreatedDate": "2026-09-18T16:22:40Z",
+  "ClosedDate": null
+ },
+ "comments": [
+  {
+   "attributes": {
+    "type": "CaseComment",
+    "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000063"
+   },
+   "Id": "00a000000000000063",
+   "ParentId": "500000000000000019",
+   "CommentBody": "Some background before the actual question, because it will not make sense otherwise. We have nine county chapters and a member belongs to one of them as well as to the council. The dues are forty dollars and by our own constitution twelve of that belongs to the chapter the member sits in. That split is not negotiable, it is written into the governing document.",
+   "IsPublished": true,
+   "CreatedById": "005000000000000067",
+   "CreatedDate": "2026-09-18T16:35:12Z"
+  },
+  {
+   "attributes": {
+    "type": "CaseComment",
+    "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000064"
+   },
+   "Id": "00a000000000000064",
+   "ParentId": "500000000000000019",
+   "CommentBody": "So here is the question. When a member pays their dues we have no way to split that payment between the council and the chapter they belong to, so our bookkeeper moves the chapter share across by journal entry every month. It is about four hundred payments a month and she does the whole lot as nine transfers at the end of it, which works until somebody joins the wrong chapter and then it does not.",
+   "IsPublished": true,
+   "CreatedById": "005000000000000067",
+   "CreatedDate": "2026-09-21T09:47:10Z"
+  },
+  {
+   "attributes": {
+    "type": "CaseComment",
+    "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000065"
+   },
+   "Id": "00a000000000000065",
+   "ParentId": "500000000000000019",
+   "CommentBody": "Internal note, not for the customer. Worth flagging to the product group that this is the second land trust this quarter asking for the same thing and the first one went quiet after we said no. I would not put that in the reply, but the account team should know it before the renewal conversation in November.",
+   "IsPublished": false,
+   "CreatedById": "005000000000000001",
+   "CreatedDate": "2026-09-21T10:38:55Z"
+  },
+  {
+   "attributes": {
+    "type": "CaseComment",
+    "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000066"
+   },
+   "Id": "00a000000000000066",
+   "ParentId": "500000000000000019",
+   "CommentBody": "Thank you, the background was useful rather than unnecessary. I have written this up in your own words and it is going to the group who own the payment side. I will also ask internally whether there is anything sensible we can do with the existing tools to reduce the nine transfers to something smaller, and I will come back to you either way by the end of next week.",
+   "IsPublished": true,
+   "CreatedById": "005000000000000001",
+   "CreatedDate": "2026-09-21T11:20:07Z"
+  }
+ ]
+}

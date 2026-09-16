@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "totalSize": 13,
+  "totalSize": 15,
   "done": true,
   "records": [
     {
@@ -132,6 +132,26 @@
       "Name": "Owen Delacroix",
       "UserType": "CustomerSuccess",
       "IsActive": true
+    },
+    {
+      "attributes": {
+        "type": "User",
+        "url": "/services/data/v62.0/sobjects/User/00500000000000006e"
+      },
+      "Id": "00500000000000006e",
+      "Name": "Alina Petrosyan",
+      "UserType": "CspLitePortal",
+      "IsActive": true
+    },
+    {
+      "attributes": {
+        "type": "User",
+        "url": "/services/data/v62.0/sobjects/User/00500000000000006f"
+      },
+      "Id": "00500000000000006f",
+      "Name": "Teodor Brandt",
+      "UserType": "CustomerSuccess",
+      "IsActive": true
     }
   ],
   "meta": {
@@ -139,7 +159,7 @@
       "from": "2026-09-07T00:00:00Z",
       "to": "2026-09-27T23:59:59Z"
     },
-    "rows_returned": 13,
+    "rows_returned": 15,
     "row_cap": 200,
     "withheld_comment_count": null,
     "fields_allowlisted": [
