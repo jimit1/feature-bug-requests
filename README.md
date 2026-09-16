@@ -4,6 +4,8 @@ A prototype I built for Momentive Software. Every night it reads the sales calls
 
 **Live page:** https://jimit1.github.io/feature-bug-requests/ (the passphrase for the ask panel is in my email)
 
+![the page](deck/png/readme/page.png)
+
 ## How it works
 
 Customers ask for things all week, and only a little of it reaches the product team.
@@ -26,6 +28,10 @@ You can also just ask a question, and the answer comes back with the quotes behi
 
 ![the ask agent](deck/png/readme/slide-6.png)
 
+Nothing invented can reach the page. Six checks, in the order the data meets them.
+
+![six checks](deck/png/readme/slide-7.png)
+
 Every line can be followed home. Theme THEME-0001 carries the sentence "Every renewal statement we send out is missing the balance that carried over from the previous period, so the invoice total reads far higher than it should.", said on call 7782934451002 at 11:03.
 
 In its first week it ran for about five cents a night, verified 22 claims, and built 10 themes.
@@ -35,6 +41,10 @@ In its first week it ran for about five cents a night, verified 22 claims, and b
 Four groups of work, designed but not built.
 
 ![the roadmap](deck/png/readme/slide-8.png)
+
+The decisions behind it, on one page.
+
+![the decisions](deck/png/readme/slide-9.png)
 
 ## Run it yourself
 
