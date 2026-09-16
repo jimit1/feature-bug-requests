@@ -1,0 +1,44 @@
+{
+ "type": "object",
+ "required": [
+  "claims"
+ ],
+ "properties": {
+  "claims": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "type",
+     "topic",
+     "quote",
+     "speaker",
+     "locator"
+    ],
+    "properties": {
+     "type": {
+      "enum": [
+       "bug",
+       "feature"
+      ]
+     },
+     "topic": {
+      "type": "string",
+      "description": "short noun phrase"
+     },
+     "quote": {
+      "type": "string",
+      "description": "the customer's words, copied exactly from one turn or comment"
+     },
+     "speaker": {
+      "type": "string"
+     },
+     "locator": {
+      "type": "object",
+      "description": "call_id, speaker_id, start_ms, end_ms for a call; case_id, comment_id for a case"
+     }
+    }
+   }
+  }
+ }
+}

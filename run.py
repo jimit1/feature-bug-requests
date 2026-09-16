@@ -9,16 +9,7 @@ PRICE = {"reader": (1.0, 5.0), "editor": (5.0, 25.0), "ask": (3.0, 15.0)}
 USAGE = {"reader": [0, 0], "editor": [0, 0], "ask": [0, 0]}
 CLIENT = []
 
-CLAIM = {"type": "object", "required": ["type", "topic", "quote", "speaker", "locator"], "properties": {
-    "type": {"enum": ["bug", "feature"]}, "topic": {"type": "string"}, "quote": {"type": "string"},
-    "speaker": {"type": "string"}, "locator": {"type": "object"}}}
-DECISION = {"type": "object", "required": ["claim_id", "action", "why"], "properties": {
-    "claim_id": {"type": "string"}, "action": {"enum": ["append", "open"]}, "theme_id": {"type": ["string", "null"]},
-    "title": {"type": ["string", "null"]}, "why": {"type": "string"}}}
-SCHEMAS = {  # the readers and the editor can only answer through these; the model never returns free text
-    "reader": {"type": "object", "required": ["claims"], "properties": {"claims": {"type": "array", "items": CLAIM}}},
-    "editor": {"type": "object", "required": ["decisions", "summaries"], "properties": {
-        "decisions": {"type": "array", "items": DECISION}, "summaries": {"type": "object"}}}}
+SCHEMAS = {"reader": load("agents/reader.schema.json"), "editor": load("agents/editor.schema.json")}  # the only shapes an agent can answer in
 
 def call_model(tier, system, user):
     import anthropic

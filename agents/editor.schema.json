@@ -1,0 +1,53 @@
+{
+ "type": "object",
+ "required": [
+  "decisions",
+  "summaries"
+ ],
+ "properties": {
+  "decisions": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "claim_id",
+     "action",
+     "why"
+    ],
+    "properties": {
+     "claim_id": {
+      "type": "string"
+     },
+     "action": {
+      "enum": [
+       "append",
+       "open"
+      ]
+     },
+     "theme_id": {
+      "type": [
+       "string",
+       "null"
+      ],
+      "description": "an id from the index, for append"
+     },
+     "title": {
+      "type": [
+       "string",
+       "null"
+      ],
+      "description": "a short heading, for open"
+     },
+     "why": {
+      "type": "string",
+      "description": "one sentence for the audit log"
+     }
+    }
+   }
+  },
+  "summaries": {
+   "type": "object",
+   "description": "theme id or new title to two plain sentences"
+  }
+ }
+}

@@ -14,7 +14,7 @@ trap 'rm -rf "$TMP"' EXIT
 
 mkdir -p "$PKG/agents"
 cp "$ROOT/run.py" "$ROOT/ask.py" "$ROOT/config.json" "$ROOT/hosting/ask_lambda.py" "$PKG/"
-cp "$ROOT/agents/ask.md" "$PKG/agents/"
+cp "$ROOT/agents/ask.md" "$ROOT/agents/"*.schema.json "$PKG/agents/"
 python3 -m pip install --quiet --target "$PKG" --platform manylinux2014_x86_64 --implementation cp --python-version 3.12 --only-binary=:all: anthropic
 (cd "$PKG" && zip -qr "$ZIP" .)
 
