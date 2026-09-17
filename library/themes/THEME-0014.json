@@ -1,0 +1,32 @@
+{
+ "id": "THEME-0014",
+ "title": "Consolidated year end donor tax receipts",
+ "type": "feature",
+ "summary": "Nonprofit staff cannot generate one year end tax receipt for a donor who gave to several appeals. They pull three separate exports and assemble each receipt by hand in a mail merge, which is slow and easy to get wrong.",
+ "claim_ids": [
+  "c-8c2632e3512c"
+ ],
+ "first_seen": "2026-09-17",
+ "last_seen": "2026-09-17",
+ "log": [
+  {
+   "day": "2026-09-17",
+   "action": "open",
+   "claim_id": "c-8c2632e3512c",
+   "why": "No existing theme covers aggregating a donor's gifts across appeals into one receipt."
+  }
+ ],
+ "accounts": {
+  "customer": 1,
+  "prospect": 0
+ },
+ "open_cases": 3,
+ "score_parts": {
+  "accounts": 7.5,
+  "value": 0.9,
+  "cases": 15.0,
+  "recency": 15.0,
+  "bug": 0.0
+ },
+ "score": 38
+}

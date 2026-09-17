@@ -1,5 +1,5 @@
 window.DIGEST = {
- "as_of": "2026-09-16",
+ "as_of": "2026-09-17",
  "days": [
   "2026-09-08",
   "2026-09-09",
@@ -7,10 +7,148 @@ window.DIGEST = {
   "2026-09-11",
   "2026-09-14",
   "2026-09-15",
-  "2026-09-16"
+  "2026-09-16",
+  "2026-09-17"
  ],
  "ask_url": "https://g3kmsu2e2ikq7cyivffqi7i6oe0unrtk.lambda-url.us-east-1.on.aws/",
  "themes": [
+  {
+   "id": "THEME-0008",
+   "title": "Pledge reminder schedule ignores donor contact preferences",
+   "type": "bug",
+   "summary": "Pledge reminders go out to donors who have told the organization in writing how often they want to be contacted, including donors who asked for once a year only. The reminder schedule does not read stored contact preferences, so staff learn about the breach from the donors themselves.",
+   "claim_ids": [
+    "c-5d3a978f29d2",
+    "c-5b5f6e38062c",
+    "c-7a9d32ef25ab",
+    "c-f9dffedd9836"
+   ],
+   "first_seen": "2026-09-08",
+   "last_seen": "2026-09-17",
+   "log": [
+    {
+     "day": "2026-09-08",
+     "action": "open",
+     "claim_id": "c-5d3a978f29d2",
+     "why": "Fundraising reminders overriding stored donor preferences is a separate ask from renewal notice delivery and opens its own theme."
+    },
+    {
+     "day": "2026-09-09",
+     "action": "append",
+     "claim_id": "c-5b5f6e38062c",
+     "why": "Pledge reminders emailed to donors who asked for paper only is the same failure as the existing theme about reminders ignoring donor contact preferences."
+    },
+    {
+     "day": "2026-09-09",
+     "action": "append",
+     "claim_id": "c-7a9d32ef25ab",
+     "why": "Mail-only donors still receiving emailed pledge reminders is the same preference being ignored that the existing theme describes."
+    },
+    {
+     "day": "2026-09-17",
+     "action": "append",
+     "claim_id": "c-f9dffedd9836",
+     "why": "Same failure already in the index: pledge reminders go out to donors whose stated contact frequency preference says not to."
+    }
+   ],
+   "accounts": {
+    "customer": 3,
+    "prospect": 0
+   },
+   "open_cases": 10,
+   "score_parts": {
+    "accounts": 22.5,
+    "value": 13.4,
+    "cases": 20.0,
+    "recency": 15.0,
+    "bug": 10.0
+   },
+   "score": 81,
+   "claims": [
+    {
+     "id": "c-5d3a978f29d2",
+     "day": "2026-09-08",
+     "source": "gong",
+     "type": "bug",
+     "topic": "pledge reminders ignoring donor preference",
+     "quote": "Pledge reminders keep going out on the standard schedule even for donors who told us they only want a single reminder before the campaign closes.",
+     "account_id": "ACC-0002",
+     "account": "Cascadia Nurses Association",
+     "account_type": "customer",
+     "tier": "Enterprise",
+     "arr": 268000,
+     "speaker": "Renee Okafor",
+     "locator": {
+      "call_id": "7782934452019",
+      "speaker_id": "c-02",
+      "start_ms": 313354,
+      "end_ms": 319749
+     },
+     "occurred_at": "2026-09-08T12:06:21Z"
+    },
+    {
+     "id": "c-5b5f6e38062c",
+     "day": "2026-09-09",
+     "source": "gong",
+     "type": "bug",
+     "topic": "pledge reminders ignore paper-only preference",
+     "quote": "Our pledge reminders still go out by email to donors who told us twice that they only want paper, and there is no way to hold them back.",
+     "account_id": "ACC-0005",
+     "account": "Sunbelt Literacy Network",
+     "account_type": "customer",
+     "tier": "Standard",
+     "arr": 41000,
+     "speaker": "Yvette Bramhall",
+     "locator": {
+      "call_id": "7782934451404",
+      "speaker_id": "4955",
+      "start_ms": 449706,
+      "end_ms": 486168
+     },
+     "occurred_at": "2026-09-09T14:08:59Z"
+    },
+    {
+     "id": "c-7a9d32ef25ab",
+     "day": "2026-09-09",
+     "source": "salesforce",
+     "type": "bug",
+     "topic": "pledge reminders sent to opted-out mail-only donors",
+     "quote": "We have donors who asked to be reminded by mail only, and the system still emails them pledge reminders on top of that.",
+     "account_id": "ACC-0005",
+     "account": "Sunbelt Literacy Network",
+     "account_type": "customer",
+     "tier": "Standard",
+     "arr": 41000,
+     "speaker": "Yolanda Pruitt",
+     "locator": {
+      "case_id": "500000000000000011",
+      "comment_id": "00a000000000000042",
+      "case_number": "00005017"
+     },
+     "occurred_at": "2026-09-09T09:45:54Z"
+    },
+    {
+     "id": "c-f9dffedd9836",
+     "day": "2026-09-17",
+     "source": "salesforce",
+     "type": "bug",
+     "topic": "pledge reminders sent to donors who opted out",
+     "quote": "two of the donors on that list also told us in writing that they only want to hear from us once a year, and the pledge reminders went out to them anyway in the spring.",
+     "account_id": "ACC-0006",
+     "account": "Copper Ridge Youth Foundation",
+     "account_type": "customer",
+     "tier": "Standard",
+     "arr": 18000,
+     "speaker": "Denise Okonkwo",
+     "locator": {
+      "case_id": "500000000000000017",
+      "comment_id": "00a00000000000005e",
+      "case_number": "00005023"
+     },
+     "occurred_at": "2026-09-17T13:40:28Z"
+    }
+   ]
+  },
   {
    "id": "THEME-0001",
    "title": "Renewal invoices omit prior credits and balances",
@@ -59,10 +197,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 15.0,
+    "recency": 13.9,
     "bug": 10.0
    },
-   "score": 77,
+   "score": 76,
    "claims": [
     {
      "id": "c-915d4dd0bc13",
@@ -183,10 +321,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 15.0,
+    "recency": 13.9,
     "bug": 10.0
    },
-   "score": 77,
+   "score": 76,
    "claims": [
     {
      "id": "c-b35dfc0ea355",
@@ -280,10 +418,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 9.6,
+    "recency": 8.6,
     "bug": 10.0
    },
-   "score": 72,
+   "score": 71,
    "claims": [
     {
      "id": "c-7d2a3f364428",
@@ -371,116 +509,6 @@ window.DIGEST = {
    ]
   },
   {
-   "id": "THEME-0008",
-   "title": "Pledge reminder schedule ignores donor contact preferences",
-   "type": "bug",
-   "summary": "Pledge reminders go out by email to donors who have asked to be contacted by mail only, and staff have no way to hold those sends back. Donors repeat the request and fundraising teams lose trust with the people they are asking to give.",
-   "claim_ids": [
-    "c-5d3a978f29d2",
-    "c-5b5f6e38062c",
-    "c-7a9d32ef25ab"
-   ],
-   "first_seen": "2026-09-08",
-   "last_seen": "2026-09-09",
-   "log": [
-    {
-     "day": "2026-09-08",
-     "action": "open",
-     "claim_id": "c-5d3a978f29d2",
-     "why": "Fundraising reminders overriding stored donor preferences is a separate ask from renewal notice delivery and opens its own theme."
-    },
-    {
-     "day": "2026-09-09",
-     "action": "append",
-     "claim_id": "c-5b5f6e38062c",
-     "why": "Pledge reminders emailed to donors who asked for paper only is the same failure as the existing theme about reminders ignoring donor contact preferences."
-    },
-    {
-     "day": "2026-09-09",
-     "action": "append",
-     "claim_id": "c-7a9d32ef25ab",
-     "why": "Mail-only donors still receiving emailed pledge reminders is the same preference being ignored that the existing theme describes."
-    }
-   ],
-   "accounts": {
-    "customer": 2,
-    "prospect": 0
-   },
-   "open_cases": 7,
-   "score_parts": {
-    "accounts": 15.0,
-    "value": 13.4,
-    "cases": 20.0,
-    "recency": 7.5,
-    "bug": 10.0
-   },
-   "score": 66,
-   "claims": [
-    {
-     "id": "c-5d3a978f29d2",
-     "day": "2026-09-08",
-     "source": "gong",
-     "type": "bug",
-     "topic": "pledge reminders ignoring donor preference",
-     "quote": "Pledge reminders keep going out on the standard schedule even for donors who told us they only want a single reminder before the campaign closes.",
-     "account_id": "ACC-0002",
-     "account": "Cascadia Nurses Association",
-     "account_type": "customer",
-     "tier": "Enterprise",
-     "arr": 268000,
-     "speaker": "Renee Okafor",
-     "locator": {
-      "call_id": "7782934452019",
-      "speaker_id": "c-02",
-      "start_ms": 313354,
-      "end_ms": 319749
-     },
-     "occurred_at": "2026-09-08T12:06:21Z"
-    },
-    {
-     "id": "c-5b5f6e38062c",
-     "day": "2026-09-09",
-     "source": "gong",
-     "type": "bug",
-     "topic": "pledge reminders ignore paper-only preference",
-     "quote": "Our pledge reminders still go out by email to donors who told us twice that they only want paper, and there is no way to hold them back.",
-     "account_id": "ACC-0005",
-     "account": "Sunbelt Literacy Network",
-     "account_type": "customer",
-     "tier": "Standard",
-     "arr": 41000,
-     "speaker": "Yvette Bramhall",
-     "locator": {
-      "call_id": "7782934451404",
-      "speaker_id": "4955",
-      "start_ms": 449706,
-      "end_ms": 486168
-     },
-     "occurred_at": "2026-09-09T14:08:59Z"
-    },
-    {
-     "id": "c-7a9d32ef25ab",
-     "day": "2026-09-09",
-     "source": "salesforce",
-     "type": "bug",
-     "topic": "pledge reminders sent to opted-out mail-only donors",
-     "quote": "We have donors who asked to be reminded by mail only, and the system still emails them pledge reminders on top of that.",
-     "account_id": "ACC-0005",
-     "account": "Sunbelt Literacy Network",
-     "account_type": "customer",
-     "tier": "Standard",
-     "arr": 41000,
-     "speaker": "Yolanda Pruitt",
-     "locator": {
-      "case_id": "500000000000000011",
-      "comment_id": "00a000000000000042",
-      "case_number": "00005017"
-     },
-     "occurred_at": "2026-09-09T09:45:54Z"
-    }
-   ]
-  },
-  {
    "id": "THEME-0003",
    "title": "Offline event check-in with later sync",
    "type": "feature",
@@ -535,10 +563,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 15.0,
+    "recency": 13.9,
     "bug": 0.0
    },
-   "score": 63,
+   "score": 62,
    "claims": [
     {
      "id": "c-6fdcefc76dcd",
@@ -680,10 +708,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 7.7,
     "cases": 20.0,
-    "recency": 7.5,
+    "recency": 6.4,
     "bug": 10.0
    },
-   "score": 60,
+   "score": 59,
    "claims": [
     {
      "id": "c-9e53583c6513",
@@ -762,10 +790,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 2.0,
     "cases": 20.0,
-    "recency": 7.5,
+    "recency": 6.4,
     "bug": 10.0
    },
-   "score": 54,
+   "score": 53,
    "claims": [
     {
      "id": "c-8fc57031470e",
@@ -838,10 +866,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 6.4,
+    "recency": 5.4,
     "bug": 0.0
    },
-   "score": 51,
+   "score": 50,
    "claims": [
     {
      "id": "c-16cd97e72e9e",
@@ -893,10 +921,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 4.8,
     "cases": 20.0,
-    "recency": 6.4,
+    "recency": 5.4,
     "bug": 10.0
    },
-   "score": 49,
+   "score": 48,
    "claims": [
     {
      "id": "c-c44577763b5c",
@@ -918,6 +946,115 @@ window.DIGEST = {
       "end_ms": 225600
      },
      "occurred_at": "2026-09-08T16:20:39Z"
+    }
+   ]
+  },
+  {
+   "id": "THEME-0014",
+   "title": "Consolidated year end donor tax receipts",
+   "type": "feature",
+   "summary": "Nonprofit staff cannot generate one year end tax receipt for a donor who gave to several appeals. They pull three separate exports and assemble each receipt by hand in a mail merge, which is slow and easy to get wrong.",
+   "claim_ids": [
+    "c-8c2632e3512c"
+   ],
+   "first_seen": "2026-09-17",
+   "last_seen": "2026-09-17",
+   "log": [
+    {
+     "day": "2026-09-17",
+     "action": "open",
+     "claim_id": "c-8c2632e3512c",
+     "why": "No existing theme covers aggregating a donor's gifts across appeals into one receipt."
+    }
+   ],
+   "accounts": {
+    "customer": 1,
+    "prospect": 0
+   },
+   "open_cases": 3,
+   "score_parts": {
+    "accounts": 7.5,
+    "value": 0.9,
+    "cases": 15.0,
+    "recency": 15.0,
+    "bug": 0.0
+   },
+   "score": 38,
+   "claims": [
+    {
+     "id": "c-8c2632e3512c",
+     "day": "2026-09-17",
+     "source": "salesforce",
+     "type": "feature",
+     "topic": "year end tax receipts for donors with multiple gifts",
+     "quote": "There is no way to produce a single year end tax receipt for a donor who gave across several appeals, so we build each one in a mail merge from three separate exports.",
+     "account_id": "ACC-0006",
+     "account": "Copper Ridge Youth Foundation",
+     "account_type": "customer",
+     "tier": "Standard",
+     "arr": 18000,
+     "speaker": "Denise Okonkwo",
+     "locator": {
+      "case_id": "500000000000000017",
+      "comment_id": "00a00000000000005c",
+      "case_number": "00005023"
+     },
+     "occurred_at": "2026-09-17T09:24:50Z"
+    }
+   ]
+  },
+  {
+   "id": "THEME-0013",
+   "title": "Member directory search by location and specialty",
+   "type": "feature",
+   "summary": "Members of an arts council cannot find each other in the directory unless they already know the exact name. There is no way to search or filter by geography such as county or by the craft or specialty a member works in, so the directory goes largely unused.",
+   "claim_ids": [
+    "c-19324e96cdf8"
+   ],
+   "first_seen": "2026-09-17",
+   "last_seen": "2026-09-17",
+   "log": [
+    {
+     "day": "2026-09-17",
+     "action": "open",
+     "claim_id": "c-19324e96cdf8",
+     "why": "Nothing in the index covers searching the member directory by attributes other than name."
+    }
+   ],
+   "accounts": {
+    "customer": 1,
+    "prospect": 0
+   },
+   "open_cases": 1,
+   "score_parts": {
+    "accounts": 7.5,
+    "value": 6.4,
+    "cases": 5.0,
+    "recency": 15.0,
+    "bug": 0.0
+   },
+   "score": 34,
+   "claims": [
+    {
+     "id": "c-19324e96cdf8",
+     "day": "2026-09-17",
+     "source": "gong",
+     "type": "feature",
+     "topic": "member directory search by location and craft",
+     "quote": "Our members cannot look one another up by county or by the craft they work in, so the directory is only useful if you already know the person's name.",
+     "account_id": "ACC-0010",
+     "account": "Ozark Valley Arts Council",
+     "account_type": "customer",
+     "tier": "Professional",
+     "arr": 128000,
+     "speaker": "Alina Petrosyan",
+     "locator": {
+      "call_id": "7782934453101",
+      "speaker_id": "4601",
+      "start_ms": 236520,
+      "end_ms": 300380
+     },
+     "occurred_at": "2026-09-17T13:06:40Z"
     }
    ]
   },
@@ -955,10 +1092,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 0.0,
     "cases": 0.0,
-    "recency": 13.9,
+    "recency": 12.9,
     "bug": 0.0
    },
-   "score": 21,
+   "score": 20,
    "claims": [
     {
      "id": "c-b696c3430eb3",
@@ -1031,10 +1168,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 0.0,
     "cases": 0.0,
-    "recency": 7.5,
+    "recency": 6.4,
     "bug": 0.0
    },
-   "score": 15,
+   "score": 14,
    "claims": [
     {
      "id": "c-299d81776e9e",

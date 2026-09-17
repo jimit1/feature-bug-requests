@@ -2,14 +2,15 @@
  "id": "THEME-0008",
  "title": "Pledge reminder schedule ignores donor contact preferences",
  "type": "bug",
- "summary": "Pledge reminders go out by email to donors who have asked to be contacted by mail only, and staff have no way to hold those sends back. Donors repeat the request and fundraising teams lose trust with the people they are asking to give.",
+ "summary": "Pledge reminders go out to donors who have told the organization in writing how often they want to be contacted, including donors who asked for once a year only. The reminder schedule does not read stored contact preferences, so staff learn about the breach from the donors themselves.",
  "claim_ids": [
   "c-5d3a978f29d2",
   "c-5b5f6e38062c",
-  "c-7a9d32ef25ab"
+  "c-7a9d32ef25ab",
+  "c-f9dffedd9836"
  ],
  "first_seen": "2026-09-08",
- "last_seen": "2026-09-09",
+ "last_seen": "2026-09-17",
  "log": [
   {
    "day": "2026-09-08",
@@ -28,19 +29,25 @@
    "action": "append",
    "claim_id": "c-7a9d32ef25ab",
    "why": "Mail-only donors still receiving emailed pledge reminders is the same preference being ignored that the existing theme describes."
+  },
+  {
+   "day": "2026-09-17",
+   "action": "append",
+   "claim_id": "c-f9dffedd9836",
+   "why": "Same failure already in the index: pledge reminders go out to donors whose stated contact frequency preference says not to."
   }
  ],
  "accounts": {
-  "customer": 2,
+  "customer": 3,
   "prospect": 0
  },
- "open_cases": 7,
+ "open_cases": 10,
  "score_parts": {
-  "accounts": 15.0,
+  "accounts": 22.5,
   "value": 13.4,
   "cases": 20.0,
-  "recency": 7.5,
+  "recency": 15.0,
   "bug": 10.0
  },
- "score": 66
+ "score": 81
 }

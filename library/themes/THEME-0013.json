@@ -1,0 +1,32 @@
+{
+ "id": "THEME-0013",
+ "title": "Member directory search by location and specialty",
+ "type": "feature",
+ "summary": "Members of an arts council cannot find each other in the directory unless they already know the exact name. There is no way to search or filter by geography such as county or by the craft or specialty a member works in, so the directory goes largely unused.",
+ "claim_ids": [
+  "c-19324e96cdf8"
+ ],
+ "first_seen": "2026-09-17",
+ "last_seen": "2026-09-17",
+ "log": [
+  {
+   "day": "2026-09-17",
+   "action": "open",
+   "claim_id": "c-19324e96cdf8",
+   "why": "Nothing in the index covers searching the member directory by attributes other than name."
+  }
+ ],
+ "accounts": {
+  "customer": 1,
+  "prospect": 0
+ },
+ "open_cases": 1,
+ "score_parts": {
+  "accounts": 7.5,
+  "value": 6.4,
+  "cases": 5.0,
+  "recency": 15.0,
+  "bug": 0.0
+ },
+ "score": 34
+}
