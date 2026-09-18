@@ -1,0 +1,32 @@
+{
+ "id": "THEME-0015",
+ "title": "Name badge printing from attendee lists",
+ "type": "feature",
+ "summary": "Event staff cannot print name badges directly from the attendee list. They export attendees to a spreadsheet and run them through a separate label program the night before the event, which adds manual work and risks stale or mismatched badges.",
+ "claim_ids": [
+  "c-f5506b29197f"
+ ],
+ "first_seen": "2026-09-18",
+ "last_seen": "2026-09-18",
+ "log": [
+  {
+   "day": "2026-09-18",
+   "action": "open",
+   "claim_id": "c-f5506b29197f",
+   "why": "Nothing in the index covers producing badges or printed materials from event attendee data."
+  }
+ ],
+ "accounts": {
+  "customer": 1,
+  "prospect": 0
+ },
+ "open_cases": 1,
+ "score_parts": {
+  "accounts": 7.5,
+  "value": 6.4,
+  "cases": 5.0,
+  "recency": 15.0,
+  "bug": 0.0
+ },
+ "score": 34
+}

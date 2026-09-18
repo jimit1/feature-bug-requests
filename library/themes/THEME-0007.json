@@ -2,18 +2,25 @@
  "id": "THEME-0007",
  "title": "Expiration warnings for postings",
  "type": "bug",
- "summary": "Postings expire and are removed without any notice to the person who created them. Owners keep assuming their posting is still live long after it has come down.",
+ "summary": "Organizations that place postings get no warning before a listing expires and comes down. The posting party only learns the listing is gone when a caller asks why it vanished from the board, so lapses go unnoticed until someone complains.",
  "claim_ids": [
-  "c-c44577763b5c"
+  "c-c44577763b5c",
+  "c-096f6053d878"
  ],
  "first_seen": "2026-09-08",
- "last_seen": "2026-09-08",
+ "last_seen": "2026-09-18",
  "log": [
   {
    "day": "2026-09-08",
    "action": "open",
    "claim_id": "c-c44577763b5c",
    "why": "Postings coming down with no notice to their owner is a new area not covered by any existing theme."
+  },
+  {
+   "day": "2026-09-18",
+   "action": "append",
+   "claim_id": "c-096f6053d878",
+   "why": "The yard learning a listing dropped only when someone phones is the same gap as missing expiration warnings for postings."
   }
  ],
  "accounts": {
@@ -25,8 +32,8 @@
   "accounts": 7.5,
   "value": 4.8,
   "cases": 20.0,
-  "recency": 5.4,
+  "recency": 15.0,
   "bug": 10.0
  },
- "score": 48
+ "score": 57
 }
