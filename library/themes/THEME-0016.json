@@ -1,0 +1,32 @@
+{
+ "id": "THEME-0016",
+ "title": "Session dates to learner calendars",
+ "type": "feature",
+ "summary": "Learning staff have no way to get scheduled session dates into a learner's own calendar. They paste the dates into a reminder note and rely on each learner to copy them across by hand.",
+ "claim_ids": [
+  "c-92d6a9487216"
+ ],
+ "first_seen": "2026-09-21",
+ "last_seen": "2026-09-21",
+ "log": [
+  {
+   "day": "2026-09-21",
+   "action": "open",
+   "claim_id": "c-92d6a9487216",
+   "why": "The index covers SCORM import and completion sync back to member records, but nothing pushes scheduled session dates out to a learner's calendar."
+  }
+ ],
+ "accounts": {
+  "customer": 1,
+  "prospect": 0
+ },
+ "open_cases": 5,
+ "score_parts": {
+  "accounts": 7.5,
+  "value": 13.4,
+  "cases": 20.0,
+  "recency": 15.0,
+  "bug": 0.0
+ },
+ "score": 56
+}

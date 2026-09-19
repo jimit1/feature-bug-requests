@@ -1,5 +1,5 @@
 window.DIGEST = {
- "as_of": "2026-09-18",
+ "as_of": "2026-09-21",
  "days": [
   "2026-09-08",
   "2026-09-09",
@@ -9,7 +9,8 @@ window.DIGEST = {
   "2026-09-15",
   "2026-09-16",
   "2026-09-17",
-  "2026-09-18"
+  "2026-09-18",
+  "2026-09-21"
  ],
  "ask_url": "https://g3kmsu2e2ikq7cyivffqi7i6oe0unrtk.lambda-url.us-east-1.on.aws/",
  "themes": [
@@ -61,10 +62,10 @@ window.DIGEST = {
     "accounts": 22.5,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 13.9,
+    "recency": 10.7,
     "bug": 10.0
    },
-   "score": 80,
+   "score": 77,
    "claims": [
     {
      "id": "c-5d3a978f29d2",
@@ -198,10 +199,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 12.9,
+    "recency": 9.6,
     "bug": 10.0
    },
-   "score": 75,
+   "score": 72,
    "claims": [
     {
      "id": "c-915d4dd0bc13",
@@ -322,10 +323,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 12.9,
+    "recency": 9.6,
     "bug": 10.0
    },
-   "score": 75,
+   "score": 72,
    "claims": [
     {
      "id": "c-b35dfc0ea355",
@@ -419,10 +420,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 7.5,
+    "recency": 4.3,
     "bug": 10.0
    },
-   "score": 70,
+   "score": 66,
    "claims": [
     {
      "id": "c-7d2a3f364428",
@@ -510,6 +511,89 @@ window.DIGEST = {
    ]
   },
   {
+   "id": "THEME-0010",
+   "title": "Course completion data sync to member records",
+   "type": "feature",
+   "summary": "Course completion does not flow into the member record automatically, so staff rekey finished hours by hand. One registrar spends about three hours every week copying numbers from the learning screens into member records.",
+   "claim_ids": [
+    "c-299d81776e9e",
+    "c-7b86c73b5e27"
+   ],
+   "first_seen": "2026-09-09",
+   "last_seen": "2026-09-21",
+   "log": [
+    {
+     "day": "2026-09-09",
+     "action": "open",
+     "claim_id": "c-299d81776e9e",
+     "why": "Nothing in the index covers moving completion, score and time spent onto member records, which is a distinct ask from importing course packages."
+    },
+    {
+     "day": "2026-09-21",
+     "action": "append",
+     "claim_id": "c-7b86c73b5e27",
+     "why": "Same ask as the existing theme: finished course hours do not reach the member record without manual keying."
+    }
+   ],
+   "accounts": {
+    "customer": 1,
+    "prospect": 1
+   },
+   "open_cases": 5,
+   "score_parts": {
+    "accounts": 15.0,
+    "value": 13.4,
+    "cases": 20.0,
+    "recency": 15.0,
+    "bug": 0.0
+   },
+   "score": 63,
+   "claims": [
+    {
+     "id": "c-299d81776e9e",
+     "day": "2026-09-09",
+     "source": "gong",
+     "type": "feature",
+     "topic": "completion data to member records",
+     "quote": "The hosted platform writes completion, score and time spent to a file, and our membership clerk keys those three numbers onto the member record once a week.",
+     "account_id": "ACC-0007",
+     "account": "Northwoods Arborists Society",
+     "account_type": "prospect",
+     "tier": "Prospect",
+     "arr": 0,
+     "speaker": "Delphine Okerlund",
+     "locator": {
+      "call_id": "7782934451311",
+      "speaker_id": "4852",
+      "start_ms": 765578,
+      "end_ms": 793190
+     },
+     "occurred_at": "2026-09-09T16:13:33Z"
+    },
+    {
+     "id": "c-7b86c73b5e27",
+     "day": "2026-09-21",
+     "source": "gong",
+     "type": "feature",
+     "topic": "completion data should sync to member records",
+     "quote": "The second thing is the one I have raised before, so I will say it once and then stop. Completion still does not reach the member record on its own, so our registrar keys the finished hours in every Friday afternoon. It is about three hours a week for her and it is three hours of copying numbers from one screen to another.",
+     "account_id": "ACC-0002",
+     "account": "Cascadia Nurses Association",
+     "account_type": "customer",
+     "tier": "Enterprise",
+     "arr": 268000,
+     "speaker": "Ingrid Solheim",
+     "locator": {
+      "call_id": "7782934453103",
+      "speaker_id": "4803",
+      "start_ms": 266480,
+      "end_ms": 319560
+     },
+     "occurred_at": "2026-09-21T14:06:21Z"
+    }
+   ]
+  },
+  {
    "id": "THEME-0003",
    "title": "Offline event check-in with later sync",
    "type": "feature",
@@ -564,10 +648,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 12.9,
+    "recency": 9.6,
     "bug": 0.0
    },
-   "score": 61,
+   "score": 58,
    "claims": [
     {
      "id": "c-6fdcefc76dcd",
@@ -676,6 +760,61 @@ window.DIGEST = {
    ]
   },
   {
+   "id": "THEME-0016",
+   "title": "Session dates to learner calendars",
+   "type": "feature",
+   "summary": "Learning staff have no way to get scheduled session dates into a learner's own calendar. They paste the dates into a reminder note and rely on each learner to copy them across by hand.",
+   "claim_ids": [
+    "c-92d6a9487216"
+   ],
+   "first_seen": "2026-09-21",
+   "last_seen": "2026-09-21",
+   "log": [
+    {
+     "day": "2026-09-21",
+     "action": "open",
+     "claim_id": "c-92d6a9487216",
+     "why": "The index covers SCORM import and completion sync back to member records, but nothing pushes scheduled session dates out to a learner's calendar."
+    }
+   ],
+   "accounts": {
+    "customer": 1,
+    "prospect": 0
+   },
+   "open_cases": 5,
+   "score_parts": {
+    "accounts": 7.5,
+    "value": 13.4,
+    "cases": 20.0,
+    "recency": 15.0,
+    "bug": 0.0
+   },
+   "score": 56,
+   "claims": [
+    {
+     "id": "c-92d6a9487216",
+     "day": "2026-09-21",
+     "source": "gong",
+     "type": "feature",
+     "topic": "session dates should sync to learner calendars",
+     "quote": "None of the session dates land in a learner's own calendar, so we paste them into a reminder note and trust people to copy them across themselves.",
+     "account_id": "ACC-0002",
+     "account": "Cascadia Nurses Association",
+     "account_type": "customer",
+     "tier": "Enterprise",
+     "arr": 268000,
+     "speaker": "Ingrid Solheim",
+     "locator": {
+      "call_id": "7782934453103",
+      "speaker_id": "4803",
+      "start_ms": 140910,
+      "end_ms": 202350
+     },
+     "occurred_at": "2026-09-21T14:04:15Z"
+    }
+   ]
+  },
+  {
    "id": "THEME-0006",
    "title": "Duplicate journal entries in general ledger sync",
    "type": "bug",
@@ -709,10 +848,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 7.7,
     "cases": 20.0,
-    "recency": 5.4,
+    "recency": 2.1,
     "bug": 10.0
    },
-   "score": 58,
+   "score": 55,
    "claims": [
     {
      "id": "c-9e53583c6513",
@@ -791,10 +930,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 4.8,
     "cases": 20.0,
-    "recency": 15.0,
+    "recency": 11.8,
     "bug": 10.0
    },
-   "score": 57,
+   "score": 54,
    "claims": [
     {
      "id": "c-c44577763b5c",
@@ -841,6 +980,60 @@ window.DIGEST = {
    ]
   },
   {
+   "id": "THEME-0017",
+   "title": "Splitting dues payments across council and chapter",
+   "type": "feature",
+   "summary": "A single dues payment cannot be allocated between the parent council and the member's chapter. The bookkeeper moves the chapter share manually with a journal entry every month.",
+   "claim_ids": [
+    "c-418a8c8e7f16"
+   ],
+   "first_seen": "2026-09-21",
+   "last_seen": "2026-09-21",
+   "log": [
+    {
+     "day": "2026-09-21",
+     "action": "open",
+     "claim_id": "c-418a8c8e7f16",
+     "why": "No theme covers allocating a single dues payment between parent and chapter entities; the ledger theme is about duplicate entries, not revenue splits."
+    }
+   ],
+   "accounts": {
+    "customer": 1,
+    "prospect": 0
+   },
+   "open_cases": 4,
+   "score_parts": {
+    "accounts": 7.5,
+    "value": 7.7,
+    "cases": 20.0,
+    "recency": 15.0,
+    "bug": 0.0
+   },
+   "score": 50,
+   "claims": [
+    {
+     "id": "c-418a8c8e7f16",
+     "day": "2026-09-21",
+     "source": "salesforce",
+     "type": "feature",
+     "topic": "splitting dues payments between council and chapter",
+     "quote": "When a member pays their dues we have no way to split that payment between the council and the chapter they belong to, so our bookkeeper moves the chapter share across by journal entry every month.",
+     "account_id": "ACC-0003",
+     "account": "Prairie Land Trust Council",
+     "account_type": "customer",
+     "tier": "Professional",
+     "arr": 154000,
+     "speaker": "Miguel Ferreira",
+     "locator": {
+      "case_id": "500000000000000019",
+      "comment_id": "00a000000000000064",
+      "case_number": "00005025"
+     },
+     "occurred_at": "2026-09-21T09:47:10Z"
+    }
+   ]
+  },
+  {
    "id": "THEME-0004",
    "title": "Renewal notice email deliverability",
    "type": "bug",
@@ -874,10 +1067,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 2.0,
     "cases": 20.0,
-    "recency": 5.4,
+    "recency": 2.1,
     "bug": 10.0
    },
-   "score": 52,
+   "score": 49,
    "claims": [
     {
      "id": "c-8fc57031470e",
@@ -950,10 +1143,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 4.3,
+    "recency": 1.1,
     "bug": 0.0
    },
-   "score": 49,
+   "score": 46,
    "claims": [
     {
      "id": "c-16cd97e72e9e",
@@ -1005,10 +1198,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 0.9,
     "cases": 15.0,
-    "recency": 13.9,
+    "recency": 10.7,
     "bug": 0.0
    },
-   "score": 37,
+   "score": 34,
    "claims": [
     {
      "id": "c-8c2632e3512c",
@@ -1059,10 +1252,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 6.4,
     "cases": 5.0,
-    "recency": 15.0,
+    "recency": 11.8,
     "bug": 0.0
    },
-   "score": 34,
+   "score": 31,
    "claims": [
     {
      "id": "c-f5506b29197f",
@@ -1113,10 +1306,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 6.4,
     "cases": 5.0,
-    "recency": 13.9,
+    "recency": 10.7,
     "bug": 0.0
    },
-   "score": 33,
+   "score": 30,
    "claims": [
     {
      "id": "c-19324e96cdf8",
@@ -1175,10 +1368,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 0.0,
     "cases": 0.0,
-    "recency": 11.8,
+    "recency": 8.6,
     "bug": 0.0
    },
-   "score": 19,
+   "score": 16,
    "claims": [
     {
      "id": "c-b696c3430eb3",
@@ -1221,61 +1414,6 @@ window.DIGEST = {
       "end_ms": 303673
      },
      "occurred_at": "2026-09-15T12:07:12Z"
-    }
-   ]
-  },
-  {
-   "id": "THEME-0010",
-   "title": "Course completion data sync to member records",
-   "type": "feature",
-   "summary": "Completion, score and time spent from the learning platform are not written back to the member record automatically. A membership clerk rekeys those values weekly, which is slow and leaves member training histories out of date and error prone.",
-   "claim_ids": [
-    "c-299d81776e9e"
-   ],
-   "first_seen": "2026-09-09",
-   "last_seen": "2026-09-09",
-   "log": [
-    {
-     "day": "2026-09-09",
-     "action": "open",
-     "claim_id": "c-299d81776e9e",
-     "why": "Nothing in the index covers moving completion, score and time spent onto member records, which is a distinct ask from importing course packages."
-    }
-   ],
-   "accounts": {
-    "customer": 0,
-    "prospect": 1
-   },
-   "open_cases": 0,
-   "score_parts": {
-    "accounts": 7.5,
-    "value": 0.0,
-    "cases": 0.0,
-    "recency": 5.4,
-    "bug": 0.0
-   },
-   "score": 13,
-   "claims": [
-    {
-     "id": "c-299d81776e9e",
-     "day": "2026-09-09",
-     "source": "gong",
-     "type": "feature",
-     "topic": "completion data to member records",
-     "quote": "The hosted platform writes completion, score and time spent to a file, and our membership clerk keys those three numbers onto the member record once a week.",
-     "account_id": "ACC-0007",
-     "account": "Northwoods Arborists Society",
-     "account_type": "prospect",
-     "tier": "Prospect",
-     "arr": 0,
-     "speaker": "Delphine Okerlund",
-     "locator": {
-      "call_id": "7782934451311",
-      "speaker_id": "4852",
-      "start_ms": 765578,
-      "end_ms": 793190
-     },
-     "occurred_at": "2026-09-09T16:13:33Z"
     }
    ]
   }

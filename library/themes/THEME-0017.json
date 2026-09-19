@@ -1,0 +1,32 @@
+{
+ "id": "THEME-0017",
+ "title": "Splitting dues payments across council and chapter",
+ "type": "feature",
+ "summary": "A single dues payment cannot be allocated between the parent council and the member's chapter. The bookkeeper moves the chapter share manually with a journal entry every month.",
+ "claim_ids": [
+  "c-418a8c8e7f16"
+ ],
+ "first_seen": "2026-09-21",
+ "last_seen": "2026-09-21",
+ "log": [
+  {
+   "day": "2026-09-21",
+   "action": "open",
+   "claim_id": "c-418a8c8e7f16",
+   "why": "No theme covers allocating a single dues payment between parent and chapter entities; the ledger theme is about duplicate entries, not revenue splits."
+  }
+ ],
+ "accounts": {
+  "customer": 1,
+  "prospect": 0
+ },
+ "open_cases": 4,
+ "score_parts": {
+  "accounts": 7.5,
+  "value": 7.7,
+  "cases": 20.0,
+  "recency": 15.0,
+  "bug": 0.0
+ },
+ "score": 50
+}
