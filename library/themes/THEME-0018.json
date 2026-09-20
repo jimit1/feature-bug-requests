@@ -1,0 +1,32 @@
+{
+ "id": "THEME-0018",
+ "title": "Cross site reporting on member and non member visits",
+ "type": "feature",
+ "summary": "Multi site organizations cannot compare member visits against non member visits across their locations in one place. Staff have to go to each site separately and stitch the numbers together by hand to answer a question their boards ask routinely.",
+ "claim_ids": [
+  "c-4d4d64d27752"
+ ],
+ "first_seen": "2026-09-22",
+ "last_seen": "2026-09-22",
+ "log": [
+  {
+   "day": "2026-09-22",
+   "action": "open",
+   "claim_id": "c-4d4d64d27752",
+   "why": "Nothing in the index covers rolled up visit reporting across multiple sites, which is a reporting capability gap rather than an export or sync defect."
+  }
+ ],
+ "accounts": {
+  "customer": 1,
+  "prospect": 0
+ },
+ "open_cases": 7,
+ "score_parts": {
+  "accounts": 7.5,
+  "value": 17.0,
+  "cases": 20.0,
+  "recency": 15.0,
+  "bug": 0.0
+ },
+ "score": 60
+}

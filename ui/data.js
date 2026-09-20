@@ -1,5 +1,5 @@
 window.DIGEST = {
- "as_of": "2026-09-21",
+ "as_of": "2026-09-22",
  "days": [
   "2026-09-08",
   "2026-09-09",
@@ -10,10 +10,204 @@ window.DIGEST = {
   "2026-09-16",
   "2026-09-17",
   "2026-09-18",
-  "2026-09-21"
+  "2026-09-21",
+  "2026-09-22"
  ],
  "ask_url": "https://g3kmsu2e2ikq7cyivffqi7i6oe0unrtk.lambda-url.us-east-1.on.aws/",
  "themes": [
+  {
+   "id": "THEME-0005",
+   "title": "Membership report export truncated at row limit",
+   "type": "bug",
+   "summary": "Staff pulling membership and report data cannot get a complete, reliable extract. Exports stop near ten thousand rows with no notice that the file is short, and teams are left running manual weekly downloads instead of having their own systems pull the data on a schedule.",
+   "claim_ids": [
+    "c-7d2a3f364428",
+    "c-155dc035f7d8",
+    "c-83304fe35523",
+    "c-e79e344c3032",
+    "c-534bacb5d43b",
+    "c-a61007860db0"
+   ],
+   "first_seen": "2026-09-08",
+   "last_seen": "2026-09-22",
+   "log": [
+    {
+     "day": "2026-09-08",
+     "action": "open",
+     "claim_id": "c-7d2a3f364428",
+     "why": "Exports cutting off above a row threshold is a reporting failure with no matching theme in the index."
+    },
+    {
+     "day": "2026-09-09",
+     "action": "append",
+     "claim_id": "c-155dc035f7d8",
+     "why": "A donor report cut off past a few thousand rows is the same export truncation at a row limit as the existing theme, only on a different report."
+    },
+    {
+     "day": "2026-09-11",
+     "action": "append",
+     "claim_id": "c-83304fe35523",
+     "why": "This is the same silent row-limit truncation on large exports already tracked in the export truncation theme."
+    },
+    {
+     "day": "2026-09-11",
+     "action": "append",
+     "claim_id": "c-e79e344c3032",
+     "why": "A donor report cut off short of the full record count is the same export row cap, differing only in which report noticed it."
+    },
+    {
+     "day": "2026-09-22",
+     "action": "append",
+     "claim_id": "c-534bacb5d43b",
+     "why": "Same failure already in the index: report exports stop at a row ceiling and give no warning that the file is incomplete."
+    },
+    {
+     "day": "2026-09-22",
+     "action": "append",
+     "claim_id": "c-a61007860db0",
+     "why": "Same underlying ask from the other side: manual file downloads do not get the full membership data out, and a scheduled programmatic pull is the fix for the export path."
+    }
+   ],
+   "accounts": {
+    "customer": 3,
+    "prospect": 0
+   },
+   "open_cases": 14,
+   "score_parts": {
+    "accounts": 22.5,
+    "value": 17.0,
+    "cases": 20.0,
+    "recency": 15.0,
+    "bug": 10.0
+   },
+   "score": 84,
+   "claims": [
+    {
+     "id": "c-7d2a3f364428",
+     "day": "2026-09-08",
+     "source": "gong",
+     "type": "bug",
+     "topic": "membership export cuts off at row limit",
+     "quote": "Any report we try to export once membership crosses about ten thousand rows just cuts off partway through instead of finishing the file.",
+     "account_id": "ACC-0001",
+     "account": "Great Lakes Museum Alliance",
+     "account_type": "customer",
+     "tier": "Enterprise",
+     "arr": 340000,
+     "speaker": "Naomi Castellanos",
+     "locator": {
+      "call_id": "7782934452010",
+      "speaker_id": "c-01",
+      "start_ms": 208421,
+      "end_ms": 271579
+     },
+     "occurred_at": "2026-09-08T09:04:55Z"
+    },
+    {
+     "id": "c-155dc035f7d8",
+     "day": "2026-09-09",
+     "source": "gong",
+     "type": "bug",
+     "topic": "year end donor report row limit",
+     "quote": "Our year end donor report stops short of the full list once it gets past a few thousand rows, so we are stitching multiple exports together by hand.",
+     "account_id": "ACC-0006",
+     "account": "Copper Ridge Youth Foundation",
+     "account_type": "customer",
+     "tier": "Standard",
+     "arr": 18000,
+     "speaker": "Denise Okonkwo",
+     "locator": {
+      "call_id": "7782934452011",
+      "speaker_id": "c-06",
+      "start_ms": 252720,
+      "end_ms": 259200
+     },
+     "occurred_at": "2026-09-09T15:20:51Z"
+    },
+    {
+     "id": "c-83304fe35523",
+     "day": "2026-09-11",
+     "source": "gong",
+     "type": "bug",
+     "topic": "export truncation at ten thousand rows",
+     "quote": "Every export we run over about ten thousand rows comes back cut off at the bottom and nobody is told that it happened.",
+     "account_id": "ACC-0006",
+     "account": "Copper Ridge Youth Foundation",
+     "account_type": "customer",
+     "tier": "Standard",
+     "arr": 18000,
+     "speaker": "Marisol Quintero",
+     "locator": {
+      "call_id": "7782934451119",
+      "speaker_id": "5066",
+      "start_ms": 406214,
+      "end_ms": 453060
+     },
+     "occurred_at": "2026-09-11T15:38:08Z"
+    },
+    {
+     "id": "c-e79e344c3032",
+     "day": "2026-09-11",
+     "source": "salesforce",
+     "type": "bug",
+     "topic": "year end donor report row limit",
+     "quote": "Our year end donor report stops at about 3,200 rows even though we have close to 5,000 donors on file.",
+     "account_id": "ACC-0006",
+     "account": "Copper Ridge Youth Foundation",
+     "account_type": "customer",
+     "tier": "Standard",
+     "arr": 18000,
+     "speaker": "Denise Okonkwo",
+     "locator": {
+      "case_id": "500000000000000007",
+      "comment_id": "00a00000000000001a",
+      "case_number": "00005007"
+     },
+     "occurred_at": "2026-09-11T15:45:55Z"
+    },
+    {
+     "id": "c-534bacb5d43b",
+     "day": "2026-09-22",
+     "source": "gong",
+     "type": "bug",
+     "topic": "exports silently truncate past ten thousand records",
+     "quote": "Once a report runs past about ten thousand records the file comes back short, and nothing on it tells us it stopped early.",
+     "account_id": "ACC-0001",
+     "account": "Great Lakes Museum Alliance",
+     "account_type": "customer",
+     "tier": "Enterprise",
+     "arr": 340000,
+     "speaker": "Louisa Hartmann",
+     "locator": {
+      "call_id": "7782934453105",
+      "speaker_id": "5005",
+      "start_ms": 52220,
+      "end_ms": 105080
+     },
+     "occurred_at": "2026-09-22T09:33:04Z"
+    },
+    {
+     "id": "c-a61007860db0",
+     "day": "2026-09-22",
+     "source": "salesforce",
+     "type": "feature",
+     "topic": "API to pull membership data on a schedule",
+     "quote": "What we need is an interface our own systems can call for the membership data on a schedule, because one person downloading a file every Monday morning is not something we can keep doing.",
+     "account_id": "ACC-0004",
+     "account": "Atlantic Shipwrights Guild",
+     "account_type": "customer",
+     "tier": "Professional",
+     "arr": 96000,
+     "speaker": "Colin Bramwell",
+     "locator": {
+      "case_id": "50000000000000001a",
+      "comment_id": "00a000000000000068",
+      "case_number": "00005026"
+     },
+     "occurred_at": "2026-09-22T09:34:16Z"
+    }
+   ]
+  },
   {
    "id": "THEME-0008",
    "title": "Pledge reminder schedule ignores donor contact preferences",
@@ -62,10 +256,10 @@ window.DIGEST = {
     "accounts": 22.5,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 10.7,
+    "recency": 9.6,
     "bug": 10.0
    },
-   "score": 77,
+   "score": 76,
    "claims": [
     {
      "id": "c-5d3a978f29d2",
@@ -199,10 +393,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 9.6,
+    "recency": 8.6,
     "bug": 10.0
    },
-   "score": 72,
+   "score": 71,
    "claims": [
     {
      "id": "c-915d4dd0bc13",
@@ -323,10 +517,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 9.6,
+    "recency": 8.6,
     "bug": 10.0
    },
-   "score": 72,
+   "score": 71,
    "claims": [
     {
      "id": "c-b35dfc0ea355",
@@ -373,144 +567,6 @@ window.DIGEST = {
    ]
   },
   {
-   "id": "THEME-0005",
-   "title": "Membership report export truncated at row limit",
-   "type": "bug",
-   "summary": "Customers running large reports get files that stop partway through, with no warning that rows are missing. This affects both membership and donor reporting, so staff only discover the gap when the totals do not match their own record counts.",
-   "claim_ids": [
-    "c-7d2a3f364428",
-    "c-155dc035f7d8",
-    "c-83304fe35523",
-    "c-e79e344c3032"
-   ],
-   "first_seen": "2026-09-08",
-   "last_seen": "2026-09-11",
-   "log": [
-    {
-     "day": "2026-09-08",
-     "action": "open",
-     "claim_id": "c-7d2a3f364428",
-     "why": "Exports cutting off above a row threshold is a reporting failure with no matching theme in the index."
-    },
-    {
-     "day": "2026-09-09",
-     "action": "append",
-     "claim_id": "c-155dc035f7d8",
-     "why": "A donor report cut off past a few thousand rows is the same export truncation at a row limit as the existing theme, only on a different report."
-    },
-    {
-     "day": "2026-09-11",
-     "action": "append",
-     "claim_id": "c-83304fe35523",
-     "why": "This is the same silent row-limit truncation on large exports already tracked in the export truncation theme."
-    },
-    {
-     "day": "2026-09-11",
-     "action": "append",
-     "claim_id": "c-e79e344c3032",
-     "why": "A donor report cut off short of the full record count is the same export row cap, differing only in which report noticed it."
-    }
-   ],
-   "accounts": {
-    "customer": 2,
-    "prospect": 0
-   },
-   "open_cases": 10,
-   "score_parts": {
-    "accounts": 15.0,
-    "value": 17.0,
-    "cases": 20.0,
-    "recency": 4.3,
-    "bug": 10.0
-   },
-   "score": 66,
-   "claims": [
-    {
-     "id": "c-7d2a3f364428",
-     "day": "2026-09-08",
-     "source": "gong",
-     "type": "bug",
-     "topic": "membership export cuts off at row limit",
-     "quote": "Any report we try to export once membership crosses about ten thousand rows just cuts off partway through instead of finishing the file.",
-     "account_id": "ACC-0001",
-     "account": "Great Lakes Museum Alliance",
-     "account_type": "customer",
-     "tier": "Enterprise",
-     "arr": 340000,
-     "speaker": "Naomi Castellanos",
-     "locator": {
-      "call_id": "7782934452010",
-      "speaker_id": "c-01",
-      "start_ms": 208421,
-      "end_ms": 271579
-     },
-     "occurred_at": "2026-09-08T09:04:55Z"
-    },
-    {
-     "id": "c-155dc035f7d8",
-     "day": "2026-09-09",
-     "source": "gong",
-     "type": "bug",
-     "topic": "year end donor report row limit",
-     "quote": "Our year end donor report stops short of the full list once it gets past a few thousand rows, so we are stitching multiple exports together by hand.",
-     "account_id": "ACC-0006",
-     "account": "Copper Ridge Youth Foundation",
-     "account_type": "customer",
-     "tier": "Standard",
-     "arr": 18000,
-     "speaker": "Denise Okonkwo",
-     "locator": {
-      "call_id": "7782934452011",
-      "speaker_id": "c-06",
-      "start_ms": 252720,
-      "end_ms": 259200
-     },
-     "occurred_at": "2026-09-09T15:20:51Z"
-    },
-    {
-     "id": "c-83304fe35523",
-     "day": "2026-09-11",
-     "source": "gong",
-     "type": "bug",
-     "topic": "export truncation at ten thousand rows",
-     "quote": "Every export we run over about ten thousand rows comes back cut off at the bottom and nobody is told that it happened.",
-     "account_id": "ACC-0006",
-     "account": "Copper Ridge Youth Foundation",
-     "account_type": "customer",
-     "tier": "Standard",
-     "arr": 18000,
-     "speaker": "Marisol Quintero",
-     "locator": {
-      "call_id": "7782934451119",
-      "speaker_id": "5066",
-      "start_ms": 406214,
-      "end_ms": 453060
-     },
-     "occurred_at": "2026-09-11T15:38:08Z"
-    },
-    {
-     "id": "c-e79e344c3032",
-     "day": "2026-09-11",
-     "source": "salesforce",
-     "type": "bug",
-     "topic": "year end donor report row limit",
-     "quote": "Our year end donor report stops at about 3,200 rows even though we have close to 5,000 donors on file.",
-     "account_id": "ACC-0006",
-     "account": "Copper Ridge Youth Foundation",
-     "account_type": "customer",
-     "tier": "Standard",
-     "arr": 18000,
-     "speaker": "Denise Okonkwo",
-     "locator": {
-      "case_id": "500000000000000007",
-      "comment_id": "00a00000000000001a",
-      "case_number": "00005007"
-     },
-     "occurred_at": "2026-09-11T15:45:55Z"
-    }
-   ]
-  },
-  {
    "id": "THEME-0010",
    "title": "Course completion data sync to member records",
    "type": "feature",
@@ -544,10 +600,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 15.0,
+    "recency": 13.9,
     "bug": 0.0
    },
-   "score": 63,
+   "score": 62,
    "claims": [
     {
      "id": "c-299d81776e9e",
@@ -590,6 +646,61 @@ window.DIGEST = {
       "end_ms": 319560
      },
      "occurred_at": "2026-09-21T14:06:21Z"
+    }
+   ]
+  },
+  {
+   "id": "THEME-0018",
+   "title": "Cross site reporting on member and non member visits",
+   "type": "feature",
+   "summary": "Multi site organizations cannot compare member visits against non member visits across their locations in one place. Staff have to go to each site separately and stitch the numbers together by hand to answer a question their boards ask routinely.",
+   "claim_ids": [
+    "c-4d4d64d27752"
+   ],
+   "first_seen": "2026-09-22",
+   "last_seen": "2026-09-22",
+   "log": [
+    {
+     "day": "2026-09-22",
+     "action": "open",
+     "claim_id": "c-4d4d64d27752",
+     "why": "Nothing in the index covers rolled up visit reporting across multiple sites, which is a reporting capability gap rather than an export or sync defect."
+    }
+   ],
+   "accounts": {
+    "customer": 1,
+    "prospect": 0
+   },
+   "open_cases": 7,
+   "score_parts": {
+    "accounts": 7.5,
+    "value": 17.0,
+    "cases": 20.0,
+    "recency": 15.0,
+    "bug": 0.0
+   },
+   "score": 60,
+   "claims": [
+    {
+     "id": "c-4d4d64d27752",
+     "day": "2026-09-22",
+     "source": "gong",
+     "type": "feature",
+     "topic": "member versus non-member visit data by site",
+     "quote": "We are being asked to show member visits against non member visits by site, and we cannot get that without going to each museum individually.",
+     "account_id": "ACC-0001",
+     "account": "Great Lakes Museum Alliance",
+     "account_type": "customer",
+     "tier": "Enterprise",
+     "arr": 340000,
+     "speaker": "Louisa Hartmann",
+     "locator": {
+      "call_id": "7782934453105",
+      "speaker_id": "5005",
+      "start_ms": 253390,
+      "end_ms": 294850
+     },
+     "occurred_at": "2026-09-22T09:36:25Z"
     }
    ]
   },
@@ -648,10 +759,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 9.6,
+    "recency": 8.6,
     "bug": 0.0
    },
-   "score": 58,
+   "score": 57,
    "claims": [
     {
      "id": "c-6fdcefc76dcd",
@@ -786,10 +897,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 15.0,
+    "recency": 13.9,
     "bug": 0.0
    },
-   "score": 56,
+   "score": 55,
    "claims": [
     {
      "id": "c-92d6a9487216",
@@ -848,10 +959,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 7.7,
     "cases": 20.0,
-    "recency": 2.1,
+    "recency": 1.1,
     "bug": 10.0
    },
-   "score": 55,
+   "score": 54,
    "claims": [
     {
      "id": "c-9e53583c6513",
@@ -930,10 +1041,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 4.8,
     "cases": 20.0,
-    "recency": 11.8,
+    "recency": 10.7,
     "bug": 10.0
    },
-   "score": 54,
+   "score": 53,
    "claims": [
     {
      "id": "c-c44577763b5c",
@@ -1006,10 +1117,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 7.7,
     "cases": 20.0,
-    "recency": 15.0,
+    "recency": 13.9,
     "bug": 0.0
    },
-   "score": 50,
+   "score": 49,
    "claims": [
     {
      "id": "c-418a8c8e7f16",
@@ -1067,10 +1178,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 2.0,
     "cases": 20.0,
-    "recency": 2.1,
+    "recency": 1.1,
     "bug": 10.0
    },
-   "score": 49,
+   "score": 48,
    "claims": [
     {
      "id": "c-8fc57031470e",
@@ -1143,10 +1254,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 1.1,
+    "recency": 0.0,
     "bug": 0.0
    },
-   "score": 46,
+   "score": 44,
    "claims": [
     {
      "id": "c-16cd97e72e9e",
@@ -1198,10 +1309,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 0.9,
     "cases": 15.0,
-    "recency": 10.7,
+    "recency": 9.6,
     "bug": 0.0
    },
-   "score": 34,
+   "score": 33,
    "claims": [
     {
      "id": "c-8c2632e3512c",
@@ -1252,10 +1363,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 6.4,
     "cases": 5.0,
-    "recency": 11.8,
+    "recency": 10.7,
     "bug": 0.0
    },
-   "score": 31,
+   "score": 30,
    "claims": [
     {
      "id": "c-f5506b29197f",
@@ -1306,10 +1417,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 6.4,
     "cases": 5.0,
-    "recency": 10.7,
+    "recency": 9.6,
     "bug": 0.0
    },
-   "score": 30,
+   "score": 28,
    "claims": [
     {
      "id": "c-19324e96cdf8",
@@ -1368,10 +1479,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 0.0,
     "cases": 0.0,
-    "recency": 8.6,
+    "recency": 7.5,
     "bug": 0.0
    },
-   "score": 16,
+   "score": 15,
    "claims": [
     {
      "id": "c-b696c3430eb3",

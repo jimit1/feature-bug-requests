@@ -2,15 +2,17 @@
  "id": "THEME-0005",
  "title": "Membership report export truncated at row limit",
  "type": "bug",
- "summary": "Customers running large reports get files that stop partway through, with no warning that rows are missing. This affects both membership and donor reporting, so staff only discover the gap when the totals do not match their own record counts.",
+ "summary": "Staff pulling membership and report data cannot get a complete, reliable extract. Exports stop near ten thousand rows with no notice that the file is short, and teams are left running manual weekly downloads instead of having their own systems pull the data on a schedule.",
  "claim_ids": [
   "c-7d2a3f364428",
   "c-155dc035f7d8",
   "c-83304fe35523",
-  "c-e79e344c3032"
+  "c-e79e344c3032",
+  "c-534bacb5d43b",
+  "c-a61007860db0"
  ],
  "first_seen": "2026-09-08",
- "last_seen": "2026-09-11",
+ "last_seen": "2026-09-22",
  "log": [
   {
    "day": "2026-09-08",
@@ -35,19 +37,31 @@
    "action": "append",
    "claim_id": "c-e79e344c3032",
    "why": "A donor report cut off short of the full record count is the same export row cap, differing only in which report noticed it."
+  },
+  {
+   "day": "2026-09-22",
+   "action": "append",
+   "claim_id": "c-534bacb5d43b",
+   "why": "Same failure already in the index: report exports stop at a row ceiling and give no warning that the file is incomplete."
+  },
+  {
+   "day": "2026-09-22",
+   "action": "append",
+   "claim_id": "c-a61007860db0",
+   "why": "Same underlying ask from the other side: manual file downloads do not get the full membership data out, and a scheduled programmatic pull is the fix for the export path."
   }
  ],
  "accounts": {
-  "customer": 2,
+  "customer": 3,
   "prospect": 0
  },
- "open_cases": 10,
+ "open_cases": 14,
  "score_parts": {
-  "accounts": 15.0,
+  "accounts": 22.5,
   "value": 17.0,
   "cases": 20.0,
-  "recency": 4.3,
+  "recency": 15.0,
   "bug": 10.0
  },
- "score": 66
+ "score": 84
 }
