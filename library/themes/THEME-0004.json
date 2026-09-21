@@ -2,13 +2,14 @@
  "id": "THEME-0004",
  "title": "Renewal notice email deliverability",
  "type": "bug",
- "summary": "Renewal reminder emails are being filtered as spam by major mail providers, so members never see the notice and lapse without warning. Staff only find out when renewals are missed and have to chase members by hand.",
+ "summary": "Mail the system sends on behalf of organizations is being filtered to junk, affecting both renewal notices and fundraising appeal letters, with the large free mail providers the worst case. Organizations find out by accident from a member or board member rather than from anything in the product, so they cannot tell how much mail went unseen.",
  "claim_ids": [
   "c-8fc57031470e",
-  "c-c3cc9482540b"
+  "c-c3cc9482540b",
+  "c-b1bf7c6402b9"
  ],
  "first_seen": "2026-09-08",
- "last_seen": "2026-09-09",
+ "last_seen": "2026-09-23",
  "log": [
   {
    "day": "2026-09-08",
@@ -21,6 +22,12 @@
    "action": "append",
    "claim_id": "c-c3cc9482540b",
    "why": "Renewal reminders landing in spam and members missing the notice is the deliverability failure the existing theme already tracks."
+  },
+  {
+   "day": "2026-09-23",
+   "action": "append",
+   "claim_id": "c-b1bf7c6402b9",
+   "why": "Fundraising appeal mail landing in junk at the large free providers is the same deliverability failure as renewal notices not reaching inboxes."
   }
  ],
  "accounts": {
@@ -32,8 +39,8 @@
   "accounts": 15.0,
   "value": 2.0,
   "cases": 20.0,
-  "recency": 1.1,
+  "recency": 15.0,
   "bug": 10.0
  },
- "score": 48
+ "score": 62
 }

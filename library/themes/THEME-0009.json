@@ -2,13 +2,15 @@
  "id": "THEME-0009",
  "title": "SCORM package import into learning module",
  "type": "feature",
- "summary": "Associations with existing SCORM course libraries want to upload those packages directly into the learning module and have them run without rebuilding the content. Both customers and prospects raise this as a condition of moving their training online, including support for SCORM 1.2 packages.",
+ "summary": "Associations and training teams arrive with libraries of existing course packages built to SCORM, including SCORM 2004, and the learning module will not take them in. Staff must rebuild each course page by page in the editor before it will run, leaving dozens of finished courses stranded in a folder.",
  "claim_ids": [
   "c-b696c3430eb3",
-  "c-c9934ceb9fc5"
+  "c-c9934ceb9fc5",
+  "c-0a7bb09191c1",
+  "c-ac4356cf3621"
  ],
  "first_seen": "2026-09-09",
- "last_seen": "2026-09-15",
+ "last_seen": "2026-09-23",
  "log": [
   {
    "day": "2026-09-09",
@@ -21,19 +23,31 @@
    "action": "append",
    "claim_id": "c-c9934ceb9fc5",
    "why": "The prospect is asking to bring existing SCORM course packages into the learning module and have them run as-is, which is the same import ask the theme already covers."
+  },
+  {
+   "day": "2026-09-23",
+   "action": "append",
+   "claim_id": "c-0a7bb09191c1",
+   "why": "The ask is for the learning module to accept existing SCORM packaging directly, which is the same import gap already open."
+  },
+  {
+   "day": "2026-09-23",
+   "action": "append",
+   "claim_id": "c-ac4356cf3621",
+   "why": "Rebuilding course packages page by page because the module will not run them is the failure side of the same package import ask."
   }
  ],
  "accounts": {
-  "customer": 0,
-  "prospect": 1
+  "customer": 1,
+  "prospect": 2
  },
- "open_cases": 0,
+ "open_cases": 5,
  "score_parts": {
-  "accounts": 7.5,
-  "value": 0.0,
-  "cases": 0.0,
-  "recency": 7.5,
+  "accounts": 22.5,
+  "value": 13.4,
+  "cases": 20.0,
+  "recency": 15.0,
   "bug": 0.0
  },
- "score": 15
+ "score": 71
 }

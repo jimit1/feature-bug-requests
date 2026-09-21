@@ -1,5 +1,5 @@
 window.DIGEST = {
- "as_of": "2026-09-22",
+ "as_of": "2026-09-23",
  "days": [
   "2026-09-08",
   "2026-09-09",
@@ -11,7 +11,8 @@ window.DIGEST = {
   "2026-09-17",
   "2026-09-18",
   "2026-09-21",
-  "2026-09-22"
+  "2026-09-22",
+  "2026-09-23"
  ],
  "ask_url": "https://g3kmsu2e2ikq7cyivffqi7i6oe0unrtk.lambda-url.us-east-1.on.aws/",
  "themes": [
@@ -77,10 +78,10 @@ window.DIGEST = {
     "accounts": 22.5,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 15.0,
+    "recency": 13.9,
     "bug": 10.0
    },
-   "score": 84,
+   "score": 83,
    "claims": [
     {
      "id": "c-7d2a3f364428",
@@ -256,10 +257,10 @@ window.DIGEST = {
     "accounts": 22.5,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 9.6,
+    "recency": 8.6,
     "bug": 10.0
    },
-   "score": 76,
+   "score": 74,
    "claims": [
     {
      "id": "c-5d3a978f29d2",
@@ -346,6 +347,144 @@ window.DIGEST = {
    ]
   },
   {
+   "id": "THEME-0009",
+   "title": "SCORM package import into learning module",
+   "type": "feature",
+   "summary": "Associations and training teams arrive with libraries of existing course packages built to SCORM, including SCORM 2004, and the learning module will not take them in. Staff must rebuild each course page by page in the editor before it will run, leaving dozens of finished courses stranded in a folder.",
+   "claim_ids": [
+    "c-b696c3430eb3",
+    "c-c9934ceb9fc5",
+    "c-0a7bb09191c1",
+    "c-ac4356cf3621"
+   ],
+   "first_seen": "2026-09-09",
+   "last_seen": "2026-09-23",
+   "log": [
+    {
+     "day": "2026-09-09",
+     "action": "open",
+     "claim_id": "c-b696c3430eb3",
+     "why": "No existing theme covers loading course content into the learning module, so this import ask needs a new heading."
+    },
+    {
+     "day": "2026-09-15",
+     "action": "append",
+     "claim_id": "c-c9934ceb9fc5",
+     "why": "The prospect is asking to bring existing SCORM course packages into the learning module and have them run as-is, which is the same import ask the theme already covers."
+    },
+    {
+     "day": "2026-09-23",
+     "action": "append",
+     "claim_id": "c-0a7bb09191c1",
+     "why": "The ask is for the learning module to accept existing SCORM packaging directly, which is the same import gap already open."
+    },
+    {
+     "day": "2026-09-23",
+     "action": "append",
+     "claim_id": "c-ac4356cf3621",
+     "why": "Rebuilding course packages page by page because the module will not run them is the failure side of the same package import ask."
+    }
+   ],
+   "accounts": {
+    "customer": 1,
+    "prospect": 2
+   },
+   "open_cases": 5,
+   "score_parts": {
+    "accounts": 22.5,
+    "value": 13.4,
+    "cases": 20.0,
+    "recency": 15.0,
+    "bug": 0.0
+   },
+   "score": 71,
+   "claims": [
+    {
+     "id": "c-b696c3430eb3",
+     "day": "2026-09-09",
+     "source": "gong",
+     "type": "feature",
+     "topic": "SCORM package upload without rebuilding",
+     "quote": "We need to upload SCORM 1.2 and SCORM 2004 packages straight into the learning module without rebuilding every course by hand.",
+     "account_id": "ACC-0007",
+     "account": "Northwoods Arborists Society",
+     "account_type": "prospect",
+     "tier": "Prospect",
+     "arr": 0,
+     "speaker": "Delphine Okerlund",
+     "locator": {
+      "call_id": "7782934451311",
+      "speaker_id": "4852",
+      "start_ms": 629690,
+      "end_ms": 675828
+     },
+     "occurred_at": "2026-09-09T16:11:17Z"
+    },
+    {
+     "id": "c-c9934ceb9fc5",
+     "day": "2026-09-15",
+     "source": "gong",
+     "type": "feature",
+     "topic": "SCORM 1.2 course package upload and execution",
+     "quote": "We need to be able to upload our existing SCORM 1.2 course packages and have them run inside the new learning module without rebuilding anything.",
+     "account_id": "ACC-0007",
+     "account": "Northwoods Arborists Society",
+     "account_type": "prospect",
+     "tier": "Prospect",
+     "arr": 0,
+     "speaker": "Grant Halverson",
+     "locator": {
+      "call_id": "7782934452006",
+      "speaker_id": "c-07",
+      "start_ms": 298776,
+      "end_ms": 303673
+     },
+     "occurred_at": "2026-09-15T12:07:12Z"
+    },
+    {
+     "id": "c-0a7bb09191c1",
+     "day": "2026-09-23",
+     "source": "gong",
+     "type": "feature",
+     "topic": "SCORM 2004 packaging support",
+     "quote": "Our training team already has a library built for SCORM 2004, so whatever we move to needs to accept that packaging directly.",
+     "account_id": "ACC-0008",
+     "account": "Harbor City Teachers Collective",
+     "account_type": "prospect",
+     "tier": "Prospect",
+     "arr": 0,
+     "speaker": "Simone Whitfield",
+     "locator": {
+      "call_id": "7782934452007",
+      "speaker_id": "c-08",
+      "start_ms": 375273,
+      "end_ms": 453455
+     },
+     "occurred_at": "2026-09-23T09:22:43Z"
+    },
+    {
+     "id": "c-ac4356cf3621",
+     "day": "2026-09-23",
+     "source": "salesforce",
+     "type": "bug",
+     "topic": "course packages not accepted by learning module",
+     "quote": "Every one of our existing course packages has to be rebuilt page by page in your editor before it will run, and we have forty of them sitting in a folder waiting.",
+     "account_id": "ACC-0002",
+     "account": "Cascadia Nurses Association",
+     "account_type": "customer",
+     "tier": "Enterprise",
+     "arr": 268000,
+     "speaker": "Renee Okafor",
+     "locator": {
+      "case_id": "50000000000000001b",
+      "comment_id": "00a00000000000006d",
+      "case_number": "00005027"
+     },
+     "occurred_at": "2026-09-23T10:31:48Z"
+    }
+   ]
+  },
+  {
    "id": "THEME-0001",
    "title": "Renewal invoices omit prior credits and balances",
    "type": "bug",
@@ -393,10 +532,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 8.6,
+    "recency": 7.5,
     "bug": 10.0
    },
-   "score": 71,
+   "score": 70,
    "claims": [
     {
      "id": "c-915d4dd0bc13",
@@ -517,10 +656,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 8.6,
+    "recency": 7.5,
     "bug": 10.0
    },
-   "score": 71,
+   "score": 70,
    "claims": [
     {
      "id": "c-b35dfc0ea355",
@@ -567,6 +706,117 @@ window.DIGEST = {
    ]
   },
   {
+   "id": "THEME-0004",
+   "title": "Renewal notice email deliverability",
+   "type": "bug",
+   "summary": "Mail the system sends on behalf of organizations is being filtered to junk, affecting both renewal notices and fundraising appeal letters, with the large free mail providers the worst case. Organizations find out by accident from a member or board member rather than from anything in the product, so they cannot tell how much mail went unseen.",
+   "claim_ids": [
+    "c-8fc57031470e",
+    "c-c3cc9482540b",
+    "c-b1bf7c6402b9"
+   ],
+   "first_seen": "2026-09-08",
+   "last_seen": "2026-09-23",
+   "log": [
+    {
+     "day": "2026-09-08",
+     "action": "open",
+     "claim_id": "c-8fc57031470e",
+     "why": "This is about renewal emails being filtered to spam rather than about invoice amounts, and no theme covers message delivery."
+    },
+    {
+     "day": "2026-09-09",
+     "action": "append",
+     "claim_id": "c-c3cc9482540b",
+     "why": "Renewal reminders landing in spam and members missing the notice is the deliverability failure the existing theme already tracks."
+    },
+    {
+     "day": "2026-09-23",
+     "action": "append",
+     "claim_id": "c-b1bf7c6402b9",
+     "why": "Fundraising appeal mail landing in junk at the large free providers is the same deliverability failure as renewal notices not reaching inboxes."
+    }
+   ],
+   "accounts": {
+    "customer": 2,
+    "prospect": 0
+   },
+   "open_cases": 5,
+   "score_parts": {
+    "accounts": 15.0,
+    "value": 2.0,
+    "cases": 20.0,
+    "recency": 15.0,
+    "bug": 10.0
+   },
+   "score": 62,
+   "claims": [
+    {
+     "id": "c-8fc57031470e",
+     "day": "2026-09-08",
+     "source": "gong",
+     "type": "bug",
+     "topic": "renewal notices landing in spam folder",
+     "quote": "A good number of our members tell us the renewal notice never showed up, and when we check, it landed in their spam folder instead of the inbox.",
+     "account_id": "ACC-0005",
+     "account": "Sunbelt Literacy Network",
+     "account_type": "customer",
+     "tier": "Standard",
+     "arr": 41000,
+     "speaker": "Yolanda Pruitt",
+     "locator": {
+      "call_id": "7782934452008",
+      "speaker_id": "c-05",
+      "start_ms": 127685,
+      "end_ms": 167586
+     },
+     "occurred_at": "2026-09-08T15:04:04Z"
+    },
+    {
+     "id": "c-c3cc9482540b",
+     "day": "2026-09-09",
+     "source": "gong",
+     "type": "bug",
+     "topic": "renewal reminder emails flagged as spam",
+     "quote": "Our renewal reminder emails are getting flagged as spam by some of the bigger providers, so members are missing the notice entirely.",
+     "account_id": "ACC-0006",
+     "account": "Copper Ridge Youth Foundation",
+     "account_type": "customer",
+     "tier": "Standard",
+     "arr": 18000,
+     "speaker": "Denise Okonkwo",
+     "locator": {
+      "call_id": "7782934452009",
+      "speaker_id": "c-06",
+      "start_ms": 312000,
+      "end_ms": 324000
+     },
+     "occurred_at": "2026-09-09T13:23:01Z"
+    },
+    {
+     "id": "c-b1bf7c6402b9",
+     "day": "2026-09-23",
+     "source": "gong",
+     "type": "bug",
+     "topic": "appeal letters landing in junk for free mail providers",
+     "quote": "Our appeal letters are landing in junk for anyone on the two large free mail providers, and we only learned that because a board member mentioned it in passing.",
+     "account_id": "ACC-0005",
+     "account": "Sunbelt Literacy Network",
+     "account_type": "customer",
+     "tier": "Standard",
+     "arr": 41000,
+     "speaker": "Curtis Ellsworth",
+     "locator": {
+      "call_id": "7782934453106",
+      "speaker_id": "5106",
+      "start_ms": 92330,
+      "end_ms": 145960
+     },
+     "occurred_at": "2026-09-23T13:48:41Z"
+    }
+   ]
+  },
+  {
    "id": "THEME-0010",
    "title": "Course completion data sync to member records",
    "type": "feature",
@@ -600,10 +850,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 13.9,
+    "recency": 12.9,
     "bug": 0.0
    },
-   "score": 62,
+   "score": 61,
    "claims": [
     {
      "id": "c-299d81776e9e",
@@ -676,10 +926,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 15.0,
+    "recency": 13.9,
     "bug": 0.0
    },
-   "score": 60,
+   "score": 58,
    "claims": [
     {
      "id": "c-4d4d64d27752",
@@ -759,10 +1009,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 8.6,
+    "recency": 7.5,
     "bug": 0.0
    },
-   "score": 57,
+   "score": 56,
    "claims": [
     {
      "id": "c-6fdcefc76dcd",
@@ -897,10 +1147,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 13.9,
+    "recency": 12.9,
     "bug": 0.0
    },
-   "score": 55,
+   "score": 54,
    "claims": [
     {
      "id": "c-92d6a9487216",
@@ -959,10 +1209,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 7.7,
     "cases": 20.0,
-    "recency": 1.1,
+    "recency": 0.0,
     "bug": 10.0
    },
-   "score": 54,
+   "score": 53,
    "claims": [
     {
      "id": "c-9e53583c6513",
@@ -1041,10 +1291,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 4.8,
     "cases": 20.0,
-    "recency": 10.7,
+    "recency": 9.6,
     "bug": 10.0
    },
-   "score": 53,
+   "score": 52,
    "claims": [
     {
      "id": "c-c44577763b5c",
@@ -1117,10 +1367,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 7.7,
     "cases": 20.0,
-    "recency": 13.9,
+    "recency": 12.9,
     "bug": 0.0
    },
-   "score": 49,
+   "score": 48,
    "claims": [
     {
      "id": "c-418a8c8e7f16",
@@ -1141,89 +1391,6 @@ window.DIGEST = {
       "case_number": "00005025"
      },
      "occurred_at": "2026-09-21T09:47:10Z"
-    }
-   ]
-  },
-  {
-   "id": "THEME-0004",
-   "title": "Renewal notice email deliverability",
-   "type": "bug",
-   "summary": "Renewal reminder emails are being filtered as spam by major mail providers, so members never see the notice and lapse without warning. Staff only find out when renewals are missed and have to chase members by hand.",
-   "claim_ids": [
-    "c-8fc57031470e",
-    "c-c3cc9482540b"
-   ],
-   "first_seen": "2026-09-08",
-   "last_seen": "2026-09-09",
-   "log": [
-    {
-     "day": "2026-09-08",
-     "action": "open",
-     "claim_id": "c-8fc57031470e",
-     "why": "This is about renewal emails being filtered to spam rather than about invoice amounts, and no theme covers message delivery."
-    },
-    {
-     "day": "2026-09-09",
-     "action": "append",
-     "claim_id": "c-c3cc9482540b",
-     "why": "Renewal reminders landing in spam and members missing the notice is the deliverability failure the existing theme already tracks."
-    }
-   ],
-   "accounts": {
-    "customer": 2,
-    "prospect": 0
-   },
-   "open_cases": 5,
-   "score_parts": {
-    "accounts": 15.0,
-    "value": 2.0,
-    "cases": 20.0,
-    "recency": 1.1,
-    "bug": 10.0
-   },
-   "score": 48,
-   "claims": [
-    {
-     "id": "c-8fc57031470e",
-     "day": "2026-09-08",
-     "source": "gong",
-     "type": "bug",
-     "topic": "renewal notices landing in spam folder",
-     "quote": "A good number of our members tell us the renewal notice never showed up, and when we check, it landed in their spam folder instead of the inbox.",
-     "account_id": "ACC-0005",
-     "account": "Sunbelt Literacy Network",
-     "account_type": "customer",
-     "tier": "Standard",
-     "arr": 41000,
-     "speaker": "Yolanda Pruitt",
-     "locator": {
-      "call_id": "7782934452008",
-      "speaker_id": "c-05",
-      "start_ms": 127685,
-      "end_ms": 167586
-     },
-     "occurred_at": "2026-09-08T15:04:04Z"
-    },
-    {
-     "id": "c-c3cc9482540b",
-     "day": "2026-09-09",
-     "source": "gong",
-     "type": "bug",
-     "topic": "renewal reminder emails flagged as spam",
-     "quote": "Our renewal reminder emails are getting flagged as spam by some of the bigger providers, so members are missing the notice entirely.",
-     "account_id": "ACC-0006",
-     "account": "Copper Ridge Youth Foundation",
-     "account_type": "customer",
-     "tier": "Standard",
-     "arr": 18000,
-     "speaker": "Denise Okonkwo",
-     "locator": {
-      "call_id": "7782934452009",
-      "speaker_id": "c-06",
-      "start_ms": 312000,
-      "end_ms": 324000
-     },
-     "occurred_at": "2026-09-09T13:23:01Z"
     }
    ]
   },
@@ -1283,6 +1450,61 @@ window.DIGEST = {
    ]
   },
   {
+   "id": "THEME-0019",
+   "title": "Staff sign-in with existing office identity provider",
+   "type": "feature",
+   "summary": "Staff at member organizations keep a password for this system and nothing else, which they have to remember and reset separately. They want to sign in with the same office account they already use for the rest of their tools.",
+   "claim_ids": [
+    "c-91501239d30d"
+   ],
+   "first_seen": "2026-09-23",
+   "last_seen": "2026-09-23",
+   "log": [
+    {
+     "day": "2026-09-23",
+     "action": "open",
+     "claim_id": "c-91501239d30d",
+     "why": "The index covers role changes failing to sync from an identity provider but nothing about letting staff sign in with their existing office account instead of a separate password."
+    }
+   ],
+   "accounts": {
+    "customer": 1,
+    "prospect": 0
+   },
+   "open_cases": 2,
+   "score_parts": {
+    "accounts": 7.5,
+    "value": 2.0,
+    "cases": 10.0,
+    "recency": 15.0,
+    "bug": 0.0
+   },
+   "score": 34,
+   "claims": [
+    {
+     "id": "c-91501239d30d",
+     "day": "2026-09-23",
+     "source": "gong",
+     "type": "feature",
+     "topic": "staff sign-in with single office account instead of separate password",
+     "quote": "Our staff keep a separate password for this system and nothing else, and we want them signing in with the same account they use for everything else in the office.",
+     "account_id": "ACC-0005",
+     "account": "Sunbelt Literacy Network",
+     "account_type": "customer",
+     "tier": "Standard",
+     "arr": 41000,
+     "speaker": "Curtis Ellsworth",
+     "locator": {
+      "call_id": "7782934453106",
+      "speaker_id": "5106",
+      "start_ms": 254380,
+      "end_ms": 312190
+     },
+     "occurred_at": "2026-09-23T13:51:23Z"
+    }
+   ]
+  },
+  {
    "id": "THEME-0014",
    "title": "Consolidated year end donor tax receipts",
    "type": "feature",
@@ -1309,10 +1531,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 0.9,
     "cases": 15.0,
-    "recency": 9.6,
+    "recency": 8.6,
     "bug": 0.0
    },
-   "score": 33,
+   "score": 32,
    "claims": [
     {
      "id": "c-8c2632e3512c",
@@ -1333,60 +1555,6 @@ window.DIGEST = {
       "case_number": "00005023"
      },
      "occurred_at": "2026-09-17T09:24:50Z"
-    }
-   ]
-  },
-  {
-   "id": "THEME-0015",
-   "title": "Name badge printing from attendee lists",
-   "type": "feature",
-   "summary": "Event staff cannot print name badges directly from the attendee list. They export attendees to a spreadsheet and run them through a separate label program the night before the event, which adds manual work and risks stale or mismatched badges.",
-   "claim_ids": [
-    "c-f5506b29197f"
-   ],
-   "first_seen": "2026-09-18",
-   "last_seen": "2026-09-18",
-   "log": [
-    {
-     "day": "2026-09-18",
-     "action": "open",
-     "claim_id": "c-f5506b29197f",
-     "why": "Nothing in the index covers producing badges or printed materials from event attendee data."
-    }
-   ],
-   "accounts": {
-    "customer": 1,
-    "prospect": 0
-   },
-   "open_cases": 1,
-   "score_parts": {
-    "accounts": 7.5,
-    "value": 6.4,
-    "cases": 5.0,
-    "recency": 10.7,
-    "bug": 0.0
-   },
-   "score": 30,
-   "claims": [
-    {
-     "id": "c-f5506b29197f",
-     "day": "2026-09-18",
-     "source": "salesforce",
-     "type": "feature",
-     "topic": "printing name badges from attendee list",
-     "quote": "We cannot print name badges from the attendee list at all, so we export to a spreadsheet and run the whole thing through a separate label program the night before.",
-     "account_id": "ACC-0010",
-     "account": "Ozark Valley Arts Council",
-     "account_type": "customer",
-     "tier": "Professional",
-     "arr": 128000,
-     "speaker": "Alina Petrosyan",
-     "locator": {
-      "case_id": "500000000000000018",
-      "comment_id": "00a000000000000060",
-      "case_number": "00005024"
-     },
-     "occurred_at": "2026-09-18T08:31:06Z"
     }
    ]
   },
@@ -1417,7 +1585,7 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 6.4,
     "cases": 5.0,
-    "recency": 9.6,
+    "recency": 8.6,
     "bug": 0.0
    },
    "score": 28,
@@ -1446,85 +1614,56 @@ window.DIGEST = {
    ]
   },
   {
-   "id": "THEME-0009",
-   "title": "SCORM package import into learning module",
+   "id": "THEME-0015",
+   "title": "Name badge printing from attendee lists",
    "type": "feature",
-   "summary": "Associations with existing SCORM course libraries want to upload those packages directly into the learning module and have them run without rebuilding the content. Both customers and prospects raise this as a condition of moving their training online, including support for SCORM 1.2 packages.",
+   "summary": "Event staff cannot print name badges directly from the attendee list. They export attendees to a spreadsheet and run them through a separate label program the night before the event, which adds manual work and risks stale or mismatched badges.",
    "claim_ids": [
-    "c-b696c3430eb3",
-    "c-c9934ceb9fc5"
+    "c-f5506b29197f"
    ],
-   "first_seen": "2026-09-09",
-   "last_seen": "2026-09-15",
+   "first_seen": "2026-09-18",
+   "last_seen": "2026-09-18",
    "log": [
     {
-     "day": "2026-09-09",
+     "day": "2026-09-18",
      "action": "open",
-     "claim_id": "c-b696c3430eb3",
-     "why": "No existing theme covers loading course content into the learning module, so this import ask needs a new heading."
-    },
-    {
-     "day": "2026-09-15",
-     "action": "append",
-     "claim_id": "c-c9934ceb9fc5",
-     "why": "The prospect is asking to bring existing SCORM course packages into the learning module and have them run as-is, which is the same import ask the theme already covers."
+     "claim_id": "c-f5506b29197f",
+     "why": "Nothing in the index covers producing badges or printed materials from event attendee data."
     }
    ],
    "accounts": {
-    "customer": 0,
-    "prospect": 1
+    "customer": 1,
+    "prospect": 0
    },
-   "open_cases": 0,
+   "open_cases": 1,
    "score_parts": {
     "accounts": 7.5,
-    "value": 0.0,
-    "cases": 0.0,
-    "recency": 7.5,
+    "value": 6.4,
+    "cases": 5.0,
+    "recency": 9.6,
     "bug": 0.0
    },
-   "score": 15,
+   "score": 28,
    "claims": [
     {
-     "id": "c-b696c3430eb3",
-     "day": "2026-09-09",
-     "source": "gong",
+     "id": "c-f5506b29197f",
+     "day": "2026-09-18",
+     "source": "salesforce",
      "type": "feature",
-     "topic": "SCORM package upload without rebuilding",
-     "quote": "We need to upload SCORM 1.2 and SCORM 2004 packages straight into the learning module without rebuilding every course by hand.",
-     "account_id": "ACC-0007",
-     "account": "Northwoods Arborists Society",
-     "account_type": "prospect",
-     "tier": "Prospect",
-     "arr": 0,
-     "speaker": "Delphine Okerlund",
+     "topic": "printing name badges from attendee list",
+     "quote": "We cannot print name badges from the attendee list at all, so we export to a spreadsheet and run the whole thing through a separate label program the night before.",
+     "account_id": "ACC-0010",
+     "account": "Ozark Valley Arts Council",
+     "account_type": "customer",
+     "tier": "Professional",
+     "arr": 128000,
+     "speaker": "Alina Petrosyan",
      "locator": {
-      "call_id": "7782934451311",
-      "speaker_id": "4852",
-      "start_ms": 629690,
-      "end_ms": 675828
+      "case_id": "500000000000000018",
+      "comment_id": "00a000000000000060",
+      "case_number": "00005024"
      },
-     "occurred_at": "2026-09-09T16:11:17Z"
-    },
-    {
-     "id": "c-c9934ceb9fc5",
-     "day": "2026-09-15",
-     "source": "gong",
-     "type": "feature",
-     "topic": "SCORM 1.2 course package upload and execution",
-     "quote": "We need to be able to upload our existing SCORM 1.2 course packages and have them run inside the new learning module without rebuilding anything.",
-     "account_id": "ACC-0007",
-     "account": "Northwoods Arborists Society",
-     "account_type": "prospect",
-     "tier": "Prospect",
-     "arr": 0,
-     "speaker": "Grant Halverson",
-     "locator": {
-      "call_id": "7782934452006",
-      "speaker_id": "c-07",
-      "start_ms": 298776,
-      "end_ms": 303673
-     },
-     "occurred_at": "2026-09-15T12:07:12Z"
+     "occurred_at": "2026-09-18T08:31:06Z"
     }
    ]
   }
