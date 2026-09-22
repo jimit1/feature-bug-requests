@@ -1,5 +1,5 @@
 window.DIGEST = {
- "as_of": "2026-09-23",
+ "as_of": "2026-09-24",
  "days": [
   "2026-09-08",
   "2026-09-09",
@@ -12,7 +12,8 @@ window.DIGEST = {
   "2026-09-18",
   "2026-09-21",
   "2026-09-22",
-  "2026-09-23"
+  "2026-09-23",
+  "2026-09-24"
  ],
  "ask_url": "https://g3kmsu2e2ikq7cyivffqi7i6oe0unrtk.lambda-url.us-east-1.on.aws/",
  "themes": [
@@ -78,10 +79,10 @@ window.DIGEST = {
     "accounts": 22.5,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 13.9,
+    "recency": 12.9,
     "bug": 10.0
    },
-   "score": 83,
+   "score": 82,
    "claims": [
     {
      "id": "c-7d2a3f364428",
@@ -210,6 +211,116 @@ window.DIGEST = {
    ]
   },
   {
+   "id": "THEME-0006",
+   "title": "Duplicate journal entries in general ledger sync",
+   "type": "bug",
+   "summary": "Finance staff at multiple associations find the same journal entries posted twice into their general ledger after a sync, including month end closings that came through in duplicate on several occasions. Treasurers reverse the extra copies by hand, so the ledger is only correct after manual cleanup.",
+   "claim_ids": [
+    "c-9e53583c6513",
+    "c-5c26d1b4bb94",
+    "c-19a349819453"
+   ],
+   "first_seen": "2026-09-08",
+   "last_seen": "2026-09-24",
+   "log": [
+    {
+     "day": "2026-09-08",
+     "action": "open",
+     "claim_id": "c-9e53583c6513",
+     "why": "Double-posted journal entries in the accounting sync are distinct from invoice and reporting issues and open a new theme."
+    },
+    {
+     "day": "2026-09-09",
+     "action": "append",
+     "claim_id": "c-5c26d1b4bb94",
+     "why": "Transactions appearing twice in the ledger after a sync run is the duplicate journal entry problem the existing theme covers."
+    },
+    {
+     "day": "2026-09-24",
+     "action": "append",
+     "claim_id": "c-19a349819453",
+     "why": "Month end posting arriving twice in the ledger is the same duplicate journal entry failure in the accounting sync already tracked."
+    }
+   ],
+   "accounts": {
+    "customer": 3,
+    "prospect": 0
+   },
+   "open_cases": 7,
+   "score_parts": {
+    "accounts": 22.5,
+    "value": 7.7,
+    "cases": 20.0,
+    "recency": 15.0,
+    "bug": 10.0
+   },
+   "score": 75,
+   "claims": [
+    {
+     "id": "c-9e53583c6513",
+     "day": "2026-09-08",
+     "source": "gong",
+     "type": "bug",
+     "topic": "duplicate journal entries in general ledger sync",
+     "quote": "The general ledger sync has posted the same journal entry twice on more than one closing, and our bookkeeper has to go back and reverse the duplicate by hand.",
+     "account_id": "ACC-0003",
+     "account": "Prairie Land Trust Council",
+     "account_type": "customer",
+     "tier": "Professional",
+     "arr": 154000,
+     "speaker": "Miguel Ferreira",
+     "locator": {
+      "call_id": "7782934452015",
+      "speaker_id": "c-03",
+      "start_ms": 478615,
+      "end_ms": 486462
+     },
+     "occurred_at": "2026-09-08T09:08:48Z"
+    },
+    {
+     "id": "c-5c26d1b4bb94",
+     "day": "2026-09-09",
+     "source": "salesforce",
+     "type": "bug",
+     "topic": "duplicate transactions in ledger after sync",
+     "quote": "Every few weeks a batch of transactions shows up twice in the ledger after the sync runs, and finance has to hunt down which one to remove.",
+     "account_id": "ACC-0005",
+     "account": "Sunbelt Literacy Network",
+     "account_type": "customer",
+     "tier": "Standard",
+     "arr": 41000,
+     "speaker": "Yolanda Pruitt",
+     "locator": {
+      "case_id": "50000000000000000a",
+      "comment_id": "00a000000000000026",
+      "case_number": "00005010"
+     },
+     "occurred_at": "2026-09-09T11:45:46Z"
+    },
+    {
+     "id": "c-19a349819453",
+     "day": "2026-09-24",
+     "source": "gong",
+     "type": "bug",
+     "topic": "month end posting duplicates in ledger",
+     "quote": "The month end posting has come through twice into our ledger on three closings since the spring, and our treasurer reverses the copy by hand each time.",
+     "account_id": "ACC-0010",
+     "account": "Ozark Valley Arts Council",
+     "account_type": "customer",
+     "tier": "Professional",
+     "arr": 128000,
+     "speaker": "Rosalind Achterberg",
+     "locator": {
+      "call_id": "7782934453107",
+      "speaker_id": "5207",
+      "start_ms": 93870,
+      "end_ms": 153880
+     },
+     "occurred_at": "2026-09-24T10:04:04Z"
+    }
+   ]
+  },
+  {
    "id": "THEME-0008",
    "title": "Pledge reminder schedule ignores donor contact preferences",
    "type": "bug",
@@ -257,10 +368,10 @@ window.DIGEST = {
     "accounts": 22.5,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 8.6,
+    "recency": 7.5,
     "bug": 10.0
    },
-   "score": 74,
+   "score": 73,
    "claims": [
     {
      "id": "c-5d3a978f29d2",
@@ -347,6 +458,200 @@ window.DIGEST = {
    ]
   },
   {
+   "id": "THEME-0003",
+   "title": "Offline event check-in with later sync",
+   "type": "feature",
+   "summary": "Event staff and volunteers need to check attendees in away from a fixed kiosk and a dependable network, at venues such as school gyms where connectivity drops or no hardware travels. They want check-in to run on the devices they carry and to sync the records once a connection returns.",
+   "claim_ids": [
+    "c-6fdcefc76dcd",
+    "c-b58dd0db5d66",
+    "c-dd21af62c2f6",
+    "c-5814ec6d0a27",
+    "c-9e3ed5d027fc",
+    "c-396b59402c5f"
+   ],
+   "first_seen": "2026-09-08",
+   "last_seen": "2026-09-24",
+   "log": [
+    {
+     "day": "2026-09-08",
+     "action": "open",
+     "claim_id": "c-6fdcefc76dcd",
+     "why": "Check-in failing when venue wifi drops and the ask for offline capture with sync are one theme, and none exists yet."
+    },
+    {
+     "day": "2026-09-08",
+     "action": "append",
+     "claim_id": "c-b58dd0db5d66",
+     "why": "Same ask as the other check-in claim from the same account: keep check-in running without connectivity and sync when back online."
+    },
+    {
+     "day": "2026-09-11",
+     "action": "append",
+     "claim_id": "c-dd21af62c2f6",
+     "why": "A kiosk that stops signing people in when the wifi drops is the failure side of the existing offline check-in with later sync theme."
+    },
+    {
+     "day": "2026-09-11",
+     "action": "append",
+     "claim_id": "c-5814ec6d0a27",
+     "why": "The request for the kiosk to keep running through an outage and reconcile afterwards is exactly the offline check-in with later sync ask."
+    },
+    {
+     "day": "2026-09-16",
+     "action": "append",
+     "claim_id": "c-9e3ed5d027fc",
+     "why": "Asking the attendee kiosk to keep checking people in without a connection and sync on reconnect is the same ask as offline event check-in with later sync."
+    },
+    {
+     "day": "2026-09-24",
+     "action": "append",
+     "claim_id": "c-396b59402c5f",
+     "why": "Signing attendees in from volunteer phones at venues without kiosks or reliable connectivity is the same check-in away from fixed infrastructure ask."
+    }
+   ],
+   "accounts": {
+    "customer": 3,
+    "prospect": 0
+   },
+   "open_cases": 12,
+   "score_parts": {
+    "accounts": 22.5,
+    "value": 13.4,
+    "cases": 20.0,
+    "recency": 15.0,
+    "bug": 0.0
+   },
+   "score": 71,
+   "claims": [
+    {
+     "id": "c-6fdcefc76dcd",
+     "day": "2026-09-08",
+     "source": "gong",
+     "type": "feature",
+     "topic": "offline event check-in syncing",
+     "quote": "When the venue wifi drops we need event check-in to keep running on the tablets and sync everything back up once we are online again. That is the single thing I would change if I could change one thing.",
+     "account_id": "ACC-0002",
+     "account": "Cascadia Nurses Association",
+     "account_type": "customer",
+     "tier": "Enterprise",
+     "arr": 268000,
+     "speaker": "Sylvia Marchetti",
+     "locator": {
+      "call_id": "7782934451118",
+      "speaker_id": "4631",
+      "start_ms": 754970,
+      "end_ms": 790252
+     },
+     "occurred_at": "2026-09-08T17:44:14Z"
+    },
+    {
+     "id": "c-b58dd0db5d66",
+     "day": "2026-09-08",
+     "source": "salesforce",
+     "type": "feature",
+     "topic": "offline event check-in with sync",
+     "quote": "Our onsite team needs event check-in to keep working even when the venue wifi drops, and then sync everything back once we are online again.",
+     "account_id": "ACC-0002",
+     "account": "Cascadia Nurses Association",
+     "account_type": "customer",
+     "tier": "Enterprise",
+     "arr": 268000,
+     "speaker": "Renee Okafor",
+     "locator": {
+      "case_id": "500000000000000002",
+      "comment_id": "00a000000000000005",
+      "case_number": "00005002"
+     },
+     "occurred_at": "2026-09-08T10:25:12Z"
+    },
+    {
+     "id": "c-dd21af62c2f6",
+     "day": "2026-09-11",
+     "source": "gong",
+     "type": "bug",
+     "topic": "attendee kiosk offline during network outage",
+     "quote": "If the hall wifi cuts out halfway through the morning, the attendee kiosk has to carry on signing people in and catch up later.",
+     "account_id": "ACC-0004",
+     "account": "Atlantic Shipwrights Guild",
+     "account_type": "customer",
+     "tier": "Professional",
+     "arr": 96000,
+     "speaker": "Garrett Thibodeaux",
+     "locator": {
+      "call_id": "7782934451207",
+      "speaker_id": "4744",
+      "start_ms": 444042,
+      "end_ms": 506400
+     },
+     "occurred_at": "2026-09-11T13:09:29Z"
+    },
+    {
+     "id": "c-5814ec6d0a27",
+     "day": "2026-09-11",
+     "source": "gong",
+     "type": "feature",
+     "topic": "offline capability for attendee kiosk during network outages",
+     "quote": "Our insurance requires us to show who was on site and roughly when, so the attendee kiosk staying up through an outage and reconciling afterwards is the difference between a compliant record and a gap.",
+     "account_id": "ACC-0004",
+     "account": "Atlantic Shipwrights Guild",
+     "account_type": "customer",
+     "tier": "Professional",
+     "arr": 96000,
+     "speaker": "Garrett Thibodeaux",
+     "locator": {
+      "call_id": "7782934451207",
+      "speaker_id": "4744",
+      "start_ms": 444042,
+      "end_ms": 506400
+     },
+     "occurred_at": "2026-09-11T13:09:29Z"
+    },
+    {
+     "id": "c-9e3ed5d027fc",
+     "day": "2026-09-16",
+     "source": "gong",
+     "type": "feature",
+     "topic": "attendee kiosk offline resilience",
+     "quote": "The attendee kiosk has to keep taking people in even if the venue connection goes down, and catch back up automatically the moment it reconnects.",
+     "account_id": "ACC-0004",
+     "account": "Atlantic Shipwrights Guild",
+     "account_type": "customer",
+     "tier": "Professional",
+     "arr": 96000,
+     "speaker": "Colin Bramwell",
+     "locator": {
+      "call_id": "7782934452004",
+      "speaker_id": "c-04",
+      "start_ms": 90586,
+      "end_ms": 105683
+     },
+     "occurred_at": "2026-09-16T12:33:17Z"
+    },
+    {
+     "id": "c-396b59402c5f",
+     "day": "2026-09-24",
+     "source": "gong",
+     "type": "feature",
+     "topic": "mobile phone sign-in for event volunteers",
+     "quote": "We want something our volunteers can run on their own phones to sign people in at the door, because the kiosks do not travel to a school gym.",
+     "account_id": "ACC-0006",
+     "account": "Copper Ridge Youth Foundation",
+     "account_type": "customer",
+     "tier": "Standard",
+     "arr": 18000,
+     "speaker": "Devon Hargreaves",
+     "locator": {
+      "call_id": "7782934453108",
+      "speaker_id": "5308",
+      "start_ms": 127050,
+      "end_ms": 185740
+     },
+     "occurred_at": "2026-09-24T15:18:47Z"
+    }
+   ]
+  },
+  {
    "id": "THEME-0009",
    "title": "SCORM package import into learning module",
    "type": "feature",
@@ -394,10 +699,10 @@ window.DIGEST = {
     "accounts": 22.5,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 15.0,
+    "recency": 13.9,
     "bug": 0.0
    },
-   "score": 71,
+   "score": 70,
    "claims": [
     {
      "id": "c-b696c3430eb3",
@@ -532,10 +837,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 7.5,
+    "recency": 6.4,
     "bug": 10.0
    },
-   "score": 70,
+   "score": 68,
    "claims": [
     {
      "id": "c-915d4dd0bc13",
@@ -656,10 +961,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 7.5,
+    "recency": 6.4,
     "bug": 10.0
    },
-   "score": 70,
+   "score": 68,
    "claims": [
     {
      "id": "c-b35dfc0ea355",
@@ -706,6 +1011,88 @@ window.DIGEST = {
    ]
   },
   {
+   "id": "THEME-0013",
+   "title": "Member directory search by location and specialty",
+   "type": "feature",
+   "summary": "Members ask staff to find other members by where they are and what they do, but the directory only supports searching by name. Staff end up answering these requests by hand every week because the search cannot filter by region or specialty.",
+   "claim_ids": [
+    "c-19324e96cdf8",
+    "c-771740209506"
+   ],
+   "first_seen": "2026-09-17",
+   "last_seen": "2026-09-24",
+   "log": [
+    {
+     "day": "2026-09-17",
+     "action": "open",
+     "claim_id": "c-19324e96cdf8",
+     "why": "Nothing in the index covers searching the member directory by attributes other than name."
+    },
+    {
+     "day": "2026-09-24",
+     "action": "append",
+     "claim_id": "c-771740209506",
+     "why": "Searching the member directory by region is the same gap as directory search by location and specialty."
+    }
+   ],
+   "accounts": {
+    "customer": 2,
+    "prospect": 0
+   },
+   "open_cases": 8,
+   "score_parts": {
+    "accounts": 15.0,
+    "value": 17.0,
+    "cases": 20.0,
+    "recency": 15.0,
+    "bug": 0.0
+   },
+   "score": 67,
+   "claims": [
+    {
+     "id": "c-19324e96cdf8",
+     "day": "2026-09-17",
+     "source": "gong",
+     "type": "feature",
+     "topic": "member directory search by location and craft",
+     "quote": "Our members cannot look one another up by county or by the craft they work in, so the directory is only useful if you already know the person's name.",
+     "account_id": "ACC-0010",
+     "account": "Ozark Valley Arts Council",
+     "account_type": "customer",
+     "tier": "Professional",
+     "arr": 128000,
+     "speaker": "Alina Petrosyan",
+     "locator": {
+      "call_id": "7782934453101",
+      "speaker_id": "4601",
+      "start_ms": 236520,
+      "end_ms": 300380
+     },
+     "occurred_at": "2026-09-17T13:06:40Z"
+    },
+    {
+     "id": "c-771740209506",
+     "day": "2026-09-24",
+     "source": "salesforce",
+     "type": "feature",
+     "topic": "directory search by region",
+     "quote": "Members ask us for other members by region almost every week and all we can offer them is a search on a name",
+     "account_id": "ACC-0001",
+     "account": "Great Lakes Museum Alliance",
+     "account_type": "customer",
+     "tier": "Enterprise",
+     "arr": 340000,
+     "speaker": "Naomi Castellanos",
+     "locator": {
+      "case_id": "50000000000000001c",
+      "comment_id": "00a000000000000070",
+      "case_number": "00005028"
+     },
+     "occurred_at": "2026-09-24T11:26:39Z"
+    }
+   ]
+  },
+  {
    "id": "THEME-0004",
    "title": "Renewal notice email deliverability",
    "type": "bug",
@@ -746,10 +1133,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 2.0,
     "cases": 20.0,
-    "recency": 15.0,
+    "recency": 13.9,
     "bug": 10.0
    },
-   "score": 62,
+   "score": 61,
    "claims": [
     {
      "id": "c-8fc57031470e",
@@ -850,10 +1237,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 12.9,
+    "recency": 11.8,
     "bug": 0.0
    },
-   "score": 61,
+   "score": 60,
    "claims": [
     {
      "id": "c-299d81776e9e",
@@ -926,10 +1313,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 13.9,
+    "recency": 12.9,
     "bug": 0.0
    },
-   "score": 58,
+   "score": 57,
    "claims": [
     {
      "id": "c-4d4d64d27752",
@@ -951,172 +1338,6 @@ window.DIGEST = {
       "end_ms": 294850
      },
      "occurred_at": "2026-09-22T09:36:25Z"
-    }
-   ]
-  },
-  {
-   "id": "THEME-0003",
-   "title": "Offline event check-in with later sync",
-   "type": "feature",
-   "summary": "Event staff running check-in at venues with unreliable connectivity cannot admit attendees when the network drops. They need the attendee kiosk and check-in app to keep accepting people while offline and to sync the records automatically once the connection returns.",
-   "claim_ids": [
-    "c-6fdcefc76dcd",
-    "c-b58dd0db5d66",
-    "c-dd21af62c2f6",
-    "c-5814ec6d0a27",
-    "c-9e3ed5d027fc"
-   ],
-   "first_seen": "2026-09-08",
-   "last_seen": "2026-09-16",
-   "log": [
-    {
-     "day": "2026-09-08",
-     "action": "open",
-     "claim_id": "c-6fdcefc76dcd",
-     "why": "Check-in failing when venue wifi drops and the ask for offline capture with sync are one theme, and none exists yet."
-    },
-    {
-     "day": "2026-09-08",
-     "action": "append",
-     "claim_id": "c-b58dd0db5d66",
-     "why": "Same ask as the other check-in claim from the same account: keep check-in running without connectivity and sync when back online."
-    },
-    {
-     "day": "2026-09-11",
-     "action": "append",
-     "claim_id": "c-dd21af62c2f6",
-     "why": "A kiosk that stops signing people in when the wifi drops is the failure side of the existing offline check-in with later sync theme."
-    },
-    {
-     "day": "2026-09-11",
-     "action": "append",
-     "claim_id": "c-5814ec6d0a27",
-     "why": "The request for the kiosk to keep running through an outage and reconcile afterwards is exactly the offline check-in with later sync ask."
-    },
-    {
-     "day": "2026-09-16",
-     "action": "append",
-     "claim_id": "c-9e3ed5d027fc",
-     "why": "Asking the attendee kiosk to keep checking people in without a connection and sync on reconnect is the same ask as offline event check-in with later sync."
-    }
-   ],
-   "accounts": {
-    "customer": 2,
-    "prospect": 0
-   },
-   "open_cases": 9,
-   "score_parts": {
-    "accounts": 15.0,
-    "value": 13.4,
-    "cases": 20.0,
-    "recency": 7.5,
-    "bug": 0.0
-   },
-   "score": 56,
-   "claims": [
-    {
-     "id": "c-6fdcefc76dcd",
-     "day": "2026-09-08",
-     "source": "gong",
-     "type": "feature",
-     "topic": "offline event check-in syncing",
-     "quote": "When the venue wifi drops we need event check-in to keep running on the tablets and sync everything back up once we are online again. That is the single thing I would change if I could change one thing.",
-     "account_id": "ACC-0002",
-     "account": "Cascadia Nurses Association",
-     "account_type": "customer",
-     "tier": "Enterprise",
-     "arr": 268000,
-     "speaker": "Sylvia Marchetti",
-     "locator": {
-      "call_id": "7782934451118",
-      "speaker_id": "4631",
-      "start_ms": 754970,
-      "end_ms": 790252
-     },
-     "occurred_at": "2026-09-08T17:44:14Z"
-    },
-    {
-     "id": "c-b58dd0db5d66",
-     "day": "2026-09-08",
-     "source": "salesforce",
-     "type": "feature",
-     "topic": "offline event check-in with sync",
-     "quote": "Our onsite team needs event check-in to keep working even when the venue wifi drops, and then sync everything back once we are online again.",
-     "account_id": "ACC-0002",
-     "account": "Cascadia Nurses Association",
-     "account_type": "customer",
-     "tier": "Enterprise",
-     "arr": 268000,
-     "speaker": "Renee Okafor",
-     "locator": {
-      "case_id": "500000000000000002",
-      "comment_id": "00a000000000000005",
-      "case_number": "00005002"
-     },
-     "occurred_at": "2026-09-08T10:25:12Z"
-    },
-    {
-     "id": "c-dd21af62c2f6",
-     "day": "2026-09-11",
-     "source": "gong",
-     "type": "bug",
-     "topic": "attendee kiosk offline during network outage",
-     "quote": "If the hall wifi cuts out halfway through the morning, the attendee kiosk has to carry on signing people in and catch up later.",
-     "account_id": "ACC-0004",
-     "account": "Atlantic Shipwrights Guild",
-     "account_type": "customer",
-     "tier": "Professional",
-     "arr": 96000,
-     "speaker": "Garrett Thibodeaux",
-     "locator": {
-      "call_id": "7782934451207",
-      "speaker_id": "4744",
-      "start_ms": 444042,
-      "end_ms": 506400
-     },
-     "occurred_at": "2026-09-11T13:09:29Z"
-    },
-    {
-     "id": "c-5814ec6d0a27",
-     "day": "2026-09-11",
-     "source": "gong",
-     "type": "feature",
-     "topic": "offline capability for attendee kiosk during network outages",
-     "quote": "Our insurance requires us to show who was on site and roughly when, so the attendee kiosk staying up through an outage and reconciling afterwards is the difference between a compliant record and a gap.",
-     "account_id": "ACC-0004",
-     "account": "Atlantic Shipwrights Guild",
-     "account_type": "customer",
-     "tier": "Professional",
-     "arr": 96000,
-     "speaker": "Garrett Thibodeaux",
-     "locator": {
-      "call_id": "7782934451207",
-      "speaker_id": "4744",
-      "start_ms": 444042,
-      "end_ms": 506400
-     },
-     "occurred_at": "2026-09-11T13:09:29Z"
-    },
-    {
-     "id": "c-9e3ed5d027fc",
-     "day": "2026-09-16",
-     "source": "gong",
-     "type": "feature",
-     "topic": "attendee kiosk offline resilience",
-     "quote": "The attendee kiosk has to keep taking people in even if the venue connection goes down, and catch back up automatically the moment it reconnects.",
-     "account_id": "ACC-0004",
-     "account": "Atlantic Shipwrights Guild",
-     "account_type": "customer",
-     "tier": "Professional",
-     "arr": 96000,
-     "speaker": "Colin Bramwell",
-     "locator": {
-      "call_id": "7782934452004",
-      "speaker_id": "c-04",
-      "start_ms": 90586,
-      "end_ms": 105683
-     },
-     "occurred_at": "2026-09-16T12:33:17Z"
     }
    ]
   },
@@ -1147,10 +1368,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 12.9,
+    "recency": 11.8,
     "bug": 0.0
    },
-   "score": 54,
+   "score": 53,
    "claims": [
     {
      "id": "c-92d6a9487216",
@@ -1172,88 +1393,6 @@ window.DIGEST = {
       "end_ms": 202350
      },
      "occurred_at": "2026-09-21T14:04:15Z"
-    }
-   ]
-  },
-  {
-   "id": "THEME-0006",
-   "title": "Duplicate journal entries in general ledger sync",
-   "type": "bug",
-   "summary": "A batch of transactions periodically posts twice to the general ledger after the accounting sync runs. Finance staff have to identify and remove the duplicate entries before the books reconcile.",
-   "claim_ids": [
-    "c-9e53583c6513",
-    "c-5c26d1b4bb94"
-   ],
-   "first_seen": "2026-09-08",
-   "last_seen": "2026-09-09",
-   "log": [
-    {
-     "day": "2026-09-08",
-     "action": "open",
-     "claim_id": "c-9e53583c6513",
-     "why": "Double-posted journal entries in the accounting sync are distinct from invoice and reporting issues and open a new theme."
-    },
-    {
-     "day": "2026-09-09",
-     "action": "append",
-     "claim_id": "c-5c26d1b4bb94",
-     "why": "Transactions appearing twice in the ledger after a sync run is the duplicate journal entry problem the existing theme covers."
-    }
-   ],
-   "accounts": {
-    "customer": 2,
-    "prospect": 0
-   },
-   "open_cases": 6,
-   "score_parts": {
-    "accounts": 15.0,
-    "value": 7.7,
-    "cases": 20.0,
-    "recency": 0.0,
-    "bug": 10.0
-   },
-   "score": 53,
-   "claims": [
-    {
-     "id": "c-9e53583c6513",
-     "day": "2026-09-08",
-     "source": "gong",
-     "type": "bug",
-     "topic": "duplicate journal entries in general ledger sync",
-     "quote": "The general ledger sync has posted the same journal entry twice on more than one closing, and our bookkeeper has to go back and reverse the duplicate by hand.",
-     "account_id": "ACC-0003",
-     "account": "Prairie Land Trust Council",
-     "account_type": "customer",
-     "tier": "Professional",
-     "arr": 154000,
-     "speaker": "Miguel Ferreira",
-     "locator": {
-      "call_id": "7782934452015",
-      "speaker_id": "c-03",
-      "start_ms": 478615,
-      "end_ms": 486462
-     },
-     "occurred_at": "2026-09-08T09:08:48Z"
-    },
-    {
-     "id": "c-5c26d1b4bb94",
-     "day": "2026-09-09",
-     "source": "salesforce",
-     "type": "bug",
-     "topic": "duplicate transactions in ledger after sync",
-     "quote": "Every few weeks a batch of transactions shows up twice in the ledger after the sync runs, and finance has to hunt down which one to remove.",
-     "account_id": "ACC-0005",
-     "account": "Sunbelt Literacy Network",
-     "account_type": "customer",
-     "tier": "Standard",
-     "arr": 41000,
-     "speaker": "Yolanda Pruitt",
-     "locator": {
-      "case_id": "50000000000000000a",
-      "comment_id": "00a000000000000026",
-      "case_number": "00005010"
-     },
-     "occurred_at": "2026-09-09T11:45:46Z"
     }
    ]
   },
@@ -1291,10 +1430,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 4.8,
     "cases": 20.0,
-    "recency": 9.6,
+    "recency": 8.6,
     "bug": 10.0
    },
-   "score": 52,
+   "score": 51,
    "claims": [
     {
      "id": "c-c44577763b5c",
@@ -1367,10 +1506,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 7.7,
     "cases": 20.0,
-    "recency": 12.9,
+    "recency": 11.8,
     "bug": 0.0
    },
-   "score": 48,
+   "score": 47,
    "claims": [
     {
      "id": "c-418a8c8e7f16",
@@ -1476,10 +1615,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 2.0,
     "cases": 10.0,
-    "recency": 15.0,
+    "recency": 13.9,
     "bug": 0.0
    },
-   "score": 34,
+   "score": 33,
    "claims": [
     {
      "id": "c-91501239d30d",
@@ -1531,10 +1670,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 0.9,
     "cases": 15.0,
-    "recency": 8.6,
+    "recency": 7.5,
     "bug": 0.0
    },
-   "score": 32,
+   "score": 31,
    "claims": [
     {
      "id": "c-8c2632e3512c",
@@ -1555,61 +1694,6 @@ window.DIGEST = {
       "case_number": "00005023"
      },
      "occurred_at": "2026-09-17T09:24:50Z"
-    }
-   ]
-  },
-  {
-   "id": "THEME-0013",
-   "title": "Member directory search by location and specialty",
-   "type": "feature",
-   "summary": "Members of an arts council cannot find each other in the directory unless they already know the exact name. There is no way to search or filter by geography such as county or by the craft or specialty a member works in, so the directory goes largely unused.",
-   "claim_ids": [
-    "c-19324e96cdf8"
-   ],
-   "first_seen": "2026-09-17",
-   "last_seen": "2026-09-17",
-   "log": [
-    {
-     "day": "2026-09-17",
-     "action": "open",
-     "claim_id": "c-19324e96cdf8",
-     "why": "Nothing in the index covers searching the member directory by attributes other than name."
-    }
-   ],
-   "accounts": {
-    "customer": 1,
-    "prospect": 0
-   },
-   "open_cases": 1,
-   "score_parts": {
-    "accounts": 7.5,
-    "value": 6.4,
-    "cases": 5.0,
-    "recency": 8.6,
-    "bug": 0.0
-   },
-   "score": 28,
-   "claims": [
-    {
-     "id": "c-19324e96cdf8",
-     "day": "2026-09-17",
-     "source": "gong",
-     "type": "feature",
-     "topic": "member directory search by location and craft",
-     "quote": "Our members cannot look one another up by county or by the craft they work in, so the directory is only useful if you already know the person's name.",
-     "account_id": "ACC-0010",
-     "account": "Ozark Valley Arts Council",
-     "account_type": "customer",
-     "tier": "Professional",
-     "arr": 128000,
-     "speaker": "Alina Petrosyan",
-     "locator": {
-      "call_id": "7782934453101",
-      "speaker_id": "4601",
-      "start_ms": 236520,
-      "end_ms": 300380
-     },
-     "occurred_at": "2026-09-17T13:06:40Z"
     }
    ]
   },
@@ -1640,7 +1724,7 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 6.4,
     "cases": 5.0,
-    "recency": 9.6,
+    "recency": 8.6,
     "bug": 0.0
    },
    "score": 28,

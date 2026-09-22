@@ -2,31 +2,38 @@
  "id": "THEME-0013",
  "title": "Member directory search by location and specialty",
  "type": "feature",
- "summary": "Members of an arts council cannot find each other in the directory unless they already know the exact name. There is no way to search or filter by geography such as county or by the craft or specialty a member works in, so the directory goes largely unused.",
+ "summary": "Members ask staff to find other members by where they are and what they do, but the directory only supports searching by name. Staff end up answering these requests by hand every week because the search cannot filter by region or specialty.",
  "claim_ids": [
-  "c-19324e96cdf8"
+  "c-19324e96cdf8",
+  "c-771740209506"
  ],
  "first_seen": "2026-09-17",
- "last_seen": "2026-09-17",
+ "last_seen": "2026-09-24",
  "log": [
   {
    "day": "2026-09-17",
    "action": "open",
    "claim_id": "c-19324e96cdf8",
    "why": "Nothing in the index covers searching the member directory by attributes other than name."
+  },
+  {
+   "day": "2026-09-24",
+   "action": "append",
+   "claim_id": "c-771740209506",
+   "why": "Searching the member directory by region is the same gap as directory search by location and specialty."
   }
  ],
  "accounts": {
-  "customer": 1,
+  "customer": 2,
   "prospect": 0
  },
- "open_cases": 1,
+ "open_cases": 8,
  "score_parts": {
-  "accounts": 7.5,
-  "value": 6.4,
-  "cases": 5.0,
-  "recency": 8.6,
+  "accounts": 15.0,
+  "value": 17.0,
+  "cases": 20.0,
+  "recency": 15.0,
   "bug": 0.0
  },
- "score": 28
+ "score": 67
 }

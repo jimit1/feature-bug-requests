@@ -2,16 +2,17 @@
  "id": "THEME-0003",
  "title": "Offline event check-in with later sync",
  "type": "feature",
- "summary": "Event staff running check-in at venues with unreliable connectivity cannot admit attendees when the network drops. They need the attendee kiosk and check-in app to keep accepting people while offline and to sync the records automatically once the connection returns.",
+ "summary": "Event staff and volunteers need to check attendees in away from a fixed kiosk and a dependable network, at venues such as school gyms where connectivity drops or no hardware travels. They want check-in to run on the devices they carry and to sync the records once a connection returns.",
  "claim_ids": [
   "c-6fdcefc76dcd",
   "c-b58dd0db5d66",
   "c-dd21af62c2f6",
   "c-5814ec6d0a27",
-  "c-9e3ed5d027fc"
+  "c-9e3ed5d027fc",
+  "c-396b59402c5f"
  ],
  "first_seen": "2026-09-08",
- "last_seen": "2026-09-16",
+ "last_seen": "2026-09-24",
  "log": [
   {
    "day": "2026-09-08",
@@ -42,19 +43,25 @@
    "action": "append",
    "claim_id": "c-9e3ed5d027fc",
    "why": "Asking the attendee kiosk to keep checking people in without a connection and sync on reconnect is the same ask as offline event check-in with later sync."
+  },
+  {
+   "day": "2026-09-24",
+   "action": "append",
+   "claim_id": "c-396b59402c5f",
+   "why": "Signing attendees in from volunteer phones at venues without kiosks or reliable connectivity is the same check-in away from fixed infrastructure ask."
   }
  ],
  "accounts": {
-  "customer": 2,
+  "customer": 3,
   "prospect": 0
  },
- "open_cases": 9,
+ "open_cases": 12,
  "score_parts": {
-  "accounts": 15.0,
+  "accounts": 22.5,
   "value": 13.4,
   "cases": 20.0,
-  "recency": 7.5,
+  "recency": 15.0,
   "bug": 0.0
  },
- "score": 56
+ "score": 71
 }
