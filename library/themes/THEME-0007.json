@@ -2,13 +2,14 @@
  "id": "THEME-0007",
  "title": "Expiration warnings for postings",
  "type": "bug",
- "summary": "Organizations that place postings get no warning before a listing expires and comes down. The posting party only learns the listing is gone when a caller asks why it vanished from the board, so lapses go unnoticed until someone complains.",
+ "summary": "Customers who publish postings are not told before a posting expires, so listings drop off without anyone noticing in time to act. They want a warning sent at least a week ahead so the poster can renew or extend before the listing disappears.",
  "claim_ids": [
   "c-c44577763b5c",
-  "c-096f6053d878"
+  "c-096f6053d878",
+  "c-d307607f309c"
  ],
  "first_seen": "2026-09-08",
- "last_seen": "2026-09-18",
+ "last_seen": "2026-09-25",
  "log": [
   {
    "day": "2026-09-08",
@@ -21,6 +22,12 @@
    "action": "append",
    "claim_id": "c-096f6053d878",
    "why": "The yard learning a listing dropped only when someone phones is the same gap as missing expiration warnings for postings."
+  },
+  {
+   "day": "2026-09-25",
+   "action": "append",
+   "claim_id": "c-d307607f309c",
+   "why": "The ask for a week of advance warning before a posting expires is the feature side of the existing expiration warnings for postings theme."
   }
  ],
  "accounts": {
@@ -32,8 +39,8 @@
   "accounts": 7.5,
   "value": 4.8,
   "cases": 20.0,
-  "recency": 8.6,
+  "recency": 15.0,
   "bug": 10.0
  },
- "score": 51
+ "score": 57
 }

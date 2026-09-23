@@ -1,5 +1,5 @@
 window.DIGEST = {
- "as_of": "2026-09-24",
+ "as_of": "2026-09-25",
  "days": [
   "2026-09-08",
   "2026-09-09",
@@ -13,7 +13,8 @@ window.DIGEST = {
   "2026-09-21",
   "2026-09-22",
   "2026-09-23",
-  "2026-09-24"
+  "2026-09-24",
+  "2026-09-25"
  ],
  "ask_url": "https://g3kmsu2e2ikq7cyivffqi7i6oe0unrtk.lambda-url.us-east-1.on.aws/",
  "themes": [
@@ -79,10 +80,10 @@ window.DIGEST = {
     "accounts": 22.5,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 12.9,
+    "recency": 11.8,
     "bug": 10.0
    },
-   "score": 82,
+   "score": 81,
    "claims": [
     {
      "id": "c-7d2a3f364428",
@@ -251,10 +252,10 @@ window.DIGEST = {
     "accounts": 22.5,
     "value": 7.7,
     "cases": 20.0,
-    "recency": 15.0,
+    "recency": 13.9,
     "bug": 10.0
    },
-   "score": 75,
+   "score": 74,
    "claims": [
     {
      "id": "c-9e53583c6513",
@@ -368,10 +369,10 @@ window.DIGEST = {
     "accounts": 22.5,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 7.5,
+    "recency": 6.4,
     "bug": 10.0
    },
-   "score": 73,
+   "score": 72,
    "claims": [
     {
      "id": "c-5d3a978f29d2",
@@ -519,10 +520,10 @@ window.DIGEST = {
     "accounts": 22.5,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 15.0,
+    "recency": 13.9,
     "bug": 0.0
    },
-   "score": 71,
+   "score": 70,
    "claims": [
     {
      "id": "c-6fdcefc76dcd",
@@ -699,10 +700,10 @@ window.DIGEST = {
     "accounts": 22.5,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 13.9,
+    "recency": 12.9,
     "bug": 0.0
    },
-   "score": 70,
+   "score": 69,
    "claims": [
     {
      "id": "c-b696c3430eb3",
@@ -837,10 +838,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 6.4,
+    "recency": 5.4,
     "bug": 10.0
    },
-   "score": 68,
+   "score": 67,
    "claims": [
     {
      "id": "c-915d4dd0bc13",
@@ -961,10 +962,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 6.4,
+    "recency": 5.4,
     "bug": 10.0
    },
-   "score": 68,
+   "score": 67,
    "claims": [
     {
      "id": "c-b35dfc0ea355",
@@ -1044,10 +1045,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 15.0,
+    "recency": 13.9,
     "bug": 0.0
    },
-   "score": 67,
+   "score": 66,
    "claims": [
     {
      "id": "c-19324e96cdf8",
@@ -1133,10 +1134,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 2.0,
     "cases": 20.0,
-    "recency": 13.9,
+    "recency": 12.9,
     "bug": 10.0
    },
-   "score": 61,
+   "score": 60,
    "claims": [
     {
      "id": "c-8fc57031470e",
@@ -1237,10 +1238,10 @@ window.DIGEST = {
     "accounts": 15.0,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 11.8,
+    "recency": 10.7,
     "bug": 0.0
    },
-   "score": 60,
+   "score": 59,
    "claims": [
     {
      "id": "c-299d81776e9e",
@@ -1287,6 +1288,116 @@ window.DIGEST = {
    ]
   },
   {
+   "id": "THEME-0007",
+   "title": "Expiration warnings for postings",
+   "type": "bug",
+   "summary": "Customers who publish postings are not told before a posting expires, so listings drop off without anyone noticing in time to act. They want a warning sent at least a week ahead so the poster can renew or extend before the listing disappears.",
+   "claim_ids": [
+    "c-c44577763b5c",
+    "c-096f6053d878",
+    "c-d307607f309c"
+   ],
+   "first_seen": "2026-09-08",
+   "last_seen": "2026-09-25",
+   "log": [
+    {
+     "day": "2026-09-08",
+     "action": "open",
+     "claim_id": "c-c44577763b5c",
+     "why": "Postings coming down with no notice to their owner is a new area not covered by any existing theme."
+    },
+    {
+     "day": "2026-09-18",
+     "action": "append",
+     "claim_id": "c-096f6053d878",
+     "why": "The yard learning a listing dropped only when someone phones is the same gap as missing expiration warnings for postings."
+    },
+    {
+     "day": "2026-09-25",
+     "action": "append",
+     "claim_id": "c-d307607f309c",
+     "why": "The ask for a week of advance warning before a posting expires is the feature side of the existing expiration warnings for postings theme."
+    }
+   ],
+   "accounts": {
+    "customer": 1,
+    "prospect": 0
+   },
+   "open_cases": 4,
+   "score_parts": {
+    "accounts": 7.5,
+    "value": 4.8,
+    "cases": 20.0,
+    "recency": 15.0,
+    "bug": 10.0
+   },
+   "score": 57,
+   "claims": [
+    {
+     "id": "c-c44577763b5c",
+     "day": "2026-09-08",
+     "source": "gong",
+     "type": "bug",
+     "topic": "posting expiration without warning",
+     "quote": "A posting expires and comes down with no warning to the person who placed it, so postings vanish while they still think it is live.",
+     "account_id": "ACC-0004",
+     "account": "Atlantic Shipwrights Guild",
+     "account_type": "customer",
+     "tier": "Professional",
+     "arr": 96000,
+     "speaker": "Colin Bramwell",
+     "locator": {
+      "call_id": "7782934452018",
+      "speaker_id": "c-04",
+      "start_ms": 220800,
+      "end_ms": 225600
+     },
+     "occurred_at": "2026-09-08T16:20:39Z"
+    },
+    {
+     "id": "c-096f6053d878",
+     "day": "2026-09-18",
+     "source": "gong",
+     "type": "bug",
+     "topic": "expired listings drop without notice to the posting yard",
+     "quote": "Listings come down when they expire and nothing tells the yard that it happened. Nobody gets a note before a listing drops off the board, so the yard that placed it finds out only when somebody phones to ask why it disappeared.",
+     "account_id": "ACC-0004",
+     "account": "Atlantic Shipwrights Guild",
+     "account_type": "customer",
+     "tier": "Professional",
+     "arr": 96000,
+     "speaker": "Harriet Vandermeer",
+     "locator": {
+      "call_id": "7782934453102",
+      "speaker_id": "4702",
+      "start_ms": 139990,
+      "end_ms": 193180
+     },
+     "occurred_at": "2026-09-18T10:33:37Z"
+    },
+    {
+     "id": "c-d307607f309c",
+     "day": "2026-09-25",
+     "source": "salesforce",
+     "type": "feature",
+     "topic": "advance warning before posting expiry",
+     "quote": "At least a week ahead would give them time to renew it before it drops.",
+     "account_id": "ACC-0004",
+     "account": "Atlantic Shipwrights Guild",
+     "account_type": "customer",
+     "tier": "Professional",
+     "arr": 96000,
+     "speaker": "Colin Bramwell",
+     "locator": {
+      "case_id": "500000000000000010",
+      "comment_id": "00a000000000000040",
+      "case_number": "00005016"
+     },
+     "occurred_at": "2026-09-25T15:05:29Z"
+    }
+   ]
+  },
+  {
    "id": "THEME-0018",
    "title": "Cross site reporting on member and non member visits",
    "type": "feature",
@@ -1313,10 +1424,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 17.0,
     "cases": 20.0,
-    "recency": 12.9,
+    "recency": 11.8,
     "bug": 0.0
    },
-   "score": 57,
+   "score": 56,
    "claims": [
     {
      "id": "c-4d4d64d27752",
@@ -1368,10 +1479,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 13.4,
     "cases": 20.0,
-    "recency": 11.8,
+    "recency": 10.7,
     "bug": 0.0
    },
-   "score": 53,
+   "score": 52,
    "claims": [
     {
      "id": "c-92d6a9487216",
@@ -1393,89 +1504,6 @@ window.DIGEST = {
       "end_ms": 202350
      },
      "occurred_at": "2026-09-21T14:04:15Z"
-    }
-   ]
-  },
-  {
-   "id": "THEME-0007",
-   "title": "Expiration warnings for postings",
-   "type": "bug",
-   "summary": "Organizations that place postings get no warning before a listing expires and comes down. The posting party only learns the listing is gone when a caller asks why it vanished from the board, so lapses go unnoticed until someone complains.",
-   "claim_ids": [
-    "c-c44577763b5c",
-    "c-096f6053d878"
-   ],
-   "first_seen": "2026-09-08",
-   "last_seen": "2026-09-18",
-   "log": [
-    {
-     "day": "2026-09-08",
-     "action": "open",
-     "claim_id": "c-c44577763b5c",
-     "why": "Postings coming down with no notice to their owner is a new area not covered by any existing theme."
-    },
-    {
-     "day": "2026-09-18",
-     "action": "append",
-     "claim_id": "c-096f6053d878",
-     "why": "The yard learning a listing dropped only when someone phones is the same gap as missing expiration warnings for postings."
-    }
-   ],
-   "accounts": {
-    "customer": 1,
-    "prospect": 0
-   },
-   "open_cases": 4,
-   "score_parts": {
-    "accounts": 7.5,
-    "value": 4.8,
-    "cases": 20.0,
-    "recency": 8.6,
-    "bug": 10.0
-   },
-   "score": 51,
-   "claims": [
-    {
-     "id": "c-c44577763b5c",
-     "day": "2026-09-08",
-     "source": "gong",
-     "type": "bug",
-     "topic": "posting expiration without warning",
-     "quote": "A posting expires and comes down with no warning to the person who placed it, so postings vanish while they still think it is live.",
-     "account_id": "ACC-0004",
-     "account": "Atlantic Shipwrights Guild",
-     "account_type": "customer",
-     "tier": "Professional",
-     "arr": 96000,
-     "speaker": "Colin Bramwell",
-     "locator": {
-      "call_id": "7782934452018",
-      "speaker_id": "c-04",
-      "start_ms": 220800,
-      "end_ms": 225600
-     },
-     "occurred_at": "2026-09-08T16:20:39Z"
-    },
-    {
-     "id": "c-096f6053d878",
-     "day": "2026-09-18",
-     "source": "gong",
-     "type": "bug",
-     "topic": "expired listings drop without notice to the posting yard",
-     "quote": "Listings come down when they expire and nothing tells the yard that it happened. Nobody gets a note before a listing drops off the board, so the yard that placed it finds out only when somebody phones to ask why it disappeared.",
-     "account_id": "ACC-0004",
-     "account": "Atlantic Shipwrights Guild",
-     "account_type": "customer",
-     "tier": "Professional",
-     "arr": 96000,
-     "speaker": "Harriet Vandermeer",
-     "locator": {
-      "call_id": "7782934453102",
-      "speaker_id": "4702",
-      "start_ms": 139990,
-      "end_ms": 193180
-     },
-     "occurred_at": "2026-09-18T10:33:37Z"
     }
    ]
   },
@@ -1506,10 +1534,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 7.7,
     "cases": 20.0,
-    "recency": 11.8,
+    "recency": 10.7,
     "bug": 0.0
    },
-   "score": 47,
+   "score": 46,
    "claims": [
     {
      "id": "c-418a8c8e7f16",
@@ -1615,10 +1643,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 2.0,
     "cases": 10.0,
-    "recency": 13.9,
+    "recency": 12.9,
     "bug": 0.0
    },
-   "score": 33,
+   "score": 32,
    "claims": [
     {
      "id": "c-91501239d30d",
@@ -1670,10 +1698,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 0.9,
     "cases": 15.0,
-    "recency": 7.5,
+    "recency": 6.4,
     "bug": 0.0
    },
-   "score": 31,
+   "score": 30,
    "claims": [
     {
      "id": "c-8c2632e3512c",
@@ -1724,10 +1752,10 @@ window.DIGEST = {
     "accounts": 7.5,
     "value": 6.4,
     "cases": 5.0,
-    "recency": 8.6,
+    "recency": 7.5,
     "bug": 0.0
    },
-   "score": 28,
+   "score": 26,
    "claims": [
     {
      "id": "c-f5506b29197f",
